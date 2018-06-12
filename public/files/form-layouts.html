@@ -1,0 +1,216 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Form</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/input" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="Form Layouts" ui-sref="form-layouts" md-active="true">
+            </md-tab>
+            <md-tab label="Form Validations" ui-sref="form-validations">
+            </md-tab>
+            <md-tab label="Form Masks" ui-sref="form-masks">
+            </md-tab>
+            <md-tab label="Text Editor" ui-sref="text-editor">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- //////////////////////////////////////// -->
+    <!-- Block Form -->
+    <div class="row">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Form -->
+        <div class="col s12 l6">
+            <!-- section -->
+            <section class="page-section md-whiteframe-3dp">
+                <!--form title-->
+                <h3 class="theme-title">Basic Form</h3>
+                <!-- content -->
+                <form name="userForm">
+                    <md-input-container class="md-block">
+                        <label>Name</label>
+                        <input type="text">
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Email</label>
+                        <input type="email">
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Password</label>
+                        <input type="password">
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Message</label>
+                        <textarea ng-model="message" md-maxlength="150" rows="3" md-select-on-focus></textarea>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <h6 class="theme-title m-t-0">Gender</h6>
+                        <md-radio-group layout="row" layout-wrap>
+                            <md-radio-button value="male" class="md-primary" layout layout-align="start start">Male</md-radio-button>
+
+                            <md-radio-button value="Female" class="md-primary" layout layout-align="start start"> Female </md-radio-button>
+                        </md-radio-group>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <md-checkbox name="tos" class="md-primary">
+                            I accept the terms of service.
+                        </md-checkbox>
+                    </md-input-container>
+
+                    <md-button class="md-raised md-primary p-r-15 p-l-15">Submit <i class="material-icons icon-right">send</i></md-button>
+
+                </form>
+                <!-- end content -->
+            </section>
+            <!-- end section -->
+        </div>
+        <!-- End Basic Form -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Form with Icon Prefixes -->
+        <div class="col s12 l6">
+            <!-- section -->
+            <section class="page-section md-whiteframe-3dp">
+                <!--form title-->
+                <h3 class="theme-title">Form with Icon Prefixes</h3>
+                <!-- content -->
+                <form name="userForm1">
+                    <md-input-container class="md-block md-icon-float">
+                        <label>Name</label>
+                        <md-icon class="material-icons">account_circle</md-icon>
+                        <input type="text">
+                    </md-input-container>
+
+                    <md-input-container class="md-block md-icon-float">
+                        <label>Email</label>
+                        <md-icon class="material-icons">email</md-icon>
+                        <input type="email">
+                    </md-input-container>
+
+                    <md-input-container class="md-block md-icon-float">
+                        <label>Password</label>
+                        <md-icon class="material-icons">lock</md-icon>
+                        <input type="password">
+                    </md-input-container>
+
+                    <md-input-container class="md-block md-icon-float">
+                        <label>Message</label>
+                        <md-icon class="material-icons">message</md-icon>
+                        <textarea ng-model="message1" md-maxlength="150" rows="3" md-select-on-focus></textarea>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <h6 class="theme-title m-t-0">Gender</h6>
+                        <md-radio-group layout="row" layout-wrap>
+                            <md-radio-button value="male" class="md-primary" layout layout-align="start start">Male</md-radio-button>
+
+                            <md-radio-button value="Female" class="md-primary" layout layout-align="start start"> Female </md-radio-button>
+                        </md-radio-group>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <md-checkbox name="tos1" class="md-primary">
+                            I accept the terms of service.
+                        </md-checkbox>
+                    </md-input-container>
+
+                    <md-button class="md-raised md-primary p-r-15 p-l-15">Submit <i class="material-icons icon-right">send</i></md-button>
+
+                </form>
+                <!-- end content -->
+            </section>
+            <!-- end section -->
+        </div>
+        <!-- End Form with Icon Prefixes -->
+        <!-- //////////////////////////////////////// -->
+    </div>
+    <!-- End Block Form -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- Inline Form -->
+
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--form title-->
+        <h3 class="theme-title">Inline Form</h3>
+        <!-- content -->
+        <form name="userForm3">
+            <div class="row">
+                <md-input-container class="col s12 m4 md-block md-icon-float">
+                    <label>Name</label>
+                    <md-icon class="material-icons">account_circle</md-icon>
+                    <input type="text">
+                </md-input-container>
+
+                <md-input-container class="col s12 m4 md-block md-icon-float">
+                    <label>Password</label>
+                    <md-icon class="material-icons">lock</md-icon>
+                    <input type="password">
+                </md-input-container>
+                <md-input-container class="col s12 m4 md-block">
+                    <md-button class="md-raised md-primary p-r-15 p-l-15">Submit <i class="material-icons icon-right">send</i></md-button>
+                </md-input-container>
+            </div>
+        </form>
+        <!-- end content -->
+    </section>
+    <!-- end section -->
+
+    <!-- End Inline Form -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- Inline Form with Placeholder -->
+
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--form title-->
+        <h3 class="theme-title">Inline Form with Placeholder</h3>
+        <!-- content -->
+        <form name="userForm4">
+            <div class="row">
+                <md-input-container class="col s12 m4 md-block md-icon-float">
+                    <label>Name</label>
+                    <md-icon class="material-icons">account_circle</md-icon>
+                    <input type="text" placeholder="John Doe">
+                </md-input-container>
+
+                <md-input-container class="col s12 m4 md-block md-icon-float">
+                    <label>Email</label>
+                    <md-icon class="material-icons">email</md-icon>
+                    <input type="email" placeholder="john@mydomain.com">
+                </md-input-container>
+                <md-input-container class="col s12 m4 md-block">
+                    <md-button class="md-raised md-primary p-r-15 p-l-15">Submit <i class="material-icons icon-right">send</i></md-button>
+                </md-input-container>
+            </div>
+        </form>
+        <!-- end content -->
+    </section>
+    <!-- end section -->
+
+    <!-- End Inline Form with Placeholder -->
+    <!-- //////////////////////////////////////// -->
+
+</md-content>
+<!--End Page content -->

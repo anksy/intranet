@@ -1,0 +1,131 @@
+<div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-star font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">Add New User  </span>
+                                    </div>
+                                </div>
+
+                                <div class="portlet-body form">
+                                    <md-content class="md-padding">
+                                        <div layout="column">
+                                            <md-content layout-padding>
+                                              <form name="userForm" novalidate ng-submit="userForm.$valid && addUser()">
+
+                                                
+                                                  <md-input-container class="md-block">
+                                                    <label>Name</label>
+                                                    <input required name="name" ng-model="user.name" required>
+                                                    <div ng-messages="userForm.name.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+                                                
+
+                                                <div layout="row">
+                                                  <md-input-container flex="50">
+                                                    <label>Email</label>
+                                                    <input type='email' required name="email" ng-model="user.email" ng-pattern='/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' required>
+                                                    <div ng-messages="userForm.email.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                      <div ng-message="pattern">Email must be valid.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container flex="50">
+                                                    <label>Mobile</label>
+                                                    <input required name="mobile" ng-model="user.mobile" ng-minlength="5" required>
+                                                    <div ng-messages="userForm.mobile.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                      <div ng-message="minlength">Username must have at least 5 characters.</div>
+                                                    </div>
+                                                  </md-input-container>
+                                                </div>
+
+                                                <div layout="row">
+                                                  <md-input-container flex='50'>
+                                                    <label>New Password</label>
+                                                    <input type='password' name="new" ng-model="user.new" ng-minlength='6' required>
+                                                    <div ng-messages="userForm.new.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                      <div ng-message="minlength">Your password must have at least 6 characters.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container flex='50'>
+                                                    <label>Confirm Password</label>
+                                                    <input type='password' name="confirm" ng-model="user.confirm" password-verify="user.new"  required>
+                                                    <div ng-messages="userForm.confirm.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                      <div ng-message="passwordVerify">Confirm password not same as New Password.
+                                                      </div> 
+                                                    </div>
+                                                  </md-input-container>
+                                                </div>
+
+                                                <div layout="row">
+                                                <md-input-container flex='50'>
+                                                    <label>Type</label>
+                                                    <md-select ng-model="user.usertype" required>
+                                                      <md-option value="company">
+                                                        Company (AMC)
+                                                      </md-option>
+                                                      <md-option value="individual">
+                                                        Individual
+                                                      </md-option>
+                                                      <md-option value="appraiser">
+                                                        Appraiser
+                                                      </md-option>
+                                                      <md-option value="inspector">
+                                                        Inspector
+                                                      </md-option>
+                                                      <md-option value="trainee">
+                                                        Trainee
+                                                      </md-option>
+                                                      <md-option value="apprentice">
+                                                        Apprentice
+                                                      </md-option>
+                                                    </md-select>
+                                                    <div ng-messages="userForm.confirm.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+
+                                                  <md-input-container flex='50'>
+                                                    <label>Status</label>
+                                                    <md-select ng-model="user.status" required>
+                                                      <md-option value="true">
+                                                        Active
+                                                      </md-option>
+                                                      <md-option value="false">
+                                                        Inactive
+                                                      </md-option>
+                                                    </md-select>
+                                                    <div ng-messages="userForm.confirm.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+                                                  </div>
+                                                <div>
+                                                  <md-button type="submit" class='btn red'>Add User</md-button>
+                                                </div>
+                                              </form>
+                                            </md-content>
+
+                                       </div>
+                                      </md-content>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>

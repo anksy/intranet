@@ -1,0 +1,258 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Material UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/tabs" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="buttons" ui-sref="buttons">
+            </md-tab>
+            <md-tab label="breadcrumbs" ui-sref="breadcrumbs">
+            </md-tab>
+            <md-tab label="collections" ui-sref="collections">
+            </md-tab>
+            <md-tab label="collapsibles" ui-sref="collapsibles">
+            </md-tab>
+            <md-tab label="menu" ui-sref="menu">
+            </md-tab>
+            <md-tab label="tabs" ui-sref="tabs" md-active="true">
+            </md-tab>
+            <md-tab label="pagination" ui-sref="pagination">
+            </md-tab>
+            <md-tab label="progress circular" ui-sref="progressCircular">
+            </md-tab>
+            <md-tab label="progress linear" ui-sref="progressLinear">
+            </md-tab>
+            <md-tab label="toasts" ui-sref="toasts">
+            </md-tab>
+            <md-tab label="tooltip" ui-sref="tooltip">
+            </md-tab>
+            <md-tab label="ripple" ui-sref="ripple">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--title-->
+        <h2 class="theme-title">Tabs</h2>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Tabs -->
+        <!--title-->
+        <h3 class="theme-title">Basic Usage</h3>
+        <!-- content -->
+        <md-tabs md-border-bottom>
+            <md-tab label="one">
+                <md-content class="m-t-0">
+                    <h3>Tab One</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
+                        felis nec, feugiat ultricies mi.</p>
+                </md-content>
+            </md-tab>
+            <md-tab label="two">
+                <md-content class="m-t-0">
+                    <h3>Tab Two</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
+                        felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue
+                        ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus
+                        in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+                    <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas
+                        enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl
+                        consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed
+                        id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                </md-content>
+            </md-tab>
+            <md-tab label="three">
+                <md-content class="m-t-0">
+                    <h3>Tab Three</h3>
+                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed
+                        id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                </md-content>
+            </md-tab>
+            <md-tab label="disabled four" ng-disabled="true">
+                <md-content class="m-t-0">
+                    <h3>Tab Four</h3>
+                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed
+                        id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+        <!-- end content -->
+
+        <!-- End Basic Tabs -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Dynamic Height -->
+        <!--title-->
+        <h3 class="theme-title">Dynamic Height</h3>
+        <!-- content -->
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="one">
+                <md-content class="m-t-0">
+                    <h3>Tab One</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
+                        felis nec, feugiat ultricies mi.</p>
+                </md-content>
+            </md-tab>
+            <md-tab label="two">
+                <md-content class="m-t-0">
+                    <h3>Tab Two</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
+                        felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue
+                        ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus
+                        in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+                    <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas
+                        enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl
+                        consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed
+                        id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                </md-content>
+            </md-tab>
+            <md-tab label="three">
+                <md-content class="m-t-0">
+                    <h3>Tab Three</h3>
+                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed
+                        id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+        <!-- end content -->
+
+        <!-- End Dynamic Height -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Custom Label Tab -->
+        <!--title-->
+        <h3 class="theme-title">Custom Label Tab</h3>
+        <!-- content -->
+        <md-tabs md-dynamic-height class="md-accent">
+            <md-tab id="tab1">
+                <md-tab-label>Item One</md-tab-label>
+                <md-tab-body>
+                    <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin
+                    consectetur felis nec, feugiat ultricies mi.
+                    <br/>
+                </md-tab-body>
+            </md-tab>
+            <md-tab id="tab2">
+                <md-tab-label>Item Two</md-tab-label>
+                <md-tab-body>
+                    <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin
+                    consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                    <br/>
+                </md-tab-body>
+            </md-tab>
+            <md-tab id="tab3">
+                <md-tab-label>
+                    <i class="material-icons">favorite</i>
+                </md-tab-label>
+                <md-tab-body>
+                    <br/> Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc.
+                    Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.
+                    <br/>
+                </md-tab-body>
+            </md-tab>
+            <md-tab id="tab4">
+                <md-tab-label>
+                    <i class="material-icons">face</i>
+                </md-tab-label>
+                <md-tab-body>
+                    <br/> Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor
+                    vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.<br/>
+                </md-tab-body>
+            </md-tab>
+        </md-tabs>
+        <!-- end content -->
+
+        <!-- Custom Label Tab -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Multi Color Tabs -->
+        <!--title-->
+        <h3 class="theme-title">Multi Color Tabs</h3>
+        <!-- content -->
+        <md-tabs md-dynamic-height class="md-primary">
+            <md-tab label="one">
+                <md-content class="m-a-0 md-padding" md-colors=" {background: 'indigo-200'}">
+                    <h3>Tab One</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
+                        felis nec, feugiat ultricies mi.</p>
+                </md-content>
+            </md-tab>
+            <md-tab label="two">
+                <md-content class="m-a-0 md-padding" md-colors=" {background: 'green-200'}">
+                    <h3>Tab Two</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
+                        felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue
+                        ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus
+                        in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+                </md-content>
+            </md-tab>
+            <md-tab label="three">
+                <md-content class="m-a-0 md-padding" md-colors=" {background: 'cyan-200'}">
+                    <h3>Tab Three</h3>
+                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed
+                        id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+        <!-- end content -->
+
+        <!-- Multi Color Tabs -->
+        <!-- //////////////////////////////////////// -->
+
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Align Bottom Tabs -->
+        <!--title-->
+        <h3 class="theme-title">Align Bottom Tabs</h3>
+        <!-- content -->
+        <md-tabs md-dynamic-height class="md-warn" md-align-tabs="bottom">
+            <md-tab label="one">
+                <md-content class="m-a-0 md-padding" md-colors=" {background: 'red-200'}">
+                    <h3>Tab One</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
+                        felis nec, feugiat ultricies mi.</p>
+                </md-content>
+            </md-tab>
+            <md-tab label="two">
+                <md-content class="m-a-0 md-padding" md-colors=" {background: 'pink-200'}">
+                    <h3>Tab Two</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur
+                        felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue
+                        ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus
+                        in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+                </md-content>
+            </md-tab>
+            <md-tab label="three">
+                <md-content class="m-a-0 md-padding" md-colors=" {background: 'orange-300'}">
+                    <h3>Tab Three</h3>
+                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed
+                        id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+        <!-- end content -->
+
+        <!-- Align Bottom Tabs -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

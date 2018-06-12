@@ -1,0 +1,1797 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Color</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/colors" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Color</h2>
+        <!-- page desciption -->
+        <p><a href="https://material.io/guidelines/style/color.html" target="_blank">Color</a> in Material Design is inspired by bold hues juxtaposed with muted environments, deep shadows, and bright highlights.</p>
+
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+
+                <!-- //////////////////////////////////////// -->
+                <!-- color Usage -->
+
+                <!--title-->
+                <h3 class="theme-title">Usage</h3>
+                <!-- description -->
+                <p><code class="language-markup">md-colors</code> attribute is used to color the background and text colors using either the current or specified Theme palette colors.</p>
+
+                <!-- content -->
+                <h4 class="theme-title">Background Color</h4>
+                <md-card md-colors="{background: '{{themeColor}}-500'}" class="md-padding">This is a card with a indigo-500 background color</md-card>
+
+                <h4 class="theme-title">Color</h4>
+                <md-card md-colors="{color: 'red'}" class="md-padding">This is a card with text color red</md-card>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-card md-colors=&quot;{background: '{{themeColor}}-500'}&quot; class=&quot;md-padding&quot;&gt;This is a card with a indigo-500 background color&lt;/md-card&gt;
+
+&lt;md-card md-colors=&quot;{color: 'red'}&quot; class=&quot;md-padding&quot;&gt;This is a card with text color red&lt;/md-card&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+                <!-- end color Usage -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- //////////////////////////////////////// -->
+                <!-- color palette -->
+
+                <!--title-->
+                <h3 class="theme-title">The color palette</h3>
+                <!-- content -->
+                <div layout-padding class="row">
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo light" style="background-color: #F44336;">
+                            <span class="group">Red</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#F44336</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFEBEE;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#FFEBEE</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFCDD2;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#FFCDD2</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #EF9A9A;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#EF9A9A</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #E57373;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#E57373</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #EF5350;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#EF5350</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #F44336;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#F44336</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #E53935;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#E53935</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #D32F2F;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#D32F2F</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #C62828;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#C62828</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #B71C1C;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#B71C1C</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FF8A80;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#FF8A80</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #FF5252;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#FF5252</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #FF1744;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#FF1744</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #D50000;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#D50000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo light" style="background-color: #E91E63;">
+                            <span class="group">Pink</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#E91E63</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FCE4EC;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#FCE4EC</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #F8BBD0;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#F8BBD0</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #F48FB1;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#F48FB1</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #F06292;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#F06292</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #EC407A;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#EC407A</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #E91E63;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#E91E63</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #D81B60;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#D81B60</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #C2185B;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#C2185B</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #AD1457;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#AD1457</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #880E4F;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#880E4F</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FF80AB;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#FF80AB</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #FF4081;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#FF4081</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #F50057;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#F50057</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #C51162;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#C51162</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo light" style="background-color: #9C27B0;">
+                            <span class="group">Purple</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#9C27B0</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #F3E5F5;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#F3E5F5</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #E1BEE7;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#E1BEE7</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #CE93D8;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#CE93D8</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #BA68C8;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#BA68C8</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #AB47BC;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#AB47BC</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #9C27B0;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#9C27B0</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #8E24AA;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#8E24AA</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #7B1FA2;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#7B1FA2</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #6A1B9A;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#6A1B9A</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #4A148C;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#4A148C</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #EA80FC;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#EA80FC</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #E040FB;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#E040FB</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #D500F9;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#D500F9</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #AA00FF;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#AA00FF</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo light" style="background-color: #673AB7;">
+                            <span class="group">Deep Purple</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#673AB7</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #EDE7F6;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#EDE7F6</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #D1C4E9;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#D1C4E9</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #B39DDB;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#B39DDB</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #9575CD;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#9575CD</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #7E57C2;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#7E57C2</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #673AB7;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#673AB7</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #5E35B1;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#5E35B1</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #512DA8;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#512DA8</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #4527A0;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#4527A0</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #311B92;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#311B92</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #B388FF;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#B388FF</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #7C4DFF;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#7C4DFF</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #651FFF;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#651FFF</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #6200EA;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#6200EA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo light" style="background-color: #3F51B5;">
+                            <span class="group">Indigo</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#3F51B5</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #E8EAF6;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#E8EAF6</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #C5CAE9;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#C5CAE9</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #9FA8DA;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#9FA8DA</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #7986CB;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#7986CB</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #5C6BC0;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#5C6BC0</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #3F51B5;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#3F51B5</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #3949AB;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#3949AB</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #303F9F;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#303F9F</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #283593;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#283593</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #1A237E;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#1A237E</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #8C9EFF;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#8C9EFF</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #536DFE;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#536DFE</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #3D5AFE;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#3D5AFE</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #304FFE;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#304FFE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo dark" style="background-color: #2196F3;">
+                            <span class="group">Blue</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#2196F3</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #E3F2FD;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#E3F2FD</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #BBDEFB;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#BBDEFB</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #90CAF9;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#90CAF9</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #64B5F6;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#64B5F6</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #42A5F5;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#42A5F5</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #2196F3;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#2196F3</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #1E88E5;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#1E88E5</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #1976D2;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#1976D2</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #1565C0;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#1565C0</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #0D47A1;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#0D47A1</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #82B1FF;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#82B1FF</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #448AFF;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#448AFF</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #2979FF;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#2979FF</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #2962FF;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#2962FF</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo dark" style="background-color: #03A9F4;">
+                            <span class="group">Light Blue</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#03A9F4</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #E1F5FE;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#E1F5FE</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #B3E5FC;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#B3E5FC</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #81D4FA;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#81D4FA</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #4FC3F7;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#4FC3F7</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #29B6F6;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#29B6F6</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #03A9F4;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#03A9F4</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #039BE5;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#039BE5</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #0288D1;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#0288D1</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #0277BD;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#0277BD</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #01579B;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#01579B</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #80D8FF;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#80D8FF</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #40C4FF;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#40C4FF</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #00B0FF;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#00B0FF</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #0091EA;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#0091EA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo dark" style="background-color: #00BCD4;">
+                            <span class="group">Cyan</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#00BCD4</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #E0F7FA;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#E0F7FA</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #B2EBF2;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#B2EBF2</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #80DEEA;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#80DEEA</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #4DD0E1;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#4DD0E1</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #26C6DA;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#26C6DA</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #00BCD4;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#00BCD4</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #00ACC1;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#00ACC1</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #0097A7;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#0097A7</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #00838F;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#00838F</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #006064;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#006064</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #84FFFF;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#84FFFF</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #18FFFF;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#18FFFF</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #00E5FF;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#00E5FF</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #00B8D4;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#00B8D4</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo light" style="background-color: #009688;">
+                            <span class="group">Teal</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#009688</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #E0F2F1;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#E0F2F1</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #B2DFDB;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#B2DFDB</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #80CBC4;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#80CBC4</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #4DB6AC;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#4DB6AC</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #26A69A;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#26A69A</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #009688;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#009688</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #00897B;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#00897B</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #00796B;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#00796B</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #00695C;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#00695C</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #004D40;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#004D40</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #A7FFEB;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#A7FFEB</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #64FFDA;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#64FFDA</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #1DE9B6;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#1DE9B6</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #00BFA5;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#00BFA5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo dark" style="background-color: #4CAF50;">
+                            <span class="group">Green</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#4CAF50</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #E8F5E9;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#E8F5E9</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #C8E6C9;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#C8E6C9</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #A5D6A7;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#A5D6A7</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #81C784;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#81C784</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #66BB6A;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#66BB6A</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #4CAF50;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#4CAF50</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #43A047;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#43A047</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #388E3C;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#388E3C</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #2E7D32;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#2E7D32</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #1B5E20;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#1B5E20</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #B9F6CA;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#B9F6CA</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #69F0AE;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#69F0AE</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #00E676;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#00E676</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #00C853;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#00C853</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo dark" style="background-color: #8BC34A;">
+                            <span class="group">Light Green</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#8BC34A</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #F1F8E9;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#F1F8E9</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #DCEDC8;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#DCEDC8</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #C5E1A5;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#C5E1A5</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #AED581;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#AED581</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #9CCC65;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#9CCC65</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #8BC34A;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#8BC34A</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #7CB342;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#7CB342</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #689F38;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#689F38</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #558B2F;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#558B2F</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #33691E;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#33691E</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #CCFF90;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#CCFF90</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #B2FF59;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#B2FF59</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #76FF03;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#76FF03</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #64DD17;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#64DD17</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo dark" style="background-color: #CDDC39;">
+                            <span class="group">Lime</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#CDDC39</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #F9FBE7;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#F9FBE7</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #F0F4C3;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#F0F4C3</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #E6EE9C;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#E6EE9C</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #DCE775;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#DCE775</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #D4E157;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#D4E157</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #CDDC39;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#CDDC39</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #C0CA33;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#C0CA33</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #AFB42B;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#AFB42B</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #9E9D24;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#9E9D24</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #827717;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#827717</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #F4FF81;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#F4FF81</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #EEFF41;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#EEFF41</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #C6FF00;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#C6FF00</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #AEEA00;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#AEEA00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo dark" style="background-color: #FFEB3B;">
+                            <span class="group">Yellow</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#FFEB3B</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFFDE7;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#FFFDE7</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFF9C4;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#FFF9C4</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFF59D;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#FFF59D</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFF176;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#FFF176</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFEE58;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#FFEE58</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFEB3B;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#FFEB3B</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FDD835;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#FDD835</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FBC02D;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#FBC02D</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #F9A825;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#F9A825</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #F57F17;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#F57F17</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFFF8D;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#FFFF8D</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFFF00;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#FFFF00</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFEA00;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#FFEA00</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFD600;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#FFD600</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo dark" style="background-color: #FFC107;">
+                            <span class="group">Amber</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#FFC107</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFF8E1;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#FFF8E1</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFECB3;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#FFECB3</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFE082;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#FFE082</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFD54F;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#FFD54F</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFCA28;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#FFCA28</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFC107;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#FFC107</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFB300;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#FFB300</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFA000;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#FFA000</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FF8F00;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#FF8F00</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FF6F00;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#FF6F00</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFE57F;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#FFE57F</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFD740;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#FFD740</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFC400;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#FFC400</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFAB00;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#FFAB00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo dark" style="background-color: #FF9800;">
+                            <span class="group">Orange</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#FF9800</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFF3E0;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#FFF3E0</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFE0B2;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#FFE0B2</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFCC80;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#FFCC80</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFB74D;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#FFB74D</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFA726;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#FFA726</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FF9800;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#FF9800</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FB8C00;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#FB8C00</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #F57C00;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#F57C00</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #EF6C00;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#EF6C00</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #E65100;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#E65100</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFD180;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#FFD180</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFAB40;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#FFAB40</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FF9100;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#FF9100</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FF6D00;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#FF6D00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo dark" style="background-color: #FF5722;">
+                            <span class="group">Deep Orange</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#FF5722</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FBE9E7;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#FBE9E7</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFCCBC;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#FFCCBC</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFAB91;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#FFAB91</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FF8A65;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#FF8A65</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FF7043;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#FF7043</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FF5722;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#FF5722</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #F4511E;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#F4511E</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #E64A19;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#E64A19</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #D84315;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#D84315</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #BF360C;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#BF360C</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FF9E80;">
+                            <div class="details">
+                                <span>A100</span>
+                                <span class="hex-color-demo">#FF9E80</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FF6E40;">
+                            <div class="details">
+                                <span>A200</span>
+                                <span class="hex-color-demo">#FF6E40</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #FF3D00;">
+                            <div class="details">
+                                <span>A400</span>
+                                <span class="hex-color-demo">#FF3D00</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #DD2C00;">
+                            <div class="details">
+                                <span>A700</span>
+                                <span class="hex-color-demo">#DD2C00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo light" style="background-color: #795548;">
+                            <span class="group">Brown</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#795548</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #EFEBE9;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#EFEBE9</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #D7CCC8;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#D7CCC8</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #BCAAA4;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#BCAAA4</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #A1887F;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#A1887F</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #8D6E63;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#8D6E63</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #795548;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#795548</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #6D4C41;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#6D4C41</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #5D4037;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#5D4037</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #4E342E;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#4E342E</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #3E2723;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#3E2723</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo dark" style="background-color: #9E9E9E;">
+                            <span class="group">Grey</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#9E9E9E</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FAFAFA;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#FAFAFA</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #F5F5F5;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#F5F5F5</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #EEEEEE;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#EEEEEE</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #E0E0E0;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#E0E0E0</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #BDBDBD;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#BDBDBD</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #9E9E9E;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#9E9E9E</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #757575;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#757575</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #616161;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#616161</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #424242;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#424242</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #212121;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#212121</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo light" style="background-color: #607D8B;">
+                            <span class="group">Blue Grey</span>
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#607D8B</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #ECEFF1;">
+                            <div class="details">
+                                <span>50</span>
+                                <span class="hex-color-demo">#ECEFF1</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #CFD8DC;">
+                            <div class="details">
+                                <span>100</span>
+                                <span class="hex-color-demo">#CFD8DC</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #B0BEC5;">
+                            <div class="details">
+                                <span>200</span>
+                                <span class="hex-color-demo">#B0BEC5</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #90A4AE;">
+                            <div class="details">
+                                <span>300</span>
+                                <span class="hex-color-demo">#90A4AE</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #78909C;">
+                            <div class="details">
+                                <span>400</span>
+                                <span class="hex-color-demo">#78909C</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #607D8B;">
+                            <div class="details">
+                                <span>500</span>
+                                <span class="hex-color-demo">#607D8B</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #546E7A;">
+                            <div class="details">
+                                <span>600</span>
+                                <span class="hex-color-demo">#546E7A</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #455A64;">
+                            <div class="details">
+                                <span>700</span>
+                                <span class="hex-color-demo">#455A64</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #37474F;">
+                            <div class="details">
+                                <span>800</span>
+                                <span class="hex-color-demo">#37474F</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo light" style="background-color: #263238;">
+                            <div class="details">
+                                <span>900</span>
+                                <span class="hex-color-demo">#263238</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                        <div class="color-tag-demo light" style="background-color: #000000;">
+                            <div class="details">
+                                <span>Black</span>
+                                <span class="hex-color-demo">#000000</span>
+                            </div>
+                        </div>
+                        <div class="color-tag-demo dark" style="background-color: #FFFFFF;">
+                            <div class="details">
+                                <span>White</span>
+                                <span class="hex-color-demo">#FFFFFF</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 color-module-demo">
+                    </div>
+                </div>
+            </div>
+
+            <!-- end content -->
+
+            <!-- End color palette -->
+            <!-- //////////////////////////////////////// -->
+
+        </div>
+        <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

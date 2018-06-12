@@ -1,0 +1,25 @@
+{
+  "name": "intranet",
+  "description": "Angular Material admin template",
+  "main": "app.js",
+  "authors": [
+    "consolebox"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "master",
+    "jquery": "^3.3.1",
+    "angular-ui-router": "0.3.2",
+    "angular-material-data-table": "^0.10.10",
+    "angular-ui-router.stateHelper": "^1.3.1"
+  }
+}

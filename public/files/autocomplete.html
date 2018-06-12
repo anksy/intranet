@@ -1,0 +1,510 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Forms Elements</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/autocomplete" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="Autocomplete" ui-sref="autocomplete" md-active="true">
+            </md-tab>
+            <md-tab label="Checkbox" ui-sref="checkbox">
+            </md-tab>
+            <md-tab label="Chips" ui-sref="chips">
+            </md-tab>
+            <md-tab label="datepicker" ui-sref="datepicker">
+            </md-tab>
+            <md-tab label="file input" ui-sref="file-input">
+            </md-tab>
+            <md-tab label="Radio Button" ui-sref="radio-button">
+            </md-tab>
+            <md-tab label="Select" ui-sref="select">
+            </md-tab>
+            <md-tab label="Switch" ui-sref="switch">
+            </md-tab>
+
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Autocomplete</h2>
+        <!-- page desciption -->
+        <p>Autocomplete use to search for matches from local or remote data sources.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- content -->
+                <form ng-submit="$event.preventDefault()">
+                    <md-autocomplete md-input-name="basicUsage" ng-disabled="autocompleteDemo.isDisabled" md-selected-item="selectedItem1" md-search-text-change="autocompleteDemo.searchTextChange(searchText1)" md-search-text="searchText1" md-selected-item-change="autocompleteDemo.selectedItemChange(item)"
+                        md-items="item in autocompleteDemo.querySearch(searchText1)" md-item-text="item.display" md-min-length="0" placeholder="What is your favorite US state?" class="autocomplete-demo">
+                        <md-item-template>
+                            <span md-highlight-text="searchText1" md-highlight-flags="^i">{{item.display}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                            No states matching "{{searchText1}}" were found.
+                            <a ng-click="autocompleteDemo.newState(searchText1)">Create a new one!</a>
+                        </md-not-found>
+                    </md-autocomplete>
+                </form>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <blockquote ng-non-bindable>
+                    In HTML sample code angularjs scope variable denoted as <code class="red">{}</code> instead of <code class="red">{{ }}</code>.
+                </blockquote>
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;form ng-submit=&quot;$event.preventDefault()&quot;&gt;
+    &lt;md-autocomplete md-input-name=&quot;basicUsage&quot; ng-disabled=&quot;autocompleteDemo.isDisabled&quot; md-selected-item=&quot;selectedItem1&quot; md-search-text-change=&quot;autocompleteDemo.searchTextChange(searchText1)&quot; md-search-text=&quot;searchText1&quot; md-selected-item-change=&quot;autocompleteDemo.selectedItemChange(item)&quot;
+        md-items=&quot;item in autocompleteDemo.querySearch(searchText1)&quot; md-item-text=&quot;item.display&quot; md-min-length=&quot;0&quot; placeholder=&quot;What is your favorite US state?&quot;&gt;
+        &lt;md-item-template&gt;
+            &lt;span md-highlight-text=&quot;searchText1&quot; md-highlight-flags=&quot;^i&quot;&gt;{item.display}&lt;/span&gt;
+        &lt;/md-item-template&gt;
+        &lt;md-not-found&gt;
+            No states matching &quot;{searchText1}&quot; were found.
+            &lt;a ng-click=&quot;autocompleteDemo.newState(searchText1)&quot;&gt;Create a new one!&lt;/a&gt;
+        &lt;/md-not-found&gt;
+    &lt;/md-autocomplete&gt;
+&lt;/form&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.autocompleteDemo = {
+    // Disable caching of queries
+    isDisabled: false,
+    /**
+    * Search for states... use $timeout to simulate
+    * remote dataservice call.
+    */
+    querySearch: function(query) {
+        var results = query ? $scope.states.filter($scope.createFilterFor(query)) : $scope.states,
+            deferred;
+        if ($scope.simulateQuery) {
+            deferred = $q.defer();
+            $timeout(function() { deferred.resolve(results); }, Math.random() * 1000, false);
+            return deferred.promise;
+        } else {
+            return results;
+        }
+    },
+    searchTextChange: function(text) {
+        $log.info('Text changed to ' + text);
+    },
+    selectedItemChange: function(item) {
+        $log.info('Item changed to ' + JSON.stringify(item));
+    },
+    /**
+    * Build `states` list of key/value pairs
+    */
+    loadAll: function() {
+        var allStates = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
+    Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
+    Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
+    Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
+    North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
+    South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
+    Wisconsin, Wyoming';
+
+        return allStates.split(/, +/g).map(function(state) {
+            return {
+                value: state.toLowerCase(),
+                display: state
+            };
+        });
+    },
+    newState: function(state) {
+        alert("Sorry! You'll need to create a Constitution for " + state + " first!");
+    }
+
+};
+
+//Create filter function for a query string
+
+$scope.createFilterFor = function(query) {
+    var lowercaseQuery = angular.lowercase(query);
+
+    return $scope.filterFn = function(state) {
+        return (state.value.indexOf(lowercaseQuery) === 0);
+    };
+
+};
+
+//Simulate query for results
+$scope.simulateQuery = false;
+
+// list of `state` value/display objects
+$scope.states = $scope.autocompleteDemo.loadAll();
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                    <md-tab label="css">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-css" prism>
+md-autocomplete.autocomplete-demo input {
+    line-height: 20px;
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Custom Template -->
+
+        <!-- layout  -->
+        <div layout="row" class="m-t-30">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Custom Template</h3>
+
+                <!-- content -->
+                <form ng-submit="$event.preventDefault()">
+                    <md-autocomplete md-input-name="customTemplate" ng-disabled="autocompleteDemo.isDisabled" md-selected-item="selectedItem" md-search-text-change="autocompleteDemo.searchTextChange(searchText)" md-search-text="searchText" md-selected-item-change="autocompleteDemo.selectedItemChange(item)"
+                        md-items="item in autocompleteDemo.querySearch(searchText)" md-item-text="item.display" md-min-length="0" placeholder="What is your favorite US state?" md-menu-class="autocomplete-custom-template" class="autocomplete-demo">
+                        <md-item-template>
+                            <span class="item-title">
+                            <md-icon class="material-icons">place</md-icon>
+                            <span> {{item.display}} </span>
+                            </span>
+                        </md-item-template>
+                        <md-not-found>
+                            No states matching "{{searchText}}" were found.
+                            <a ng-click="autocompleteDemo.newState(searchText)">Create a new one!</a>
+                        </md-not-found>
+                    </md-autocomplete>
+                </form>
+                <!-- end content -->
+                <!-- sample code -->
+                <blockquote ng-non-bindable>
+                    In HTML sample code angularjs scope variable denoted as <code class="red">{}</code> instead of <code class="red">{{ }}</code>.
+                </blockquote>
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;form ng-submit=&quot;$event.preventDefault()&quot;&gt;
+    &lt;md-autocomplete md-input-name=&quot;customTemplate&quot; ng-disabled=&quot;autocompleteDemo.isDisabled&quot; md-selected-item=&quot;selectedItem&quot; md-search-text-change=&quot;autocompleteDemo.searchTextChange(searchText)&quot; md-search-text=&quot;searchText&quot; md-selected-item-change=&quot;autocompleteDemo.selectedItemChange(item)&quot;
+        md-items=&quot;item in autocompleteDemo.querySearch(searchText)&quot; md-item-text=&quot;item.display&quot; md-min-length=&quot;0&quot; placeholder=&quot;What is your favorite US state?&quot; md-menu-class=&quot;autocomplete-custom-template&quot;&gt;
+        &lt;md-item-template&gt;
+            &lt;span class=&quot;item-title&quot;&gt;
+            &lt;md-icon class=&quot;material-icons&quot;&gt;place&lt;/md-icon&gt;
+            &lt;span&gt; {item.display} &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/md-item-template&gt;
+        &lt;md-not-found&gt;
+            No states matching &quot;{searchText}&quot; were found.
+            &lt;a ng-click=&quot;autocompleteDemo.newState(searchText)&quot;&gt;Create a new one!&lt;/a&gt;
+        &lt;/md-not-found&gt;
+    &lt;/md-autocomplete&gt;
+&lt;/form&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.autocompleteDemo = {
+    // Disable caching of queries
+    isDisabled: false,
+    /**
+    * Search for states... use $timeout to simulate
+    * remote dataservice call.
+    */
+    querySearch: function(query) {
+        var results = query ? $scope.states.filter($scope.createFilterFor(query)) : $scope.states,
+            deferred;
+        if ($scope.simulateQuery) {
+            deferred = $q.defer();
+            $timeout(function() { deferred.resolve(results); }, Math.random() * 1000, false);
+            return deferred.promise;
+        } else {
+            return results;
+        }
+    },
+    searchTextChange: function(text) {
+        $log.info('Text changed to ' + text);
+    },
+    selectedItemChange: function(item) {
+        $log.info('Item changed to ' + JSON.stringify(item));
+    },
+    /**
+    * Build `states` list of key/value pairs
+    */
+    loadAll: function() {
+        var allStates = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
+    Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
+    Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
+    Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
+    North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
+    South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
+    Wisconsin, Wyoming';
+
+        return allStates.split(/, +/g).map(function(state) {
+            return {
+                value: state.toLowerCase(),
+                display: state
+            };
+        });
+    },
+    newState: function(state) {
+        alert("Sorry! You'll need to create a Constitution for " + state + " first!");
+    }
+
+};
+
+//Create filter function for a query string
+
+$scope.createFilterFor = function(query) {
+    var lowercaseQuery = angular.lowercase(query);
+
+    return $scope.filterFn = function(state) {
+        return (state.value.indexOf(lowercaseQuery) === 0);
+    };
+
+};
+
+//Simulate query for results
+$scope.simulateQuery = false;
+
+// list of `state` value/display objects
+$scope.states = $scope.autocompleteDemo.loadAll();
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                    <md-tab label="css">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-css" prism>
+.autocomplete-custom-template li {
+    border-bottom: 1px solid #ccc;
+    height: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    white-space: normal;
+}
+
+.autocomplete-custom-template li:last-child {
+    border-bottom-width: 0;
+}
+
+.autocomplete-custom-template .item-title {
+    display: block;
+    line-height: 2;
+}
+
+.autocomplete-custom-template .item-title md-icon {
+    height: 18px;
+    width: 18px;
+}
+
+md-autocomplete.autocomplete-demo input {
+    line-height: 20px;
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Custom Template -->
+        <!-- //////////////////////////////////////// -->
+
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Floating Label -->
+
+        <!-- layout  -->
+        <div layout="row" class="m-t-30">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Floating Label</h3>
+
+                <!-- content -->
+                <form ng-submit="$event.preventDefault()" name="searchForm">
+                    <p>The following example demonstrates floating labels being used as a normal form element.</p>
+                    <div layout-gt-sm="row">
+                        <md-input-container flex>
+                            <label>Name</label>
+                            <input type="text" />
+                        </md-input-container>
+                        <md-autocomplete flex required md-input-name="autocompleteField" md-input-minlength="2" md-input-maxlength="18" md-selected-item="selectedItem2" md-search-text="searchText2" md-items="item in autocompleteDemo.querySearch(searchText2)" md-item-text="item.display"
+                            md-require-match md-floating-label="Favorite state">
+                            <md-item-template>
+                                <span md-highlight-text="searchText2">{{item.display}}</span>
+                            </md-item-template>
+                            <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+                                <div ng-message="required">You <b>must</b> have a favorite state.</div>
+                                <div ng-message="md-require-match">Please select an existing state.</div>
+                                <div ng-message="minlength">Your entry is not long enough.</div>
+                                <div ng-message="maxlength">Your entry is too long.</div>
+                            </div>
+                        </md-autocomplete>
+
+                    </div>
+                </form>
+                <!-- end content -->
+                <!-- sample code -->
+                <blockquote ng-non-bindable>
+                    In HTML sample code angularjs scope variable denoted as <code class="red">{}</code> instead of <code class="red">{{ }}</code>.
+                </blockquote>
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;form ng-submit=&quot;$event.preventDefault()&quot; name=&quot;searchForm&quot;&gt;
+    &lt;p&gt;The following example demonstrates floating labels being used as a normal form element.&lt;/p&gt;
+    &lt;div layout-gt-sm=&quot;row&quot;&gt;
+        &lt;md-input-container flex&gt;
+            &lt;label&gt;Name&lt;/label&gt;
+            &lt;input type=&quot;text&quot; /&gt;
+        &lt;/md-input-container&gt;
+        &lt;md-autocomplete flex required md-input-name=&quot;autocompleteField&quot; md-input-minlength=&quot;2&quot; md-input-maxlength=&quot;18&quot; md-selected-item=&quot;selectedItem2&quot; md-search-text=&quot;searchText2&quot; md-items=&quot;item in autocompleteDemo.querySearch(searchText2)&quot; md-item-text=&quot;item.display&quot;
+            md-require-match md-floating-label=&quot;Favorite state&quot;&gt;
+            &lt;md-item-template&gt;
+                &lt;span md-highlight-text=&quot;searchText2&quot;&gt;{item.display}&lt;/span&gt;
+            &lt;/md-item-template&gt;
+            &lt;div ng-messages=&quot;searchForm.autocompleteField.$error&quot; ng-if=&quot;searchForm.autocompleteField.$touched&quot;&gt;
+                &lt;div ng-message=&quot;required&quot;&gt;You &lt;b&gt;must&lt;/b&gt; have a favorite state.&lt;/div&gt;
+                &lt;div ng-message=&quot;md-require-match&quot;&gt;Please select an existing state.&lt;/div&gt;
+                &lt;div ng-message=&quot;minlength&quot;&gt;Your entry is not long enough.&lt;/div&gt;
+                &lt;div ng-message=&quot;maxlength&quot;&gt;Your entry is too long.&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/md-autocomplete&gt;
+
+    &lt;/div&gt;
+&lt;/form&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.autocompleteDemo = {
+    // Disable caching of queries
+    isDisabled: false,
+    /**
+    * Search for states... use $timeout to simulate
+    * remote dataservice call.
+    */
+    querySearch: function(query) {
+        var results = query ? $scope.states.filter($scope.createFilterFor(query)) : $scope.states,
+            deferred;
+        if ($scope.simulateQuery) {
+            deferred = $q.defer();
+            $timeout(function() { deferred.resolve(results); }, Math.random() * 1000, false);
+            return deferred.promise;
+        } else {
+            return results;
+        }
+    },
+    searchTextChange: function(text) {
+        $log.info('Text changed to ' + text);
+    },
+    selectedItemChange: function(item) {
+        $log.info('Item changed to ' + JSON.stringify(item));
+    },
+    /**
+    * Build `states` list of key/value pairs
+    */
+    loadAll: function() {
+        var allStates = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
+    Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
+    Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
+    Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
+    North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
+    South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
+    Wisconsin, Wyoming';
+
+        return allStates.split(/, +/g).map(function(state) {
+            return {
+                value: state.toLowerCase(),
+                display: state
+            };
+        });
+    },
+    newState: function(state) {
+        alert("Sorry! You'll need to create a Constitution for " + state + " first!");
+    }
+
+};
+
+//Create filter function for a query string
+
+$scope.createFilterFor = function(query) {
+    var lowercaseQuery = angular.lowercase(query);
+
+    return $scope.filterFn = function(state) {
+        return (state.value.indexOf(lowercaseQuery) === 0);
+    };
+
+};
+
+//Simulate query for results
+$scope.simulateQuery = false;
+
+// list of `state` value/display objects
+$scope.states = $scope.autocompleteDemo.loadAll();
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Floating Label -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

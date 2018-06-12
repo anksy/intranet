@@ -1,0 +1,148 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Extra UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/toolbar" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="bottom Sheet" ui-sref="bottomSheet">
+            </md-tab>
+            <md-tab label="fab SpeedDial" ui-sref="fabSpeedDial">
+            </md-tab>
+            <md-tab label="fab Toolbar" ui-sref="fabToolbar">
+            </md-tab>
+            <md-tab label="list" ui-sref="list">
+            </md-tab>
+            <md-tab label="menuBar" ui-sref="menuBar">
+            </md-tab>
+            <md-tab label="navBar" ui-sref="navBar">
+            </md-tab>
+            <md-tab label="panel" ui-sref="panel">
+            </md-tab>
+            <md-tab label="subheader" ui-sref="subheader">
+            </md-tab>
+            <md-tab label="swipe" ui-sref="swipe">
+            </md-tab>
+            <md-tab label="toolbar" ui-sref="toolbar" md-active="true">
+            </md-tab>
+            <md-tab label="virtual Repeat" ui-sref="virtualRepeat">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Toolbar</h2>
+        <!-- page desciption -->
+        <p><code class="language-markup">md-toolbar</code> is used to place a toolbar in your app.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- //////////////////////////////////////// -->
+                <!-- content -->
+
+                <!-- Toolbar Demo 1-->
+                <md-toolbar>
+                    <div class="md-toolbar-tools">
+                        Toolbar Title
+                    </div>
+                </md-toolbar>
+                <!-- End Toolbar Demo 1-->
+
+
+                <!-- Toolbar Demo 2-->
+                <div class="m-t-30"></div>
+                <md-toolbar class="md-hue-2">
+                    <div class="md-toolbar-tools">
+                        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+                            <md-icon>menu</md-icon>
+                        </md-button>
+
+                        <h2 flex md-truncate>Toolbar with Disabled/Enabled Icon Buttons</h2>
+
+                        <md-button class="md-icon-button" aria-label="Favorite">
+                            <md-icon style="color: greenyellow;">favorite</md-icon>
+                        </md-button>
+
+                        <md-button class="md-icon-button" aria-label="More">
+                            <md-icon>more_vert</md-icon>
+                        </md-button>
+                    </div>
+                </md-toolbar>
+                <!-- End Toolbar Demo 2-->
+
+
+                <!-- Toolbar Demo 3-->
+                <div class="m-t-30"></div>
+                <md-toolbar>
+                    <div class="md-toolbar-tools">
+                        <md-button aria-label="Go Back">
+                            Go Back
+                        </md-button>
+
+                        <md-truncate style="position: absolute; left: 90px; right: 170px; top: 13px; bottom: 13px;">Toolbar with Standard Buttons</md-truncate>
+
+                        <span flex></span>
+                        <md-button class="md-raised" aria-label="Learn More">
+                            Learn More
+                        </md-button>
+                        <md-button class="md-fab md-mini" aria-label="Favorite">
+                            <md-icon>favorite</md-icon>
+                        </md-button>
+                    </div>
+                </md-toolbar>
+                <!-- End Toolbar Demo 3-->
+
+                <!-- Toolbar Demo 4-->
+                <div class="m-t-30"></div>
+                <md-toolbar class="md-tall md-accent">
+                    <h2 class="md-toolbar-tools">
+                        <span>Toolbar: tall (md-accent)</span>
+                    </h2>
+                </md-toolbar>
+                <!-- End Toolbar Demo 4-->
+
+                <!-- Toolbar Demo 5-->
+                <div class="m-t-30"></div>
+                <md-toolbar class="md-tall md-warn md-hue-3">
+                    <span flex></span>
+                    <h2 class="md-toolbar-tools">
+                        <span class="md-flex">Toolbar: tall with actions pin to the bottom (md-warn md-hue-3)</span>
+                    </h2>
+                </md-toolbar>
+                <!-- End Toolbar Demo 5-->
+
+                <!-- end content -->
+                <!-- //////////////////////////////////////// -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

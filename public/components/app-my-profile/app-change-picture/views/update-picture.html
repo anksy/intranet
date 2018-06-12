@@ -1,0 +1,51 @@
+<md-content layout-padding>
+  <form name="userProfile" novalidate>
+    
+    <div  layout="column" layout-align="center center" class="isLoading" ng-if="isUploading">
+         <md-progress-circular md-mode="indeterminate" md-diameter="50"></md-progress-circular>
+         <span>Loading..</span>
+    </div>
+
+    <div ng-hide="myImage">
+       <user-image  class="my-profie-image"> <!--user image--></user-image>
+    
+      <div class="text-center">{{isLogin.name}}</div>
+      <div class="space"></div>
+      <div class="text-center">
+        <md-button type="submit" 
+          ngf-accept="'image/*'" ngf-select="onSelectImage($file)"  ngf-select ng-model="file" name="file"
+          class="md-raised md-primary btn-block max-300 btn-action-form">
+            <md-icon>add_a_photo</md-icon> 
+            Change Picture
+        </md-button>
+      
+        <div ng-if="isError" class="error">
+          <md-icon >error_outline</md-icon> Please select valid image file
+          <span ng-if="userProfile.file.$error.maxSize"> 
+
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cropArea" ng-show="myImage" >
+      <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+    </div>
+
+    <div layout="row" layout-align="space-between center" ng-if="myImage" class="max-w5">
+      <md-button  ng-click="UploadForm(userProfile)"
+          class="md-raised md-primary btn-block  btn-action-form">
+          <md-icon>crop</md-icon> 
+            Crop &amp; Upload
+      </md-button>
+
+      <div> &nbsp;&nbsp;&nbsp;&nbsp;</div>
+      
+      <md-button  ng-click="cancelCrop()"
+          class="md-raised md-primary btn-block  btn-action-form">
+          <md-icon>close</md-icon> Close
+      </md-button>
+    </div>
+</form>
+
+</md-content>

@@ -1,0 +1,185 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>CSS</h1>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="typography" ui-sref="typography">
+            </md-tab>
+            <md-tab label="icons" ui-sref="icons">
+            </md-tab>
+            <md-tab label="animations" ui-sref="animations">
+            </md-tab>
+            <md-tab label="whiteframe" ui-sref="whiteframe">
+            </md-tab>
+            <md-tab label="media" ui-sref="media" md-active="true">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Media CSS Images</h2>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Images -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!-- //////////////////////////////////////// -->
+                <!--Responsive Images -->
+
+                <!--title-->
+                <h3 class="theme-title">Responsive Image</h3>
+                <!-- description -->
+                <p>To make images resize responsively to page width, you can add the class <code class="  language-markup">responsive-img</code> to your image tag.</p>
+                <!-- image box -->
+                <div layout="row">
+                    <!-- flex -->
+                    <div flex="100">
+                        <img src="../../asset/images/nature.jpg" alt="nature responsive image" class="responsive-img">
+                    </div>
+                    <!-- end flex -->
+                </div>
+                <!-- end image box -->
+
+                <!-- end Responsive Images -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- //////////////////////////////////////// -->
+                <!--Circular image -->
+
+                <!--title-->
+                <h3 class="theme-title">Circular Image</h3>
+                <!-- description -->
+                <p>To make images appear circular, simply add <code class="  language-markup">class="circle"</code> to them.</p>
+                <!-- image box -->
+                <div layout="row">
+                    <!-- flex -->
+                    <div flex="50" flex-xs="100">
+                        <md-card md-theme="dark-indigo">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Card with circle image</span>
+                                    <span class="md-subhead">This is a square image. Add the "circle" class to it to make it appear circular.</span>
+                                </md-card-title-text>
+                                <md-card-title-media>
+                                    <img src="../../asset/images/user2.jpg" alt="" class="circle responsive-img">
+                                </md-card-title-media>
+                            </md-card-title>
+                        </md-card>
+                    </div>
+                    <!-- end flex -->
+                </div>
+                <!-- end image box -->
+
+                <!-- end Circular image -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- //////////////////////////////////////// -->
+                <!--Responsive Images -->
+
+                <!--title-->
+                <h3 class="theme-title">Center Image</h3>
+                <!-- image box -->
+                <div layout="row">
+                    <!-- flex -->
+                    <div flex="100" layout layout-align="center center">
+                        <img src="../../asset/images/nature.jpg" alt="nature responsive image" class="responsive-img">
+                    </div>
+                    <!-- end flex -->
+                </div>
+                <!-- end image box -->
+
+                <!-- end Responsive Images -->
+                <!-- //////////////////////////////////////// -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Images -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Media CSS Videos</h2>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Videos -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!-- //////////////////////////////////////// -->
+                <!--Responsive Embeds -->
+
+                <!--title-->
+                <h3 class="theme-title">Responsive Embeds</h3>
+                <!-- description -->
+                <p>To make your embeds responsive, merely wrap them with a containing div which has the class <code class=" language-markup">video-container</code>.</p>
+                <!-- video box -->
+                <div layout="row">
+                    <!-- flex -->
+                    <div flex="50" flex-xs="100">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/jE1EU1ACe6s?ecver=2" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <!-- end flex -->
+                </div>
+                <!-- end video box -->
+
+                <!-- end Responsive Embeds -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- //////////////////////////////////////// -->
+                <!--Responsive Videos -->
+
+                <!--title-->
+                <h3 class="theme-title">Responsive Videos</h3>
+                <!-- description -->
+                <p>To make your HTML5 Videos responsive just add the class <code class="  language-markup">responsive-video</code> to the video tag.</p>
+                <!-- video box -->
+                <div layout="row">
+                    <!-- flex -->
+                    <div flex="50" flex-xs="100">
+                        <video class="responsive-video" controls>
+                            <source src="../../asset/videos/movie.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- end flex -->
+                </div>
+                <!-- end video box -->
+
+                <!-- end Responsive Videos -->
+                <!-- //////////////////////////////////////// -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Videos -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

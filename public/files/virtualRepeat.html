@@ -1,0 +1,250 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Extra UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/virtualRepeat" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="bottom Sheet" ui-sref="bottomSheet">
+            </md-tab>
+            <md-tab label="fab SpeedDial" ui-sref="fabSpeedDial">
+            </md-tab>
+            <md-tab label="fab Toolbar" ui-sref="fabToolbar">
+            </md-tab>
+            <md-tab label="list" ui-sref="list">
+            </md-tab>
+            <md-tab label="menuBar" ui-sref="menuBar">
+            </md-tab>
+            <md-tab label="navBar" ui-sref="navBar">
+            </md-tab>
+            <md-tab label="panel" ui-sref="panel">
+            </md-tab>
+            <md-tab label="subheader" ui-sref="subheader">
+            </md-tab>
+            <md-tab label="swipe" ui-sref="swipe">
+            </md-tab>
+            <md-tab label="toolbar" ui-sref="toolbar">
+            </md-tab>
+            <md-tab label="virtual Repeat" ui-sref="virtualRepeat" md-active="true">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Virtual Repeat</h2>
+        <!-- page desciption -->
+        <p><code class="language-markup">md-virtual-repeat</code> specifies an element to repeat using virtual scrolling.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+                <!-- description -->
+                <p>
+                    Display 1000 item in a virtual-list with viewport of only 7 rows (height=40px).
+                    <br/><br/> This demo shows scroll and rendering performance gains when using <code class="language-markup">md-virtual-repeat</code>; achieved with the dynamic reuse of rows visible in the viewport area. Developers are required to explicitly
+                    use <code class="language-markup">md-virtual-repeat-container</code> as a wrapping parent container.
+                </p>
+                <!-- end description -->
+
+                <!-- content -->
+                <div layout="row">
+                    <div flex="100">
+                        <md-virtual-repeat-container id="vertical-container">
+                            <div md-virtual-repeat="item in virtualRepeatDemoItems" class="repeated-item" flex>
+                                {{item}}
+                            </div>
+                        </md-virtual-repeat-container>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <blockquote ng-non-bindable>
+                    In HTML sample code angularjs scope variable denoted as <code class="red">{}</code> instead of <code class="red">{{ }}</code>.
+                </blockquote>
+
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-20">
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-markup" prism>
+&lt;div layout=&quot;row&quot;&gt;
+    &lt;div flex=&quot;100&quot;&gt;
+        &lt;md-virtual-repeat-container id=&quot;vertical-container&quot;&gt;
+            &lt;div md-virtual-repeat=&quot;item in virtualRepeatDemoItems&quot; class=&quot;repeated-item&quot; flex&gt;
+                {item}
+            &lt;/div&gt;
+        &lt;/md-virtual-repeat-container&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.virtualRepeatDemoItems = [];
+for (var i = 0; i < 1000; i++) {
+    $scope.virtualRepeatDemoItems.push(i);
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="css">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-css" prism>
+#vertical-container {
+    height: 292px;
+    width: 100%;
+    max-width: 400px;
+    border: solid 1px grey;
+}
+
+#vertical-container .repeated-item {
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Horizontal Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Horizontal Usage</h3>
+                <!-- description -->
+                <p>
+                    Display 1000 item in a virtual-list with viewport of only 16 columns (width=50px).
+                    <br/><br/> This demo shows scroll and rendering performance gains when using <code class="language-markup">md-virtual-repeat</code>; achieved with the dynamic reuse of rows visible in the viewport area. Developers are required to explicitly
+                    use <code class="language-markup">md-virtual-repeat-container</code> as a wrapping parent container.
+                </p>
+                <!-- end description -->
+
+                <!-- content -->
+                <div layout="row">
+                    <div flex="100">
+                        <md-virtual-repeat-container id="horizontal-container" md-orient-horizontal>
+                            <div md-virtual-repeat="item in virtualRepeatDemoItems" class="repeated-item" flex>
+                                {{item}}
+                            </div>
+                        </md-virtual-repeat-container>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <blockquote ng-non-bindable>
+                    In HTML sample code angularjs scope variable denoted as <code class="red">{}</code> instead of <code class="red">{{ }}</code>.
+                </blockquote>
+
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-20">
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-markup" prism>
+&lt;div layout=&quot;row&quot;&gt;
+    &lt;div flex=&quot;100&quot;&gt;
+        &lt;md-virtual-repeat-container id=&quot;horizontal-container&quot; md-orient-horizontal&gt;
+            &lt;div md-virtual-repeat=&quot;item in virtualRepeatDemoItems&quot; class=&quot;repeated-item&quot; flex&gt;
+                {item}
+            &lt;/div&gt;
+        &lt;/md-virtual-repeat-container&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.virtualRepeatDemoItems = [];
+for (var i = 0; i < 1000; i++) {
+    $scope.virtualRepeatDemoItems.push(i);
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="css">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-css" prism>
+#horizontal-container {
+    height: 100px;
+    width: 100%;
+    max-width: 830px;
+    border: solid 1px grey;
+}
+
+#horizontal-container .repeated-item {
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 84px;
+    padding-top: 35px;
+    text-align: center;
+    width: 50px;
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Horizontal Usage -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+</md-content>
+<!--End Page content -->

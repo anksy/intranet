@@ -1,0 +1,101 @@
+<nav>
+    <!-- left sidebar overlay for mobile -->
+    <div class="theme-left-sidebar-overlay" data-ng-click="showHideLeftSidebar()" data-md-swipe-left="showHideLeftSidebar()">
+    </div>
+    <!-- sidebar box -->
+    <div class="theme-left-sidebar md-whiteframe-6dp">
+        <!-- Theme logo only show in mobile -->
+        <div class="theme-mobile-logo-container hide-gt-sm" data-md-colors=" {background: 'indigo'} ">
+          <!--   <a class="theme-mobile-logo" href="#">ConsoleBox1</a> -->
+        </div>
+        <md-divider></md-divider>
+        <!-- end theme logo only show in mobile -->
+
+        <div class="theme-left-sidebar-body">
+
+            <!-- menu -->
+            <ul class="theme-left-sidebar-menu">
+                <li>
+                    <a ui-sref="dashbaord" 
+                        class="side-menu-label active" 
+                        data-md-ink-ripple 
+                        data-ui-sref-active="menu-active">
+                        <i class="material-icons left-icon">dashboard</i>
+                        <span>Dashboard</span>
+                    </a></li>
+
+                <li>
+                    <a data-ui-sref="viewsUsers" class="side-menu-label" 
+                        data-md-ink-ripple
+                        data-ui-sref-active="menu-active">
+                        <i class="material-icons left-icon">people</i>
+                        <span>Users Permission</span>
+                    </a>
+                </li>
+
+                              <li><a class="side-menu-label menu-has-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}">
+                    <i class="material-icons left-icon">terrain</i>
+                    <i class="material-icons right-icon">keyboard_arrow_down</i>
+                    <span>Customer CRM 
+                </span>
+               </a>
+                    <ul class="side-menu-label-body">
+                        <li>
+                            <a  ui-sref="customerCRM"
+                            class="side-menu-label-1" 
+                            data-md-ink-ripple="{{leftSidebarMenuRipple}}">
+                                Customer List 
+                            </a>
+                        </li>
+
+                        <li><a  class="side-menu-label-1" ui-sref="addCustomer" data-md-ink-ripple="{{leftSidebarMenuRipple}}">Add Customer </a></li>
+                    </ul>
+                </li>
+
+                <li><a data-ui-sref="documentUpload" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active">
+                    <i class="material-icons left-icon">cloud_upload</i><span>Document Upload</span>
+                </a>
+                </li>
+
+
+                <li>
+                    <a data-ui-sref="allLeads" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active">
+                        <i class="material-icons left-icon">cloud_upload</i>
+                        <span>Leads</span>
+                    </a>
+                </li>
+
+                <li><a data-ui-sref="proposalCreator" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">add_to_photos</i><span>Proposal Creator</span>
+                <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Proposal Creator</md-tooltip></a>
+                </li>
+
+                <li>
+                    <a data-ui-sref="quoteCreator" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active">
+                        <i class="material-icons left-icon">add_to_photos</i>
+                        <span>Quote Creator</span>
+                        <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Quote Creator</md-tooltip>
+                    </a>
+                </li>
+
+                
+
+                <li><a data-ui-sref="webSettings" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">live_help</i><span>Settings</span>
+                <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Settings</md-tooltip></a>
+                </li>
+
+  
+            </ul>
+            <!-- end menu -->
+        </div>
+        <!-- end sidebar body -->
+
+
+        <!-- left sidebar footer -->
+        <md-divider></md-divider>
+        <div class="theme-left-sidebar-footer hide-xs hide-sm">
+            <a class="collapsed-sidebar" data-ng-click="collapsedLeftSidebar()"><i class="right material-icons">keyboard_arrow_left</i><md-tooltip md-direction="top" class="tooltip-gt-md">{{collapsedTooltipText}} Sidebar</md-tooltip></a>
+        </div>
+        <!-- end left sidebar footer -->
+    </div>
+    <!-- end sidebar box -->
+</nav>

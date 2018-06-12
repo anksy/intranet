@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myAdminApp" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Admin Panel</title>
+  <!-- css files -->
+  <link rel="stylesheet" type="text/css" href="dist/css/admin_site.min.css"> 
+  <link rel="stylesheet" type="text/css" href="dist/css/admin_app.min.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      
+</head>
+    <body 
+        ng-cloak 
+        ng-class="!headerAndSidebar?'login':'page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo page-md'">
+
+        <div class="logo" ng-if='!headerAndSidebar'>&nbsp;</div>
+        <!-- BEGIN LOGIN -->
+        <div ng-if="headerAndSidebar" ng-include="'backend/includes/views/header.html'"></div>
+        <div ng-class="!headerAndSidebar?'content':'page-container'">
+          
+          <div ng-if="headerAndSidebar" 
+               ng-include="'backend/includes/views/left_sidebar.html'">
+          </div>
+          <!-- BEGIN VIEWS -->
+          <div ng-view></div>
+          <!-- END VIEWS -->
+        
+        </div>
+        
+        <div ng-if="headerAndSidebar" 
+            ng-include="'backend/includes/views/footer.html'">
+        </div>
+        
+        <script type="text/javascript" src="dist/js/admin_site_jquery_.min.js"></script>
+        <script type="text/javascript" src="dist/js/admin_site.min.js"></script>
+        <script type="text/javascript" src="dist/js/admin_app.min.js"></script>
+
+      </body>
+      </html>

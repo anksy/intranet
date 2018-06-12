@@ -1,0 +1,258 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Forms Elements</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/switch" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="Autocomplete" ui-sref="autocomplete">
+            </md-tab>
+            <md-tab label="Checkbox" ui-sref="checkbox">
+            </md-tab>
+            <md-tab label="Chips" ui-sref="chips">
+            </md-tab>
+            <md-tab label="datepicker" ui-sref="datepicker">
+            </md-tab>
+            <md-tab label="file input" ui-sref="file-input">
+            </md-tab>
+            <md-tab label="Radio Button" ui-sref="radio-button">
+            </md-tab>
+            <md-tab label="Select" ui-sref="select">
+            </md-tab>
+            <md-tab label="Switch" ui-sref="switch" md-active="true">
+            </md-tab>
+
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Switch</h2>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- content -->
+                <div layout="row">
+                    <div flex="100">
+                        <form>
+                            <md-switch ng-model="basicUsageSwitch.cb1" aria-label="Switch 1" class="md-primary">
+                                Switch 1(primary): {{ basicUsageSwitch.cb1 }}
+                            </md-switch>
+
+                            <md-switch ng-model="basicUsageSwitch.cb2" aria-label="Switch 2" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+                                Switch 2 (warn): {{ basicUsageSwitch.cb2 }}
+                            </md-switch>
+
+                            <md-switch ng-disabled="true" aria-label="Disabled switch" ng-model="basicUsageSwitch.cb3">
+                                Switch (Disabled)
+                            </md-switch>
+
+                            <md-switch ng-disabled="true" aria-label="Disabled active switch" ng-model="basicUsageSwitch.cb4">
+                                Switch (Disabled, Active)
+                            </md-switch>
+
+                            <md-switch md-no-ink aria-label="Switch No Ink" ng-model="basicUsageSwitch.cb5">
+                                Switch (accent): No Ink
+                            </md-switch>
+
+                            <md-switch ng-model="basicUsageSwitch.cb6" aria-label="Switch 6" ng-change="basicUsageSwitch.onChange(basicUsageSwitch.cb6)">
+                                Switch 6 message: {{ message }}
+                            </md-switch>
+
+                            <md-switch md-invert aria-label="Switch 7" class="md-primary">
+                                Switch (Inverted)
+                            </md-switch>
+                        </form>
+                    </div>
+                </div>
+                <!-- end content -->
+
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.basicUsageSwitch = {
+    cb1: true,
+    cb2: 'yup',
+    cb3: false,
+    cb4: true,
+    cb5: true,
+    cb6: false,
+    onChange: function(cbState) {
+        $scope.message = cbState;
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Color Options -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Color Options</h3>
+
+                <!-- content -->
+                <div layout="row">
+                    <div flex="100">
+                        <form>
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <md-switch ng-model="colorOptionsSwitch.cb1" aria-label="Switch 1" class="md-purple">
+                                        Switch 1(purple)
+                                    </md-switch>
+
+                                    <md-switch ng-model="colorOptionsSwitch.cb2" aria-label="Switch 1" class="md-blue">
+                                        Switch 1(blue)
+                                    </md-switch>
+
+                                    <md-switch ng-model="colorOptionsSwitch.cb3" aria-label="Switch 1" class="md-cyan">
+                                        Switch 1(cyan)
+                                    </md-switch>
+
+                                    <md-switch ng-model="colorOptionsSwitch.cb4" aria-label="Switch 1" class="md-teal">
+                                        Switch 1(teal)
+                                    </md-switch>
+                                </div>
+                                <div class="col s12 m6">
+                                    <md-switch ng-model="colorOptionsSwitch.cb5" aria-label="Switch 1" class="md-green">
+                                        Switch 1(green)
+                                    </md-switch>
+
+                                    <md-switch ng-model="colorOptionsSwitch.cb6" aria-label="Switch 1" class="md-yellow">
+                                        Switch 1(yellow)
+                                    </md-switch>
+
+                                    <md-switch ng-model="colorOptionsSwitch.cb7" aria-label="Switch 1" class="md-brown">
+                                        Switch 1(brown)
+                                    </md-switch>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-switch ng-model=&quot;colorOptionsSwitch.cb1&quot; aria-label=&quot;Switch 1&quot; class=&quot;md-purple&quot;&gt;
+    Switch 1(purple)
+&lt;/md-switch&gt;
+
+&lt;md-switch ng-model=&quot;colorOptionsSwitch.cb2&quot; aria-label=&quot;Switch 1&quot; class=&quot;md-blue&quot;&gt;
+    Switch 1(blue)
+&lt;/md-switch&gt;
+
+&lt;md-switch ng-model=&quot;colorOptionsSwitch.cb3&quot; aria-label=&quot;Switch 1&quot; class=&quot;md-cyan&quot;&gt;
+    Switch 1(cyan)
+&lt;/md-switch&gt;
+
+&lt;md-switch ng-model=&quot;colorOptionsSwitch.cb4&quot; aria-label=&quot;Switch 1&quot; class=&quot;md-teal&quot;&gt;
+    Switch 1(teal)
+&lt;/md-switch&gt;
+&lt;md-switch ng-model=&quot;colorOptionsSwitch.cb5&quot; aria-label=&quot;Switch 1&quot; class=&quot;md-green&quot;&gt;
+    Switch 1(green)
+&lt;/md-switch&gt;
+
+&lt;md-switch ng-model=&quot;colorOptionsSwitch.cb6&quot; aria-label=&quot;Switch 1&quot; class=&quot;md-yellow&quot;&gt;
+    Switch 1(yellow)
+&lt;/md-switch&gt;
+
+&lt;md-switch ng-model=&quot;colorOptionsSwitch.cb7&quot; aria-label=&quot;Switch 1&quot; class=&quot;md-brown&quot;&gt;
+    Switch 1(brown)
+&lt;/md-switch&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.colorOptionsSwitch = {
+    cb1: true,
+    cb2: true,
+    cb3: true,
+    cb4: true,
+    cb5: true,
+    cb6: true,
+    cb7: true
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="css">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-css" prism>
+md-switch.md-checked.md-purple .md-thumb {
+    background-color: #9C27B0;
+}
+
+md-switch.md-checked.md-purple .md-ink-ripple {
+    color: #9C27B0;
+}
+
+md-switch.md-checked.md-purple .md-bar {
+    background-color: rgba(156, 39, 176, 0.5);
+    ;
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Color Options -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

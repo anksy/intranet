@@ -1,0 +1,34 @@
+<form class="forget-form" novalidate="novalidate" style="display: block;" name='resetForm' ng-submit="resetForm.$valid && resetPassword()">
+    <h3>Reset Password ?</h3>
+    <p> Enter your new password twice. </p>
+    <div class="list-group-item bg-red bg-font-red" ng-show='nokey'>This link may not work. Please check your email for a valid reset password link.</div>
+    <div class="form-group">
+      <md-input-container class="md-icon-float md-block">
+        <label class="control-label">Password</label>
+         <div class="input-icon">
+            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" name="password" required ng-model="reset.password" ng-minlength='6' /> 
+         </div>
+         <div ng-messages="resetForm.password.$error" ng-show='resetForm.password.$dirty || resetForm.password.$invalid'>
+            <div ng-message="required">This is required.</div>
+            <div ng-message="minlength">Password must have at least 6 characters.</div>
+         </div>
+      </md-input-container>
+    </div>
+
+    <div class="form-group">
+      <md-input-container class="md-icon-float md-block">
+        <label class="control-label">Confirm Password</label>
+         <div class="input-icon">
+            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" name="cpassword" required ng-model="reset.cpassword" password-verify="reset.password"  /> 
+         </div>
+         <div ng-messages="resetForm.cpassword.$error" ng-show='resetForm.cpassword.$dirty || resetForm.cpassword.$invalid'>
+            <div ng-message="required">This is required.</div>
+            <div ng-message="passwordVerify">Confirm password not same as New Password.</div> 
+         </div>
+      </md-input-container>
+    </div>
+    <div class="form-actions">
+        <a class="btn grey-salsa btn-outline" ng-click='go("/login")'> Back to Login</a>
+        <md-button type="submit" class="btn red pull-right"> Submit </md-button>
+    </div>
+</form>

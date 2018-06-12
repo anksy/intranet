@@ -1,0 +1,31 @@
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+            <!--Right sidebar-->
+            <nav>
+                <!-- right sidebar body -->
+                <div class="theme-right-sidebar md-whiteframe-6dp theme-right-sidebar-hide" data-ng-class="showHideRightSidebarClass">
+                    <!-- right sidebar close button -->
+                    <div class="theme-right-sidebar-close" data-ng-click="showHideRightSidebar()">
+                        <i class="material-icons">clear</i>
+                        <md-tooltip md-direction="left" class="tooltip-gt-md">Close Settings</md-tooltip>
+                    </div>
+                    <!--end right sidebar close button -->
+                    <!-- right sidebar body -->
+                    <div class="theme-right-sidebar-body">
+                        <!-- layout options -->
+                        <h4>Layout Options</h4>
+                        <md-radio-group ng-model="layoutOptions.option1" class="layout-options-box" ng-change="layoutOptionsConfigure()">
+                            <md-radio-button value="1" class="md-primary md-checked">Fixed Header and Sidebar</md-radio-button>
+                            <md-radio-button value="2" class="md-primary">Fixed Header Unfixed Sidebar</md-radio-button>
+                            <md-radio-button value="3" class="md-primary">Unfixed Header and Sidebar</md-radio-button>
+                            <md-radio-button value="4" class="md-primary md-checked">Fixed Header and Sidebar(Boxed)</md-radio-button>
+                            <md-radio-button value="5" class="md-primary">Fixed Header Unfixed Sidebar(Boxed)</md-radio-button>
+                            <md-radio-button value="6" class="md-primary">Unfixed Header and Sidebar(Boxed)</md-radio-button>
+                        </md-radio-group>
+                        <!-- end layout options -->
+                    </div>
+                    <!-- end right sidebar body -->
+                </div>
+                <!--end right sidebar body -->
+            </nav>
+            <!--End Right sidebar-->
+            <!-- //////////////////////////////////////////////////////////////////////////// -->

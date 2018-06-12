@@ -1,0 +1,19 @@
+{
+  "name": "consolebox",
+  "version": "1.0.0",
+  "description": "Angular Material admin template",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "consolebox",
+  "license": "ISC",
+  "dependencies": {
+    "angular-google-chart": "^1.0.0-beta.1",
+    "angular-material": "^1.1.4",
+    "angular-ui-router": "^1.0.3",
+    "jpkleemans-angular-validate": "^1.1.3",
+    "jquery": "^3.2.1",
+    "ng-ui-router-state-events": "^1.0.1"
+  }
+}

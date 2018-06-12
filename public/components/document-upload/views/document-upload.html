@@ -1,0 +1,251 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title" layout="row" layout-align="space-between center">
+        <h1 ng-if="!isEdit"> Documents and File management </h1>
+        <a ui-sref="customerCRM"> <md-icon>people</md-icon> Customer list &nbsp;  &nbsp; &nbsp;</a>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Page content -->
+<md-content class="page-content documents-upload-section">
+  <!-- section -->
+   <div class="isLoading page-loader border-radius-10  md-whiteframe-3dp" 
+      layout="column" 
+      layout-align="center center" 
+      ng-show="isPageLoading">
+       <md-progress-circular md-mode="indeterminate" md-diameter="52"></md-progress-circular>
+       <span>Loading..</span>
+    </div>
+    <md-breadcrumb data="folderPath"></md-breadcrumb>
+    
+  <section class="page-section  md-whiteframe-3dp border-radius-10" ng-hide="isPageLoading">
+    <!--page loader-->
+      <div class="header-top"> 
+        <div  layout="row" layout-align="space-between center">
+          <div>
+            <md-button class="md-button-text" path="folderPath" add-new-folder > 
+                <md-icon>add</md-icon>
+                <span> New  Folder</span>
+            </md-button>
+   
+            <upload-file-custom > </upload-file-custom>
+            <!-- ng-if="folderActive._id" -->
+            <md-button class="md-button-text" share-data > 
+                <md-icon>share</md-icon>
+                <span> Share</span>
+            </md-button>
+
+
+       <!--       <md-menu>
+                <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
+                  <md-icon md-menu-origin >more_vert</md-icon>
+                </md-button>
+
+                <md-menu-content >
+                  <md-menu-item>
+                    <md-button ng-click="redial($event)">
+                       <md-icon>edit</md-icon>
+                      Edit
+                    </md-button>
+                  </md-menu-item>
+
+                  <md-menu-item>
+                    <md-button disabled="disabled" ng-click="checkVoicemail()">
+                      <md-icon md-svg-icon="call:voicemail"></md-icon>
+                      Check voicemail
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-divider></md-menu-divider>
+                  <md-menu-item>
+                    <md-button ng-click="toggleNotifications()">
+                      <md-icon md-svg-icon="social:notifications-{{notificationsEnabled ? 'off' : 'on'}}"></md-icon>
+                      {{notificationsEnabled ? 'Disable' : 'Enable' }} notifications
+                    </md-button>
+                  </md-menu-item>
+                </md-menu-content>
+              </md-menu>
+ -->
+             <md-button rename-folder folder-active="folderActive" class="md-button-text" ng-if="folderActive._id"> 
+                <md-icon>edit</md-icon>
+                <span> rename</span>
+            </md-button>
+
+            <md-button  class="md-button-text"  ng-click="openFolder(folderActive)"
+              ng-if="folderActive._id && !folderActive.attachment"> 
+                <md-icon>folder_open</md-icon>
+                <span> Open</span>
+            </md-button>
+
+             <md-button ng-href="{{folderActive.attachment.secure_url}}" target="_blank" class="md-button-text" ng-if="folderActive.attachment"> 
+                <md-icon>file_download</md-icon>
+                <span> Download</span>
+            </md-button>
+
+            <md-button class="md-button-text" delete-data="folderActive" ng-if="folderActive._id"> 
+                <md-icon>delete</md-icon>
+                <span> Delete</span>
+            </md-button>
+          </div>
+
+          <div class="filter-right" layout="row" layout-align="space-between center">
+            <span>Showing: </span>
+              <md-select 
+                md-on-close="filterResult(filter)"
+                ng-model="filter" placeholder="Select option" class="md-no-underline">
+                <md-option value="1">All </md-option>
+                <md-option value="file">Only Files</md-option>
+                <md-option value="folder">Only Folders</md-option>
+                <md-option value="2">Only Share with me</md-option>
+              </md-select>
+          </div>
+         
+        </div>
+      </div>
+
+  <!-- section -->
+      <div class="isLoading page-loader border-radius-10  md-whiteframe-3dp" 
+        layout="column" 
+        layout-align="center center " 
+        ng-show="isLoading">
+         <md-progress-circular md-mode="indeterminate" md-diameter="52"></md-progress-circular>
+         <span>Loading..</span>
+      </div>
+
+      
+
+      <div layout="row" layout-align="center stretch">
+
+        <div class="md-block margin-top-50" ng-class="{'border-right': isEmpty(folderActive)}">
+          
+         <div layout="row" layout-align="start center">
+
+           <div class="md-block" >
+             <div class="search-min">
+                  <md-input-container md-no-float class="md-block">
+                    <md-icon >search</md-icon>
+                    <input ng-model="searchText" type="text" ng-keyup="filterList(searchText)" placeholder="Search files and folders..">
+                    <md-button class="md-icon-button close-btn" ng-click="clear();" ng-show="searchText">
+                      <md-icon >close</md-icon>
+                    </md-button>
+                  </md-input-container>
+                  <md-progress-linear ng-if="isSearching" class="is-searching" md-mode="indeterminate"></md-progress-linear>
+              </div>
+           </div>
+         </div> 
+
+          <div ng-if="folders.length==0 && !isLoading" class="md-padding no-records"> 
+                <div>No files or folder added  yet! </div>
+                <div layout="row" layout-align="center center">
+                  <md-button class="md-button-text" add-new-folder> 
+                    <md-icon>add</md-icon>
+                    <span> New  Folder &nbsp;&nbsp; </span>
+                  </md-button>
+                  <upload-file-custom> </upload-file-custom>
+                </div>
+
+          </div>
+          <div layout="row" layout-align="start  center" layout-wrap>
+          <div flex="33" ng-repeat="folder in folders"  class="md-padding">
+
+            <md-folder
+              ng-right-click="rightMenu()"
+              ng-class="{'active' :folderActive._id === folder._id}"
+              ng-dblclick ="openFolder(folder)"   
+              ng-click="folderSelected(folder)"> 
+              <!--dynamic tempplate--> 
+            </md-folder>
+
+          </div>
+        </div>
+
+        </div>
+
+        <div 
+          ng-if="isEmpty(folderActive)" 
+          class="right-folder-info" 
+          layout="column" 
+          layout-align="start stretch"> 
+
+            <div layout="row" layout-align="space-between start" > 
+                <div class="padding-space" layout="row" layout-align="start center"> 
+                  <md-icon>folder</md-icon>
+                  <a ui-sref="folderList({name: folderActive.id})"> 
+                    {{folderActive.title}} 
+                  </a>
+                </div>
+            </div>
+
+            <div layout="row" layout-align="space-between center" > 
+                <div class="padding-space" layout="row" layout-align="start center"> 
+                  <md-icon  class="icon-sm">access_time</md-icon>
+                  <span> {{ folderActive.created_at | date:'medium'}}  </span>
+                </div>
+            </div>
+
+            <div layout="row" layout-align="start center" >
+
+              <div class="padding-space" layout="row" layout-align="start center"> 
+                  <md-icon  class="icon-sm">info_outline</md-icon>
+                    <span class="info" layout="row" layout-align="center center">
+
+                      <span ng-if="!folderActive.resouces.files && !folderActive.resouces.folders">Empty Folder
+                      </span>
+                      <span ng-if="folderActive.resouces.files "> Empty Folder </span>
+
+                      <span ng-if="folderActive.resouces.files">  
+                        {{folderActive.resouces.files}} Files</span> 
+                      <span ng-if="folderActive.resouces.files">  
+                        | {{folderActive.resouces.folders}} Folders </span> 
+                      <span ng-if="folderActive.resouces.size">
+                        | {{folderActive.resouces.size}} MB</span>
+                    </span>
+                </div>
+            </div>
+
+             <div class="padding-space" layout="column" >
+               <b class="md-padding"> Information </b>
+               <span> <md-icon>public <!-- lock --></md-icon>Public </span>
+               <span> Created By: Mahendra Singh</span>
+               <span ng-if="users.length"> {{users.length}} Pepoles added in this folder</span>
+             </div>
+
+            <div class="box-list" ng-if="users.length>0">
+              <p><b>Pepoles</b></p>
+              <md-list >
+                <md-list-item ng-repeat="user in users" ng-init="user.isLoading =false">
+                  <div layout="row" layout-align="center center" class="isLoading" ng-if="user.isLoading">
+                     <md-progress-circular md-mode="indeterminate" md-diameter="30"></md-progress-circular>
+                     <span>&nbsp;</span>
+                    <span>Processing..</span>
+                  </div>
+                  <div layout="row"  layout="start center" style="width: 100%">
+                    <small layout="column"  layout="center center"><md-icon>account_circle</md-icon></small>
+
+                    <div layout="column" layout="start center">
+                      <b>{{user.name}}</b>
+                      <div class="small"> {{user.email}}</div>
+                    </div>
+
+                  </div>
+
+                  <md-button ng-click="remove(user)" class="md-icon-button">
+                    <md-icon> close </md-icon>
+                  </md-button>
+                 <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+
+              
+              </md-list>
+
+        </div>
+
+            </div>
+
+
+        </div>
+
+      </div>
+      
+  </section>
+</md-content>
+<!--End Page content

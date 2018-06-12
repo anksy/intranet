@@ -1,0 +1,527 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Forms Elements</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/select" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="Autocomplete" ui-sref="autocomplete">
+            </md-tab>
+            <md-tab label="Checkbox" ui-sref="checkbox">
+            </md-tab>
+            <md-tab label="Chips" ui-sref="chips">
+            </md-tab>
+            <md-tab label="datepicker" ui-sref="datepicker">
+            </md-tab>
+            <md-tab label="file input" ui-sref="file-input">
+            </md-tab>
+            <md-tab label="Radio Button" ui-sref="radio-button">
+            </md-tab>
+            <md-tab label="Select" ui-sref="select" md-active="true">
+            </md-tab>
+            <md-tab label="Switch" ui-sref="switch">
+            </md-tab>
+
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Select</h2>
+        <!-- page desciption -->
+        <p>Select allows user input through specified options. The <code class="language-markup">&lt;md-select&gt;</code> component can be used within a
+            <code class="language-markup">&lt;md-input-container&gt;</code> or as a stand alone component by using the
+            <code class="language-markup">md-no-underline</code> class.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- content -->
+                <form>
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <md-input-container>
+                                <label>Options</label>
+                                <md-select ng-model="basicUsageSelect.demo1">
+                                    <md-option ng-value="Option1">Option 1</md-option>
+                                    <md-option ng-value="Option2">Option 2</md-option>
+                                    <md-option ng-value="Option3">Option 3</md-option>
+                                    <md-option ng-value="Option4">Option 4</md-option>
+                                    <md-option ng-value="Option5">Option 5</md-option>
+                                    <md-option ng-value="Option6">Option 6</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+
+                        <div class="col s12 m6">
+                            <md-input-container>
+                                <label>Group Options</label>
+                                <md-select ng-model="basicUsageSelect.demo5">
+                                    <md-optgroup label="Group Options I">
+                                        <md-option ng-value="Option1">Group Option 1</md-option>
+                                        <md-option ng-value="Option2">Group Option 2</md-option>
+                                        <md-option ng-value="Option3">Group Option 3</md-option>
+                                    </md-optgroup>
+                                    <md-optgroup label="Group Options II">
+                                        <md-option ng-value="Option4">Group Option 4</md-option>
+                                        <md-option ng-value="Option5">Group Option 5</md-option>
+                                        <md-option ng-value="Option6">Group Option 6</md-option>
+                                    </md-optgroup>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                    </div>
+
+                    <div layout="row" layout-align="space-between center">
+                        <span>What is your favorite weapon?</span>
+                        <md-select ng-model="basicUsageSelect.demo2" placeholder="Weapon" class="md-no-underline">
+                            <md-option value="axe">Axe</md-option>
+                            <md-option value="sword">Sword</md-option>
+                            <md-option value="wand">Wand</md-option>
+                            <md-option value="pen">Pen?</md-option>
+                        </md-select>
+                    </div>
+
+                    <div layout="row" layout-align="space-between center">
+                        <span>What armor do you wear?</span>
+                        <md-select ng-model="basicUsageSelect.demo3" placeholder="Armor" class="md-no-underline" required md-no-asterisk="false">
+                            <md-option value="cloth">Cloth</md-option>
+                            <md-option value="leather">Leather</md-option>
+                            <md-option value="chain">Chainmail</md-option>
+                            <md-option value="plate">Plate</md-option>
+                        </md-select>
+                    </div>
+
+                    <div layout="row" layout-align="space-between center">
+                        <span>How do you refresh your magic?</span>
+                        <md-select ng-model="basicUsageSelect.demo4" placeholder="Drink" class="md-no-underline">
+                            <md-option value="water">Water</md-option>
+                            <md-option value="juice">Juice</md-option>
+                            <md-option value="milk">Milk</md-option>
+                            <md-option value="wine">Wine</md-option>
+                            <md-option value="mead">Mead</md-option>
+                        </md-select>
+                    </div>
+
+                </form>
+
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.basicUsageSelect = {
+    demo1: '',
+    demo2: 'sword',
+    demo3: 'chain',
+    demo4: ''
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Multiple Select -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Multiple Select</h3>
+
+                <!-- content -->
+                <form>
+                    <md-input-container>
+                        <label>Options</label>
+                        <md-select ng-model="multipleSelect.demo1" multiple>
+                            <md-option ng-value="option.name" ng-repeat="option in multipleSelect.options">{{option.name}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </form>
+
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.multipleSelect = {
+    demo1: [],
+    options: [
+        { name: 'Option 1' },
+        { name: 'Option 2' },
+        { name: 'Option 3' },
+        { name: 'Option 4' },
+        { name: 'Option 5' },
+        { name: 'Option 6' }
+    ]
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Multiple Select -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Options With Async Search -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Options With Async Search</h3>
+
+                <!-- content -->
+                <form>
+                    <md-input-container>
+                        <md-select placeholder="Assign to user" ng-model="asyncSearchSelect.user" md-on-open="asyncSearchSelectloadUsers()" style="min-width: 200px;">
+                            <md-option ng-value="user" ng-repeat="user in asyncSearchSelect.users">{{user.name}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </form>
+
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.asyncSearchSelect = {
+    user: null,
+    users: null
+};
+
+$scope.asyncSearchSelectloadUsers = function() {
+
+    // Use timeout to simulate a 650ms request.
+    return $timeout(function() {
+
+        $scope.asyncSearchSelect.users = $scope.asyncSearchSelect.users || [
+            { id: 1, name: 'Scooby Doo' },
+            { id: 2, name: 'Shaggy Rodgers' },
+            { id: 3, name: 'Fred Jones' },
+            { id: 4, name: 'Daphne Blake' },
+            { id: 5, name: 'Velma Dinkley' }
+        ];
+
+    }, 650);
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Options With Async Search -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Select Header -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Select Header</h3>
+
+                <!-- content -->
+                <form>
+                    <md-input-container>
+                        <label>Vegetables</label>
+                        <md-select ng-model="headerSelect.selectedVegetables" md-on-close="headerSelect.clearSearchTerm()" data-md-container-class="selectdemoSelectHeader" multiple>
+                            <md-select-header class="demo-select-header">
+                                <input ng-model="headerSelectSearchTerm.data" type="search" placeholder="Search for a vegetable.." class="demo-header-searchbox md-text" ng-keydown="headerSelect.stopPropagation($event)">
+                            </md-select-header>
+                            <md-optgroup label="vegetables">
+                                <md-option ng-value="vegetable" ng-repeat="vegetable in headerSelect.vegetables |
+              filter:headerSelectSearchTerm.data">{{vegetable}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+                    </md-input-container>
+
+                </form>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.headerSelectSearchTerm = {
+    data: ''
+};
+$scope.headerSelect = {
+    selectedVegetables: [],
+    vegetables: ['Corn', 'Onions', 'Kale', 'Arugula', 'Peas', 'Zucchini'],
+
+    clearSearchTerm: function() {
+        $scope.headerSelectSearchTerm.data = '';
+    },
+    // The md-select directive eats keydown events for some quick select
+    // logic. Since we have a search input here, we don't need that logic.
+    stopPropagation: function(ev) {
+        ev.stopPropagation();
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                    <md-tab label="css">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-css" prism>
+.selectdemoSelectHeader .demo-header-searchbox {
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+.selectdemoSelectHeader .demo-select-header {
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+    padding-left: 10.667px;
+    height: 48px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+.selectdemoSelectHeader md-content._md {
+    max-height: 240px;
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Select Header -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Selected Text -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Select Text</h3>
+
+                <!-- content -->
+                <form>
+                    <md-input-container>
+                        <label>Items</label>
+                        <md-select ng-model="selectTextItem.data" md-selected-text="selectTextDemo.getSelectedText()">
+                            <md-optgroup label="items">
+                                <md-option ng-value="item" ng-repeat="item in selectTextDemo.items">Item {{item}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+                    </md-input-container>
+
+                </form>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+ $scope.selectTextItem = {
+    data: ''
+};
+$scope.selectTextDemo = {
+    items: [1, 2, 3, 4, 5, 6, 7],
+    getSelectedText: function() {
+        if ($scope.selectTextItem.data) {
+            return "You have selected: Item " + $scope.selectTextItem.data;
+        } else {
+            return "Please select an item";
+        }
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Select Text -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Validations -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Validations</h3>
+
+                <!-- content -->
+                <form name="myForm">
+                    <div layout="row">
+                        <md-input-container flex="33" flex-sm="50" flex-xs="100">
+                            <label>Favorite Color</label>
+                            <md-select name="favoriteColor" ng-model="validationSelectDemo.data" required>
+                                <md-option value="red">Red</md-option>
+                                <md-option value="blue">Blue</md-option>
+                                <md-option value="green">Green</md-option>
+                            </md-select>
+                            <div class="errors" ng-messages="myForm.favoriteColor.$error">
+                                <div ng-message="required">Required</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </form>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.validationSelectDemo = {
+    data: undefined
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Validations -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+</md-content>
+<!--End Page content -->

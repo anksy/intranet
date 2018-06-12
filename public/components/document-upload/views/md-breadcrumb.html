@@ -1,0 +1,11 @@
+
+<ol class="breadcrumb fixed-top " >
+
+	<li ng-hide="state === 'documentUpload' ">
+	  <a ui-serf="documentUpload"> <md-icon>home</md-icon>  Home </a>
+	</li>
+
+	<li ng-repeat ="list in breadcrumb" ng-class="{'active': $last}">
+	  <a ng-click="goTo(list)">{{list.title}}</a>
+	</li>
+</ol>

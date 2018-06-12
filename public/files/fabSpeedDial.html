@@ -1,0 +1,151 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Extra UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/fabSpeedDial" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="bottom Sheet" ui-sref="bottomSheet">
+            </md-tab>
+            <md-tab label="fab SpeedDial" ui-sref="fabSpeedDial" md-active="true">
+            </md-tab>
+            <md-tab label="fab Toolbar" ui-sref="fabToolbar">
+            </md-tab>
+            <md-tab label="list" ui-sref="list">
+            </md-tab>
+            <md-tab label="menuBar" ui-sref="menuBar">
+            </md-tab>
+            <md-tab label="navBar" ui-sref="navBar">
+            </md-tab>
+            <md-tab label="panel" ui-sref="panel">
+            </md-tab>
+            <md-tab label="subheader" ui-sref="subheader">
+            </md-tab>
+            <md-tab label="swipe" ui-sref="swipe">
+            </md-tab>
+            <md-tab label="toolbar" ui-sref="toolbar">
+            </md-tab>
+            <md-tab label="virtual Repeat" ui-sref="virtualRepeat">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">FAB Speed Dial</h2>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- descrition -->
+                <p>
+                    You may supply a direction of <code class="language-markup">left</code>, <code class="language-markup">up</code>, <code class="language-markup">down</code>, or
+                    <code class="language-markup">right</code> through the <code class="language-markup">md-direction</code> attribute.
+                </p>
+
+                <p>
+                    You may supply a animation modes of <code class="language-markup">md-fling</code>, <code class="language-markup">md-scale</code> through the <code class="language-markup">class</code> attribute.
+                </p>
+                <!--end descrition -->
+
+                <!-- alert -->
+                <blockquote>
+                    <code class="red">ng-cloak</code>, should be in parent of <code class="red">md-fab-speed-dial</code>.
+                </blockquote>
+                <!-- end alert -->
+
+                <!-- content -->
+
+                <div layout="row" layout-align="space-around start" ng-cloak>
+                    <md-fab-speed-dial md-open="fabSpeedDialDemo.isOpen" md-direction="up" ng-class="fabSpeedDialDemo.animationMode[0]">
+                        <md-fab-trigger>
+                            <md-button aria-label="menu" class="md-fab md-warn">
+                                <i class="material-icons">menu</i>
+                            </md-button>
+                        </md-fab-trigger>
+                        <h4 class="theme-title">Animation Mode fling</h4>
+
+                        <md-fab-actions>
+                            <md-button aria-label="network wifi" class="md-fab md-raised md-mini">
+                                <i class="material-icons">network_wifi</i>
+                            </md-button>
+                            <md-button aria-label="settings bluetooth" class="md-fab md-raised md-mini">
+                                <i class="material-icons">settings_bluetooth</i>
+                            </md-button>
+                            <md-button aria-label="portable wifi off" class="md-fab md-raised md-mini">
+                                <i class="material-icons">portable_wifi_off</i>
+                            </md-button>
+                        </md-fab-actions>
+                    </md-fab-speed-dial>
+
+                    <md-fab-speed-dial md-open="fabSpeedDialDemo.isOpen1" md-direction="up" ng-class="fabSpeedDialDemo.animationMode[1]">
+                        <md-fab-trigger>
+                            <md-button aria-label="menu" class="md-fab md-warn">
+                                <i class="material-icons">menu</i>
+                            </md-button>
+                        </md-fab-trigger>
+                        <h4 class="theme-title">Animation Mode scale</h4>
+
+                        <md-fab-actions>
+                            <md-button aria-label="network wifi" class="md-fab md-raised md-mini">
+                                <i class="material-icons">network_wifi</i>
+                            </md-button>
+                            <md-button aria-label="settings bluetooth" class="md-fab md-raised md-mini">
+                                <i class="material-icons">settings_bluetooth</i>
+                            </md-button>
+                            <md-button aria-label="portable wifi off" class="md-fab md-raised md-mini">
+                                <i class="material-icons">portable_wifi_off</i>
+                            </md-button>
+                        </md-fab-actions>
+                    </md-fab-speed-dial>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.fabSpeedDialDemo = {
+    animationMode: ['md-fling', 'md-scale'],
+    isOpen: false,
+    isOpen1: true
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

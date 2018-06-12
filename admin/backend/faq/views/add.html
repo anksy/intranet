@@ -1,0 +1,85 @@
+<div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="portlet light bordered">
+                                <material-loader ng-show="loader"></material-loader>
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-star font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">Add New Question</span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <md-content class="md-padding">
+                                        <div layout="column">
+                                            <md-content layout-padding>
+                    
+                                              <form name="addForm" novalidate ng-submit="addForm.$valid && add()">
+
+                                                
+                                                  <md-input-container class="md-block">
+                                                    <label>Question</label>
+                                                    <input required name="title" ng-model="cms.title" required>
+                                                    <div ng-messages="addForm.title.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container class="md-block">
+                                                    <label>Answer</label>
+                                                    <textarea ng-model="cms.content" name='content' md-rows="5" rows="5" md-select-on-focus required></textarea>
+                                                    <div ng-messages="addForm.content.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+                                                
+                                                  
+                                                  <md-input-container class='md-block'>
+                                                    <label>FAQ For</label>
+                                                    <md-select ng-model="cms.innerType" required name='innerType'>
+                                                      <md-option value="Appraisers">
+                                                        Appraisers
+                                                      </md-option>
+                                                      <md-option value="Company">
+                                                        Company
+                                                      </md-option>
+                                                    </md-select>
+                                                    <div ng-messages="addForm.innerType.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container class='md-block'>
+                                                    <label>Status</label>
+                                                    <md-select ng-model="cms.status" required name='status'>
+                                                      <md-option value="true">
+                                                        Active
+                                                      </md-option>
+                                                      <md-option value="false">
+                                                        Inactive
+                                                      </md-option>
+                                                    </md-select>
+                                                    <div ng-messages="addForm.status.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+                                                  
+                                                <div>
+                                                  <md-button type="submit" class='btn red'>Add Question</md-button>
+                                                </div>
+                                              </form>
+                                            </md-content>
+
+                                       </div>
+                                      </md-content>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>

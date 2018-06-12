@@ -1,0 +1,127 @@
+<div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                            <div class="portlet light bordered">
+                                 <div class="portlet-title">
+                                       <div class="caption">
+                                        <i class="icon-search font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">Filter Payments</span>
+                                    </div>
+
+
+
+                                    <div class="search-filter bordered col-sm-12 mbot20">
+                                    <div class="row">
+
+                                          <div class="col-sm-4">
+                                             <div class="input-icon right">
+                                                 <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Filter by Job name / ID " ng-model="query.q" ng-model-options="{debounce:500}" ng-change="listPayments()" aria-invalid="false" style=""> 
+                                             </div>
+                                          </div>
+
+
+                                          <div class="col-sm-4">
+                                             <select class="form-control ng-pristine ng-valid ng-not-empty ng-touched" ng-init="query.type=''" ng-model="query.type" ng-model-options="{debounce:500}" ng-change="query.page=1; listPayments()" aria-invalid="false" style="">
+                                                 <option value="">Select type</option>
+                                                 <option value="1">On Going</option>
+                                                 <option value="2">Auto Refunded</option>
+                                                 <option value="3">Manual Refund (Not Refunded Yet)</option>
+                                                 <option value="4">Manual Refunded </option>
+
+                                                 <option value="5">Auto Transfered</option>
+                                                 <option value="6">Manual Transfer (Not Transfered Yet)</option>
+                                                 <option value="7">Manual Transfered</option>
+                                             </select>
+                                          </div>
+
+                                    </div>
+                                   </div>
+
+
+                                 </div>
+
+
+                           </div>
+
+                            <div class="portlet light bordered">
+
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-bubble font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">Payments</span>
+                                    </div>
+                                </div>
+
+                                <div class="data-container" ng-if="data.records.length">
+                                    <md-table-container>
+                                      <table md-table md-row-select md-progress="data.records">
+                                        <thead md-head md-order="query.order" md-on-reorder="listJobs">
+                                          <tr md-row>
+                                            <th md-column><span>ID#</span></th>
+                                            <th md-column>Job Title</th>
+                                            <th md-column>Amount (in $)</th>
+                                            
+                                            <th md-column>Job Status</th>
+                                            <th md-column>Created On</th>
+                                            
+                                            <th md-column>Action</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody md-body>
+                                          <tr md-row md-select="row._id" md-select-id="row._id" md-auto-select ng-repeat="row in data.records">
+                                            <td md-cell>{{row.meta.Identifier}}</td>
+                                            <td md-cell>{{row.meta.title}}</td>
+                                            <td md-cell>${{(row.stripe.amount)/100}}</td>
+                                            
+
+                                            <td md-cell>
+                                            
+                                            <label class="btn btn-xs" ng-if="row.refund && !row.refundManually">Auto Refunded</label>
+
+                                            <label class="btn btn-xs" ng-if="row.refundManually && !row.refund">Manual Refund (Not Refunded Yet)</label>
+
+                                            <label class="btn btn-xs" ng-if="row.refundManually && row.refund">Manually Refunded</label>
+
+
+                                            <label class="btn btn-xs" ng-if="row.transfer && !row.transferManually">Auto Transfered</label>
+
+                                            <label class="btn btn-xs" ng-if="row.transferManually && !row.transfer">Manual Transfer (Not Transfered Yet)</label>
+
+                                            <label class="btn btn-xs" ng-if="row.transferManually && row.transfer">Manually Transfered</label>
+
+
+                                            <label class="btn btn-xs" ng-if="!row.refund && !row.transfer && !row.transferManually && !row.refundManually">On Going</label>
+
+
+                                            
+                                            
+                                            </td>
+                                            <td md-cell>{{row.created_at | date : 'MMM d, y h:mm a'}}</td>
+                                            
+                                            <td md-cell>
+                                                <a ng-click="go('/payments/details/'+row._id)" class="btn btn-icon-only green">
+                                                    <i class="fa fa-search"></i>
+                                                </a>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+
+                                    </md-table-container>
+
+                                    <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{data.total}}" md-on-paginate="listPayments" md-page-select></md-table-pagination>
+                                </div>
+
+                                <div class="alert alert-info" ng-if='!data.records || data.records.length===0'>No record found</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>

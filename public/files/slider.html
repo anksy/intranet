@@ -1,0 +1,383 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Advanced UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/slider" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="cards" ui-sref="cards">
+            </md-tab>
+            <md-tab label="carousel" ui-sref="carousel">
+            </md-tab>
+            <md-tab label="dialog" ui-sref="dialog">
+            </md-tab>
+            <md-tab label="slider" ui-sref="slider" md-active="true">
+            </md-tab>
+            <md-tab label="sweetAlert" ui-sref="sweetAlert">
+            </md-tab>
+            <md-tab label="highlight" ui-sref="highlight">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Slider</h2>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Slider -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- content -->
+                <md-slider-container>
+                    <span>Default</span>
+                    <md-slider flex min="0" max="255" ng-model="value.value1" aria-label="default" id="default-slider" class="md-primary">
+                    </md-slider>
+                    <md-input-container>
+                        <input flex type="number" ng-model="value.value1" aria-label="default" aria-controls="default-slider">
+                    </md-input-container>
+                </md-slider-container>
+
+                <md-slider-container>
+                    <span>Warn</span>
+                    <md-slider flex min="0" max="255" ng-model="value.value2" aria-label="warn" id="warn-slider" class="md-warn">
+                    </md-slider>
+                    <md-input-container>
+                        <input flex type="number" ng-model="value.value2" aria-label="warn" aria-controls="warn-slider">
+                    </md-input-container>
+                </md-slider-container>
+
+                <md-slider-container>
+                    <span>Accent</span>
+                    <md-slider flex min="0" max="255" ng-model="value.value3" aria-label="accent" id="accent-slider" class="md-accent">
+                    </md-slider>
+                    <md-input-container>
+                        <input flex type="number" ng-model="value.value3" aria-label="accent" aria-controls="accent-slider">
+                    </md-input-container>
+                </md-slider-container>
+
+                <md-slider-container ng-disabled="true">
+                    <span>Disable</span>
+                    <md-slider flex min="0" max="255" ng-model="value.value4" aria-label="Disabled" id="disabled-slider"></md-slider>
+
+                    <md-input-container>
+                        <input flex type="number" ng-model="value.value4" aria-label="Disabled" aria-controls="disabled-slider">
+                    </md-input-container>
+                </md-slider-container>
+
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-slider-container&gt;
+    &lt;span&gt;Default&lt;/span&gt;
+    &lt;md-slider flex min=&quot;0&quot; max=&quot;255&quot; ng-model=&quot;value.value1&quot; aria-label=&quot;default&quot; id=&quot;default-slider&quot; class=&quot;md-primary&quot;&gt;
+    &lt;/md-slider&gt;
+    &lt;md-input-container&gt;
+        &lt;input flex type=&quot;number&quot; ng-model=&quot;value.value1&quot; aria-label=&quot;default&quot; aria-controls=&quot;default-slider&quot;&gt;
+    &lt;/md-input-container&gt;
+&lt;/md-slider-container&gt;
+
+&lt;md-slider-container&gt;
+    &lt;span&gt;Warn&lt;/span&gt;
+    &lt;md-slider flex min=&quot;0&quot; max=&quot;255&quot; ng-model=&quot;value.value2&quot; aria-label=&quot;warn&quot; id=&quot;warn-slider&quot; class=&quot;md-warn&quot;&gt;
+    &lt;/md-slider&gt;
+    &lt;md-input-container&gt;
+        &lt;input flex type=&quot;number&quot; ng-model=&quot;value.value2&quot; aria-label=&quot;warn&quot; aria-controls=&quot;warn-slider&quot;&gt;
+    &lt;/md-input-container&gt;
+&lt;/md-slider-container&gt;
+
+&lt;md-slider-container&gt;
+    &lt;span&gt;Accent&lt;/span&gt;
+    &lt;md-slider flex min=&quot;0&quot; max=&quot;255&quot; ng-model=&quot;value.value3&quot; aria-label=&quot;accent&quot; id=&quot;accent-slider&quot; class=&quot;md-accent&quot;&gt;
+    &lt;/md-slider&gt;
+    &lt;md-input-container&gt;
+        &lt;input flex type=&quot;number&quot; ng-model=&quot;value.value3&quot; aria-label=&quot;accent&quot; aria-controls=&quot;accent-slider&quot;&gt;
+    &lt;/md-input-container&gt;
+&lt;/md-slider-container&gt;
+
+&lt;md-slider-container ng-disabled=&quot;true&quot;&gt;
+    &lt;span&gt;Disable&lt;/span&gt;
+    &lt;md-slider flex min=&quot;0&quot; max=&quot;255&quot; ng-model=&quot;value.value4&quot; aria-label=&quot;Disabled&quot; id=&quot;disabled-slider&quot;&gt;&lt;/md-slider&gt;
+
+    &lt;md-input-container&gt;
+        &lt;input flex type=&quot;number&quot; ng-model=&quot;value.value4&quot; aria-label=&quot;Disabled&quot; aria-controls=&quot;disabled-slider&quot;&gt;
+    &lt;/md-input-container&gt;
+&lt;/md-slider-container&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.value = {
+    value1: Math.floor(Math.random() * 255),
+    value2: Math.floor(Math.random() * 255),
+    value3: Math.floor(Math.random() * 255),
+    value4: Math.floor(Math.random() * 255)
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Slider -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Rating Slider -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Rating Slider</h3>
+
+                <!-- content -->
+                <div layout>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="md-body-1">Default</span>
+                    </div>
+                    <md-slider flex md-discrete ng-model="rating1" step="1" min="1" max="5" aria-label="rating" class="md-primary">
+                    </md-slider>
+                </div>
+
+                <div layout class="m-t-20">
+                    <div flex="10" layout layout-align="center center">
+                        <span class="md-body-1">Warn</span>
+                    </div>
+                    <md-slider flex md-discrete ng-model="rating2" step="1" min="1" max="5" aria-label="rating" class="md-warn">
+                    </md-slider>
+                </div>
+
+                <div layout class="m-t-20">
+                    <div flex="10" layout layout-align="center center">
+                        <span class="md-body-1">Accent</span>
+                    </div>
+                    <md-slider flex md-discrete ng-model="rating3" step="1" min="1" max="5" aria-label="rating" class="md-accent">
+                    </md-slider>
+                </div>
+
+                <div layout class="m-t-20">
+                    <div flex="10" layout layout-align="center center">
+                        <span class="md-body-1">Disable</span>
+                    </div>
+                    <md-slider flex md-discrete ng-model="rating4" ng-disabled="true" step="1" min="1" max="5" aria-label="rating" class="md-primary">
+                    </md-slider>
+                </div>
+
+                <div layout class="m-t-20">
+                    <div flex="10" layout layout-align="center center">
+                        <span class="md-body-1">Disable</span>
+                    </div>
+                    <md-slider flex md-discrete ng-model="rating5" ng-disabled="true" ng-readonly="true" step="1" min="1" max="5" aria-label="rating" class="md-primary">
+                    </md-slider>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div layout&gt;
+    &lt;div flex=&quot;10&quot; layout layout-align=&quot;center center&quot;&gt;
+        &lt;span class=&quot;md-body-1&quot;&gt;Default&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;md-slider flex md-discrete ng-model=&quot;rating1&quot; step=&quot;1&quot; min=&quot;1&quot; max=&quot;5&quot; aria-label=&quot;rating&quot; class=&quot;md-primary&quot;&gt;
+    &lt;/md-slider&gt;
+&lt;/div&gt;
+
+&lt;div layout&gt;
+    &lt;div flex=&quot;10&quot; layout layout-align=&quot;center center&quot;&gt;
+        &lt;span class=&quot;md-body-1&quot;&gt;Warn&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;md-slider flex md-discrete ng-model=&quot;rating2&quot; step=&quot;1&quot; min=&quot;1&quot; max=&quot;5&quot; aria-label=&quot;rating&quot; class=&quot;md-warn&quot;&gt;
+    &lt;/md-slider&gt;
+&lt;/div&gt;
+
+&lt;div layout&gt;
+    &lt;div flex=&quot;10&quot; layout layout-align=&quot;center center&quot;&gt;
+        &lt;span class=&quot;md-body-1&quot;&gt;Accent&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;md-slider flex md-discrete ng-model=&quot;rating3&quot; step=&quot;1&quot; min=&quot;1&quot; max=&quot;5&quot; aria-label=&quot;rating&quot; class=&quot;md-accent&quot;&gt;
+    &lt;/md-slider&gt;
+&lt;/div&gt;
+&lt;div layout class=&quot;m-t-20&quot;&gt;
+    &lt;div flex=&quot;10&quot; layout layout-align=&quot;center center&quot;&gt;
+        &lt;span class=&quot;md-body-1&quot;&gt;Disable&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;md-slider flex md-discrete ng-model=&quot;rating4&quot; ng-disabled=&quot;true&quot; step=&quot;1&quot; min=&quot;1&quot; max=&quot;5&quot; aria-label=&quot;rating&quot; class=&quot;md-primary&quot;&gt;
+    &lt;/md-slider&gt;
+&lt;/div&gt;
+
+&lt;div layout class=&quot;m-t-20&quot;&gt;
+    &lt;div flex=&quot;10&quot; layout layout-align=&quot;center center&quot;&gt;
+        &lt;span class=&quot;md-body-1&quot;&gt;Disable&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;md-slider flex md-discrete ng-model=&quot;rating5&quot; ng-disabled=&quot;true&quot; ng-readonly=&quot;true&quot; step=&quot;1&quot; min=&quot;1&quot; max=&quot;5&quot; aria-label=&quot;rating&quot;  class=&quot;md-primary&quot;&gt;
+    &lt;/md-slider&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.rating1 = 3;
+$scope.rating2 = 2;
+$scope.rating3 = 4;
+$scope.rating4 = 2;
+$scope.rating5 = 4;
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Rating Slider -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Invert Slider -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Invert Slider</h3>
+
+                <!-- content -->
+                <md-slider-container>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="md-body-1">Regular</span>
+                    </div>
+                    <md-slider ng-model="invert" min="0" max="100" aria-label="regular slider" class="md-primary"></md-slider>
+
+                    <md-input-container>
+                        <input flex type="number" ng-model="invert" aria-label="regular-slider">
+                    </md-input-container>
+                </md-slider-container>
+                <md-slider-container>
+                    <div flex="10" layout layout-align="center center">
+                        <span class="md-body-1">Invert</span>
+                    </div>
+                    <md-slider md-invert ng-model="invert" min="0" max="100" aria-label="invertd slider" class="md-primary"></md-slider>
+
+                    <md-input-container>
+                        <input flex type="number" ng-model="invert" aria-label="invert-slider">
+                    </md-input-container>
+                </md-slider-container>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-slider-container&gt;
+    &lt;div flex=&quot;10&quot; layout layout-align=&quot;center center&quot;&gt;
+        &lt;span class=&quot;md-body-1&quot;&gt;Regular&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;md-slider ng-model=&quot;invert&quot; min=&quot;0&quot; max=&quot;100&quot; aria-label=&quot;regular slider&quot; class=&quot;md-primary&quot;&gt;&lt;/md-slider&gt;
+
+    &lt;md-input-container&gt;
+        &lt;input flex type=&quot;number&quot; ng-model=&quot;invert&quot; aria-label=&quot;regular-slider&quot;&gt;
+    &lt;/md-input-container&gt;
+&lt;/md-slider-container&gt;
+&lt;md-slider-container&gt;
+    &lt;div flex=&quot;10&quot; layout layout-align=&quot;center center&quot;&gt;
+        &lt;span class=&quot;md-body-1&quot;&gt;Invert&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;md-slider md-invert ng-model=&quot;invert&quot; min=&quot;0&quot; max=&quot;100&quot; aria-label=&quot;invertd slider&quot; class=&quot;md-primary&quot;&gt;&lt;/md-slider&gt;
+
+    &lt;md-input-container&gt;
+        &lt;input flex type=&quot;number&quot; ng-model=&quot;invert&quot; aria-label=&quot;invert-slider&quot;&gt;
+    &lt;/md-input-container&gt;
+&lt;/md-slider-container&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.invert = Math.floor(Math.random() * 100);
+
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Invert Slider -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+</md-content>
+<!--End Page content -->

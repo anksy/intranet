@@ -1,0 +1,494 @@
+<!--Design by ConsoleBox-->
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!--Start HTML document-->
+<!DOCTYPE html>
+<html lang="en" data-ng-app="materialApp" data-ng-controller="materialCtrl" data-ng-cloak>
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!--Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Favicon icon-->
+    <link href="./asset/images/favicon.png" type="image/png" rel="icon">
+    <!--Page title-->
+    <title data-ng-bind="themeMeta.title">ConsoleBox</title>
+    <!-- Page description -->
+    <meta name="description" content="{{themeMeta.description}}" />
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!-- stylesheet -->
+
+    <!-- Font (Roboto) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <!-- angular material stylesheet-->
+    <link rel="stylesheet" href="./asset/vendors/node_modules/angular-material/angular-material.min.css">
+    <!-- google material icon -->
+    <link href="./asset/vendors/plugins/material-icons/material-icons.css" type="text/css" rel="stylesheet" />
+    <!-- prism syntx highlighter -->
+    <link href="./asset/vendors/plugins/prismjs/prism.css" type="text/css" rel="stylesheet" />
+    <!-- Animate css -->
+    <link href="./asset/vendors/plugins/animate.css/animate.css" type="text/css" rel="stylesheet" />
+    <!-- Owl Carousel 2 -->
+    <link href="./asset/vendors/plugins/OwlCarousel2/assets/owl.carousel.min.css" type="text/css" rel="stylesheet" />
+    <!-- Owl Carousel 2 theme -->
+    <link href="./asset/vendors/plugins/OwlCarousel2/assets/owl.theme.default.min.css" type="text/css" rel="stylesheet" />
+    <!-- SweetAlert -->
+    <link href="./asset/vendors/plugins/sweetalert/sweetalert.css" type="text/css" rel="stylesheet" />
+    <!-- quill test editor -->
+    <link href="./asset/vendors/plugins/quill/quill.snow.css" type="text/css" rel="stylesheet" />
+    <!-- Angular Material Fileinput -->
+    <link href="./asset/vendors/plugins/fileinput/lf-ng-md-file-input.min.css" type="text/css" rel="stylesheet" />
+    <!-- Data Table -->
+    <link href="./asset/vendors/plugins/md-data-table/dist/md-data-table.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- app stylesheet -->
+    <link rel="stylesheet" href="./asset/css/app.css">
+    <!-- app Grid stylesheet -->
+    <link rel="stylesheet" href="./asset/css/grid.css">
+    <!-- app theme stylesheet -->
+    <link rel="stylesheet" href="./asset/css/theme.css">
+
+    <!-- end stylesheet -->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+</head>
+<!-- End head-->
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!--body-->
+
+<body>
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!--Pre Page Loader-->
+    <div id="pre-page-loader">
+        <md-progress-circular md-mode="indeterminate" class="loader-center"></md-progress-circular>
+    </div>
+
+    <!-- End Pre Page Loader-->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!--Page wrapper-->
+    <div class="theme-page-wrapper">
+        <!-- //////////////////////////////////////////////////////////////////////////// -->
+        <!--Control page-->
+        <div id="theme-page-control" data-ng-class="[themeOptions, mdSidebar,collapsedsidebarClass]">
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+            <!--Header-->
+            <md-toolbar class="theme-toolbar md-primary md-whiteframe-6dp">
+                <a class="theme-logo hide-xs hide-sm" href="#">ConsoleBox</a>
+                <div class="md-toolbar-tools">
+                    <ul class="theme-toolbar-left">
+                        <li class="hide-gt-sm"><a data-ng-click="showHideLeftSidebar()" class="horz-menu"><i class="material-icons">menu</i></a></li>
+                        <li>
+                            <md-menu>
+                                <a aria-label="Open apps menu" data-ng-click="$mdMenu.open($event)" data-md-menu-origin class="horz-menu"><i class="material-icons">notifications_active</i><span class="theme-pulse noti-pulse"></span>
+                                <md-tooltip md-direction="bottom"  class="tooltip-gt-md">Notifications</md-tooltip></a>
+                                <md-menu-content class="theme-noti-box">
+                                    <md-menu-item class="theme-noti-list">
+                                        <div class="theme-noti-list-title center-align">ConsoleBox Notifications</div>
+                                    </md-menu-item>
+
+                                    <md-menu-item class="theme-noti-list md-whiteframe-1dp">
+                                        <div class="theme-noti-list-item">
+                                            <div class="noti-list-item-title">
+                                                Try new ConsoleBox layout
+                                            </div>
+                                            <div class="noti-list-item-desc">
+                                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                                            </div>
+                                            <div class="noti-list-item-action">
+                                                <a data-ng-click="$mdMenu.close()" class="md-button" data-md-ink-ripple="#ff0000">Dismiss</a>
+                                                <a data-ng-click="$mdMenu.close()" class="md-button" data-md-ink-ripple="#000">find out more</a>
+                                            </div>
+                                        </div>
+                                    </md-menu-item>
+
+                                    <md-menu-item class="theme-noti-list md-whiteframe-1dp">
+                                        <div class="theme-noti-list-item">
+                                            <div class="noti-list-item-title">
+                                                Try new ConsoleBox pages
+                                            </div>
+                                            <div class="noti-list-item-desc">
+                                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                                            </div>
+                                            <div class="noti-list-item-action">
+                                                <a data-ng-click="$mdMenu.close()" class="md-button" data-md-ink-ripple="#ff0000">Dismiss</a>
+                                                <a data-ng-click="$mdMenu.close()" class="md-button" data-md-ink-ripple="#000">find out more</a>
+                                            </div>
+                                        </div>
+                                    </md-menu-item>
+                                    <md-menu-item class="theme-noti-list md-whiteframe-1dp">
+                                        <div class="theme-noti-list-item">
+                                            <div class="noti-list-item-title">
+                                                Try new ConsoleBox color layout
+                                            </div>
+                                            <div class="noti-list-item-desc">
+                                                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                                            </div>
+                                            <div class="noti-list-item-action">
+                                                <a data-ng-click="$mdMenu.close()" class="md-button" data-md-ink-ripple="#ff0000">Dismiss</a>
+                                                <a data-ng-click="$mdMenu.close()" class="md-button" data-md-ink-ripple="#000">find out more</a>
+                                            </div>
+                                        </div>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                        </li>
+
+                        <li>
+                            <md-menu>
+                                <a aria-label="Open apps menu" data-ng-click="$mdMenu.open($event)" data-md-menu-origin class="horz-menu"><i class="material-icons">apps</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Apps</md-tooltip></a>
+                                <md-menu-content width="5">
+                                    <md-menu-item class="theme-apps-item">
+                                        <a data-ng-click="$mdMenu.close()" class="center-align md-button"><i class="material-icons">polymer</i><span>Polymer</span></a>
+
+                                        <a data-ng-click="$mdMenu.close()" class="center-align  md-button"><i class="material-icons">import_contacts</i><span>Contact</span></a>
+                                    </md-menu-item>
+
+                                    <md-menu-item class="theme-apps-item">
+                                        <a data-ng-click="$mdMenu.close()" class="center-align md-button"><i class="material-icons">email</i><span>Email</span></a>
+
+                                        <a data-ng-click="$mdMenu.close()" class="center-align md-button"><i class="material-icons">ondemand_video</i><span>Video</span></a>
+                                    </md-menu-item>
+                                    <md-menu-item class="theme-apps-item">
+                                        <a data-ng-click="$mdMenu.close()" class="center-align md-button"><i class="material-icons">bug_report</i><span>Bug Report</span></a>
+
+                                        <a data-ng-click="$mdMenu.close()" class="center-align md-button"><i class="material-icons">voicemail</i><span>Voicemail</span></a>
+                                    </md-menu-item>
+
+                                    <md-menu-item class="theme-apps-item">
+                                        <a data-ng-click="$mdMenu.close()" class="center-align md-button"><i class="material-icons">account_balance</i><span>Balance</span></a>
+
+                                        <a data-ng-click="$mdMenu.close()" class="center-align md-button"><i class="material-icons">alarm</i><span>Alarm</span></a>
+                                    </md-menu-item>
+
+                                </md-menu-content>
+                            </md-menu>
+                        </li>
+
+                    </ul>
+                    <ul class="theme-toolbar-right">
+                        <li><a data-ng-click="showHideSearch()" class="horz-menu"><i class="material-icons">search</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">{{searchTooltipText}} Search</md-tooltip></a></li>
+                        <li>
+                            <md-menu>
+                                <a aria-label="Open user account" data-ng-click="$mdMenu.open($event)" data-md-menu-origin class="horz-menu"><i class="material-icons">account_circle</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Your Account</md-tooltip></a>
+                                <md-menu-content width="4">
+                                    <md-menu-item>
+                                        <md-button>
+                                            <a class="center-vertical no-underline">
+                                                <md-icon>perm_identity</md-icon><span> My Profile</span></a>
+                                        </md-button>
+                                    </md-menu-item>
+                                    <md-menu-item>
+                                        <md-button>
+                                            <a class="center-vertical no-underline">
+                                                <md-icon>settings</md-icon><span> Page Customizer</span></a>
+                                        </md-button>
+                                    </md-menu-item>
+                                    <md-menu-divider></md-menu-divider>
+                                    <md-menu-item>
+                                        <md-button>
+                                            <a class="center-vertical no-underline" href="frontend/#/lock">
+                                                <md-icon>lock</md-icon><span> Lock</span></a>
+                                        </md-button>
+                                    </md-menu-item>
+                                    <md-menu-item>
+                                        <md-button>
+                                            <a class="center-vertical no-underline" href="/#/login">
+                                                <md-icon>power_settings_new</md-icon><span> Logout</span></a>
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                        </li>
+                        <li class="hide-xs"><a data-ng-click="fullscreenPage()" class="horz-menu"><i class="material-icons">fullscreen</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Full Screen</md-tooltip></a></li>
+                        <li><a data-ng-click="showHideRightSidebar()" class="horz-menu"><i class="material-icons">settings_applications</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">App Settings</md-tooltip></a></li>
+                    </ul>
+                </div>
+            </md-toolbar>
+            <!--End Header-->
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+            <!--Left sidebar-->
+
+            <nav>
+                <!-- left sidebar overlay for mobile -->
+                <div class="theme-left-sidebar-overlay" data-ng-click="showHideLeftSidebar()" data-md-swipe-left="showHideLeftSidebar()">
+                </div>
+                <!-- sidebar box -->
+                <div class="theme-left-sidebar md-whiteframe-6dp">
+                    <!-- Theme logo only show in mobile -->
+                    <div class="theme-mobile-logo-container hide-gt-sm" data-md-colors=" {background: 'indigo'} ">
+                        <a class="theme-mobile-logo" href="#">ConsoleBox</a>
+                    </div>
+                    <md-divider></md-divider>
+                    <!-- end theme logo only show in mobile -->
+
+                    <!-- sidebar body -->
+
+                    <div class="theme-left-sidebar-body">
+                        <!-- plan -->
+                        <div class="subscription-plan">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="center-align">
+                                            <span class="current-plan">Business</span>
+                                            <span class="price">&#36;49/month</span>
+
+                                        </td>
+                                        <td class="center-align">
+                                            <md-button class="md-primary upgrade-plan">Buy Now</md-button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <md-divider></md-divider>
+                        <!-- end plan -->
+                        <!-- menu -->
+                        <ul class="theme-left-sidebar-menu">
+
+                            <li class="navigation">Menu</li>
+
+                            <li><a data-ui-sref="/" class="side-menu-label active" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">dashboard</i><span>Dashboard</span><md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Dashboard</md-tooltip></a></li>
+
+                            <li><a data-ui-sref="buttons" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">build</i><span>Material UI</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Material UI</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="typography" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">library_books</i><span>CSS</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">CSS</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="cards" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">add_to_photos</i><span>Advanced UI</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Advanced UI</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="bottomSheet" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">extension</i><span>Extra UI</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Extra UI</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="echarts" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">insert_chart</i><span>Charts</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Charts</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="form-layouts" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">message</i><span>Form</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Form</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="autocomplete" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">forum</i><span>Forms Elements</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Forms Elements</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="basic-table" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">border_all</i><span>Tables</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Tables</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="grid" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">grid_on</i><span>Layout</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Layout</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="color" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">format_color_fill</i><span>Colors</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Colors</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="helpers" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">live_help</i><span>Helpers Class</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Helpers Class</md-tooltip></a>
+                            </li>
+
+                            <li><a class="side-menu-label menu-has-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}"><i class="material-icons left-icon">terrain</i><i class="material-icons right-icon">keyboard_arrow_down</i><span>Pages</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Pages</md-tooltip></a>
+                                <ul class="side-menu-label-body">
+                                    <li><a data-ui-sref="helpers" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">live_help</i><span>Helpers Class</span>
+                                        <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Helpers Class</md-tooltip></a>
+                                    </li>
+
+                                    <li><a data-ui-sref="login" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">Logins</a></li>
+
+                                    <li><a href="frontend/#/signup" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">Signup</a></li>
+
+                                    <li><a href="frontend/#/reset" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">Reset</a></li>
+
+                                    <li><a href="frontend/#/lock" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">Lock</a></li>
+
+                                    <li><a href="frontend/#/change-password" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">Change Password</a></li>
+
+                                    <li><a href="frontend/#/contactus" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">Contactus</a></li>
+
+                                    <li><a href="frontend/#/404" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">404</a></li>
+
+                                    <li><a href="frontend/#/500" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">500</a></li>
+
+                                    <li><a data-ui-sref="404-admin" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active1">Dashboard 400</a></li>
+
+                                    <li><a data-ui-sref="500-admin" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active1">Dashboard 500</a></li>
+
+                                    <li><a data-ui-sref="blank" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active1">Blank Page</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- end menu -->
+                    </div>
+                    <!-- end sidebar body -->
+
+
+                    <!-- left sidebar footer -->
+                    <md-divider></md-divider>
+                    <div class="theme-left-sidebar-footer hide-xs hide-sm">
+                        <a class="collapsed-sidebar" data-ng-click="collapsedLeftSidebar()"><i class="right material-icons">keyboard_arrow_left</i><md-tooltip md-direction="top" class="tooltip-gt-md">{{collapsedTooltipText}} Sidebar</md-tooltip></a>
+                    </div>
+                    <!-- end left sidebar footer -->
+                </div>
+                <!-- end sidebar box -->
+            </nav>
+            <!--End left sidebar-->
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+            <!--Search Box-->
+            <div class="theme-search md-whiteframe-1dp theme-search-hide" data-ng-class="showHideSearchClass">
+                <input type="text" class="theme-search-input" placeholder="Search available pages ...">
+            </div>
+            <!--End Search Box-->
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+            <!--Right sidebar-->
+            <nav>
+                <!-- right sidebar body -->
+                <div class="theme-right-sidebar md-whiteframe-6dp theme-right-sidebar-hide" data-ng-class="showHideRightSidebarClass">
+                    <!-- right sidebar close button -->
+                    <div class="theme-right-sidebar-close" data-ng-click="showHideRightSidebar()">
+                        <i class="material-icons">clear</i>
+                        <md-tooltip md-direction="left" class="tooltip-gt-md">Close Settings</md-tooltip>
+                    </div>
+                    <!--end right sidebar close button -->
+                    <!-- right sidebar body -->
+                    <div class="theme-right-sidebar-body">
+                        <!-- layout options -->
+                        <h4>Layout Options</h4>
+                        <md-radio-group ng-model="layoutOptions.option1" class="layout-options-box" ng-change="layoutOptionsConfigure()">
+                            <md-radio-button value="1" class="md-primary md-checked">Fixed Header and Sidebar</md-radio-button>
+                            <md-radio-button value="2" class="md-primary">Fixed Header Unfixed Sidebar</md-radio-button>
+                            <md-radio-button value="3" class="md-primary">Unfixed Header and Sidebar</md-radio-button>
+                            <md-radio-button value="4" class="md-primary md-checked">Fixed Header and Sidebar(Boxed)</md-radio-button>
+                            <md-radio-button value="5" class="md-primary">Fixed Header Unfixed Sidebar(Boxed)</md-radio-button>
+                            <md-radio-button value="6" class="md-primary">Unfixed Header and Sidebar(Boxed)</md-radio-button>
+                        </md-radio-group>
+                        <!-- end layout options -->
+                    </div>
+                    <!-- end right sidebar body -->
+                </div>
+                <!--end right sidebar body -->
+            </nav>
+            <!--End Right sidebar-->
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+            <!--Page Body-->
+            <main class="theme-page-body">
+
+                <!-- page content  -->
+                <ui-view></ui-view>
+                <!--end page content  -->
+            </main>
+            <!--End page body-->
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+            <!--Footer-->
+            <md-divider></md-divider>
+            <footer class="page-footer">
+
+                <div class="footer-copyright">
+                    <div class="left copyright-text">&copy; ConsoleBox</div>
+                    <div class="right scroll-top-icon"><a data-ng-click="scrollToTop()"><i class="material-icons">arrow_upward</i><md-tooltip md-direction="top" class="tooltip-gt-md">Back To Top</md-tooltip></a></div>
+                </div>
+            </footer>
+            <!--End footer-->
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+        </div>
+        <!--End page control-->
+        <!-- //////////////////////////////////////////////////////////////////////////// -->
+    </div>
+    <!--End page wrapper-->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!--  Scripts-->
+
+    <!-- jquery -->
+    <script src="./asset/vendors/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- angularjs (Angular Material Dependencies)-->
+    <script src="./asset/vendors/plugins/angular-1.5.11/angular.min.js"></script>
+
+    <!-- Angular Material Dependencies -->
+    <script src="./asset/vendors/plugins/angular-1.5.11/angular-animate.min.js"></script>
+    <script src="./asset/vendors/plugins/angular-1.5.11/angular-aria.min.js"></script>
+    <script src="./asset/vendors/plugins/angular-1.5.11/angular-route.min.js"></script>
+    <script src="./asset/vendors/plugins/angular-1.5.11/angular-messages.min.js"></script>
+    <!-- ui router -->
+    <script src="./asset/vendors/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- ui router state events  -->
+    <script src="./asset/vendors/node_modules/ng-ui-router-state-events/dist/stateEvents.min.js"></script>
+    <!-- angular material script -->
+    <script src="./asset/vendors/node_modules/angular-material/angular-material.min.js"></script>
+    <!-- prism syntx highlighter -->
+    <script src="./asset/vendors/plugins/prismjs/prism.js"></script>
+    <!-- Pagination angularjs -->
+    <script src="./asset/vendors/plugins/paging/build/dist.min.js"></script>
+    <!-- Owl Carousel 2 -->
+    <script src="./asset/vendors/plugins/OwlCarousel2/owl.carousel.min.js"></script>
+    <!-- SweetAlert -->
+    <script src="./asset/vendors/plugins/sweetalert/sweetalert.min.js"></script>
+    <!-- echarts -->
+    <script src="./asset/vendors/plugins/echarts/echarts.min.js"></script>
+    <!-- echarts angularjs wrapper -->
+    <script src="./asset/vendors/plugins/echarts/ngecharts.js"></script>
+    <!-- echarts map extension -->
+    <script src="./asset/vendors/plugins/echarts/map-world.js"></script>
+    <!-- Google chart -->
+    <script src="./asset/vendors/node_modules/angular-google-chart/ng-google-chart.min.js"></script>
+    <!-- chartjs -->
+    <script src="./asset/vendors/plugins/chart.js/Chart.min.js"></script>
+    <script src="./asset/vendors/plugins/angular-chart.js/angular-chart.min.js"></script>
+    <!-- Form Validations -->
+    <script src="./asset/vendors/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="./asset/vendors/node_modules/jpkleemans-angular-validate/dist/angular-validate.min.js"></script>
+    <!-- Form Mask -->
+    <script src="./asset/vendors/plugins/cleave.js/cleave-angular.min.js"></script>
+    <!-- quill test editor -->
+    <script src="./asset/vendors/plugins/quill/quill.min.js"></script>
+    <script src="./asset/vendors/plugins/quill/ng-quill.js"></script>
+    <!-- Angular Material Fileinput -->
+    <script src="./asset/vendors/plugins/fileinput/lf-ng-md-file-input.min.js"></script>
+    <!-- Data Table -->
+    <script src="./asset/vendors/plugins/md-data-table/dist/md-data-table.min.js"></script>
+
+    <!-- app core js -->
+    <script src="./asset/js/app.js"></script>
+    <!-- app controller -->
+    <script src="./asset/js/controller.js"></script>
+    <!-- app module  -->
+    <script src="./asset/js/module.js"></script>
+
+    <!--End scripts-->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+    <!--End body-->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+</html>
+<!--End HTML document-->
+<!-- //////////////////////////////////////////////////////////////////////////// -->

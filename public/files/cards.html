@@ -1,0 +1,401 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Advanced UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/card" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="cards" ui-sref="cards" md-active="true">
+            </md-tab>
+            <md-tab label="carousel" ui-sref="carousel">
+            </md-tab>
+            <md-tab label="dialog" ui-sref="dialog">
+            </md-tab>
+            <md-tab label="slider" ui-sref="slider">
+            </md-tab>
+            <md-tab label="sweetAlert" ui-sref="sweetAlert">
+            </md-tab>
+            <md-tab label="highlight" ui-sref="highlight">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Cards</h2>
+        <!-- page desciption -->
+        <p>Cards are a convenient means of displaying content composed of different types of objects. They’re also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.</p>
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage-->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+                <!-- content -->
+                <div class="row">
+                    <!-- Card with image extra Large -->
+                    <div class="col l6 s12">
+                        <md-card md-theme="dark-indigo">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Card with image</span>
+                                    <span class="md-subhead">Extra Large</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-content layout="row" layout-align="space-between">
+                                <div class="md-media-xl card-media">
+                                    <img src="../../asset/images/nature.jpg" alt="nature">
+                                </div>
+
+                                <md-card-actions layout="column">
+                                    <md-button class="md-icon-button" aria-label="Favorite">
+                                        <i class="material-icons">favorite</i>
+                                    </md-button>
+                                    <md-button class="md-icon-button" aria-label="Settings">
+                                        <i class="material-icons">menu</i>
+                                    </md-button>
+                                    <md-button class="md-icon-button" aria-label="Share">
+                                        <i class="material-icons">share</i>
+                                    </md-button>
+                                </md-card-actions>
+                            </md-card-content>
+                        </md-card>
+                    </div>
+                    <!-- end Card with image extra Large -->
+
+                    <!-- Card with image Large -->
+                    <div class="col l6 s12">
+                        <md-card md-theme="dark-indigo">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Card with image</span>
+                                    <span class="md-subhead">Large</span>
+                                </md-card-title-text>
+                                <md-card-title-media>
+                                    <div class="md-media-lg card-media">
+                                        <img src="../../asset/images/nature.jpg" alt="nature">
+                                    </div>
+                                </md-card-title-media>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="end center">
+                                <md-button>Action 1</md-button>
+                                <md-button>Action 2</md-button>
+                            </md-card-actions>
+                        </md-card>
+                    </div>
+                    <!-- end Card with image Large -->
+
+                    <!--  Card with image medium -->
+                    <div class="col l6 s12">
+                        <md-card md-theme="dark-indigo">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Card with image</span>
+                                    <span class="md-subhead">Medium</span>
+                                </md-card-title-text>
+                                <md-card-title-media>
+                                    <div class="md-media-md card-media">
+                                        <img src="../../asset/images/nature.jpg" alt="nature">
+                                    </div>
+                                </md-card-title-media>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="end center">
+                                <md-button>Action 1</md-button>
+                                <md-button>Action 2</md-button>
+                            </md-card-actions>
+                        </md-card>
+                    </div>
+                    <!-- end Card with image medium -->
+
+                    <!--  Card with image small -->
+                    <div class="col l6 s12">
+                        <md-card md-theme="dark-indigo">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Card with image</span>
+                                    <span class="md-subhead">Small</span>
+                                </md-card-title-text>
+                                <md-card-title-media>
+                                    <div class="md-media-sm card-media">
+                                        <img src="../../asset/images/nature.jpg" alt="nature">
+                                    </div>
+                                </md-card-title-media>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="end center">
+                                <md-button>Action 1</md-button>
+                                <md-button>Action 2</md-button>
+                            </md-card-actions>
+                        </md-card>
+                    </div>
+                    <!-- end Card with image small -->
+
+                </div>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Card Action Buttons-->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Card Action Buttons</h3>
+                <!-- content -->
+                <div class="row">
+                    <!-- Action buttons -->
+                    <div class="col l6 s12">
+                        <md-card>
+                            <img src="../../asset/images/nature1.jpg" class="md-card-image" alt="nature">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Action buttons</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-content>
+                                <p>
+                                    The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                </p>
+                            </md-card-content>
+                            <md-card-actions layout="row" layout-align="end center">
+                                <md-button>Action 1</md-button>
+                                <md-button>Action 2</md-button>
+                            </md-card-actions>
+                        </md-card>
+                    </div>
+                    <!-- end Action buttons -->
+
+                    <!-- Icon action buttons -->
+                    <div class="col l6 s12">
+                        <md-card>
+                            <img src="../../asset/images/nature1.jpg" class="md-card-image" alt="nature">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Icon action buttons</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-content>
+                                <p>
+                                    The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                </p>
+                            </md-card-content>
+                            <md-card-actions layout="row" layout-align="end center">
+                                <md-button class="md-icon-button" aria-label="Favorite">
+                                    <i class="material-icons">favorite</i>
+                                </md-button>
+                                <md-button class="md-icon-button" aria-label="Settings">
+                                    <i class="material-icons">menu</i>
+                                </md-button>
+                                <md-button class="md-icon-button" aria-label="Share">
+                                    <i class="material-icons">share</i>
+                                </md-button>
+                            </md-card-actions>
+                        </md-card>
+                    </div>
+                    <!-- end Icon action buttons -->
+
+                    <!--  Vertical action buttons -->
+                    <div class="col l6 s12">
+                        <md-card>
+                            <img src="../../asset/images/nature1.jpg" class="md-card-image" alt="nature">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Vertical action buttons</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-content>
+                                <p>
+                                    The titles of Washed Out's breakthrough song and the first single Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                </p>
+                            </md-card-content>
+                            <md-card-actions layout="column" layout-align="start">
+                                <md-button>Action 1</md-button>
+                                <md-button>Action 2</md-button>
+                            </md-card-actions>
+                        </md-card>
+                    </div>
+                    <!-- end Vertical action buttons -->
+
+                    <!--  Card with header -->
+                    <div class="col l6 s12">
+                        <md-card>
+                            <md-card-header>
+                                <md-card-avatar>
+                                    <img src="../../asset/images/angular-logo.svg" />
+                                </md-card-avatar>
+                                <md-card-header-text>
+                                    <span class="md-title">AngularJS</span>
+                                    <span class="md-subhead">Material</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                            <img src="../../asset/images/nature1.jpg" class="md-card-image" alt="nature">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">Card header</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-content>
+                                <p>
+                                    The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                </p>
+                            </md-card-content>
+                        </md-card>
+                    </div>
+                    <!-- end Card with header -->
+
+                    <!--  In-card mixed actions -->
+                    <div class="col l6 s12">
+                        <md-card>
+                            <img src="../../asset/images/nature1.jpg" class="md-card-image" alt="nature">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">In-card mixed actions</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="start center">
+                                <div flex="100">
+                                    <md-card-icon-actions>
+                                        <md-button class="md-icon-button" aria-label="Favorite">
+                                            <i class="material-icons">favorite</i>
+                                        </md-button>
+
+                                        <md-button class="md-icon-button" aria-label="Share">
+                                            <i class="material-icons">share</i>
+                                        </md-button>
+                                    </md-card-icon-actions>
+                                    <md-button>Action 1</md-button>
+                                    <md-button>Action 2</md-button>
+                                </div>
+                            </md-card-actions>
+                            <md-card-content>
+                                <p>
+                                    The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                </p>
+                            </md-card-content>
+                        </md-card>
+                    </div>
+                    <!-- end In-card mixed actions -->
+
+                    <!-- In-card mixed actions -->
+                    <div class="col l6 s12">
+                        <md-card>
+                            <md-card-header>
+                                <md-card-avatar>
+                                    <img class="md-user-avatar" src="../../asset/images/user3.jpg" />
+                                </md-card-avatar>
+                                <md-card-header-text>
+                                    <span class="md-title">User</span>
+                                    <span class="md-subhead">subhead</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                            <img src="../../asset/images/nature1.jpg" class="md-card-image" alt="nature">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">In-card mixed actions</span>
+                                    <span class="md-subhead">Reversed</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="start center">
+                                <md-button>Action 1</md-button>
+                                <md-button>Action 2</md-button>
+                                <md-card-icon-actions>
+                                    <md-button class="md-icon-button" aria-label="toggle">
+                                        <i class="material-icons">keyboard_arrow_up</i>
+                                    </md-button>
+                                </md-card-icon-actions>
+                            </md-card-actions>
+                            <md-card-content>
+                                <p>
+                                    The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                </p>
+                            </md-card-content>
+                        </md-card>
+                    </div>
+                    <!-- end In-card mixed actions -->
+
+                    <!--  In-card actions -->
+                    <div class="col l6 s12">
+                        <md-card>
+                            <md-card-header>
+                                <md-card-avatar>
+                                    <i class="material-icons md-avatar-icon">menu</i>
+                                </md-card-avatar>
+                                <md-card-header-text>
+                                    <span class="md-title">Title</span>
+                                    <span class="md-subhead">subhead</span>
+                                </md-card-header-text>
+                            </md-card-header>
+                            <img src="../../asset/images/nature1.jpg" class="md-card-image" alt="nature">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">In-card actions</span>
+                                    <span class="md-subhead">Description</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-actions layout="row" layout-align="start center">
+                                <md-button>Action 1</md-button>
+                                <md-button>Action 2</md-button>
+                            </md-card-actions>
+                            <md-card-content>
+                                <p>
+                                    The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                </p>
+                            </md-card-content>
+                        </md-card>
+                    </div>
+                    <!-- end In-card actions -->
+
+                    <!--  Card with no content -->
+                    <div class="col l6 s12">
+                        <md-card>
+                            <img src="../../asset/images/nature1.jpg" class="md-card-image" alt="nature">
+                            <md-card-actions layout="row" layout-align="end center">
+                                <md-button class="md-icon-button" aria-label="Favorite">
+                                    <i class="material-icons">favorite</i>
+                                </md-button>
+                                <md-button class="md-icon-button" aria-label="Settings">
+                                    <i class="material-icons">menu</i>
+                                </md-button>
+                                <md-button class="md-icon-button" aria-label="Share">
+                                    <i class="material-icons">share</i>
+                                </md-button>
+                            </md-card-actions>
+                        </md-card>
+                    </div>
+                    <!-- end Card with no content -->
+
+                </div>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Card Action Buttons -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

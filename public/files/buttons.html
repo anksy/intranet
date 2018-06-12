@@ -1,0 +1,271 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <h1>Material UI</h1>
+        <a href="https://material.angularjs.org/latest/demo/button" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="buttons" ui-sref="buttons" md-active="true">
+            </md-tab>
+            <md-tab label="breadcrumbs" ui-sref="breadcrumbs">
+            </md-tab>
+            <md-tab label="collections" ui-sref="collections">
+            </md-tab>
+            <md-tab label="collapsibles" ui-sref="collapsibles">
+            </md-tab>
+            <md-tab label="menu" ui-sref="menu">
+            </md-tab>
+            <md-tab label="tabs" ui-sref="tabs">
+            </md-tab>
+            <md-tab label="pagination" ui-sref="pagination">
+            </md-tab>
+            <md-tab label="progress circular" ui-sref="progressCircular">
+            </md-tab>
+            <md-tab label="progress linear" ui-sref="progressLinear">
+            </md-tab>
+            <md-tab label="toasts" ui-sref="toasts">
+            </md-tab>
+            <md-tab label="tooltip" ui-sref="tooltip">
+            </md-tab>
+            <md-tab label="ripple" ui-sref="ripple">
+            </md-tab>
+        </md-tabs>
+    </div>
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page Title -->
+        <h2 class="theme-title">Buttons</h2>
+        <!-- description -->
+        <p><code class="language-markup">&lt;md-button&gt;</code> is a button directive with optional ink ripples (default enabled).</p>
+
+        <!-- Flat Button -->
+        <div layout="row">
+            <div flex="100">
+                <!-- Title -->
+                <h3 class="theme-title">Flat Button</h3>
+                <!-- content -->
+                <md-button>Button</md-button>
+                <md-button class="md-primary">Primary</md-button>
+                <md-button md-no-ink md-colors="{color: 'green'}">Green (md-noink)</md-button>
+                <md-button ng-disabled="true">Disabled</md-button>
+                <md-button class="md-warn">Warn</md-button>
+                <md-button md-colors="{color: 'teal'}">custom teal</md-button>
+                <md-button md-colors="{color: 'purple'}">Button<i class="material-icons icon-right">backup</i></md-button>
+                <md-button md-colors="{color: 'red'}"><i class="material-icons icon-left">cloud</i>Button</md-button>
+
+                <md-menu>
+                    <md-button md-colors="{color: 'brown'}" aria-label="Open button dropdown" ng-click="$mdMenu.open($event)" md-menu-origin>dropdown<i class="material-icons icon-right">arrow_drop_down</i></md-button>
+
+                    <md-menu-content width="4">
+                        <md-menu-item>
+                            <md-button>
+                                Menu One
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>
+                                Menu Two
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                            <md-button>
+                                Menu Three
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <!-- end content -->
+            </div>
+        </div>
+        <!--End Flat Button -->
+
+        <!-- Raised Button -->
+        <div layout="row">
+            <div flex="100">
+                <!-- Title -->
+                <h3 class="theme-title">Raised Button</h3>
+                <!-- content -->
+
+                <md-button class="md-raised">Button</md-button>
+                <md-button class="md-raised md-primary">Primary</md-button>
+                <md-button class="md-raised" md-no-ink md-colors="{background: 'purple'}">purple (md-noink)</md-button>
+                <md-button class="md-raised" ng-disabled="true">Disabled</md-button>
+                <md-button class="md-warn md-raised">Warn</md-button>
+                <md-button class="md-raised" md-colors="{background: 'blue'}">custom blue</md-button>
+                <md-button md-colors="{color: 'purple'}" class="md-raised">Button<i class="material-icons icon-right">backup</i></md-button>
+                <md-button md-colors="{color: 'red'}" class="md-raised"><i class="material-icons icon-left">cloud</i>Button</md-button>
+
+                <md-menu>
+                    <md-button md-colors="{background: 'brown'}" class="md-raised" aria-label="Open button dropdown" ng-click="$mdMenu.open($event)" md-menu-origin>dropdown<i class="material-icons icon-right">arrow_drop_down</i></md-button>
+
+                    <md-menu-content width="4">
+                        <md-menu-item>
+                            <md-button>
+                                Menu One
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>
+                                Menu Two
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                            <md-button>
+                                Menu Three
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- End Raised Button -->
+
+        <!-- Round Raised Button -->
+        <div layout="row">
+            <div flex="100">
+                <!-- Title -->
+                <h3 class="theme-title">Round Raised Button</h3>
+                <!-- content -->
+
+                <md-button class="md-raised btn-rounded">Button</md-button>
+                <md-button class="md-raised md-primary btn-rounded">Primary</md-button>
+                <md-button md-colors="{color: 'purple'}" class="md-raised btn-rounded">Button<i class="material-icons icon-right">backup</i></md-button>
+                <md-button md-colors="{color: 'red'}" class="md-raised btn-rounded"><i class="material-icons icon-left">cloud</i>Button</md-button>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- end Round Raised Button -->
+
+        <!-- Large Raised Button -->
+        <div layout="row">
+            <div flex="100">
+                <!-- Title -->
+                <h3 class="theme-title">Large Raised Button</h3>
+                <!-- content -->
+                <md-button class="md-raised btn-large">Button</md-button>
+                <md-button class="md-raised md-warn btn-large">Primary</md-button>
+                <md-button md-colors="{color: 'purple'}" class="md-raised btn-large">Button<i class="material-icons icon-right">backup</i></md-button>
+                <md-button md-colors="{color: 'red'}" class="md-raised btn-large"><i class="material-icons icon-left">cloud</i>Button</md-button>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- end Large Raised Button -->
+
+        <!-- FAB Button -->
+        <div layout="row">
+            <div flex="100">
+                <!-- Title -->
+                <h3 class="theme-title">FAB Button</h3>
+                <!-- content -->
+                <md-button class="md-fab md-warn" aria-label="Eat cake">
+                    <i class="material-icons">cake</i>
+                </md-button>
+
+                <md-button class="md-fab md-primary" aria-label="Use Android">
+                    <i class="material-icons">android</i>
+                </md-button>
+
+                <md-button class="md-fab" ng-disabled="true" aria-label="Comment">
+                    <i class="material-icons">comment</i>
+                </md-button>
+
+                <md-button class="md-fab md-mini" aria-label="Eat cake" md-colors="{background: 'green'}">
+                    <i class="material-icons">cake</i>
+                </md-button>
+
+                <md-button class="md-fab md-mini md-primary" aria-label="Use Android">
+                    <i class="material-icons md-yellow">android</i>
+                </md-button>
+                <md-button class="md-fab md-mini" ng-disabled="true" aria-label="Comment">
+                    <i class="material-icons">comment</i>
+                </md-button>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- End FAB Button -->
+
+        <!-- Link on Button -->
+        <div layout="row">
+            <div flex="100">
+                <!-- Title -->
+                <h3 class="theme-title">Link on Button</h3>
+                <!-- content -->
+                <md-button ng-href="https://material.angularjs.org/latest/demo/button" target="_blank">Button</md-button>
+                <md-button ng-href="https://material.angularjs.org/latest/demo/button" target="_blank" class="md-primary">Primary</md-button>
+                <md-button ng-href="https://material.angularjs.org/latest/demo/button" target="_blank" class="md-warn">Warn</md-button>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- End Link on Button -->
+
+        <!-- Icon Button -->
+        <div layout="row">
+            <div flex="100">
+                <!-- Title -->
+                <h3 class="theme-title">Icon Button</h3>
+
+                <!-- content -->
+                <md-button class="md-icon-button md-primary" aria-label="Settings">
+                    <i class="material-icons">menu</i>
+                </md-button>
+                <md-button class="md-icon-button md-accent" aria-label="Favorite">
+                    <i class="material-icons">favorite</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                    <i class="material-icons" md-colors="{color: 'red'}">more_vert</i>
+                </md-button>
+                <md-button href="http://google.com" title="Launch Google.com in new window" target="_blank" aria-label="Google.com" class="md-icon-button launch">
+                    <i class="material-icons">launch</i>
+                </md-button>
+                <!-- end content -->
+
+            </div>
+        </div>
+        <!-- end Icon Button -->
+
+        <!-- Block Button -->
+        <div layout="row">
+            <div flex="100">
+                <!-- Title -->
+                <h3 class="theme-title">Block Button</h3>
+                <!-- content -->
+                <div layout="row" layout-xs="row">
+                    <div flex="30" flex-xs="100">
+                        <md-button class="md-raised btn-block">Button</md-button>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="row">
+                    <div flex="30" flex-xs="100">
+                        <md-button class="md-raised md-primary btn-rounded btn-block">Primary</md-button>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="row">
+                    <div flex="30" flex-xs="100">
+                        <md-button md-colors="{background: 'purple'}" class="md-raised btn-large btn-block">Button<i class="material-icons icon-right">backup</i></md-button>
+                    </div>
+                </div>
+                <div layout="row" layout-xs="row">
+                    <div flex="30" flex-xs="100">
+                        <md-button md-colors="{background: 'red'}" class="md-raised btn-block"><i class="material-icons icon-left">cloud</i>Button Warn</md-button>
+                    </div>
+                </div>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- end Block Button -->
+
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

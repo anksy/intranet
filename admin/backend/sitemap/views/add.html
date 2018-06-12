@@ -1,0 +1,66 @@
+<div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="portlet light bordered">
+                                <material-loader ng-show="loader"></material-loader>
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-star font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">Add New Link</span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <md-content class="md-padding">
+                                        <div layout="column">
+                                            <md-content layout-padding>
+                    
+                                              <form name="addForm" novalidate ng-submit="addForm.$valid && add()">
+
+
+                                             
+                                                  <md-input-container class="md-block">
+                                                    <label>Category</label>
+                                                    <input required name="title" ng-model="cms.title" required>
+                                                    <div ng-messages="addForm.title.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+
+                                                  <md-input-container class="md-block">
+                                                    <label>Title</label>
+                                                    <input required name="link" ng-model="cms.link" required>
+                                                    <div ng-messages="addForm.link.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container class="md-block">
+                                                    <label>Url</label>
+                                                    <input required name="url" ng-model="cms.url" required>
+                                                    <div ng-messages="addForm.url.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                      <div ng-message="url">URL is invalid.</div>
+                                                    </div>
+                                                  </md-input-container>
+                                                
+                                                  
+                                                <div>
+                                                  <md-button type="submit" class='btn red'>Add Link</md-button>
+                                                </div>
+                                              </form>
+                                            </md-content>
+
+                                       </div>
+                                      </md-content>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>

@@ -1,0 +1,101 @@
+<!-- Page content -->
+<div layout="row" ng-hide="isLogin">
+    <div flex="100">
+
+    <div ng-include="'components/app-before-login/template/header.html'"></div>
+
+        <md-card class="action-form md-whiteframe-2dp">
+            <!-- form title -->
+            <h1 class="form-title" ng-if="!isCookies">Employee Login!</h1>
+            <!-- form -->
+            <form name="login" novalidate>
+               
+                <alert-message ng-if="alert" data="alert"> </alert-message>
+                <div class="user-panel" 
+                    layout="column"
+                    layout-align="space-between center"
+                    ng-show="isCookies">
+                    <div layout="row" class="button-top" layout-align="space-between center">
+                        <md-button class="md-icon-button" ng-click="loginDifferent()">
+                            <md-icon>arrow_back</md-icon>
+                            <md-tooltip> Login different account</md-tooltip>
+                        </md-button>
+                         <md-button class="md-icon-button" ng-click="removeSession()">
+                            <md-icon>delete_sweep</md-icon>
+                            <md-tooltip> Remove </md-tooltip>
+                        </md-button>
+
+                    </div>
+                    <img ng-src="{{isCookies.image || template.noPictureTemplate}}" alt="{{isCookies.name}}">
+                    <small class="text-elipsis">{{isCookies.name}}</small>
+                    <small><i>{{isCookies.email}}</i></small>
+                </div>
+
+                <md-input-container ng-hide="isCookies" class="md-block md-icon-float" >
+                    <label>Email</label>
+                    <md-icon class="material-icons">mail</md-icon>
+                <input 
+                    required 
+                    name="email" 
+                    type="email"
+                    ng-model="user.email"
+                    class='text-lowercase'
+                    ng-pattern="/^([a-zA-Z0-9_\.\-])+\@(([A-Za-z0-9\-])+\.)+([a-zA-Z]{2,3})+$/">
+                <div ng-messages="login.email.$error" class="error">
+                    <div ng-message="required">Email is required.</div>
+                    <div ng-message="pattern">Enter valid email address.</div>
+                </div>
+
+                </md-input-container>
+
+                <md-input-container class="md-block md-icon-float">
+                    <label>Password</label>
+                    <md-icon class="material-icons">lock</md-icon>
+                    <input type="{{password ? 'text' :'password'}}" required 
+                    name="password" ng-model="user.password">
+                     <md-icon class="pointer" ng-click="password = !password">
+                        {{ password ?'lock_open':'lock'}}
+                     </md-icon>
+                <div ng-messages="login.password.$error" class="error">
+                    <div ng-message="required">Password is required.</div>
+                </div>
+
+                </md-input-container>
+                <div layout="row" layout-align="space-between start" >
+                    <div >
+                        <md-checkbox ng-model="user.remember"  ng-disabled="isCookies"
+                            aria-label="Remember me" class="md-primary">
+                            Remember me
+                        </md-checkbox>
+                    </div>
+                    <div>
+                        <span class="form-ref-link"><a ui-sref="resetPassword">Forgot your password?</a></span>
+                    </div>
+                </div>
+               
+                <md-button 
+                    ng-disabled="isLoading"
+                    aria-label="login"
+                    ng-click="submitForm(login, user)"
+                    class="md-raised md-primary btn-block btn-action-form" 
+                    type="submit">
+                    <span ng-if="!isLoading">Login <md-icon >arrow_forward</md-icon></span>
+                    <span ng-if="isLoading"> Processing..</span>
+                </md-button>
+
+            </form>
+            <!-- end form -->
+
+            <!-- form refer link -->
+           <!--  <div class="form-footer-link">
+                <a ui-sref="/">Don't have an account? <span>Sign up</span></a>
+            </div> -->
+            <!-- end form refer link -->
+
+        </md-card>
+        <!-- End form block -->
+
+    </div>
+
+</div>
+<div ng-include="'components/app-before-login/template/footer.html'"></div>

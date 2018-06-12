@@ -1,0 +1,45 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>My Profile ({{isLogin.name}})</h1>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Page content -->
+<md-content class="page-content">
+    
+    <section layout="column" class="user-profile text-center page-section md-whiteframe-2dp" layout-align="center center">
+       <user-image> <!--user image--></user-image>
+       <span class="text-elipsis">{{isLogin.name}}</span> 
+       <span class="text-elipsis"><i>{{isLogin.email}}</i></span> 
+    </section>
+    <!-- section -->
+    <section class="page-section padding-top-50  md-whiteframe-3dp border-radius-10">
+      <p class="text-center"> Hello, <b>{{isLogin.name}}</b>, Welcome to your profile</p>
+
+      <md-nav-bar
+         md-no-ink-bar="disableInkBar" 
+         layout="row"  class="nav-justify"
+         layout-align="center center"
+         md-selected-nav-item="currentNavItem"
+         nav-bar-aria-label="navigation links">
+
+         <md-nav-item md-nav-click="goto('myProfile.personalInfo')" 
+            name="myProfile.personalInfo"> Personal Info
+         </md-nav-item>
+
+         <md-nav-item md-nav-click="goto('myProfile.changePassword')" 
+            name="myProfile.changePassword"> Change Password
+         </md-nav-item>
+
+         <md-nav-item md-nav-click="goto('myProfile.changePicture')" 
+            name="myProfile.changePicture"> Update Picture
+         </md-nav-item>
+      </md-nav-bar>
+
+      <div class="ext-content" ui-view> <!--dynamic template--> </div>
+
+    </section>
+</md-content>
+<!--End Page content -->

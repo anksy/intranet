@@ -1,0 +1,58 @@
+#How to run front-en application
+
+navigate to your directory and type
+
+==> gulp browserReload
+
+approved pages
+
+
+/**
+ * Configuration for angular material custom theme .
+ * for more infomation visit
+ * https://material.io/guidelines/style/color.html#color-color-palette
+ */
+
+1). md-accent => class use for simple link which is green text color and no background color fill
+1). md-warn => class use for fill background color on green on text color white
+
+
+//custom icon button example
+
+<icon-button 
+	aria-label="test"
+	class="md-fab"
+	icon="keyboard_arrow_up" 
+	click="btnClick()"
+	change="keyboard_arrow_down">
+</icon-button>
+	
+http://flexsin.org/HTML/taskygig/main-landing-page.html
+http://flexsin.org/HTML/taskygig/amc-landing-page.html
+http://flexsin.org/HTML/taskygig/appraiser-landing-page.html
+http://flexsin.org/HTML/taskygig/contact-us.html
+http://flexsin.org/HTML/taskygig/signin.html
+http://flexsin.org/HTML/taskygig/signup.html
+http://flexsin.org/HTML/taskygig/forgot-password.html
+
+New Designed pages: 
+
+http://flexsin.org/HTML/taskygig/about-us.html
+http://flexsin.org/HTML/taskygig/how-it-works-amc.html
+http://flexsin.org/HTML/taskygig/search-listing.html
+
+
+//angular material icon 
+https://klarsys.github.io/angular-material-icons/
+
+//angular material
+https://material.angularjs.org
+
+<!--tag under md-input-container -->
+<md-tag-right 
+	
+	ng-if="signup.confirmpassword.$viewValue" 
+	ng-class="{'error':signup.confirmpassword.$error.passwordVerify,'success':!signup.confirmpassword.$error.passwordVerify}">
+	{{signup.confirmpassword.$error.passwordVerify?'Not match' :'match'}} 
+
+</md-tag-right>

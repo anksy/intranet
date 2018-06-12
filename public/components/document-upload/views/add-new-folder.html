@@ -1,0 +1,39 @@
+<md-dialog aria-label="add new">
+  <form ng-cloak name="form" novalidate>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Add new folder</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+              <md-icon>close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <alert-message ng-if="alert" data="alert" class="padding-side"> </alert-message>
+      <div class="md-dialog-content add-new-folder">
+          <md-input-container class="md-block" >
+              <label>Enter folder name</label>
+              <input md-autofocus required name="title" ng-model="user.title" required>
+              <div ng-messages="form.title.$error">
+                <div ng-message="required">Folder name is  required.</div>
+              </div>
+          </md-input-container>
+
+        <md-button ng-disabled="isLoading" type="submit"  
+          ng-click="submitForm(form, user)" aria-label="submit"
+          class="md-raised md-primary btn-block max-300 btn-action-form">
+          <span ng-show="isLoading" layout="row" class="btn-loading"   
+           layout-align="center center">   
+          <md-progress-circular md-mode="indeterminate" md-diameter="15">
+          </md-progress-circular> <small> Processing</small>
+          </span>
+           <span ng-hide="isLoading"> Submit </span>
+      </md-button>
+
+
+      </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>

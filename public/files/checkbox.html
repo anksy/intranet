@@ -1,0 +1,479 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Forms Elements</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/checkbox" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="Autocomplete" ui-sref="autocomplete">
+            </md-tab>
+            <md-tab label="Checkbox" ui-sref="checkbox" md-active="true">
+            </md-tab>
+            <md-tab label="Chips" ui-sref="chips">
+            </md-tab>
+            <md-tab label="datepicker" ui-sref="datepicker">
+            </md-tab>
+            <md-tab label="file input" ui-sref="file-input">
+            </md-tab>
+            <md-tab label="Radio Button" ui-sref="radio-button">
+            </md-tab>
+            <md-tab label="Select" ui-sref="select">
+            </md-tab>
+            <md-tab label="Switch" ui-sref="switch">
+            </md-tab>
+
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Checkbox</h2>
+        <!-- description -->
+        <p>The checked attribute is a boolean attribute. A Boolean, returns true if the checkbox is checked, and false if the checkbox is not checked.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- content -->
+                <div class="row">
+                    <div class="col s12 m6 l4">
+                        <md-checkbox ng-model="basicCheckboxDemo.cb1" aria-label="Checkbox 1" class="md-primary">
+                            Checkbox 1: {{ basicCheckboxDemo.cb1 }}
+                        </md-checkbox>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <md-checkbox ng-model="basicCheckboxDemo.cb2" aria-label="Checkbox 2" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+                            Checkbox 2 (md-warn): {{ basicCheckboxDemo.cb2 }}
+                        </md-checkbox>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <md-checkbox ng-model="basicCheckboxDemo.cb6" aria-label="Checkbox 3" class="md-accent">
+                            Checkbox 3 (md-accent): {{ basicCheckboxDemo.cb6 }}
+                        </md-checkbox>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <md-checkbox ng-disabled="true" aria-label="Disabled checkbox" ng-model="basicCheckboxDemo.cb3">
+                            Checkbox: Disabled
+                        </md-checkbox>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="basicCheckboxDemo.cb4" ng-init="basicCheckboxDemo.cb4=true">
+                            Checkbox: Disabled, Checked
+                        </md-checkbox>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="basicCheckboxDemo.cb5" class="md-primary">
+                            Checkbox (md-primary): No Ink
+                        </md-checkbox>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <md-checkbox md-indeterminate aria-label="Checkbox Indeterminate" class="md-primary">
+                            Checkbox: Indeterminate
+                        </md-checkbox>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <md-checkbox md-indeterminate aria-label="Checkbox Disabled Indeterminate" ng-disabled="true" class="md-primary">
+                            Checkbox: Disabled, Indeterminate
+                        </md-checkbox>
+                    </div>
+                </div>
+                <!-- end content -->
+
+
+                <!-- sample code -->
+                <blockquote ng-non-bindable>
+                    In HTML sample code angularjs scope variable denoted as <code class="red">{}</code> instead of <code class="red">{{ }}</code>.
+                </blockquote>
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox ng-model=&quot;basicCheckboxDemo.cb1&quot; aria-label=&quot;Checkbox 1&quot; class=&quot;md-primary&quot;&gt;
+            Checkbox 1: { basicCheckboxDemo.cb1 }
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox ng-model=&quot;basicCheckboxDemo.cb2&quot; aria-label=&quot;Checkbox 2&quot; ng-true-value=&quot;'yup'&quot; ng-false-value=&quot;'nope'&quot; class=&quot;md-warn&quot;&gt;
+            Checkbox 2 (md-warn): { basicCheckboxDemo.cb2 }
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox ng-model=&quot;basicCheckboxDemo.cb6&quot; aria-label=&quot;Checkbox 3&quot; class=&quot;md-accent&quot;&gt;
+            Checkbox 3 (md-accent): { basicCheckboxDemo.cb6 }
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox ng-disabled=&quot;true&quot; aria-label=&quot;Disabled checkbox&quot; ng-model=&quot;basicCheckboxDemo.cb3&quot;&gt;
+            Checkbox: Disabled
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox ng-disabled=&quot;true&quot; aria-label=&quot;Disabled checked checkbox&quot; ng-model=&quot;basicCheckboxDemo.cb4&quot; ng-init=&quot;basicCheckboxDemo.cb4=true&quot;&gt;
+            Checkbox: Disabled, Checked
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox md-no-ink aria-label=&quot;Checkbox No Ink&quot; ng-model=&quot;basicCheckboxDemo.cb5&quot; class=&quot;md-primary&quot;&gt;
+            Checkbox (md-primary): No Ink
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox md-indeterminate aria-label=&quot;Checkbox Indeterminate&quot; class=&quot;md-primary&quot;&gt;
+            Checkbox: Indeterminate
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox md-indeterminate aria-label=&quot;Checkbox Disabled Indeterminate&quot; ng-disabled=&quot;true&quot; class=&quot;md-primary&quot;&gt;
+            Checkbox: Disabled, Indeterminate
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.basicCheckboxDemo = {
+    cb1: true,
+    cb2: false,
+    cb3: false,
+    cb4: false,
+    cb5: false,
+    cb6: true
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Select All -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Select All</h3>
+
+                <!-- content -->
+                <div layout="row" layout-wrap flex>
+                    <div flex-xs flex="50">
+                        <md-checkbox aria-label="Select All" ng-checked="selectAllCheckboxDemo.isChecked()" md-indeterminate="selectAllCheckboxDemo.isIndeterminate()" ng-click="selectAllCheckboxDemo.toggleAll()" class="md-primary">
+                            <span ng-if="selectAllCheckboxDemo.isChecked()">Un-</span>Select All
+                        </md-checkbox>
+                    </div>
+                    <div class="m-l-30" flex="100" ng-repeat="item in selectAllCheckboxItems">
+                        <md-checkbox ng-checked="selectAllCheckboxDemo.exists(item, selectAllCheckbox)" ng-click="selectAllCheckboxDemo.toggle(item, selectAllCheckbox)" class="md-primary">
+                            {{ item }}
+                        </md-checkbox>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <blockquote ng-non-bindable>
+                    In HTML sample code angularjs scope variable denoted as <code class="red">{}</code> instead of <code class="red">{{ }}</code>.
+                </blockquote>
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div layout=&quot;row&quot; layout-wrap flex&gt;
+    &lt;div flex-xs flex=&quot;50&quot;&gt;
+        &lt;md-checkbox aria-label=&quot;Select All&quot; ng-checked=&quot;selectAllCheckboxDemo.isChecked()&quot; md-indeterminate=&quot;selectAllCheckboxDemo.isIndeterminate()&quot; ng-click=&quot;selectAllCheckboxDemo.toggleAll()&quot; class=&quot;md-primary&quot;&gt;
+            &lt;span ng-if=&quot;selectAllCheckboxDemo.isChecked()&quot;&gt;Un-&lt;/span&gt;Select All
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;m-l-30&quot; flex=&quot;100&quot; ng-repeat=&quot;item in selectAllCheckboxItems&quot;&gt;
+        &lt;md-checkbox ng-checked=&quot;selectAllCheckboxDemo.exists(item, selectAllCheckbox)&quot; ng-click=&quot;selectAllCheckboxDemo.toggle(item, selectAllCheckbox)&quot; class=&quot;md-primary&quot;&gt;
+            { item }
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.selectAllCheckboxItems = [1, 2, 3, 4, 5];
+$scope.selectAllCheckbox = [1];
+$scope.selectAllCheckboxDemo = {
+    toggle: function(item, list) {
+        var idx = list.indexOf(item);
+        if (idx > -1) {
+            list.splice(idx, 1);
+        } else {
+            list.push(item);
+        }
+    },
+
+    exists: function(item, list) {
+        return list.indexOf(item) > -1;
+    },
+
+    isIndeterminate: function() {
+        return ($scope.selectAllCheckbox.length !== 0 &&
+            $scope.selectAllCheckbox.length !== $scope.selectAllCheckboxItems.length);
+    },
+
+    isChecked: function() {
+        return $scope.selectAllCheckbox.length === $scope.selectAllCheckboxItems.length;
+    },
+
+    toggleAll: function() {
+        if ($scope.selectAllCheckbox.length === $scope.selectAllCheckboxItems.length) {
+            $scope.selectAllCheckbox = [];
+        } else if ($scope.selectAllCheckbox.length === 0 || $scope.selectAllCheckbox.length > 0) {
+            $scope.selectAllCheckbox = $scope.selectAllCheckboxItems.slice(0);
+        }
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Select All -->
+        <!-- //////////////////////////////////////// -->
+
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Color Options -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Color Options</h3>
+
+                <!-- content -->
+                <div class="row">
+                    <div class="col s12 m6 l4">
+                        <md-checkbox ng-model="colorCheckboxDemo.cb1" aria-label="Checkbox Purple" class="md-purple">
+                            Checkbox purple
+                        </md-checkbox>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <md-checkbox ng-model="colorCheckboxDemo.cb2" aria-label="Checkbox blue" class="md-blue">
+                            Checkbox blue
+                        </md-checkbox>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <md-checkbox ng-model="colorCheckboxDemo.cb3" aria-label="Checkbox cyan" class="md-cyan">
+                            Checkbox cyan
+                        </md-checkbox>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <md-checkbox ng-model="colorCheckboxDemo.cb4" aria-label="Checkbox teal" class="md-teal">
+                            Checkbox teal
+                        </md-checkbox>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <md-checkbox ng-model="colorCheckboxDemo.cb5" aria-label="Checkbox green" class="md-green">
+                            Checkbox green
+                        </md-checkbox>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <md-checkbox ng-model="colorCheckboxDemo.cb6" aria-label="Checkbox yellow" class="md-yellow">
+                            Checkbox yellow
+                        </md-checkbox>
+                    </div>
+
+                    <div class="col s12 m6 l4">
+                        <md-checkbox ng-model="colorCheckboxDemo.cb7" aria-label="Checkbox brown" class="md-brown">
+                            Checkbox brown
+                        </md-checkbox>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox ng-model=&quot;colorCheckboxDemo.cb1&quot; aria-label=&quot;Checkbox Purple&quot; class=&quot;md-purple&quot;&gt;
+            Checkbox purple
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox ng-model=&quot;colorCheckboxDemo.cb2&quot; aria-label=&quot;Checkbox blue&quot; class=&quot;md-blue&quot;&gt;
+            Checkbox blue
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox ng-model=&quot;colorCheckboxDemo.cb3&quot; aria-label=&quot;Checkbox cyan&quot; class=&quot;md-cyan&quot;&gt;
+            Checkbox cyan
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox ng-model=&quot;colorCheckboxDemo.cb4&quot; aria-label=&quot;Checkbox teal&quot; class=&quot;md-teal&quot;&gt;
+            Checkbox teal
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox ng-model=&quot;colorCheckboxDemo.cb5&quot; aria-label=&quot;Checkbox green&quot; class=&quot;md-green&quot;&gt;
+            Checkbox green
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox ng-model=&quot;colorCheckboxDemo.cb6&quot; aria-label=&quot;Checkbox yellow&quot; class=&quot;md-yellow&quot;&gt;
+            Checkbox yellow
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;col s12 m6 l4&quot;&gt;
+        &lt;md-checkbox ng-model=&quot;colorCheckboxDemo.cb7&quot; aria-label=&quot;Checkbox brown&quot; class=&quot;md-brown&quot;&gt;
+            Checkbox brown
+        &lt;/md-checkbox&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.colorCheckboxDemo = {
+    cb1: true,
+    cb2: true,
+    cb3: true,
+    cb4: true,
+    cb5: true,
+    cb6: true,
+    cb7: true
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="css">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-css" prism>
+md-checkbox:not([disabled]).md-purple.md-checked .md-icon {
+    background-color: #9C27B0;
+}
+
+md-checkbox:not([disabled]).md-blue.md-checked .md-icon {
+    background-color: #2196F3;
+}
+
+md-checkbox:not([disabled]).md-cyan.md-checked .md-icon {
+    background-color: #00BCD4;
+}
+
+md-checkbox:not([disabled]).md-teal.md-checked .md-icon {
+    background-color: #009688;
+}
+
+md-checkbox:not([disabled]).md-green.md-checked .md-icon {
+    background-color: #4CAF50;
+}
+
+md-checkbox:not([disabled]).md-yellow.md-checked .md-icon {
+    background-color: #FFEB3B;
+}
+
+md-checkbox:not([disabled]).md-brown.md-checked .md-icon {
+    background-color: #795548;
+}
+
+md-checkbox:not([disabled]).md-purple.md-checked .md-icon:after,
+md-checkbox:not([disabled]).md-blue.md-checked .md-icon:after,
+md-checkbox:not([disabled]).md-cyan.md-checked .md-icon:after,
+md-checkbox:not([disabled]).md-teal.md-checked .md-icon:after,
+md-checkbox:not([disabled]).md-green.md-checked .md-icon:after,
+md-checkbox:not([disabled]).md-yellow.md-checked .md-icon:after,
+md-checkbox:not([disabled]).md-brown.md-checked .md-icon:after {
+    border-color: rgba(255, 255, 255, 0.87);
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Color Options -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

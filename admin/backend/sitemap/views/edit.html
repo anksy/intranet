@@ -1,0 +1,140 @@
+<div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="portlet light bordered">
+                                <material-loader ng-show="loader"></material-loader>
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-star font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">Edit Sitemap link - {{cms.title}}</span>
+                                    </div>
+                                </div>
+  
+                                <div class="portlet-body form">
+                                    <md-content class="md-padding">
+                                        <div layout="column">
+                                            <md-content layout-padding>
+                    
+                                              <form name="editForm" novalidate ng-submit="editForm.$valid && update()">
+
+                                                  
+                                            
+
+                                                  <md-input-container class="md-block">
+                                                    <label>Title</label>
+                                                    <input required name="title" ng-model="cms.title" required>
+                                                    <div ng-messages="editForm.title.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container class="md-block">
+                                                    <label>Total Links</label>
+                                                    <input readonly="" value="{{cms.links.length}}">
+                                                  </md-input-container>
+                                                  
+
+                                                  <table ng-show="cms.links.length" md-table md-row-select multiple md-progress="data.records">
+                                                    <thead md-head md-order="query.order" md-on-reorder="list">
+                                                      <tr md-row>
+                                                        <th md-column><span>Title</span></th>
+                                                           
+                                                        <th md-column>
+                                                            Links
+                                                        </th>  
+
+                                                        <th md-column>
+                                                            Action
+                                                        </th>                  
+              
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody md-body>
+                                                      <tr md-row md-select="row.title" md-select-id="row.title" md-auto-select ng-repeat="row in cms.links">
+                                                        <td md-cell>{{row.title}}</td>
+                                                        
+                                                        <td md-cell>{{row.slug}}</td>
+                                                        
+                                                        <td md-cell>
+
+                                                            <a href="javascript:;" class="btn btn-icon-only red" ng-click='removeEmLink(cms._id,row.title, $event)'>
+                                                                <i class="fa fa-times"></i>
+                                                            </a>
+
+                                                        </td>
+
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+
+
+                                                <div>
+                                                  <md-button type="submit" class='btn red'>Update Sitemap</md-button>
+                                                </div>
+                                              </form>
+                                            </md-content>
+
+                                       </div>
+                                      </md-content>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="portlet light bordered">
+                                <material-loader ng-show="loader"></material-loader>
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-star font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">Add Sitemap link into <u>{{cms.title}}</u></span>
+                                    </div>
+                                </div>
+  
+                                <div class="portlet-body form">
+                                    <md-content class="md-padding">
+                                        <div layout="column">
+                                            <md-content layout-padding>
+                    
+                                              <form name="editForm" novalidate ng-submit="editForm.$valid && addLink()">
+
+                                                  
+                                   
+
+                                                  <md-input-container class="md-block">
+                                                    <label>Title</label>
+                                                    <input required name="link" ng-model="cms.link" required>
+                                                    <div ng-messages="addForm.link.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container class="md-block">
+                                                    <label>Url</label>
+                                                    <input required name="url" ng-model="cms.url" required>
+                                                    <div ng-messages="addForm.url.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                      <div ng-message="url">URL is invalid.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                <div>
+                                                  <md-button type="submit" class='btn red'>Add Sitemap Link</md-button>
+                                                </div>
+                                              </form>
+                                            </md-content>
+
+                                       </div>
+                                      </md-content>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>

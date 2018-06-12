@@ -1,0 +1,25 @@
+<md-card layout="column" layout-align="center stretch">
+
+  <i class="tag"> 
+    <md-icon>public <!-- lock --></md-icon>{{folder.type}}</i>
+  <icon-type > <!--dynamic icon--></icon-type>
+
+  <span class="info" layout="row" layout-align="center center" ng-if="folder.attachment"> 
+    <span folder-size="folder.attachment.bytes"></span>
+  </span>
+  <span class="info" layout="row" layout-align="center center" ng-if="!folder.attachment"> 
+    
+  	<span ng-if="!folder.resouces.files && !folder.resouces.folders">Empty Folder</span>
+  	<span ng-if="folder.resouces.files ">Empty Folder</span>
+
+  	<span ng-if="folder.resouces.files">  {{folder.resouces.files}} Files</span> 
+  	<span ng-if="folder.resouces.files">  | {{folder.resouces.folders}} Folders </span> 
+  	<span ng-if="folder.resouces.size">| {{folder.resouces.size}} MB</span>
+  </span>
+
+
+  <folder-date>{{ folder.created_at | date:'medium'}}</folder-date>
+  
+  <span class="title">{{folder.title}}</span>
+
+</md-card>

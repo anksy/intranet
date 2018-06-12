@@ -1,0 +1,61 @@
+<md-content layout-padding>
+  <form name="personalForm" novalidate class="md-block-input">
+    <alert-message ng-if="alert" data="alert"> </alert-message>
+    
+    <div layout="row" class="md-block" layout-align="space-around center"
+    layout-xs="column">
+     
+      <md-input-container class="md-block">
+        <label>Full Name</label>
+        <input required name="lastname" ng-model="user.name" required>
+        <div ng-messages="personalForm.lastname.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+
+    <div layout="row">
+		<md-input-container class="md-block">
+			<label>Email</label>
+			<input type='email' required name="email" ng-model="user.email" ng-pattern='/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' required>
+			<div ng-messages="personalForm.email.$error">
+			<div ng-message="required">This is required.</div>
+			<div ng-message="pattern">Email must be valid.</div>
+			</div>
+		</md-input-container>
+
+		<div class="space"></div>
+		<md-input-container class="md-block">
+			<label>Mobile</label>
+			<input required name="mobile" ng-model="user.mobile" ng-minlength="7" ng-maxlength="12" required>
+			<div ng-messages="personalForm.mobile.$error">
+			<div ng-message="required">This is required.</div>
+			<div ng-message="minlength">Please enter valid mobile number</div>
+
+			<div ng-message="maxlength">Please enter valid mobile number</div>
+			</div>
+		</md-input-container>
+    </div>
+
+    <md-input-container class="md-block">
+        <label>Additional Information (Optional)</label>
+        <textarea  name="bio" ng-model="user.bio" md-no-autogrow="true" rows="5"></textarea>
+        <div ng-messages="personalForm.bio.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+    </md-input-container>
+    
+
+    <div>
+      <md-button ng-disabled="isLoading" type="submit"  
+        ng-click="submitForm(personalForm,user)"
+      	class="md-raised md-primary btn-block max-300 btn-action-form">
+        <span ng-show="isLoading" layout="row" class="btn-loading"   layout-align="space-around center">   
+        <md-progress-circular md-mode="indeterminate" md-diameter="15">
+        </md-progress-circular> <small>Processing</small>
+        </span>
+      <span ng-hide="isLoading">Update Profile</span>
+      </md-button>
+    </div>
+  </form>
+</md-content>

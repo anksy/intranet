@@ -1,0 +1,182 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Form</h1>
+        <!-- help -->
+        <a href="https://github.com/jquery-validation/jquery-validation" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="Form Layouts" ui-sref="form-layouts">
+            </md-tab>
+            <md-tab label="Form Validations" ui-sref="form-validations" md-active="true">
+            </md-tab>
+            <md-tab label="Form Masks" ui-sref="form-masks">
+            </md-tab>
+            <md-tab label="Text Editor" ui-sref="text-editor">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--form title-->
+        <h3 class="theme-title">Form Validations</h3>
+        <!-- description -->
+        <p>Painless form validation for AngularJS. Powered by the <a href="https://github.com/jpkleemans/angular-validate" target="_blank">jQuery Validation</a> Plugin.</p>
+        <!-- end description -->
+
+        <!-- content -->
+        <form name="registerform" ng-validate="validationOptions">
+            <md-input-container class="md-block">
+                <label>Username *</label>
+                <input type="text" name="username">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Email *</label>
+                <input type="email" name="email">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Password *</label>
+                <input type="password" name="password">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Confirm Password *</label>
+                <input type="password" name="confirmPassword">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>URL *</label>
+                <input type="url" name="url">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Your comment *</label>
+                <textarea ng-model="message" md-maxlength="150" rows="3" md-select-on-focus name="comment"></textarea>
+            </md-input-container>
+
+            <md-button class="md-raised md-primary p-r-15 p-l-15" ng-click="registerUserForm(registerform)">Submit <i class="material-icons icon-right">send</i></md-button>
+
+        </form>
+        <!-- end content -->
+
+        <!-- sample code -->
+
+        <md-tabs class="m-t-30" md-dynamic-height md-border-bottom>
+            <md-tab label="html">
+                <md-content class="m-t-0">
+                    <pre><code class="language-html" prism>
+&lt;form name=&quot;registerform&quot; ng-validate=&quot;validationOptions&quot;&gt;
+    &lt;md-input-container class=&quot;md-block&quot;&gt;
+        &lt;label&gt;Username *&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;
+    &lt;/md-input-container&gt;
+
+    &lt;md-input-container class=&quot;md-block&quot;&gt;
+        &lt;label&gt;Email *&lt;/label&gt;
+        &lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;
+    &lt;/md-input-container&gt;
+
+    &lt;md-input-container class=&quot;md-block&quot;&gt;
+        &lt;label&gt;Password *&lt;/label&gt;
+        &lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;
+    &lt;/md-input-container&gt;
+    
+    &lt;md-input-container class=&quot;md-block&quot;&gt;
+        &lt;label&gt;Confirm Password *&lt;/label&gt;
+        &lt;input type=&quot;password&quot; name=&quot;confirmPassword&quot;&gt;
+    &lt;/md-input-container&gt;
+
+    &lt;md-input-container class=&quot;md-block&quot;&gt;
+        &lt;label&gt;URL *&lt;/label&gt;
+        &lt;input type=&quot;url&quot; name=&quot;url&quot;&gt;
+    &lt;/md-input-container&gt;
+
+    &lt;md-input-container class=&quot;md-block&quot;&gt;
+        &lt;label&gt;Your comment *&lt;/label&gt;
+        &lt;textarea ng-model=&quot;message&quot; md-maxlength=&quot;150&quot; rows=&quot;3&quot; md-select-on-focus name=&quot;comment&quot;&gt;&lt;/textarea&gt;
+    &lt;/md-input-container&gt;
+
+    &lt;md-button class=&quot;md-raised md-primary p-r-15 p-l-15&quot; ng-click=&quot;registerUserForm(registerform)&quot;&gt;Primary &lt;i class=&quot;material-icons icon-right&quot;&gt;send&lt;/i&gt;&lt;/md-button&gt;
+&lt;/form&gt;
+                            </code></pre>
+                </md-content>
+            </md-tab>
+            <md-tab label="js">
+                <md-content class="m-t-0">
+                    <pre><code class=" language-javascript" prism>
+$scope.validationOptions = {
+    rules: {
+        username: {
+            required: true,
+            minlength: 5
+        },
+        email: {
+            required: true,
+            email: true
+        },
+        password: {
+            required: true,
+            minlength: 5
+        },
+        confirmPassword: {
+            required: true,
+            minlength: 5,
+            equalTo: "[name=password]"
+        },
+        url: {
+            required: true,
+            url: true
+        },
+        comment: {
+            required: true,
+            minlength: 15
+        }
+    },
+    //For custom messages
+    messages: {
+        username: {
+            required: "Enter a username",
+            minlength: "Enter at least 5 characters."
+        },
+        url: "Enter your website URL",
+        confirmPassword: "Your enter password is different.",
+    },
+    errorElement: 'div',
+    errorPlacement: function(error, element) {
+        var placement = $(element).data('error');
+        if (placement) {
+            $(placement).append(error)
+        } else {
+            error.insertAfter(element);
+        }
+    }
+};
+
+$scope.registerUserForm = function(form) {
+    if (form.validate()) {
+        alert('valid!');
+    }
+};
+</code></pre>
+                </md-content>
+            </md-tab>
+
+        </md-tabs>
+        <!-- end sample code -->
+
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

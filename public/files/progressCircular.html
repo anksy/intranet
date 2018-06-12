@@ -1,0 +1,145 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Material UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/progressCircular" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="buttons" ui-sref="buttons">
+            </md-tab>
+            <md-tab label="breadcrumbs" ui-sref="breadcrumbs">
+            </md-tab>
+            <md-tab label="collections" ui-sref="collections">
+            </md-tab>
+            <md-tab label="collapsibles" ui-sref="collapsibles">
+            </md-tab>
+            <md-tab label="menu" ui-sref="menu">
+            </md-tab>
+            <md-tab label="tabs" ui-sref="tabs">
+            </md-tab>
+            <md-tab label="pagination" ui-sref="pagination">
+            </md-tab>
+            <md-tab label="progress circular" ui-sref="progressCircular" md-active="true">
+            </md-tab>
+            <md-tab label="progress linear" ui-sref="progressLinear">
+            </md-tab>
+            <md-tab label="toasts" ui-sref="toasts">
+            </md-tab>
+            <md-tab label="tooltip" ui-sref="tooltip">
+            </md-tab>
+            <md-tab label="ripple" ui-sref="ripple">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--title-->
+        <h2 class="theme-title">Progress Circular</h2>
+
+        <!-- content -->
+        <div layout="row">
+            <div flex="100">
+                <!-- //////////////////////////////////////// -->
+                <!-- Determinate -->
+
+                <!-- title -->
+                <h3 class="theme-title">Determinate</h3>
+                <!-- description -->
+                <p>For operations where the percentage of the operation completed can be determined, use a determinate indicator. They give users a quick sense of how long an operation will take.</p>
+                <!-- content -->
+                <div layout="row" layout-sm="column" layout-align="space-around">
+                    <md-progress-circular md-mode="determinate" value="{{demoDeterminateValue}}"></md-progress-circular>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <blockquote ng-non-bindable>
+                    In HTML sample code angularjs scope variable denoted as <code class="red">{}</code> instead of <code class="red">{{ }}</code>.
+                </blockquote>
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-progress-circular md-mode=&quot;determinate&quot; value=&quot;{demoDeterminateValue}&quot;&gt;&lt;/md-progress-circular&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.demoDeterminateValue = 30;
+// Iterate every 100ms, non-stop and increment
+// the Determinate loader.
+$interval(function() {
+
+    $scope.demoDeterminateValue += 1;
+    if ($scope.demoDeterminateValue > 100) {
+        $scope.demoDeterminateValue = 30;
+    }
+
+}, 100);
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+                <!-- End Determinate -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- //////////////////////////////////////// -->
+                <!-- Indeterminate -->
+
+                <!-- title -->
+                <h3 class="theme-title">Indeterminate</h3>
+                <!-- description -->
+                <p>For operations where the user is asked to wait a moment while something finishes up, and it's not necessary to expose what's happening behind the scenes and how long it will take, use an indeterminate indicator.</p>
+                <!-- content -->
+                <div layout="row" layout-sm="column" layout-align="space-around">
+                    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                </div>
+                <!-- end content -->
+
+                <!-- End Indeterminate -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- //////////////////////////////////////// -->
+                <!-- Theming -->
+
+                <!-- title -->
+                <h3 class="theme-title">Theming</h3>
+                <!-- description -->
+                <p>Your current theme colors can be used to easily colorize your progress indicator with `md-warn` or `md-accent` colors.</p>
+                <!-- content -->
+                <div layout="row" layout-xs="column" layout-sm="column" layout-align="space-around">
+                    <md-progress-circular class="md-primary" md-diameter="20px"></md-progress-circular>
+                    <md-progress-circular class="md-accent" md-diameter="40"></md-progress-circular>
+                    <md-progress-circular class="md-warn" md-diameter="60"></md-progress-circular>
+                    <md-progress-circular class="md-warn md-hue-3" md-diameter="70"></md-progress-circular>
+                    <md-progress-circular md-diameter="96"></md-progress-circular>
+                </div>
+                <!-- end content -->
+
+                <!-- End Theming -->
+                <!-- //////////////////////////////////////// -->
+            </div>
+        </div>
+        <!-- end content -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

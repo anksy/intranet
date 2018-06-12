@@ -1,0 +1,73 @@
+<form novalidate name="form" >
+<!--job type-->
+
+	<div layout="row" layout-align="space-between center" class="filter-row">
+		<md-input-container class="center-full-block">
+          <label>Property Type</label>
+          <md-select ng-model="search.category">
+            <md-option ng-value='All'><em>All</em></md-option>
+            <md-option ng-repeat="property in attr.propertyType" ng-value="property.id" >
+              {{property.title}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+
+
+        <md-input-container class="center-full-block" >
+          <label>Appraiser Type</label>
+          
+          <md-select ng-model="search.appraisalRequest">
+            <md-option ng-value='All'><em>All</em></md-option>
+            <md-option ng-repeat="appraiser in attr.appraiserType" ng-value="appraiser.id">
+              {{appraiser.title}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+
+	</div>
+
+	<div layout="row" layout-align="start center">
+
+			<div flex="80" class="padding-top-15" layout="row" layout-align="start center">
+				<div ><b> By Posted on &nbsp;&nbsp;</b> <br><br></div>
+				
+				<md-input-container>
+					<md-datepicker 
+						ng-model="search.startDate" 
+						md-current-view="year"
+						md-mode="month"
+						md-max-date="search.endDate"
+						md-placeholder="Start date" >
+					</md-datepicker>
+				</md-input-container>
+
+				<md-input-container>
+				<md-datepicker 
+					ng-model="search.endDate" 
+					md-current-view="year"
+					md-max-date="maxdate"
+					md-mode="month"
+					name="enddate"
+					ng-change="setMinDate()"
+					md-placeholder="End date">
+				</md-datepicker>
+				
+
+				</md-input-container>
+				
+				
+			</div> 
+		<div flex="20" >
+			<md-button 
+				aria-label="btn" 
+				class="btn btn-xs pull-right green" 
+				type="submit" 
+				ng-click="searchResult(form,search)">Filter 
+			</md-button>
+		
+		</div>
+
+
+	</div>
+
+</form>

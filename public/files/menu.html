@@ -1,0 +1,264 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Material UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/menu" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="buttons" ui-sref="buttons">
+            </md-tab>
+            <md-tab label="breadcrumbs" ui-sref="breadcrumbs">
+            </md-tab>
+            <md-tab label="collections" ui-sref="collections">
+            </md-tab>
+            <md-tab label="collapsibles" ui-sref="collapsibles">
+            </md-tab>
+            <md-tab label="menu" ui-sref="menu" md-active="true">
+            </md-tab>
+            <md-tab label="tabs" ui-sref="tabs">
+            </md-tab>
+            <md-tab label="pagination" ui-sref="pagination">
+            </md-tab>
+            <md-tab label="progress circular" ui-sref="progressCircular">
+            </md-tab>
+            <md-tab label="progress linear" ui-sref="progressLinear">
+            </md-tab>
+            <md-tab label="toasts" ui-sref="toasts">
+            </md-tab>
+            <md-tab label="tooltip" ui-sref="tooltip">
+            </md-tab>
+            <md-tab label="ripple" ui-sref="ripple">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--title-->
+        <h2 class="theme-title">Menu</h2>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Menu -->
+        <!-- layout row -->
+        <div layout-wrap layout="row">
+            <!-- flex -->
+            <div flex>
+                <!--title-->
+                <h3 class="theme-title">Active on Click</h3>
+                <!-- content -->
+                <md-menu>
+                    <md-button aria-label="Open phone interactions menu" class="md-raised md-primary" ng-click="$mdMenu.open($event)" md-menu-origin><i class="material-icons">phone</i> Menu</md-button>
+
+                    <md-menu-content width="4">
+                        <md-menu-item>
+                            <md-button>
+                                <i class="material-icons">dialpad</i> Redial
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button disabled="disabled">
+                                <i class="material-icons">voicemail</i> Check voicemail
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                            <md-button>
+                                <i class="material-icons">notifications</i> notifications
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+
+            <!-- flex -->
+            <div flex>
+                <!--title-->
+                <h3 class="theme-title">Active on Hover</h3>
+                <!-- content -->
+                <md-menu>
+                    <md-button aria-label="Open chat menu" class="md-raised md-warn" ng-mouseenter="$mdMenu.open($event)" md-menu-origin><i class="material-icons">message</i> Menu</md-button>
+
+                    <md-menu-content width="4">
+                        <md-menu-item ng-repeat="item in [1, 2, 3]">
+                            <md-button>
+                                Option {{item}}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout row -->
+
+        <!-- End Basic Menu -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Menu Position -->
+
+        <!--title-->
+        <h3 class="theme-title">Menu Position Modes</h3>
+        <p>The <code class="language-markup">md-position-mode</code> attribute can be used to specify the positioning along the <code class="language-markup">x</code> and <code class="language-markup">y</code> axis.</p>
+        <!-- content -->
+
+        <!-- layout row -->
+        <div class="row">
+            <!-- flex -->
+            <div class="col s12 m4">
+                <p>Target Mode Positioning (default)</p>
+                <md-menu>
+                    <md-button aria-label="Open demo menu" class="md-raised" ng-click="$mdMenu.open($event)" md-colors="{background: 'teal'}" md-menu-origin><i class="material-icons">domain</i> Menu</md-button>
+
+                    <md-menu-content width="4">
+                        <md-menu-item ng-repeat="item in [1, 2, 3]">
+                            <md-button>
+                                Option {{item}}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+
+            <!-- flex -->
+            <div class="col s12 m4">
+                <p>Target mode with <code class="language-markup">md-offset</code></p>
+                <md-menu md-offset="0 -5">
+                    <md-button aria-label="Open demo menu" class="md-raised" ng-click="$mdMenu.open($event)" md-colors="{background: 'teal'}" md-menu-origin><i class="material-icons">settings_phone</i> Menu</md-button>
+
+                    <md-menu-content width="4">
+                        <md-menu-item ng-repeat="item in [1, 2, 3]">
+                            <md-button>
+                                Option {{item}}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+
+            <!-- flex -->
+            <div class="col s12 m4">
+                <p><code class="language-markup">md-position-mode="target-right target"</code></p>
+                <md-menu md-position-mode="target-right target">
+                    <md-button aria-label="Open demo menu" class="md-raised" ng-click="$mdMenu.open($event)" md-colors="{background: 'teal'}" md-menu-origin><i class="material-icons">portable_wifi_off</i> Menu</md-button>
+
+                    <md-menu-content width="4">
+                        <md-menu-item ng-repeat="item in [1, 2, 3]">
+                            <md-button>
+                                Option {{item}}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout row -->
+
+        <!-- End Menu Position -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Menu Width -->
+
+        <!--title-->
+        <h3 class="theme-title">Menu Width</h3>
+        <!--content -->
+        <p><code class="language-markup">md-menu-content</code> may specify a <code class="language-markup">width</code> attribute.</p>
+        <!--end content -->
+
+        <!-- layout row -->
+        <div class="row">
+            <!-- flex -->
+            <div class="col s12 m4">
+                <p>Wide menu (<code class="language-markup">width=6</code>)</p>
+                <md-menu>
+                    <md-button aria-label="Open demo menu" class="md-raised" ng-click="$mdMenu.open($event)" md-colors="{background: 'green'}" md-menu-origin><i class="material-icons">phone</i> Menu</md-button>
+
+                    <md-menu-content width="6">
+                        <md-menu-item ng-repeat="item in [1, 2, 3]">
+                            <md-button>
+                                Option {{item}}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+
+            <!-- flex -->
+            <div class="col s12 m4">
+                <p>Medium menu (<code class="language-markup">width=4</code>)</p>
+                <md-menu>
+                    <md-button aria-label="Open demo menu" class="md-raised" ng-click="$mdMenu.open($event)" md-colors="{background: 'green'}" md-menu-origin><i class="material-icons">message</i> Menu</md-button>
+
+                    <md-menu-content width="4">
+                        <md-menu-item ng-repeat="item in [1, 2, 3]">
+                            <md-button>
+                                Option {{item}}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+
+            <!-- flex -->
+            <div class="col s12 m4">
+                <p>Small menu (<code class="language-markup">width=2</code>)</p>
+                <md-menu>
+                    <md-button aria-label="Open demo menu" class="md-raised" ng-click="$mdMenu.open($event)" md-colors="{background: 'green'}" md-menu-origin><i class="material-icons">speaker_phone</i> Menu</md-button>
+
+                    <md-menu-content width="2">
+                        <md-menu-item ng-repeat="item in [1, 2, 3]">
+                            <md-button>
+                                Option {{item}}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout row -->
+
+        <!-- End Menu Width -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- Note -->
+
+        <div layout="row">
+            <div flex="100">
+                <blockquote>
+                    You can customize the events that open and close a menu by using the <code class="language-markup" md-colors="{color:'red'}">$mdMenu.open</code> and
+                    <code class="language-markup" md-colors="{color:'red'}">$mdMenu.close</code> methods.
+                </blockquote>
+            </div>
+        </div>
+        <!-- end note -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

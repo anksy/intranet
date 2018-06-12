@@ -1,0 +1,234 @@
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content">
+        <!-- BEGIN PAGE BASE CONTENT -->
+        <div class="row">
+            <div class="col-sm-12">
+                
+                
+                <div class="portlet light bordered">
+
+                <div class="actions pull-right" ng-if="job.status==='On Going'">
+                    <a href="javascript:;" class="btn blue btn-outline btn-circle btn-sm active" ng-click="cancelJob(job._id, $event)">
+                        Cancel Job
+                    </a>
+                </div>
+
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-bubble font-green-sharp"></i>
+                            <span class="caption-subject font-green-sharp bold uppercase">Job Detail</span>
+                        </div>
+                    </div>  
+                    
+                    <div class="invoice-content-2 bordered">
+                        <div class="row invoice-body">
+                            <div class="col-xs-12 table-responsive">
+
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="invoice-title uppercase">{{job.job.title}} [{{job.job.Identifier}}] <span class='label label-success pull-right'>{{job.status}}</span></th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-if="job.customer">
+                                            <td>
+                                                <h3>Job Owner Details</h3>
+                                                
+                                                <p><b>Customer Name : </b> <a ng-click="go('/user/details/'+job.userId)">{{job.customer.name?job.customer.name:"N/A"}} </a></p>
+
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr ng-if="job.freelancer">
+                                            <td>
+                                                <h3>Freelancer Details</h3>
+                                                
+                                                <p><b>Freelancer Name : </b> 
+
+                                                <a ng-click="go('/user/details/'+job.Worker)">
+                                                {{job.freelancer.firstname?(job.freelancer.firstname+" "+job.freelancer.lastname):"N/A"}} </a></p>
+
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr ng-if="job.cancelActor && job.cancelActor.length">
+                                            <td>
+                                                <h3><span style="color:red">Cancellation Details</span></h3>
+                                                
+                                                <p><b>Cancelled By : </b> 
+
+                                                <span ng-hide="job.cancelActor[0].cancelBy==='ADMIN'">
+                                                {{job.cancelActor[0].cancelBy}} ({{job.cancelActor[0].cancelBy==='AMC'?job.customer.name:job.freelancer.firstname}})
+                                                </span>
+
+                                                <span ng-show="job.cancelActor[0].cancelBy==='ADMIN'">
+                                                Super Admin
+                                                </span>
+
+
+                                                 </p>
+
+                                                <p><b>Reason: </b> {{job.cancelActor[0].reason}}</p>
+
+                                                <p><b>Cancelled On : </b> 
+                                                {{job.cancelActor[0].date | date}}  </p>
+
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td ng-if="job.postedBy==='company'">
+                                                <h3>Reference Information</h3>
+                                                <p><b>Loan# / Ref# : </b> {{job.reference.loanNo}} </p>
+
+                                                <p><b>Require UAD Compliance : </b> {{job.reference.UAD?'Yes':"No"}} </p>
+
+                                                <p><b>Investor : </b> {{job.reference.investor?job.reference.investor:'N/A'}} </p>
+
+                                                <p><b>Case# : </b> {{job.reference.caseNo}} </p>
+                                            </td>
+
+                                            <td ng-if="job.postedBy!=='company'">
+                                                <h3>Reference Information</h3>
+                                                <p><b>Kind of Inspection : </b> {{job.reference.inspectionType.title?job.reference.inspectionType.title:'N/A'}} </p>
+                                            </td>
+                                            
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>
+                                                <h3>Borrower Info</h3>
+                                                <p><b>Name : </b> {{job.borrower.name}} </p>
+
+                                                <p ng-if="job.postedBy!=='company'"><b>Comapny Name : </b> {{job.borrower.companyName?job.borrower.companyName:'N/A'}} </p>
+
+                                                <p><b>Address : </b> {{job.borrower.address.formatted_address?job.borrower.address.formatted_address:"N/A"}} </p>
+
+                                                <p><b>Emails : </b> {{(job.borrower.emails).join(", ")}} </p>
+
+                                                <p><b>Phone : </b> {{(job.borrower.homePhone)?job.borrower.homePhone:"N/A"}} </p>
+                                            </td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3>Subject Property Info</h3>
+                                                
+                                                <p><b>Address : </b> {{job.property.address.formatted_address?job.property.address.formatted_address:"N/A"}} </p>
+
+                                                <p ng-if="job.postedBy==='company'"><b>Township : </b> {{job.property.township?job.property.township:"N/A"}} </p>
+
+                                                <p ng-if="job.postedBy==='company'"><b>Legal Description : </b> {{job.property.legalDescription?job.property.legalDescription:"N/A"}} </p>
+
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <h3>Property Access / Contact Info</h3>
+                                                
+                                                <p><b>Property vacant : </b> {{job.contactInfo.vacant?'Yes':"No"}} </p>
+
+                                                <p><b>Name : </b> {{job.contactInfo.name?job.contactInfo.name:"N/A"}} </p>
+
+                                                <p><b>Phone : </b> {{job.contactInfo.homePhone?job.contactInfo.homePhone:"N/A"}} </p>
+
+                                                <p><b>Access Code : </b> {{job.contactInfo.accessCode?job.contactInfo.accessCode:"N/A"}} </p>
+
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr ng-if="job.postedBy!=='company'">
+                                            <td>
+                                                <h3>Building Info</h3>
+                                                
+                                                <p><b>Building Type : </b> {{job.property.building.buildingType.title?job.property.building.buildingType.title:"N/A"}} </p>
+
+                                                <p><b>Dwelling : </b> {{job.property.building.dwelling.title?job.property.building.dwelling.title:"N/A"}} </p>
+
+                                                <p><b>Stories : </b> {{job.property.building.stories}} </p>
+
+                                                <p><b>Rooms : </b> {{job.property.building.rooms}} </p>
+
+                                                <p><b>Bedrooms : </b> {{job.property.building.bedrooms}} </p>
+
+                                                <p><b>ESTD : </b> {{job.property.building.estd}} </p>
+
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr ng-if="job.postedBy==='company'">
+                                            <td>
+                                                <h3>Appraiser Info</h3>
+                                                
+                                                <p><b>Appraiser Type : </b> {{job.appraiserType.title?job.appraiserType.title:"N/A"}} </p>
+
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <h3>Scope of Work</h3>
+                                                
+                                                <p ng-if="job.postedBy==='company'"><b>Category : </b> {{job.assignment.category.title?job.assignment.category.title:"N/A"}} </p>
+
+                                                <p><b>FHA : </b> {{job.assignment.FHA?"Yes":"No"}} </p>
+
+                                                <p ng-if="job.postedBy==='company'"><b>Report Type : </b> 
+                                                <span ng-repeat="rep in job.assignment.report">{{rep.title}} |</span>
+                                                 </p>
+
+                                                <p ng-if="job.postedBy==='company'"><b>Intended Use : </b> {{job.assignment.intendedUse.title}} </p>
+
+                                                <p ng-if="job.postedBy==='company'"><b>Loan Type : </b> {{job.assignment.loanType.title}} </p>
+
+                                                <p ng-if="job.postedBy==='company'"><b>Occupancy : </b> {{job.assignment.occupancy.title?job.assignment.occupancy.title:"N/A"}} </p>
+
+                                                <p><b>Sale Price of Property : </b> {{job.property.salePrice?'$'+job.property.salePrice:"N/A"}} </p>
+
+                                                <p><b>Settlement Date : </b> {{job.assignment.settlementDate | date}} </p>
+
+                                                <p><b>Job Due Date : </b> {{job.assignment.dueDate.title?job.assignment.dueDate.title:"N/A"}} </p>
+
+                                                <p><b>Cost of Job : </b> ${{job.job.cost}} </p>
+
+                                                <p><b>Square Footage : </b> {{job.assignment.sqrt.title?job.assignment.sqrt.title:"N/A"}} </p>
+
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <h3>Extra Info</h3>
+                                                
+                                                <p><b>Notes : </b> {{job.notes?job.notes:"N/A"}} </p>
+
+                                            </td>
+                                            
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE BASE CONTENT -->
+    </div>
+    <!-- END CONTENT BODY -->
+</div>

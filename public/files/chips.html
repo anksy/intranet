@@ -1,0 +1,493 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Forms Elements</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/chips" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="Autocomplete" ui-sref="autocomplete">
+            </md-tab>
+            <md-tab label="Checkbox" ui-sref="checkbox">
+            </md-tab>
+            <md-tab label="Chips" ui-sref="chips" md-active="true">
+            </md-tab>
+            <md-tab label="datepicker" ui-sref="datepicker">
+            </md-tab>
+            <md-tab label="file input" ui-sref="file-input">
+            </md-tab>
+            <md-tab label="Radio Button" ui-sref="radio-button">
+            </md-tab>
+            <md-tab label="Select" ui-sref="select">
+            </md-tab>
+            <md-tab label="Switch" ui-sref="switch">
+            </md-tab>
+
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Chips</h2>
+        <!-- page desciption -->
+        <p>Chips can be used to represent small blocks of information. They are most commonly used either for contacts or for tags.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+                <!-- //////////////////////////////////////// -->
+                <!-- content -->
+                <!-- Basic Usage Demo 1 -->
+                <h4 class="theme-title">Use the default chip template.</h4>
+
+                <md-chips ng-model="basicChipsDemo.fruitNames1"></md-chips>
+                <br/>
+                <!-- End Basic Usage Demo 1 -->
+
+                <!-- Basic Usage Demo 2 -->
+                <h4 class="theme-title">Use a custom chip template.</h4>
+
+                <form name="fruitForm">
+                    <md-chips ng-model="basicChipsDemo.fruitNames" name="fruitName" md-max-chips="5" placeholder="Enter a fruit...">
+                        <md-chip-template>
+                            <strong>{{$chip}}</strong>
+                            <em>(fruit)</em>
+                        </md-chip-template>
+                    </md-chips>
+
+                    <div class="errors" ng-messages="fruitForm.fruitName.$error">
+                        <div ng-message="md-max-chips">Maximum number of chips reached.</div>
+                    </div>
+                </form>
+                <br/>
+                <!-- End Basic Usage Demo 2 -->
+
+                <!-- Basic Usage Demo 3 -->
+                <h4 class="theme-title">Make chips editable.</h4>
+
+                <md-chips ng-model="basicChipsDemo.fruitNames2" md-enable-chip-edit="true"></md-chips>
+                <br/>
+                <!-- End Basic Usage Demo 3 -->
+
+                <!-- Basic Usage Demo 4 -->
+                <h4 class="theme-title">Use Placeholders and override hint texts.</h4>
+
+                <md-chips ng-model="basicChipsDemo.tags" placeholder="Enter a tag" delete-button-label="Remove Tag" delete-hint="Press delete to remove tag" secondary-placeholder="+Tag"></md-chips>
+
+                <br/>
+                <!-- End Basic Usage Demo 4 -->
+
+                <!-- Basic Usage Demo 5 -->
+                <h4 class="theme-title">Display an ordered set of objects as chips (with custom template).</h4>
+
+                <blockquote>
+                    Note: the variables <code class="red">$chip</code> and <code class="red">$index</code> are available in custom chip templates.
+                </blockquote>
+
+                <md-chips class="custom-chips" ng-model="basicChipsDemo.vegObjs" md-transform-chip="basicChipsDemo.newVeg($chip)">
+                    <md-chip-template>
+                        <span>
+                            <strong>[{{$index}}] {{$chip.name}}</strong>
+                            <em>({{$chip.type}})</em>
+                        </span>
+                    </md-chip-template>
+                </md-chips>
+
+                <br/>
+                <!-- End Basic Usage Demo 5 -->
+
+                <!-- Basic Usage Demo 6 -->
+                <h4 class="theme-title">Disable Removable.</h4>
+
+                <md-chips ng-model="basicChipsDemo.fruitNames3" md-removable="false"></md-chips>
+                <br/>
+                <!-- End Basic Usage Demo 6 -->
+
+                <!-- Basic Usage Demo 7 -->
+                <h4 class="theme-title">Readonly</h4>
+
+                <md-chips ng-model="basicChipsDemo.fruitNames4" readonly="true"></md-chips>
+                <br/>
+                <!-- End Basic Usage Demo 7 -->
+
+                <!-- end content -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-20">
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.basicChipsDemo = {
+    fruitNames: ['Apple', 'Banana', 'Orange'],
+    fruitNames1: ['Lime', 'Lemon', 'Jambul'],
+    fruitNames2: ['Cloudberry', 'Quince', 'Mango'],
+    fruitNames3: ['Apricot', 'Bilberry', 'Blueberry'],
+    fruitNames4: ['Avocado', 'Blackberry', 'Blackcurrant'],
+    tags: [],
+    vegObjs: [{
+            'name': 'Broccoli',
+            'type': 'Brassica'
+        },
+        {
+            'name': 'Cabbage',
+            'type': 'Brassica'
+        },
+        {
+            'name': 'Carrot',
+            'type': 'Umbelliferous'
+        }
+    ],
+    newVeg: function(chip) {
+        return {
+            name: chip,
+            type: 'unknown'
+        };
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Static Chips -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Static Chips</h3>
+
+                <!-- info -->
+                <blockquote>
+                    Static chips cannot be selected, removed or edited, and are not part of any model.<br/> If no <code class="red">ng-model</code> is provided, there are no input elements in <code class="red">md-chips</code>.
+                </blockquote>
+                <!-- end info -->
+
+                <!-- content -->
+
+                <h4 class="theme-title">Display a set of items as chips.</h4>
+
+                <md-chips>
+                    <md-chip>Hockey</md-chip>
+                    <md-chip>Lacrosse</md-chip>
+                    <md-chip>Baseball</md-chip>
+                    <md-chip>Football</md-chip>
+                </md-chips>
+
+                <!-- end content -->
+
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-20">
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-html" prism>
+&lt;h4 class=&quot;theme-title&quot;&gt;Display a set of items as chips.&lt;/h4&gt;
+&lt;md-chips&gt;
+    &lt;md-chip&gt;Hockey&lt;/md-chip&gt;
+    &lt;md-chip&gt;Lacrosse&lt;/md-chip&gt;
+    &lt;md-chip&gt;Baseball&lt;/md-chip&gt;
+    &lt;md-chip&gt;Football&lt;/md-chip&gt;
+&lt;/md-chips&gt;
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Static Chips -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Custom Separator Keys -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Custom Separator Keys</h3>
+
+                <!-- info -->
+                <blockquote>
+                    Use <code class="red">md-separator-keys</code> to customize the key codes which trigger chip creation.
+                </blockquote>
+                <!-- end info -->
+
+                <!-- content -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- Demo 1 -->
+                <h4 class="theme-title">Add custom separator key codes such as "semicolon" for e-mails.</h4>
+
+                <md-chips ng-model="separatorKeysChipsDemo.contacts" md-separator-keys="separatorKeysChipsDemo.customKeys"></md-chips>
+                <br/>
+                <!-- end Demo 1 -->
+
+                <!-- Demo 2 -->
+                <h4 class="theme-title">Add custom separator key codes such as "comma" for name.</h4>
+
+                <md-chips ng-model="separatorKeysChipsDemo.name" md-separator-keys="separatorKeysChipsDemo.customKeys1"></md-chips>
+                <br/>
+                <!-- end Demo 2 -->
+
+                <!-- end content -->
+                <!-- //////////////////////////////////////// -->
+
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-20">
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-html" prism>
+&lt;h4 class=&quot;theme-title&quot;&gt;Add custom separator key codes such as &quot;semicolon&quot; for e-mails.&lt;/h4&gt;
+&lt;md-chips ng-model=&quot;separatorKeysChipsDemo.contacts&quot; md-separator-keys=&quot;separatorKeysChipsDemo.customKeys&quot;&gt;&lt;/md-chips&gt;
+
+&lt;h4 class=&quot;theme-title&quot;&gt;Add custom separator key codes such as &quot;comma&quot; for name.&lt;/h4&gt;
+&lt;md-chips ng-model=&quot;separatorKeysChipsDemo.name&quot; md-separator-keys=&quot;separatorKeysChipsDemo.customKeys1&quot;&gt;&lt;/md-chips&gt;
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+var semicolonChipsDemo = 186;
+$scope.separatorKeysChipsDemo = {
+    contacts: ['test@example.com'],
+    name: ['John Doe'],
+    customKeys: [$mdConstant.KEY_CODE.ENTER, semicolonChipsDemo],
+    customKeys1: [$mdConstant.KEY_CODE.ENTER, $mdConstant.KEY_CODE.COMMA],
+
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Custom Separator Keys -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Custom Inputs -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Custom Inputs</h3>
+
+                <!-- content -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- Demo 1 -->
+                <h4 class="theme-title">Use an <code class="language-markup">input</code> element with no model to build an ordered set of chips.</h4>
+
+                <md-chips ng-model="customInputsChipsDemo.numberChips">
+                    <input type="number" placeholder="Enter a number">
+                </md-chips>
+                <br/>
+                <!-- end Demo 1 -->
+
+                <!-- Demo 2 -->
+                <h4 class="theme-title">Use an <code class="language-markup">input</code> element to build an ordered set of chips.</h4>
+
+                <md-chips ng-model="customInputsChipsDemo.numberChips2">
+                    <input type="number" ng-model="customInputsChipsDemo.numberBuffer" placeholder="Enter a number">
+                </md-chips>
+                <br/>
+                <!-- end Demo 2 -->
+
+                <!-- Demo 3 -->
+                <h4 class="theme-title">Use <code class="language-markup">md-autocomplete</code> to build an ordered set of chips.</h4>
+
+                <md-chips ng-model="customInputsChipsDemo.selectedVegetables" md-autocomplete-snap md-transform-chip="customInputsChipsDemo.transformChip($chip)" md-require-match="customInputsChipsDemo.autocompleteDemoRequireMatch">
+                    <md-autocomplete md-selected-item="customInputsChipsDemo.selectedItem" md-search-text="customInputsChipsDemo.searchText" md-items="item in customInputsChipsDemo.querySearch(customInputsChipsDemo.searchText)" md-item-text="item.name" placeholder="Search for a vegetable">
+                        <span md-highlight-text="customInputsChipsDemo.searchText">{{item.name}} :: {{item.type}}</span>
+                    </md-autocomplete>
+                    <md-chip-template>
+                        <span>
+                            <strong>{{$chip.name}}</strong>
+                            <em>({{$chip.type}})</em>
+                        </span>
+                    </md-chip-template>
+                </md-chips>
+
+                <h5 class="theme-title m-b-0 m-t-30">Vegetable Options</h5>
+                <md-list layout="row" layout-wrap>
+                    <md-list-item class="md-2-line veggie-option" ng-repeat="veg in customInputsChipsDemo.vegetables" flex>
+                        <div class="md-item-text">
+                            <p>{{veg.name}}::<small>{{veg.type}}</small></p>
+                        </div>
+                    </md-list-item>
+                </md-list>
+                <br/>
+                <!-- end Demo 3 -->
+
+                <!-- end content -->
+                <!-- //////////////////////////////////////// -->
+
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.customInputsChipsDemo = {
+    selectedItem: null,
+    searchText: null,
+    querySearch: querySearchCustomInputsChip,
+    vegetables: loadVegetablesCustomInputsChip(),
+    selectedVegetables: [],
+    numberChips: [],
+    numberChips2: [],
+    numberBuffer: '',
+    autocompleteDemoRequireMatch: true,
+    transformChip: transformCustomInputsChip
+};
+
+
+//  Return the proper object when the append is called.
+function transformCustomInputsChip(chip) {
+    // If it is an object, it's already a known chip
+    if (angular.isObject(chip)) {
+        return chip;
+    }
+
+    // Otherwise, create a new one
+    return { name: chip, type: 'new' }
+}
+
+//  Search for vegetables.
+function querySearchCustomInputsChip(query) {
+    var results = query ? $scope.customInputsChipsDemo.vegetables.filter(createFilterForCustomInputsChip(query)) : [];
+    return results;
+}
+
+//  Create filter function for a query string
+function createFilterForCustomInputsChip(query) {
+    var lowercaseQuery = angular.lowercase(query);
+
+    return function filterFn(vegetable) {
+        return (vegetable._lowername.indexOf(lowercaseQuery) === 0) ||
+            (vegetable._lowertype.indexOf(lowercaseQuery) === 0);
+    };
+
+}
+//load all vegitables
+function loadVegetablesCustomInputsChip() {
+    var veggies = [{
+            'name': 'Broccoli',
+            'type': 'Brassica'
+        },
+        {
+            'name': 'Cabbage',
+            'type': 'Brassica'
+        },
+        {
+            'name': 'Carrot',
+            'type': 'Umbelliferous'
+        },
+        {
+            'name': 'Lettuce',
+            'type': 'Composite'
+        },
+        {
+            'name': 'Spinach',
+            'type': 'Goosefoot'
+        }
+    ];
+
+    return veggies.map(function(veg) {
+        veg._lowername = veg.name.toLowerCase();
+        veg._lowertype = veg.type.toLowerCase();
+        return veg;
+    });
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Custom Inputs -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+</md-content>
+<!--End Page content -->

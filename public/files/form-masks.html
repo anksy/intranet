@@ -1,0 +1,164 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Form</h1>
+        <!-- help -->
+        <a href="https://nosir.github.io/cleave.js/" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="Form Layouts" ui-sref="form-layouts">
+            </md-tab>
+            <md-tab label="Form Validations" ui-sref="form-validations">
+            </md-tab>
+            <md-tab label="Form Masks" ui-sref="form-masks" md-active="true">
+            </md-tab>
+            <md-tab label="Text Editor" ui-sref="text-editor">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--form title-->
+        <h3 class="theme-title">Form Masks</h3>
+        <!-- description -->
+        <p><a href="https://nosir.github.io/cleave.js/" target="_blank">Cleave.js</a> has a simple purpose: to help you format input text content automatically.</p>
+        <!-- end description -->
+
+        <!-- content -->
+        <form name="formMaskForm" class="row">
+            <md-input-container class="col s12 l6 md-block">
+                <label>Date</label>
+                <input type="text" name="date" placeholder="2017-01-01" cleave="formMaskOptions.date" ng-model="model.date" />
+            </md-input-container>
+
+            <md-input-container class="col s12 l6 md-block">
+                <label>Date</label>
+                <input type="text" name="date1" placeholder="01/01/2017" cleave="formMaskOptions.date1" ng-model="model.date1">
+            </md-input-container>
+
+            <md-input-container class="col s12 l6 md-block">
+                <label>Credit Card</label>
+                <input type="text" name="creditCard" placeholder="XXXX-XXXXX-XXXXXX" cleave="formMaskOptions.creditCard" ng-model="model.creditCard">
+            </md-input-container>
+
+            <md-input-container class="col s12 l6 md-block">
+                <label>Purchase Code</label>
+                <input type="text" name="purchaseCode" cleave="formMaskOptions.purchaseCode" ng-model="model.purchaseCode">
+            </md-input-container>
+
+            <md-input-container class="col s12 l6 md-block">
+                <label>Currency</label>
+                <input type="text" name="currency" cleave="formMaskOptions.currency" ng-model="model.currency">
+            </md-input-container>
+
+            <md-input-container class="col s12 l6 md-block">
+                <label>Mobile Number</label>
+                <input type="text" name="mobile" placeholder="1234567891" cleave="formMaskOptions.mobile" ng-model="model.mobile">
+            </md-input-container>
+        </form>
+        <!-- end content -->
+
+        <!-- sample code -->
+
+        <md-tabs class="m-t-30" md-dynamic-height md-border-bottom>
+            <md-tab label="html">
+                <md-content class="m-t-0">
+                    <pre><code class="language-html" prism>
+&lt;form name=&quot;formMaskForm&quot; class=&quot;row&quot;&gt;
+    &lt;md-input-container class=&quot;col s12 l6 md-block&quot;&gt;
+        &lt;label&gt;Date&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;date&quot; placeholder=&quot;2017-01-01&quot; cleave=&quot;formMaskOptions.date&quot; ng-model=&quot;model.date&quot; /&gt;
+    &lt;/md-input-container&gt;
+
+    &lt;md-input-container class=&quot;col s12 l6 md-block&quot;&gt;
+        &lt;label&gt;Date&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;date1&quot; placeholder=&quot;01/01/2017&quot; cleave=&quot;formMaskOptions.date1&quot; ng-model=&quot;model.date1&quot;&gt;
+    &lt;/md-input-container&gt;
+
+    &lt;md-input-container class=&quot;col s12 l6 md-block&quot;&gt;
+        &lt;label&gt;Credit Card&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;creditCard&quot; placeholder=&quot;XXXX-XXXXX-XXXXXX&quot; cleave=&quot;formMaskOptions.creditCard&quot; ng-model=&quot;model.creditCard&quot;&gt;
+    &lt;/md-input-container&gt;
+
+    &lt;md-input-container class=&quot;col s12 l6 md-block&quot;&gt;
+        &lt;label&gt;Purchase Code&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;purchaseCode&quot; cleave=&quot;formMaskOptions.purchaseCode&quot; ng-model=&quot;model.purchaseCode&quot;&gt;
+    &lt;/md-input-container&gt;
+
+    &lt;md-input-container class=&quot;col s12 l6 md-block&quot;&gt;
+        &lt;label&gt;Currency&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;currency&quot; cleave=&quot;formMaskOptions.currency&quot; ng-model=&quot;model.currency&quot;&gt;
+    &lt;/md-input-container&gt;
+
+    &lt;md-input-container class=&quot;col s12 l6 md-block&quot;&gt;
+        &lt;label&gt;Mobile Number&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;mobile&quot; placeholder=&quot;1234567891&quot; cleave=&quot;formMaskOptions.mobile&quot; ng-model=&quot;model.mobile&quot;&gt;
+    &lt;/md-input-container&gt;
+&lt;/form&gt;
+                            </code></pre>
+                </md-content>
+            </md-tab>
+            <md-tab label="js">
+                <md-content class="m-t-0">
+                    <pre><code class=" language-javascript" prism>
+$scope.formMaskOptions = {
+    date: {
+        date: true,
+        datePattern: ['Y', 'm', 'd'],
+        delimiters: ['-', '-', '-']
+    },
+    date1: {
+        date: true,
+        datePattern: ['m', 'd', 'Y']
+    },
+    creditCard: {
+        creditCard: true,
+        delimiter: '-'
+    },
+    purchaseCode: {
+        blocks: [6, 3, 3, 3],
+        prefix: 'ISBN',
+        uppercase: true,
+        delimiters: ['-', '-', '-', '-']
+    },
+    currency: {
+        numeral: true,
+        prefix: '$ ',
+        rawValueTrimPrefix: true
+    },
+    mobile: {
+        blocks: [10]
+    }
+};
+
+$scope.model = {
+    date: '',
+    date1: '',
+    creditCard: '',
+    purchaseCode: 'ISBN',
+    currency: '$ ',
+    mobile: ''
+};
+</code></pre>
+                </md-content>
+            </md-tab>
+
+        </md-tabs>
+        <!-- end sample code -->
+
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

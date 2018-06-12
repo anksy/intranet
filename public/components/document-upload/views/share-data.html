@@ -1,0 +1,80 @@
+<md-dialog aria-label="add new" class="share-diaglog">
+  <form ng-cloak name="form" novalidate>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Share</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+              <md-icon>close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      
+       <div class="md-dialog-content ">
+          <alert-message ng-if="alert" data="alert"> </alert-message>
+
+            <md-chips ng-model="selectedUsers" md-autocomplete-snap md-transform 
+          chip="transformChip($chip)" md-require-match=''>
+            <md-autocomplete md-selected-item='selectedItem' 
+                 md-search-text='searchText' 
+                 md-items='item in querySearchDeferred(searchText)' 
+                 md-item-text='item.name'
+                 placeholder="Enter names or email addresses...">
+              <span md-highlight-text='searchText'>{{item.name}} {{item.email}}</span>
+            </md-autocomplete>
+          <md-chip-template>
+            <span>
+              <strong>{{$chip.name}}</strong>
+              <em><small>({{$chip.email}})</small></em>
+            <span>
+          </md-chip-template>
+        </md-chips>
+
+            <div class="text-center">
+                 <md-button ng-disabled="isLoading || selectedUsers.length==0" type="submit"  
+          ng-click="share(form)" aria-label="submit"
+          class="md-raised md-primary ">
+          <span ng-show="isLoading" layout="row" class="btn-loading"   
+           layout-align="center center">   
+          <md-progress-circular md-mode="indeterminate" md-diameter="15">
+          </md-progress-circular> <small> Processing</small>
+          </span>
+           <span ng-hide="isLoading"> Shared </span>
+      </md-button>
+            </div>
+
+            <div class="box-list" ng-if="users.length>0">
+              <md-list >
+                <md-list-item ng-repeat="user in users" ng-init="user.isLoading =false">
+                  <div layout="row" layout-align="center center" class="isLoading" ng-if="user.isLoading">
+                     <md-progress-circular md-mode="indeterminate" md-diameter="30"></md-progress-circular>
+                     <span>&nbsp;</span>
+                    <span>Processing..</span>
+                  </div>
+                  <div layout="row"  layout="start center" style="width: 100%">
+                    <small layout="column"  layout="center center"><md-icon>account_circle</md-icon></small>
+
+                    <div layout="column" layout="start center">
+                      <b>{{user.name}}</b>
+                      <div class="small"> {{user.email}}</div>
+                    </div>
+
+                  </div>
+
+                  <md-button ng-click="remove(user)" class="md-icon-button">
+                    <md-icon> close </md-icon>
+                  </md-button>
+                 <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+
+              
+              </md-list>
+
+        </div>
+      </div>
+   </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>

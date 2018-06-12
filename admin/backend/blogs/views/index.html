@@ -1,0 +1,89 @@
+<div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="portlet light bordered">
+                                <material-loader ng-show="loader"></material-loader>
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-bubble font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">Blogs</span>
+                                    </div>
+                                    <div class="actions">
+                                        <div class="btn-group">
+
+                                            <a class="btn green-haze btn-outline btn-circle btn-sm mg-10" href="javascript:;" ng-click="go('/blogs/add')"> Add New Blog</a>
+
+                                            <a class="btn green-haze btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" aria-expanded="false" ng-if="data.records.length"> Actions <span ng-show='selected.length'>{{selected.length}} record(s) selected</span>
+                                                <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li>
+                                                    <a href="javascript:;" ng-click="quickAction('active')"> Activate</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;" ng-click="quickAction('inactive')"> Deactivate</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;" ng-click="quickAction('delete')">Delete</a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-container" ng-if="data.records.length">
+                                    <md-table-container>
+                                        
+                                      <table md-table md-row-select multiple ng-model="selected" md-progress="data.records">
+                                        <thead md-head md-order="query.order" md-on-reorder="data">
+                                          <tr md-row>
+                                            <th md-column><span>Title</span></th>
+                                            <th md-column>Meta Title</th>
+                                            <th md-column>Slug</th>
+                                            
+                                            <th md-column>Status</th>
+                                            <th md-column>Created</th>
+                                            
+                                            <th md-column>Action</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody md-body>
+                                          <tr md-row md-select="row._id" md-select-id="row._id" md-auto-select ng-repeat="row in data.records">
+                                            <td md-cell>{{row.title}}</td>
+                                            <td md-cell>{{row.meta_title}}</td>
+                                            <td md-cell>{{row.slug}}</td>
+                                            
+
+                                            <td md-cell><label class="btn btn-xs {{row.status?'green':'red'}}">{{row.status?'Active':'Inactive'}}</label></td>
+                                            <td md-cell>{{row.created_at | date}}</td>
+                                            
+                                            <td md-cell>
+                                                <a ng-click="go('/blogs/edit/'+row._id)" class="btn btn-icon-only green">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                                <a href="javascript:;" class="btn btn-icon-only red" ng-click='remove(row._id, $event)'>
+                                                    <i class="fa fa-times"></i>
+                                                </a>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+
+                                    </md-table-container>
+
+                                    <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{data.total}}" md-on-paginate="list" md-page-select></md-table-pagination>
+                                </div>
+
+                                <div class="alert alert-info" ng-if='!data.records || data.records.length===0'>No record found</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>

@@ -1,0 +1,842 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Advanced UI</h1>
+        <!-- help -->
+        <a href="https://owlcarousel2.github.io/OwlCarousel2/" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="cards" ui-sref="cards">
+            </md-tab>
+            <md-tab label="carousel" ui-sref="carousel" md-active="true">
+            </md-tab>
+            <md-tab label="dialog" ui-sref="dialog">
+            </md-tab>
+            <md-tab label="slider" ui-sref="slider">
+            </md-tab>
+            <md-tab label="sweetAlert" ui-sref="sweetAlert">
+            </md-tab>
+            <md-tab label="highlight" ui-sref="highlight">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Carousel</h2>
+        <!-- page desciption -->
+        <p><a href="https://owlcarousel2.github.io/OwlCarousel2/" target="_blank">Owl Carousel 2 </a>Touch enabled jQuery plugin that lets you create a beautiful responsive carousel slider.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Carousel -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100" class="carousel-demo">
+                <!--title-->
+                <h3 class="theme-title">Basic</h3>
+                <!-- content -->
+
+                <div class="owl-carousel owl-theme" data-options="{loop:true,margin: 10}" owlcarousel>
+                    <div class="item">
+                        <h4>1</h4>
+                    </div>
+                    <div class="item">
+                        <h4>2</h4>
+                    </div>
+                    <div class="item">
+                        <h4>3</h4>
+                    </div>
+                    <div class="item">
+                        <h4>4</h4>
+                    </div>
+                    <div class="item">
+                        <h4>5</h4>
+                    </div>
+                    <div class="item">
+                        <h4>6</h4>
+                    </div>
+                    <div class="item">
+                        <h4>7</h4>
+                    </div>
+                    <div class="item">
+                        <h4>8</h4>
+                    </div>
+                    <div class="item">
+                        <h4>9</h4>
+                    </div>
+                    <div class="item">
+                        <h4>10</h4>
+                    </div>
+                    <div class="item">
+                        <h4>11</h4>
+                    </div>
+                    <div class="item">
+                        <h4>12</h4>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;owl-carousel owl-theme&quot; data-options=&quot;{loop:true,margin: 10}&quot; owlcarousel&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;5&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;12&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Carousel -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Responsive Carousel -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100" class="carousel-demo">
+                <!--title-->
+                <h3 class="theme-title">Responsive</h3>
+                <!-- content -->
+
+                <div class="owl-carousel owl-theme" data-options="{loop:true,margin: 10,responsive:{ 0:{ items:1 },600:{ items:3 }, 1000:{ items:5 }} }" owlcarousel>
+                    <div class="item">
+                        <h4>1</h4>
+                    </div>
+                    <div class="item">
+                        <h4>2</h4>
+                    </div>
+                    <div class="item">
+                        <h4>3</h4>
+                    </div>
+                    <div class="item">
+                        <h4>4</h4>
+                    </div>
+                    <div class="item">
+                        <h4>5</h4>
+                    </div>
+                    <div class="item">
+                        <h4>6</h4>
+                    </div>
+                    <div class="item">
+                        <h4>7</h4>
+                    </div>
+                    <div class="item">
+                        <h4>8</h4>
+                    </div>
+                    <div class="item">
+                        <h4>9</h4>
+                    </div>
+                    <div class="item">
+                        <h4>10</h4>
+                    </div>
+                    <div class="item">
+                        <h4>11</h4>
+                    </div>
+                    <div class="item">
+                        <h4>12</h4>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;owl-carousel owl-theme&quot; data-options=&quot;{loop:true,margin: 10,responsive:{ 0:{ items:1 },600:{ items:3 }, 1000:{ items:5 }}}&quot; owlcarousel&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;5&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;12&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Responsive Carousel -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Center Carousel -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100" class="carousel-demo">
+                <!--title-->
+                <h3 class="theme-title">Center</h3>
+                <!-- content -->
+
+                <div class="owl-carousel owl-theme" data-options="{center: true, items: 2,loop:true,margin: 10,responsive: {600: { items: 4 }}}" owlcarousel>
+                    <div class="item">
+                        <h4>1</h4>
+                    </div>
+                    <div class="item">
+                        <h4>2</h4>
+                    </div>
+                    <div class="item">
+                        <h4>3</h4>
+                    </div>
+                    <div class="item">
+                        <h4>4</h4>
+                    </div>
+                    <div class="item">
+                        <h4>5</h4>
+                    </div>
+                    <div class="item">
+                        <h4>6</h4>
+                    </div>
+                    <div class="item">
+                        <h4>7</h4>
+                    </div>
+                    <div class="item">
+                        <h4>8</h4>
+                    </div>
+                    <div class="item">
+                        <h4>9</h4>
+                    </div>
+                    <div class="item">
+                        <h4>10</h4>
+                    </div>
+                    <div class="item">
+                        <h4>11</h4>
+                    </div>
+                    <div class="item">
+                        <h4>12</h4>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;owl-carousel owl-theme&quot; data-options=&quot;{center: true, items: 2,loop:true,margin: 10,responsive: {600: { items: 4 }}}&quot; owlcarousel&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;5&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;12&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Center Carousel -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Merge Carousel -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100" class="carousel-demo">
+                <!--title-->
+                <h3 class="theme-title">Merge</h3>
+                <!-- content -->
+
+                <div class="owl-carousel owl-theme" data-options="{items: 5,loop:true,margin: 10,merge: true,responsive: {678: {mergeFit: true},1000: {mergeFit: false}}}" owlcarousel>
+                    <div class="item" data-merge="1">
+                        <h4>1</h4>
+                    </div>
+                    <div class="item">
+                        <h4>2</h4>
+                    </div>
+                    <div class="item" data-merge="2">
+                        <h4>3</h4>
+                    </div>
+                    <div class="item" data-merge="1">
+                        <h4>4</h4>
+                    </div>
+                    <div class="item" data-merge="3">
+                        <h4>5</h4>
+                    </div>
+                    <div class="item" data-merge="6">
+                        <h4>6</h4>
+                    </div>
+                    <div class="item" data-merge="2">
+                        <h4>7</h4>
+                    </div>
+                    <div class="item" data-merge="1">
+                        <h4>8</h4>
+                    </div>
+                    <div class="item" data-merge="3">
+                        <h4>9</h4>
+                    </div>
+                    <div class="item">
+                        <h4>10</h4>
+                    </div>
+                    <div class="item">
+                        <h4>11</h4>
+                    </div>
+                    <div class="item" data-merge="2">
+                        <h4>12</h4>
+                    </div>
+                    <div class="item">
+                        <h4>13</h4>
+                    </div>
+                    <div class="item">
+                        <h4>14</h4>
+                    </div>
+                    <div class="item">
+                        <h4>15</h4>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;owl-carousel owl-theme&quot; data-options=&quot;{items: 5,loop:true,margin: 10,merge: true,responsive: {678: {mergeFit: true},1000: {mergeFit: false}}}&quot; owlcarousel&gt;
+    &lt;div class=&quot;item&quot; data-merge=&quot;1&quot;&gt;
+        &lt;h4&gt;1&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;h4&gt;2&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; data-merge=&quot;2&quot;&gt;
+        &lt;h4&gt;3&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; data-merge=&quot;1&quot;&gt;
+        &lt;h4&gt;4&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; data-merge=&quot;3&quot;&gt;
+        &lt;h4&gt;5&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; data-merge=&quot;6&quot;&gt;
+        &lt;h4&gt;6&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; data-merge=&quot;2&quot;&gt;
+        &lt;h4&gt;7&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; data-merge=&quot;1&quot;&gt;
+        &lt;h4&gt;8&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; data-merge=&quot;3&quot;&gt;
+        &lt;h4&gt;9&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;h4&gt;10&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;h4&gt;11&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; data-merge=&quot;2&quot;&gt;
+        &lt;h4&gt;12&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;h4&gt;13&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;h4&gt;14&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;h4&gt;15&lt;/h4&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Merge -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Auto Width Carousel -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100" class="carousel-demo">
+                <!--title-->
+                <h3 class="theme-title">Auto Width</h3>
+                <!-- content -->
+
+                <div class="owl-carousel owl-theme" data-options="{loop:true,margin: 10,autoWidth: true}" owlcarousel>
+                    <div class="item" style="width:250px">
+                        <h4>1</h4>
+                    </div>
+                    <div class="item" style="width:100px">
+                        <h4>2</h4>
+                    </div>
+                    <div class="item" style="width:500px">
+                        <h4>3</h4>
+                    </div>
+                    <div class="item" style="width:100px">
+                        <h4>4</h4>
+                    </div>
+                    <div class="item" style="width:50px">
+                        <h4>6</h4>
+                    </div>
+                    <div class="item" style="width:250px">
+                        <h4>7</h4>
+                    </div>
+                    <div class="item" style="width:120px">
+                        <h4>8</h4>
+                    </div>
+                    <div class="item" style="width:420px">
+                        <h4>9</h4>
+                    </div>
+                    <div class="item" style="width:120px">
+                        <h4>10</h4>
+                    </div>
+                    <div class="item" style="width:300px">
+                        <h4>11</h4>
+                    </div>
+                    <div class="item" style="width:450px">
+                        <h4>12</h4>
+                    </div>
+                    <div class="item" style="width:220px">
+                        <h4>13</h4>
+                    </div>
+                    <div class="item" style="width:150px">
+                        <h4>14</h4>
+                    </div>
+                    <div class="item" style="width:600px">
+                        <h4>15</h4>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;owl-carousel owl-theme&quot; data-options=&quot;{loop:true,margin: 10,autoWidth: true}&quot; owlcarousel&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:250px&quot;&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:100px&quot;&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:500px&quot;&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:100px&quot;&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:50px&quot;&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:250px&quot;&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:120px&quot;&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:420px&quot;&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:120px&quot;&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:300px&quot;&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:450px&quot;&gt;&lt;h4&gt;12&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:220px&quot;&gt;&lt;h4&gt;13&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:150px&quot;&gt;&lt;h4&gt;14&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;width:600px&quot;&gt;&lt;h4&gt;15&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Auto Width Carousel -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Right To Left Carousel -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100" class="carousel-demo">
+                <!--title-->
+                <h3 class="theme-title">Right To Left</h3>
+                <!-- content -->
+
+                <div class="owl-carousel owl-theme" data-options="{rtl: true,loop:true,margin: 10,nav: true}" owlcarousel>
+                    <div class="item">
+                        <h4>1</h4>
+                    </div>
+                    <div class="item">
+                        <h4>2</h4>
+                    </div>
+                    <div class="item">
+                        <h4>3</h4>
+                    </div>
+                    <div class="item">
+                        <h4>4</h4>
+                    </div>
+                    <div class="item">
+                        <h4>5</h4>
+                    </div>
+                    <div class="item">
+                        <h4>6</h4>
+                    </div>
+                    <div class="item">
+                        <h4>7</h4>
+                    </div>
+                    <div class="item">
+                        <h4>8</h4>
+                    </div>
+                    <div class="item">
+                        <h4>9</h4>
+                    </div>
+                    <div class="item">
+                        <h4>10</h4>
+                    </div>
+                    <div class="item">
+                        <h4>11</h4>
+                    </div>
+                    <div class="item">
+                        <h4>12</h4>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;owl-carousel owl-theme&quot; data-options=&quot;{rtl: true,loop:true,margin: 10,nav: true}&quot; owlcarousel&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;5&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;12&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Right To Left Carousel -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Auto Height Carousel -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100" class="carousel-demo">
+                <!--title-->
+                <h3 class="theme-title">Auto Height</h3>
+                <!-- content -->
+
+                <div class="owl-carousel owl-theme" data-options="{items:1,margin: 10,autoHeight: true}" owlcarousel>
+                    <div class="item" style="height:300px">
+                        <h4>1</h4>
+                    </div>
+                    <div class="item" style="height:100px">
+                        <h4>2</h4>
+                    </div>
+                    <div class="item" style="height:200px">
+                        <h4>3</h4>
+                    </div>
+                    <div class="item" style="height:250px">
+                        <h4>4</h4>
+                    </div>
+                    <div class="item" style="height:400px">
+                        <h4>5</h4>
+                    </div>
+                    <div class="item" style="height:200px">
+                        <h4>6</h4>
+                    </div>
+                    <div class="item" style="height:300px">
+                        <h4>7</h4>
+                    </div>
+                    <div class="item" style="height:200px">
+                        <h4>8</h4>
+                    </div>
+                    <div class="item" style="height:300px">
+                        <h4>9</h4>
+                    </div>
+                    <div class="item" style="height:350px">
+                        <h4>10</h4>
+                    </div>
+                    <div class="item" style="height:200px">
+                        <h4>11</h4>
+                    </div>
+                    <div class="item" style="height:150px">
+                        <h4>12</h4>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;owl-carousel owl-theme&quot; data-options=&quot;{items:1,margin: 10,autoHeight: true}&quot; owlcarousel&gt;
+    &lt;div class=&quot;item&quot; style=&quot;height:300px&quot;&gt;
+        &lt;h4&gt;1&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;height:100px&quot;&gt;
+        &lt;h4&gt;2&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;height:200px&quot;&gt;
+        &lt;h4&gt;3&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;height:250px&quot;&gt;
+        &lt;h4&gt;4&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;height:400px&quot;&gt;
+        &lt;h4&gt;5&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;height:200px&quot;&gt;
+        &lt;h4&gt;6&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;height:300px&quot;&gt;
+        &lt;h4&gt;7&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;height:200px&quot;&gt;
+        &lt;h4&gt;8&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;height:300px&quot;&gt;
+        &lt;h4&gt;9&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;height:350px&quot;&gt;
+        &lt;h4&gt;10&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;height:200px&quot;&gt;
+        &lt;h4&gt;11&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot; style=&quot;height:150px&quot;&gt;
+        &lt;h4&gt;12&lt;/h4&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Auto Height Carousel -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Autoplay Carousel -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100" class="carousel-demo">
+                <!--title-->
+                <h3 class="theme-title">Autoplay</h3>
+                <!-- content -->
+
+                <div class="owl-carousel owl-theme" data-options="{items: 4,loop: true,margin: 10,autoplay: true,autoplayTimeout: 1000,autoplayHoverPause: true}" owlcarousel>
+                    <div class="item">
+                        <h4>1</h4>
+                    </div>
+                    <div class="item">
+                        <h4>2</h4>
+                    </div>
+                    <div class="item">
+                        <h4>3</h4>
+                    </div>
+                    <div class="item">
+                        <h4>4</h4>
+                    </div>
+                    <div class="item">
+                        <h4>5</h4>
+                    </div>
+                    <div class="item">
+                        <h4>6</h4>
+                    </div>
+                    <div class="item">
+                        <h4>7</h4>
+                    </div>
+                    <div class="item">
+                        <h4>8</h4>
+                    </div>
+                    <div class="item">
+                        <h4>9</h4>
+                    </div>
+                    <div class="item">
+                        <h4>10</h4>
+                    </div>
+                    <div class="item">
+                        <h4>11</h4>
+                    </div>
+                    <div class="item">
+                        <h4>12</h4>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;owl-carousel owl-theme&quot; data-options=&quot;{items: 4,loop: true,margin: 10,autoplay: true,autoplayTimeout: 1000,autoplayHoverPause: true}&quot; owlcarousel&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;1&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;2&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;3&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;4&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;5&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;6&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;7&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;8&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;9&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;10&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;11&lt;/h4&gt;&lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;&lt;h4&gt;12&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Autoplay Carousel -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+
+</md-content>
+<!--End Page content -->

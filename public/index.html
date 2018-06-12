@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="intranet"  data-ng-cloak>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/assets/images/favicon.png" type="image/png" rel="icon">
+    <title>Intranet</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/dist/css/vendor.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/dist/css/app.min.css">
+    <base href="/">
+
+</head>
+<body ng-class="{'isNotLogin' :isLoginRoute }">
+    <!--Pre Page Loader-->
+    <div id="pre-page-loader" class="ng-hide">
+        <md-progress-circular md-mode="indeterminate" 
+            class="loader-center"></md-progress-circular>
+    </div>
+    <!-- End Pre Page Loader-->
+    <!--Page wrapper-->
+    <div class="theme-page-wrapper">
+        <!--Control page-->
+        <div id="theme-page-control" 
+             class="fixed-sidebar fixed-toolbar" 
+             data-ng-class="[collapsedsidebarClass]">
+            <app-header ng-if="!isLoginRoute"></app-header>
+            <!--Left sidebar-->
+           <app-sidebar ng-if="!isLoginRoute"></app-sidebar>
+            <!--End left sidebar-->
+            <!--Page Body-->
+            <main ng-class="{'theme-page-body' :!isLoginRoute }">
+                <ui-view> </ui-view>
+            </main>
+            <!--End page body-->
+            <!--Footer-->
+            <app-footer ng-if="!isLoginRoute"></app-footer>
+        </div>
+    </div>
+    <script  src="/assets/dist/js/vendor.js"></script>
+    <script  src="/assets/dist/js/bundle.min.js"></script>
+</html>

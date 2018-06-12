@@ -1,0 +1,52 @@
+<!-- Page content -->
+<div layout="row">
+    <div flex="100">
+       
+
+        <md-card class="action-form md-whiteframe-2dp">
+            <!-- form title -->
+            <h1 class="form-title">Welcome back!</h1>
+            <!-- form -->
+            <form>
+                <md-input-container class="md-block md-icon-float">
+                    <label>Email</label>
+                    <md-icon class="material-icons">mail</md-icon>
+                    <input type="email">
+                </md-input-container>
+
+                <md-input-container class="md-block md-icon-float">
+                    <label>Password</label>
+                    <md-icon class="material-icons">lock</md-icon>
+                    <input type="password">
+                </md-input-container>
+
+                <div layout="row" layout-align="space-between start">
+                    <div>
+                        <md-checkbox ng-model="demoRemember" aria-label="Remember me" class="md-primary">
+                            Remember me
+                        </md-checkbox>
+                    </div>
+                    <div>
+                        <span class="form-ref-link"><a ui-sref="reset">Forgot your password?</a></span>
+                    </div>
+                </div>
+
+                <md-button class="md-raised md-primary btn-block btn-action-form" type="submit">Sign in to your account</md-button>
+
+            </form>
+            <!-- end form -->
+
+            <!-- form refer link -->
+            <div class="form-footer-link">
+                <a ui-sref="/">Don't have an account? <span>Sign up</span></a>
+            </div>
+            <!-- end form refer link -->
+
+        </md-card>
+        <!-- End form block -->
+
+    </div>
+</div>
+<!--End Page content -->
+
+

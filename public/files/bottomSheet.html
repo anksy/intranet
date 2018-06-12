@@ -1,0 +1,151 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Extra UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/bottomSheet" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="bottom Sheet" ui-sref="bottomSheet" md-active="true">
+            </md-tab>
+            <md-tab label="fab SpeedDial" ui-sref="fabSpeedDial">
+            </md-tab>
+            <md-tab label="fab Toolbar" ui-sref="fabToolbar">
+            </md-tab>
+            <md-tab label="list" ui-sref="list">
+            </md-tab>
+            <md-tab label="menuBar" ui-sref="menuBar">
+            </md-tab>
+            <md-tab label="navBar" ui-sref="navBar">
+            </md-tab>
+            <md-tab label="panel" ui-sref="panel">
+            </md-tab>
+            <md-tab label="subheader" ui-sref="subheader">
+            </md-tab>
+            <md-tab label="swipe" ui-sref="swipe">
+            </md-tab>
+            <md-tab label="toolbar" ui-sref="toolbar">
+            </md-tab>
+            <md-tab label="virtual Repeat" ui-sref="virtualRepeat">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Bottom Sheet</h2>
+        <!-- page desciption -->
+        <p><a href="https://material.angularjs.org/latest/demo/bottomSheet" target="_blank">Bottom sheets</a> can be displayed by clicking one of the buttons below. Once shown, it can be dismissed by either swiping down or clicking in the shaded area.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- content -->
+                <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
+                    <div flex="50" class="m-a-5">
+                        <md-button class="md-primary btn-block md-raised" ng-click="showListBottomSheetDemo()">Show as List</md-button>
+                    </div>
+                    <div flex="50" class="m-a-5">
+                        <md-button class="md-primary btn-block md-raised" ng-click="showGridBottomSheetDemo()">Show as Grid</md-button>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+//  Show as List
+$scope.showListBottomSheetDemo = function() {
+    $mdBottomSheet.show({
+        template: '&lt;md-bottom-sheet&gt;' +
+            '&lt;md-subheader&gt;Comment Actions&lt;/md-subheader&gt;' +
+            '&lt;md-list&gt;' +
+            '&lt;md-list-item&gt;' +
+            '&lt;md-button&gt; &lt;i class=&quot;material-icons&quot;&gt;share&lt;/i&gt; share&lt;/md-button&gt;' +
+            '&lt;/md-list-item&gt;' +
+            '&lt;md-list-item&gt;' +
+            '&lt;md-button&gt; &lt;i class=&quot;material-icons&quot;&gt;print&lt;/i&gt; print&lt;/md-button&gt;' +
+            '&lt;/md-list-item&gt;' +
+            '&lt;md-list-item&gt;' +
+            '&lt;md-button md-autofocus=&quot;true&quot;&gt; &lt;i class=&quot;material-icons&quot;&gt;cloud_upload&lt;/i&gt; upload&lt;/md-button&gt;' +
+            '&lt;/md-list-item&gt;' +
+            '&lt;md-list-item&gt;' +
+            '&lt;md-button&gt; &lt;i class=&quot;material-icons&quot;&gt;content_copy&lt;/i&gt; copy&lt;/md-button&gt;' +
+            '&lt;/md-list-item&gt;' +
+            '&lt;/md-list&gt;' +
+            '&lt;/md-bottom-sheet&gt;',
+    });
+};
+
+//  Show as Grid
+$scope.showGridBottomSheetDemo = function() {
+    $mdBottomSheet.show({
+        template: '&lt;md-bottom-sheet&gt;' +
+            '&lt;div layout=&quot;row&quot; layout-align=&quot;center center&quot;&gt;' +
+            '&lt;h4&gt;Since &lt;code class=&quot;language-markup&quot;&gt;clickOutsideToClose = false&lt;/code&gt;, drag down or press ESC to close&lt;/h4&gt;' +
+            '&lt;/div&gt;' +
+            '&lt;div&gt;' +
+            '&lt;md-list layout=&quot;row&quot; layout-wrap&gt;' +
+            '&lt;md-list-item flex&gt;' +
+            '&lt;md-button&gt; &lt;i class=&quot;material-icons&quot;&gt;share&lt;/i&gt; share&lt;/md-button&gt;' +
+            '&lt;/md-list-item&gt;' +
+            '&lt;md-list-item flex&gt;' +
+            '&lt;md-button&gt; &lt;i class=&quot;material-icons&quot;&gt;print&lt;/i&gt; print&lt;/md-button&gt;' +
+            '&lt;/md-list-item&gt;' +
+            '&lt;md-list-item flex&gt;' +
+            '&lt;md-button md-autofocus=&quot;true&quot;&gt; &lt;i class=&quot;material-icons&quot;&gt;cloud_upload&lt;/i&gt; upload&lt;/md-button&gt;' +
+            '&lt;/md-list-item&gt;' +
+            '&lt;md-list-item flex&gt;' +
+            '&lt;md-button&gt; &lt;i class=&quot;material-icons&quot;&gt;content_copy&lt;/i&gt; copy&lt;/md-button&gt;' +
+            '&lt;/md-list-item&gt;' +
+            '&lt;md-list-item flex&gt;' +
+            '&lt;md-button&gt; &lt;i class=&quot;material-icons&quot;&gt;3d_rotation&lt;/i&gt; rotation&lt;/md-button&gt;' +
+            '&lt;/md-list-item&gt;' +
+            '&lt;md-list-item flex&gt;' +
+            '&lt;md-button&gt; &lt;i class=&quot;material-icons&quot;&gt;file_upload&lt;/i&gt; file upload&lt;/md-button&gt;' +
+            '&lt;/md-list-item&gt;' +
+            '&lt;/md-list&gt;' +
+            '&lt;/div&gt;' +
+            '&lt;/md-bottom-sheet&gt;',
+        clickOutsideToClose: false
+    });
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

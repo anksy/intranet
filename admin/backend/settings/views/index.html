@@ -1,0 +1,206 @@
+<div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="portlet light bordered">
+                                <material-loader ng-show="loader"></material-loader>
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-star font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase"> Site Settings  </span>
+                                    </div>
+                                </div>
+
+                                <div class="portlet-body form">
+                                    <md-content class="md-padding">
+                                        <div layout="column">
+                                            <md-content layout-padding>
+                                              <form name="settingsForm" novalidate ng-submit="settingsForm.$valid && updateSettings()">
+
+                                                <div layout="row">
+                                                  <md-input-container flex="50">
+                                                    <label>Application Title</label>
+                                                    <input required name="title" ng-model="settings.title" required>
+                                                    <div ng-messages="settingsForm.firstname.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container flex="50">
+                                                    <label>Tagline</label>
+                                                    <input name="tagline" ng-model="settings.tagline">
+                                                    <div ng-messages="settingsForm.tagline.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+                                                </div>
+
+                                                <div layout="row">
+                                                  <md-input-container flex="50">
+                                                    <label>Email</label>
+                                                    <input type='email' required name="email" ng-model="settings.email" ng-pattern='/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' required>
+                                                    <div ng-messages="settingsForm.email.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                      <div ng-message="pattern">Email must be valid.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container flex="50">
+                                                    <label>Address</label>
+                                                    <input name="address" ng-model="settings.address">
+                                                    <div ng-messages="settingsForm.address.$error">
+                                                      <div ng-message="required">This is required.</div>
+  
+                                                    </div>
+                                                  </md-input-container>
+                                                </div>
+
+
+                                                <div layout="row">
+                                                  <md-input-container flex="50">
+                                                    <label>Fax No</label>
+                                                    <input name="fax" ng-model="settings.fax" ng-minlength="7" ng-maxlength='14'>
+                                                    <div ng-messages="settingsForm.fax.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                      <div ng-message="minlength">Contact number should not be less than 7 digits.</div>
+                                                      <div ng-message="maxlength">Contact number should not be greater than 14 digits.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container flex="50">
+                                                    <label>Call Us</label>
+                                                    <input name="callus" ng-model="settings.callus" ng-minlength="7" ng-maxlength='15'>
+                                                    <div ng-messages="settingsForm.callus.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                      <div ng-message="minlength">Contact number should not be less than 7 digits.</div>
+                                                      <div ng-message="maxlength">Contact number should not be greater than 15 digits.</div>
+                                                    </div>
+                                                  </md-input-container>
+                                                </div>
+
+
+                                                <div layout="row">
+                                                  <md-input-container flex="50">
+                                                    <label>Google App Link</label>
+                                                    <input type='url' name="google" ng-model="settings.google">
+                                                    <div ng-messages="settingsForm.google.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                      <div ng-message="url">Link must be valid.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container flex="50">
+                                                    <label>Apple iTunes Link</label>
+                                                    <input type='url' name="apple" ng-model="settings.apple">
+                                                    <div ng-messages="settingsForm.apple.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                      <div ng-message="url">Link must be valid.</div>
+                                                    </div>
+                                                  </md-input-container>
+                                                </div>
+
+                                                <md-input-container class='md-block'>
+                                                <label>Application Summary</label>
+                                                  <textarea ng-model="settings.summary" max-rows="5"></textarea>
+                                                </md-input-container>
+
+                                                <md-input-container class='md-block'>
+                                                <label>Copyright Information</label>
+                                                  <input type="text" ng-model="settings.copyright">
+                                                </md-input-container>
+
+   
+                                                <div>
+                                                  <md-button type="submit" class='btn red'>Update Settings</md-button>
+                                                </div>
+                                              </form>
+                                            </md-content>
+
+                                       </div>
+                                      </md-content>
+                                </div>
+                            </div>
+
+
+                            <div class="portlet light bordered">
+
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-star font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase"> Site Logo  </span>
+                                    </div>
+                                </div>
+
+                                <div class="portlet-body form">
+                                    <md-content class="md-padding">
+                                        <div>
+
+                                            <md-content layout-padding layout="row"       layout-align="center center">
+
+                                              <form name="imageForm" novalidate ng-submit="imageForm.$valid && updateAvatar()">
+
+                                                <div class="profImgBx">
+                                                   <img  ng-src="{{myImage ? myCroppedImage : settings.logo}}" fallback-src="/admin/assets/img/no_avatar.jpg" />
+                                                   <span>
+                                                      
+                                                      Select Image
+                                                   </span>
+                                                   <input type="file" ngf-select="selectFile($file, true)" class="uploadpic" accept="image/*">
+                                                </div>
+                                                  
+
+                                              </form>
+                                            </md-content>
+
+                                       </div>
+                                      </md-content>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
+
+
+<div class="" style="visibility: hidden">
+   <div class="md-dialog-container cropImgBx" id="imageDialog">
+      <md-dialog   aria-label="Image dialog">
+         <md-toolbar class="height50">
+            <div class="orangeBg md-toolbar-tools height50">
+               <h2>Crop Logo</h2>
+               <span flex></span>
+               <md-button class="md-icon-button" ng-click="closeDialog()">
+                  <i class='fa fa-times'></i>
+               </md-button>
+            </div>
+         </md-toolbar>
+         <md-dialog-content layout-padding>
+            <div >
+               <div class="cropArea">
+                  <img-crop 
+                  image="myImage" 
+                  result-image="myCroppedImage"
+                  change-on-fly="true"
+                  area-type="square"
+                  result-image-size="250"
+                  result-image-format="jpg"
+                  result-image-quality="100"></img-crop>
+               </div>
+            </div>
+         </md-dialog-content>
+         <md-dialog-actions layout="row">
+            <span class="positiorel changeupload">
+            <a class="upoadpro">choose other image </a>
+            <input type="file" class="uploadpic" ngf-select="selectFile($file, false)" accept="image/*">
+            </span>
+            <md-button type="button" ng-click="uploadProfileImage(myCroppedImage,myImage.name)" class="exploremapsearchgraybtn martop10 md-raised md-primary orangeBg btnComn isLoading" aria-label="upload" ng-disabled="spinner">
+               <span>Upload</span>
+            </md-button>
+         </md-dialog-actions>
+      </md-dialog>
+   </div>
+</div>

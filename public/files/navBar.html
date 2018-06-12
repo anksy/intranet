@@ -1,0 +1,182 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Extra UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/navBar" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="bottom Sheet" ui-sref="bottomSheet">
+            </md-tab>
+            <md-tab label="fab SpeedDial" ui-sref="fabSpeedDial">
+            </md-tab>
+            <md-tab label="fab Toolbar" ui-sref="fabToolbar">
+            </md-tab>
+            <md-tab label="list" ui-sref="list">
+            </md-tab>
+            <md-tab label="menuBar" ui-sref="menuBar">
+            </md-tab>
+            <md-tab label="navBar" ui-sref="navBar" md-active="true">
+            </md-tab>
+            <md-tab label="panel" ui-sref="panel">
+            </md-tab>
+            <md-tab label="subheader" ui-sref="subheader">
+            </md-tab>
+            <md-tab label="swipe" ui-sref="swipe">
+            </md-tab>
+            <md-tab label="toolbar" ui-sref="toolbar">
+            </md-tab>
+            <md-tab label="virtual Repeat" ui-sref="virtualRepeat">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Nav Bar</h2>
+        <!-- page description -->
+        <p>The <code class="language-markup">&lt;md-nav-bar&gt;</code> directive renders a list of material tabs that can be used for top-level page navigation. Unlike <code class="language-markup">&lt;md-tabs&gt;</code>, it has no concept of a tab body
+            and no bar pagination.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- //////////////////////////////////////// -->
+                <!-- content -->
+
+                <!-- Nav Bar -->
+
+                <md-nav-bar md-selected-nav-item="navBarDemo.currentNavItem" nav-bar-aria-label="navigation links">
+                    <md-nav-item md-nav-click="navBarDemo.goto('page1')" name="page1">
+                        Page One
+                    </md-nav-item>
+                    <md-nav-item md-nav-click="navBarDemo.goto('page2')" name="page2">
+                        Page Two
+                    </md-nav-item>
+                    <md-nav-item md-nav-click="navBarDemo.goto('page3')" name="page3">
+                        Page Three
+                    </md-nav-item>
+                </md-nav-bar>
+
+
+                <div class="md-padding">
+                    External content for `<span>{{navBarDemo.currentNavItem}}</span>`.
+                </div>
+
+                <!-- Nav Bar -->
+
+                <!-- end content -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-20">
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.navBarDemo = {
+    currentNavItem: 'page1',
+    goto: function(page) {
+        console.log("Goto " + page);
+    }
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Disable Ink Bar -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Disable Ink Bar</h3>
+
+                <!-- //////////////////////////////////////// -->
+                <!-- content -->
+
+                <!-- Nav Bar -->
+
+                <md-nav-bar md-no-ink-bar="true" md-selected-nav-item="navBarDemo1.currentNavItem" nav-bar-aria-label="navigation links" class="md-primary">
+                    <md-nav-item md-nav-click="navBarDemo1.goto('page1')" name="page1">
+                        Page One
+                    </md-nav-item>
+                    <md-nav-item md-nav-click="navBarDemo1.goto('page2')" name="page2">
+                        Page Two
+                    </md-nav-item>
+                    <md-nav-item md-nav-click="navBarDemo1.goto('page3')" name="page3">
+                        Page Three
+                    </md-nav-item>
+                </md-nav-bar>
+
+
+                <div class="md-padding">
+                    External content for `<span>{{navBarDemo1.currentNavItem}}</span>`.
+                </div>
+
+                <!-- Nav Bar -->
+
+                <!-- end content -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-20">
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.navBarDemo1 = {
+    currentNavItem: 'page2',
+    goto: function(page) {
+        console.log("Goto " + page);
+    }
+}         
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Disable Ink Bar -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

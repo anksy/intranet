@@ -1,0 +1,145 @@
+
+<div ng-if="!isLoginRoute">
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1><small>Hello {{isLogin.name}}, Welcome to your dashboard </small> </h1>
+    </div>
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+
+    <!-- Dashboard Content Navbar -->
+
+    <!-- layout  -->
+    <div class="row">
+        <!-- flex -->
+        <div class="col s12 m6 l3">
+            <!-- card -->
+            <md-card class="md-whiteframe-3dp  dashboard-nav" md-colors="{background: 'teal-500'}" layout layout-align="space-between center">
+                <div class="dashboard-nav-content left">
+                    <div class="dashboard-nav-number">1,923,631</div>
+                    <div class="dashboard-nav-title">Sessions</div>
+                </div>
+
+                <div class="dashboard-nav-icon">
+                    <i class="material-icons">assessment</i>
+                </div>
+            </md-card>
+            <!-- end card -->
+        </div>
+        <!-- end flex -->
+
+        <!-- flex -->
+        <div class="col s12 m6 l3">
+            <!-- card -->
+            <md-card class="md-whiteframe-3dp  dashboard-nav" md-colors="{background: 'blue-500'}" layout layout-align="space-between center">
+                <div class="dashboard-nav-content left">
+                    <div class="dashboard-nav-number">1,947,827</div>
+                    <div class="dashboard-nav-title">Users</div>
+                </div>
+
+                <div class="dashboard-nav-icon">
+                    <i class="material-icons">supervisor_account</i>
+                </div>
+            </md-card>
+            <!-- end card -->
+        </div>
+        <!-- end flex -->
+
+        <!-- flex -->
+        <div class="col s12 m6 l3">
+            <!-- card -->
+            <md-card class="md-whiteframe-3dp  dashboard-nav" 
+            	md-colors="{background: 'green-500'}" layout layout-align="space-between center">
+                <div class="dashboard-nav-content left">
+                    <div class="dashboard-nav-number">1,834,488</div>
+                    <div class="dashboard-nav-title">Pageviews</div>
+                </div>
+
+                <div class="dashboard-nav-icon">
+                    <i class="material-icons">pageview</i>
+                </div>
+            </md-card>
+            <!-- end card -->
+        </div>
+        <!-- end flex -->
+
+        <!-- flex -->
+        <div class="col s12 m6 l3">
+            <!-- card -->
+            <md-card class="md-whiteframe-3dp  dashboard-nav" 
+            	md-colors="{background: 'purple-500'}" 
+            	layout 
+            	layout-align="space-between center">
+            	
+	                <div class="dashboard-nav-content left">
+	                    <div class="dashboard-nav-number">54.27%</div>
+	                    <div class="dashboard-nav-title">Bounce Rate</div>
+	                </div>
+                <div class="dashboard-nav-icon">
+                    <i class="material-icons">rate_review</i>
+                </div>
+            </md-card>
+            <!-- end card -->
+        </div>
+        <!-- end flex -->
+    </div>
+    <!-- end layout  -->
+
+    <!-- End Dashboard Content Navbar -->
+    <!-- Dashboard Charts -->
+
+    <!-- layout  -->
+    <div class="row">
+        <!-- flex -->
+        <div class="col s12 l6">
+            <!-- card -->
+            <md-card class="md-whiteframe-3dp ">
+                <div chart="dashboardChart1" google-chart style="width: 100%; height: 300px;"></div>
+            </md-card>
+            <!-- end card -->
+        </div>
+        <!-- end flex -->
+
+        <!-- flex -->
+        <div class="col s12 l6">
+            <!-- card -->
+            <md-card class="md-whiteframe-3dp ">
+                <div chart="dashboardChart2" google-chart style="width: 100%; height: 300px;"></div>
+            </md-card>
+            <!-- end card -->
+        </div>
+        <!-- end flex -->
+
+        <!-- flex -->
+        <div class="col s12 l6">
+            <!-- card -->
+            <md-card class="md-whiteframe-3dp ">
+                <div chart="dashboardChart3" google-chart style="width: 100%; height: 300px;"></div>
+            </md-card>
+            <!-- end card -->
+        </div>
+        <!-- end flex -->
+
+        <!-- flex -->
+        <div class="col s12 l6">
+            <!-- card -->
+            <md-card class="md-whiteframe-3dp ">
+                <h4 class="theme-chart-title">Sessions By County</h4>
+                <div chart="dashboardChart4" google-chart style="width: 100%; height: 246px;"></div>
+            </md-card>
+            <!-- end card -->
+        </div>
+        <!-- end flex -->
+
+    </div>
+    <!-- end layout  -->
+
+</md-content>
+<!--End Page content -->
+
+</div>

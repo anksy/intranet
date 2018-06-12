@@ -1,0 +1,84 @@
+  <div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title" layout="row" layout-align="space-between center">
+        <h1 ng-if="!isEdit">Settings </h1>
+        <h1 ng-if="isEdit">Update Users ( {{ user.firstname +' ' + user.lastname}} )  </h1>
+        <a ui-sref="customerCRM"> <md-icon>people</md-icon> Customer list &nbsp;  &nbsp; &nbsp;</a>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Page content -->
+<md-content class="page-content">
+
+  <!-- section -->
+   <div class="isLoading page-loader border-radius-10  md-whiteframe-3dp" 
+      layout="column" 
+      layout-align="center center " 
+      ng-show="isPageLoading">
+       <md-progress-circular md-mode="indeterminate" md-diameter="52"></md-progress-circular>
+       <span>Loading..</span>
+    </div>
+
+  <section class="page-section  md-whiteframe-3dp border-radius-10" ng-hide="isPageLoading">
+  
+  <form name="settingForm" novalidate ng-submit="settingForm.$valid && uploadFileToServer(file)">
+
+{{setting | json}}
+
+    
+    <md-input-container class='md-block'>
+        <label> Website Title</label>
+        <input required name="title" ng-model="setting.title">
+        <div ng-messages="settingForm.title.$error">
+            <div ng-message="required">This is required.</div>
+        </div>
+    </md-input-container>
+
+     <md-input-container class='md-block '>
+        <label>Website Email</label>
+        <input class="w100" required name="email" ng-model="setting.email" ng-pattern="/^(([^<>()\[\]\\.,;:\s@&quot;]+(\.[^<>()\[\]\\.,;:\s@&quot;]+)*)|(&quot;.+&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/">
+        <div ng-messages="settingForm.email.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="pattern">Email must be valid.</div>
+        </div>
+      </md-input-container>
+
+       <md-input-container class='md-block'>
+          <label>Website Contact Number</label>
+          <input required name="mobile" ng-model="setting.mobile" ng-maxlength="10" ng-minlength>
+          <div ng-messages="settingForm.mobile.$error">
+              <div ng-message="required">This is required.</div>
+              <div ng-message="maxlength">Mobile Number must be 10 </div>
+              <div ng-message="minlength">Mobile Number must be 10 </div>
+          </div>
+        </md-input-container>
+
+        <md-input-container class='md-block'>
+          <label>Website Address</label>
+          <textarea ng-map-autocomplete 
+            max-rows="5" 
+            md-no-autogrow="true" 
+            name="address" 
+            ng-model="setting.address" required>
+          </textarea>
+          <div ng-messages="settingForm.content.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+
+      <md-input-container class="md-block">
+        <input type="file" ngf-select ng-model="file" name="file" aria-label='Image' accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile" required class="form-control">
+        <div ng-messages="settingForm.file.$error">
+         <div ng-message="required">This is required.</div>
+        </div>
+        <br>
+        <br>
+        <img ng-show="settingForm.file.$valid" ngf-thumbnail="file" class="thumb" style="width:100px;">
+        <br>
+        <md-button ng-click="file = null" ng-show="file">Remove</md-button>
+      </md-input-container>
+
+      <md-button type="submit" class="md-raised md-primary btn-block max-300 btn-action-form">Submit</md-button>
+    
+  </form>
+  </section>
+  </md-content>

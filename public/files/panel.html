@@ -1,0 +1,501 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Extra UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/panel" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="bottom Sheet" ui-sref="bottomSheet">
+            </md-tab>
+            <md-tab label="fab SpeedDial" ui-sref="fabSpeedDial">
+            </md-tab>
+            <md-tab label="fab Toolbar" ui-sref="fabToolbar">
+            </md-tab>
+            <md-tab label="list" ui-sref="list">
+            </md-tab>
+            <md-tab label="menuBar" ui-sref="menuBar">
+            </md-tab>
+            <md-tab label="navBar" ui-sref="navBar">
+            </md-tab>
+            <md-tab label="panel" ui-sref="panel" md-active="true">
+            </md-tab>
+            <md-tab label="subheader" ui-sref="subheader">
+            </md-tab>
+            <md-tab label="swipe" ui-sref="swipe">
+            </md-tab>
+            <md-tab label="toolbar" ui-sref="toolbar">
+            </md-tab>
+            <md-tab label="virtual Repeat" ui-sref="virtualRepeat">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Panel</h2>
+        <!-- page desciption -->
+        <p>A <a href="https://material.angularjs.org/latest/demo/panel" target="_blank">panel</a> panel can be used to create dialogs, menus, and other overlays.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- //////////////////////////////////////// -->
+                <!-- content -->
+
+                <!-- open dialog button -->
+                <md-button class="md-primary md-raised" ng-click="panelShowDialogDemo($event)">
+                    Open Dialog
+                </md-button>
+                <!-- End open dialog button -->
+
+                <!-- Open Menu -->
+                <md-button class="md-primary md-raised demo-menu-open-button" ng-click="panelShowMenuDemo($event)">
+                    Select Menu
+                </md-button>
+                <p>Your favorite dessert is: {{ selectedDessertPanelDemo.favoriteDessert }}</p>
+                <!-- End Open Menu -->
+
+                <!-- end content -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- sample code -->
+
+                <blockquote ng-non-bindable>
+                    In HTML sample code angularjs scope variable denoted as <code class="red">{}</code> instead of <code class="red">{{ }}</code>.
+                </blockquote>
+
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-20">
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-markup" prism>
+&lt;!-- open dialog button --&gt;
+&lt;md-button class=&quot;md-primary md-raised&quot; ng-click=&quot;panelShowDialogDemo($event)&quot;&gt;
+    Open Dialog
+&lt;/md-button&gt;
+&lt;!-- End open dialog button --&gt;
+
+&lt;!-- Open Menu --&gt;
+&lt;md-button class=&quot;md-primary md-raised demo-menu-open-button&quot; ng-click=&quot;panelShowMenuDemo($event)&quot;&gt;
+    Select Menu
+&lt;/md-button&gt;
+&lt;p&gt;Your favorite dessert is: { selectedDessertPanelDemo.favoriteDessert }&lt;/p&gt;
+&lt;!-- End Open Menu --&gt;
+</code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+//  Open dialog Box
+$scope.panelShowDialogDemo = function() {
+    var position = $mdPanel.newPanelPosition()
+        .absolute()
+        .center();
+
+    var config = {
+        attachTo: angular.element(document.body),
+        controller: PanelDialogCtrlDemo,
+        disableParentScroll: false,
+        template: '&lt;div role=&quot;dialog&quot; aria-label=&quot;Eat me!&quot; layout=&quot;column&quot;&gt;' +
+            '&lt;md-toolbar&gt;&lt;div class=&quot;md-toolbar-tools&quot;&gt;&lt;h2&gt;Surprise!&lt;/h2&gt;&lt;/div&gt;&lt;/md-toolbar&gt;' +
+            '&lt;div class=&quot;md-padding&quot;&gt;' +
+            '&lt;p&gt;You hit the secret button. Here a donut:&lt;/p&gt;' +
+            '&lt;div layout=&quot;row&quot;&gt;' +
+            '&lt;img flex alt=&quot;Delicious donut&quot; src=&quot;../../asset/images/donut.jpg&quot; style=&quot;width:400px;height:200px&quot;&gt;' +
+            '&lt;/div&gt;' +
+            '&lt;/div&gt;' +
+            '&lt;div layout=&quot;row&quot; layout-align=&quot;center center&quot;&gt;' +
+            '&lt;md-button md-autofocus class=&quot;md-primary&quot; ng-click=&quot;closeDialogDemo()&quot;&gt;Close&lt;/md-button&gt;' +
+            '&lt;/div&gt;' +
+            '&lt;/div&gt;',
+        hasBackdrop: true,
+        panelClass: 'demo-dialog-example',
+        position: position,
+        trapFocus: true,
+        zIndex: 150,
+        clickOutsideToClose: true,
+        escapeToClose: true,
+        focusOnOpen: true
+    };
+
+    $mdPanel.open(config);
+};
+
+function PanelDialogCtrlDemo($scope, mdPanelRef) {
+    $scope.closeDialogDemo = function() {
+        mdPanelRef.destroy();
+    }
+}
+
+//  Open Menu
+$scope.DessertsPanelDemo = [
+    'Apple Pie',
+    'Donut',
+    'Fudge',
+    'Cupcake',
+    'Ice Cream',
+    'Tiramisu'
+];
+$scope.selectedDessertPanelDemo = { favoriteDessert: 'Donut' };
+
+$scope.panelShowMenuDemo = function(ev) {
+    var position = $mdPanel.newPanelPosition()
+        .relativeTo('.demo-menu-open-button')
+        .addPanelPosition($mdPanel.xPosition.ALIGN_START, $mdPanel.yPosition.BELOW);
+
+    var config = {
+        attachTo: angular.element(document.body),
+        controller: PanelMenuCtrlDemo,
+        controllerAs: 'ctrl',
+        template: '&lt;div class=&quot;demo-menu-example&quot; ' +
+            '     aria-label=&quot;Select your favorite dessert.&quot; ' +
+            '     role=&quot;listbox&quot;&gt;' +
+            '  &lt;div class=&quot;demo-menu-item&quot; ' +
+            '       ng-class=&quot;{selected : dessert == ctrl.selected.favoriteDessert}&quot; ' +
+            '       aria-selected=&quot;{dessert == ctrl.selected.favoriteDessert}&quot; ' +
+            '       tabindex=&quot;-1&quot; ' +
+            '       role=&quot;option&quot; ' +
+            '       ng-repeat=&quot;dessert in ctrl.desserts&quot; ' +
+            '       ng-click=&quot;ctrl.selectDessert(dessert)&quot;' +
+            '       &gt;' +
+            '    { dessert } ' +
+            '  &lt;/div&gt;' +
+            '&lt;/div&gt;',
+        panelClass: 'demo-menu-example',
+        position: position,
+        locals: {
+            'selected': $scope.selectedDessertPanelDemo,
+            'desserts': $scope.DessertsPanelDemo
+        },
+        openFrom: ev,
+        clickOutsideToClose: true,
+        escapeToClose: true,
+        focusOnOpen: false,
+        zIndex: 2
+    };
+    $mdPanel.open(config);
+};
+
+function PanelMenuCtrlDemo(mdPanelRef) {
+    this.desserts = $scope.DessertsPanelDemo;
+
+    this.selected = { favoriteDessert: $scope.selectedDessertPanelDemo.favoriteDessert };
+    this.selectDessert = function(dessert) {
+        $scope.selectedDessertPanelDemo.favoriteDessert = dessert;
+        mdPanelRef.destroy();
+    }
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="css">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-css" prism>
+/* dialog box */
+
+.demo-dialog-example {
+    background: #fff;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, .2), 0 13px 19px 2px rgba(0, 0, 0, .14), 0 5px 24px 4px rgba(0, 0, 0, .12)
+}
+
+/* menu */
+
+.demo-menu-example {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);
+    width: 256px;
+}
+
+.demo-menu-item {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 48px;
+    padding: 0 16px;
+    position: relative;
+    transition: background 0.15s linear;
+    width: auto;
+}
+
+.demo-menu-item:hover,
+.demo-menu-item:focus {
+    background-color: rgb(238, 238, 238);
+}
+
+.demo-menu-item.selected {
+    color: rgb(16, 108, 200);
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic usage -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Panel Animations -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Animations</h3>
+
+                <!-- //////////////////////////////////////// -->
+                <!-- content -->
+
+                <div layout="row">
+                    <div flex="25">
+                        <h3>OpenFrom:</h3>
+                        <md-radio-group ng-model="panelAnimationsDemo.openFrom">
+                            <md-radio-button value="button" class="md-primary">Button</md-radio-button>
+                            <md-radio-button value="corner" class="md-primary">Top/Left Corner</md-radio-button>
+                            <md-radio-button value="bottom" class="md-primary">Bottom Center</md-radio-button>
+                        </md-radio-group>
+                    </div>
+
+                    <div flex="25">
+                        <h3>CloseTo:</h3>
+                        <md-radio-group ng-model="panelAnimationsDemo.closeTo">
+                            <md-radio-button value="button" class="md-primary">Button</md-radio-button>
+                            <md-radio-button value="corner" class="md-primary">Top/Left Corner</md-radio-button>
+                            <md-radio-button value="bottom" class="md-primary">Bottom Center</md-radio-button>
+                        </md-radio-group>
+                    </div>
+
+                    <div flex="25">
+                        <h3>AnimationType:</h3>
+                        <md-radio-group ng-model="panelAnimationsDemo.animationType">
+                            <md-radio-button value="none" class="md-primary">None</md-radio-button>
+                            <md-radio-button value="slide" class="md-primary">Slide</md-radio-button>
+                            <md-radio-button value="scale" class="md-primary">Scale</md-radio-button>
+                            <md-radio-button value="fade" class="md-primary">Fade</md-radio-button>
+                            <md-radio-button value="custom" class="md-primary">Custom</md-radio-button>
+                        </md-radio-group>
+                    </div>
+
+                    <div flex="25">
+                        <h3>Duration:</h3>
+                        <md-input-container>
+                            <label>All animations</label>
+                            <input type="number" ng-model="panelAnimationsDemo.duration" ng-change="ctrl.separateDurations.open = ctrl.separateDurations.close = ctrl.duration">
+                        </md-input-container>
+
+                        <md-input-container>
+                            <label>Open animation</label>
+                            <input type="number" ng-model="panelAnimationsDemoSeparateDurations.open" ng-change="ctrl.duration = null">
+                        </md-input-container>
+
+                        <md-input-container>
+                            <label>Close animation</label>
+                            <input type="number" ng-model="panelAnimationsDemoSeparateDurations.close" ng-change="ctrl.duration = null">
+                        </md-input-container>
+                    </div>
+                </div>
+
+                <div class="demo-md-panel-content">
+                    <md-button class="animation-target md-primary md-raised" ng-click="panelAnimationsDialogDemo($event)">
+                        Dialog
+                    </md-button>
+                </div>
+
+                <!-- end content -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-20">
+                    <md-tab label="css">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-css" prism>
+/* dialog box */                  
+.demo-dialog-example {
+    background: #fff;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, .2), 0 13px 19px 2px rgba(0, 0, 0, .14), 0 5px 24px 4px rgba(0, 0, 0, .12)
+}
+
+/* custom animation */
+.demo-dialog-custom-animation-open {
+    opacity: 1;
+    transition: all 1s linear, opacity 1ms;
+    transform: rotate(390deg);
+}
+
+.demo-dialog-custom-animation-close {
+    opacity: 0;
+    transition: all 1s linear, opacity 1ms;
+    transform: rotate(0deg);
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.panelAnimationsDemo = {
+    openFrom: 'button',
+    closeTo: 'button',
+    animationType: 'scale',
+    duration: 300,
+};
+$scope.panelAnimationsDemoSeparateDurations = {
+    open: $scope.panelAnimationsDemo.duration,
+    close: $scope.panelAnimationsDemo.duration
+}
+
+
+$scope.panelAnimationsDialogDemo = function() {
+
+    var position = $mdPanel.newPanelPosition()
+        .absolute()
+        .right()
+        .top();
+
+    var animation = $mdPanel.newPanelAnimation();
+
+    animation.duration($scope.panelAnimationsDemo.duration || $scope.panelAnimationsDemoSeparateDurations);
+
+    switch ($scope.panelAnimationsDemo.openFrom) {
+        case 'button':
+            animation.openFrom('.animation-target');
+            break;
+        case 'corner':
+            animation.openFrom({ top: 0, left: 0 });
+            break;
+        case 'bottom':
+            animation.openFrom({
+                top: document.documentElement.clientHeight,
+                left: document.documentElement.clientWidth / 2 - 250
+            });
+    }
+    switch ($scope.panelAnimationsDemo.closeTo) {
+        case 'button':
+            animation.closeTo('.animation-target');
+            break;
+        case 'corner':
+            animation.closeTo({ top: 0, left: 0 });
+            break;
+        case 'bottom':
+            animation.closeTo({
+                top: document.documentElement.clientHeight,
+                left: document.documentElement.clientWidth / 2 - 250
+            });
+    }
+
+    switch ($scope.panelAnimationsDemo.animationType) {
+        case 'custom':
+            animation.withAnimation({
+                open: 'demo-dialog-custom-animation-open',
+                close: 'demo-dialog-custom-animation-close'
+            });
+            break;
+        case 'slide':
+            animation.withAnimation($mdPanel.animation.SLIDE);
+            break;
+        case 'scale':
+            animation.withAnimation($mdPanel.animation.SCALE);
+            break;
+        case 'fade':
+            animation.withAnimation($mdPanel.animation.FADE);
+            break;
+        case 'none':
+            animation = undefined;
+            break;
+    }
+
+    var config = {
+        animation: animation,
+        attachTo: angular.element(document.body),
+        controller: panelAnimationsDialogCtrl,
+        controllerAs: 'ctrl',
+        template: '&lt;div role=&quot;dialog&quot; aria-label=&quot;Eat me!&quot; layout=&quot;column&quot;&gt;' +
+            '&lt;md-toolbar&gt;' +
+            '&lt;div class=&quot;md-toolbar-tools&quot;&gt;&lt;h2&gt;Surprise!&lt;/h2&gt;&lt;/div&gt;' +
+            '&lt;/md-toolbar&gt;' +
+            '&lt;div class=&quot;md-padding&quot;&gt;' +
+            '&lt;p&gt;You hit the secret button. Heres a donut:&lt;/p&gt;' +
+            '&lt;div layout=&quot;row&quot;&gt;' +
+            '&lt;img flex alt=&quot;Delicious donut&quot; src=&quot;../../asset/images/donut.jpg&quot; style=&quot;width:400px;height:200px&quot;&gt;' +
+            '&lt;/div&gt;' +
+            '&lt;/div&gt;' +
+            '&lt;div layout=&quot;row&quot; layout-align=&quot;center center&quot;&gt;' +
+            '&lt;md-button md-autofocus class=&quot;md-primary&quot; ng-click=&quot;ctrl.panelAnimationsDialogDemoClose()&quot;&gt;Close&lt;/md-button&gt;' +
+            '&lt;/div&gt;' +
+            '&lt;/div&gt;',
+        panelClass: 'demo-dialog-example',
+        position: position,
+        trapFocus: true,
+        zIndex: 150,
+        clickOutsideToClose: true,
+        clickEscapeToClose: true,
+        hasBackdrop: true,
+    };
+
+    $mdPanel.open(config);
+};
+
+// Necessary to pass locals to the dialog template.
+function panelAnimationsDialogCtrl(mdPanelRef) {
+    this.panelAnimationsDialogDemoClose = function() {
+        mdPanelRef.close();
+    };
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Panel Animations -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+
+</md-content>
+<!--End Page content -->

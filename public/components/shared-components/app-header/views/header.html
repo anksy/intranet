@@ -1,0 +1,104 @@
+<!--Header-->
+<md-toolbar class="theme-toolbar md-primary md-whiteframe-6dp">
+    <a class="theme-logo hide-xs hide-sm" href">Intranet</a>
+    <div class="md-toolbar-tools">
+        <ul class="theme-toolbar-left">
+            <li class="hide-gt-sm"><a data-ng-click="showHideLeftSidebar()" class="horz-menu"><i class="material-icons">menu</i></a></li>
+        </ul>
+        <ul class="theme-toolbar-right">
+              <li>
+                <md-menu md-offset="0 50">
+                    <a aria-label="Open apps menu" data-ng-click="$mdMenu.open($event)" data-md-menu-origin class="horz-menu">
+                        <div class="notify"><i class="material-icons">notifications_active</i><span class="theme-pulse noti-pulse"></span>
+                        </div>
+                    <md-tooltip md-direction="bottom"  class="tooltip-gt-md">Notifications</md-tooltip></a>
+                    <md-menu-content class="theme-noti-box">
+                        <md-menu-item class="theme-noti-list">
+                            <div class="theme-noti-list-title center-align">ConsoleBox Notifications</div>
+                        </md-menu-item>
+
+                        <md-menu-item class="theme-noti-list md-whiteframe-1dp">
+                            <div class="theme-noti-list-item">
+                                <div class="noti-list-item-title">
+                                    Try new ConsoleBox layout
+                                </div>
+                                <div class="noti-list-item-desc">
+                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                                </div>
+                                <div class="noti-list-item-action">
+                                    <a data-ng-click="$mdMenu.close()" class="md-button" data-md-ink-ripple="#ff0000">Dismiss</a>
+                                    <a data-ng-click="$mdMenu.close()" class="md-button" data-md-ink-ripple="#000">find out more</a>
+                                </div>
+                            </div>
+                        </md-menu-item>
+
+                        <md-menu-item class="theme-noti-list md-whiteframe-1dp">
+                            <div class="theme-noti-list-item">
+                                <div class="noti-list-item-title">
+                                    Try new ConsoleBox pages
+                                </div>
+                                <div class="noti-list-item-desc">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                                </div>
+                                <div class="noti-list-item-action">
+                                    <a data-ng-click="$mdMenu.close()" class="md-button" data-md-ink-ripple="#ff0000">Dismiss</a>
+                                    <a data-ng-click="$mdMenu.close()" class="md-button" data-md-ink-ripple="#000">find out more</a>
+                                </div>
+                            </div>
+                        </md-menu-item>
+                        <md-menu-item class="theme-noti-list md-whiteframe-1dp">
+                            <div class="theme-noti-list-item">
+                                <div class="noti-list-item-title">
+                                    Try new ConsoleBox color layout
+                                </div>
+                                <div class="noti-list-item-desc">
+                                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                                </div>
+                                <div class="noti-list-item-action">
+                                    <a data-ng-click="$mdMenu.close()" class="md-button" data-md-ink-ripple="#ff0000">Dismiss</a>
+
+                                    <a data-ng-click="$mdMenu.close()" class="md-button" data-md-ink-ripple="#000">find out more</a>
+                                </div>
+                            </div>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </li>
+            <li>
+                <md-menu md-offset="0 55">
+                    <a aria-label="Open user account" 
+                    data-ng-click="$mdMenu.open($event)"
+                    data-md-menu-origin class="user-account">
+                   <user-image class="user-image"> <!--user image--></user-image>
+                   <span> <small class="text-elipsis">{{isLogin.name || 'Welcome..'}}</small>
+                </span>
+                </a>
+                    <md-menu-content width="4">
+                        <md-menu-item ui-sref="myProfile.personalInfo">
+                            <md-button>
+                                <a class="center-vertical no-underline">
+                                    <md-icon>perm_identity</md-icon><span> My Profile</span></a>
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>
+                                <a class="center-vertical no-underline">
+                                    <md-icon>settings</md-icon><span> Settings</span></a>
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                    
+                        <md-menu-item ng-click="logOut()">
+                            <md-button >
+                                <a class="center-vertical no-underline" >
+                                    <md-icon>power_settings_new</md-icon><span> Logout</span></a>
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </li>
+            
+        </ul>
+    </div>
+</md-toolbar>
+<!--End Header-->

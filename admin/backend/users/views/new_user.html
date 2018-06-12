@@ -1,0 +1,137 @@
+   <section class="content-header">
+      <h1>
+         New User
+      </h1>
+   </section>
+   <section class="content paddingfotter">
+      <div class="row">
+         <div class="col-md-8 martop10">
+            <div class="box box-shadow">            
+               <form name="formName " class="labelform" ng-submit="formName.$valid && signUp()" novalidate="">
+                  <md-input-container class="md-icon-float md-block">
+                     <label class="colorlabel">First Name</label>
+                     <input name="title" ng-model="user.first_name" required/>
+                     <div ng-messages="formName.title.$error" ng-show='formName.title.$dirty || formName.title.$invalid'>
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                     <label class="colorlabel">Last Name</label>
+                     <input name="meta_tittle" ng-model="user.last_name" required/>
+                     <div ng-messages="formName.meta_tittle.$error" ng-show='formName.meta_tittle.$dirty || formName.meta_tittle.$invalid'>
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>                  
+                  <md-input-container class="md-icon-float md-block">
+                     <label class="colorlabel">Display Name</label>
+                     <input name="displayname" ng-model="user.display_name" required/>
+                     <div ng-messages="formName.displayname.$error" ng-show='formName.displayname.$dirty || formName.displayname.$invalid'>
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                     <label class="colorlabel">Phone Number</label>
+                     <input  name="mobile" ng-model="user.mobile_number" numbers-Only required/>
+                     <div ng-messages="formName.mobile.$error" ng-show='formName.mobile.$dirty || formName.mobile.$invalid'>
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>                 
+                  <md-input-container class="md-icon-float md-block">
+                     <label class="colorlabel">Email</label>
+                     <input name="myEmail" ng-model="user.email" required/>
+                     <div ng-messages="formName.myEmail.$error" ng-show='formName.myEmail.$dirty || formName.myEmail.$invalid'>
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>
+    
+
+                  <md-input-container flex="100" style = "width: 100%;">
+                     <label>Country</label>
+                     <md-select name="country" ng-model="user.country" required>
+                           <md-option value = "Australia">Australia</md-option>
+                     </md-select>
+                     <div class="errors" ng-messages="formName.country.$error">
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>                  
+
+                  <md-input-container flex="100" style = "width: 100%;">
+                     <label>State</label>
+                     <md-select name="State" ng-model="user.state" required>
+                            <md-option value = "State">State</md-option>
+                     </md-select>
+                     <div class="errors" ng-messages="formName.State.$error">
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>                   
+
+                  <md-input-container flex="100" style = "width: 100%;">
+                     <label>Subrub</label>
+                     <md-select name="Suburb" ng-model="user.subrub" required>
+                            <md-option value = "Subrub">Subrub</md-option>
+                     </md-select>
+                     <div class="errors" ng-messages="formName.Suburb.$error">
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container> 
+
+                  <md-input-container class="md-icon-float md-block" style = "margin-top: 40px;">
+                     <label class="colorlabel">Address</label>
+                     <textarea name="address"  ng-model="user.address" required></textarea>
+                     <div ng-messages="formName.address.$error" ng-show='formName.address.$dirty || formName.address.$invalid'>
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block" style = "margin-top: 40px;">
+                     <label class="colorlabel">Zip Code</label>
+                     <textarea name="zip_code"  ng-model="user.zip_code" required></textarea>
+                     <div ng-messages="formName.zip_code.$error" ng-show='formName.zip_code.$dirty || formName.zip_code.$invalid'>
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>                  
+                  <md-input-container class="md-icon-float md-block">
+                     <label class="colorlabel">Promotional Code</label>
+                     <textarea name="promotional_code"  ng-model="user.promotional_code" required></textarea>
+                     <div ng-messages="formName.promotional_code.$error" ng-show='formName.promotional_code.$dirty || formName.promotional_code.$invalid'>
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>
+                 
+
+
+                  <md-input-container flex="100" style = "width: 100%;">
+                     <label>Gender</label>
+                     <md-select name="gender" ng-model="user.gender" required>
+                        <md-option value="Male">Male</md-option>
+                        <md-option value="Female">Female</md-option>
+                     </md-select>
+                     <div class="errors" ng-messages="formName.gender.$error">
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>                   
+                  <md-input-container flex="100" style = "width: 100%;">
+                     <div class="errors" ng-messages="formName.type.$error">
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>                  
+                  <md-input-container flex="100" style = "width: 100%;">
+                     <label class="colorlabel">Status</label>
+                     <md-select name="status" ng-model="user.status" required>
+                        <md-option value="true">Active</md-option>
+                        <md-option value="false">In Active</md-option>
+                     </md-select>
+                     <div class="errors" ng-messages="formName.status.$error">
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>                                          
+                  <div class="row">
+                     <div class="col-xs-12 pull-left" style="margin-top: 20px;">                       
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button  back-button  class="btn btn-primary">Cancel</button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </section>

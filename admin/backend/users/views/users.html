@@ -1,0 +1,109 @@
+<section class="content-header" ng-init="showPagesList()">
+   <h1 class="page_title"> Users <!-- <span><button class="btn btn-primary" type="button" ng-click = "addNew('/admin/users/new')" >Add New</button></span> --></h1>
+</section>
+<section class="content">
+   <div class="row">
+   <!-- <div class="row" ng-if = "postResponse.table"> -->
+      <div class="col-xs-12">
+         <div class="box">
+            <div class="box-header">     
+
+               <form name  = "searchForm" ng-submit = "searchForm.$valid && search()" novalidate="">
+               <div class="input-group input-group-sm pull-right serch_div">
+                  <input name="searchInput" ng-model = "searchFor" type="text" name="table_search" class="form-control pull-right" placeholder="Search" ng-change = "search()" ng-model-options="{ debounce: 1000 }" required="">
+                  <div class="input-group-btn">
+                     <button type="submit" class="btn btn-default btn-flat"><i class="fa fa-search"></i></button>
+                  </div>  
+                  </div>                
+               </form>               
+            </div>
+            <div class="box-body no-padding table-responsive">
+               <table class="table table-hover table-custom">
+                  <tbody>
+                     <tr>
+                        <th width="25%">First Name
+                           <a class="sort" >
+                           <i ng-click = "sort(searchFor, 'first_name', $event)" asc-icon  aria-hidden="true">
+                           </i>
+                           <md-tooltip md-direction="top">Sort by name</md-tooltip>
+                           </a>
+                        </th>
+                        <th width="25%">Email
+                           <a class="sort">
+                           <i ng-click = "sort(searchFor, 'email',  $event)" asc-icon aria-hidden="true">
+                           </i>
+                           <md-tooltip md-direction="top">Sort by email</md-tooltip>
+                           </a>
+                        </th>                        
+                        <th width="10%">Gender
+                           <a class="sort">
+                           <i ng-click = "sort(searchFor, 'gender',  $event)" asc-icon aria-hidden="true">
+                           </i>
+                           <md-tooltip md-direction="top">Sort by gender</md-tooltip>
+                           </a>
+                        </th>
+                        <th width="10%">Green ID Status
+                        </th>
+                        <th  width="10%">Status 
+                           <a class="sort"  >
+                           <i ng-click = "sort(searchFor, 
+                           'status',  $event)" asc-icon aria-hidden="true">
+                           </i>
+                           <md-tooltip md-direction="top">Sort by status</md-tooltip>
+                           </a>
+                        </th>
+                        <th  width="20%">Action</th>
+                     </tr>
+
+                     <tr ng-repeat="l in data.result">
+                        <td>
+                           {{l.first_name | limitTo: 10000}} 
+                           <span ng-if="l.firstname.length>10000">
+                           <i class="material-icons">more_horiz</i>
+                           <md-tooltip md-direction = "bottom">Click on view to read more...</md-tooltip>
+                           </span>
+                        </td>
+                        <td>{{l.email}}</td>
+                        <td>{{l.gender}}</td>
+                        <td>
+                           <span ng-if="l.greenStatus==true">Verified</span>
+                           <span ng-if="l.greenStatus==false">Not Verified</span>
+                        </td>
+                        <td>
+                           <span ng-if="l.status==true">Active</span>
+                           <span ng-if="l.status==false">In-Active</span>
+                        </td>
+                        <td>
+                           <a ng-click = "redirectTo('/admin/user/account/', l._id)">
+                              <md-tooltip md-direction="bottom">Click to edit</md-tooltip>
+                              <i class="material-icons edit">mode_edit</i>
+                           </a>
+                           <a ng-click = "redirectTo('/admin/user/account/', l._id);" >
+                              <md-tooltip md-direction="bottom">Click to view</md-tooltip>
+                              <i class="material-icons view">remove_red_eye</i> 
+                           </a>
+                           <a ng-click = "trash(l._id, $index, $event)">
+                              <md-tooltip md-direction="bottom">Click to delete</md-tooltip>
+                              <i class="material-icons color-red">delete</i>
+                           </a>
+                        </td>
+                     </tr>
+                  <tr ng-if="!data.success && searchFor.length>0">
+                     <td colspan="6">
+                        <p style="margin-top: 50px; margin-bottom: 50px;" class="text-center"> Your search - <b>{{searchFor}}</b> - did not match any record</p>
+                     </td>
+                  </tr>                     
+                  </tbody>
+               </table>
+            </div>
+         </div>
+
+         <div class="clearfix">
+            <ul uib-pagination ng-if="paging.count > paging.limit" previous-text="Previous" force-ellipses="forceEllipses" max-size="maxSize" items-per-page="paging.limit" total-items="paging.count" ng-model="paging.page" class="pagination pagination_theme pull-right" boundary-link-numbers="true" rotate="false" ng-change="getMoreRecord()">
+            </ul>
+         </div>
+      </div>
+   </div>
+   <!-- <div ng-if="!postResponse.success && !postResponse.search" ng-include="'backend/includes/views/no-result.html'"> -->
+   </div>
+</section>   

@@ -1,0 +1,107 @@
+<!--Design by ConsoleBox-->
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!--Start HTML document-->
+<!DOCTYPE html>
+<html lang="en" data-ng-app="materialApp" data-ng-controller="materialCtrl" data-ng-cloak>
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!--Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Favicon icon-->
+    <link href="../../../asset/images/favicon.png" type="image/png" rel="icon">
+    <!--Page title-->
+    <title data-ng-bind="themeMeta.title">ConsoleBox</title>
+    <!-- Page description -->
+    <meta name="description" content="{{themeMeta.description}}" />
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!-- stylesheet -->
+
+    <!-- Font (Roboto) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <!-- angular material stylesheet-->
+    <link rel="stylesheet" href="../../../asset/vendors/node_modules/angular-material/angular-material.min.css">
+    <!-- google material icon -->
+    <link href="../../../asset/vendors/plugins/material-icons/material-icons.css" type="text/css" rel="stylesheet" />
+    <!-- app stylesheet -->
+    <link rel="stylesheet" href="../../../asset/css/app.css">
+    <!-- app theme stylesheet -->
+    <link rel="stylesheet" href="../../../asset/css/theme.css">
+
+
+    <!-- end stylesheet -->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+</head>
+<!-- End head-->
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!--body-->
+
+<body>
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!--Pre Page Loader-->
+    <div id="pre-page-loader">
+        <md-progress-circular md-mode="indeterminate" class="loader-center"></md-progress-circular>
+    </div>
+
+    <!-- End Pre Page Loader-->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!--Page wrapper-->
+    <div class="front-theme-page-wrapper">
+        <!-- //////////////////////////////////////////////////////////////////////////// -->
+        <!--Page Body-->
+        <main class="front-theme-page-body">
+
+            <!-- page content  -->
+            <ui-view></ui-view>
+            <!--end page content  -->
+        </main>
+        <!--End page body-->
+        <!-- //////////////////////////////////////////////////////////////////////////// -->
+    </div>
+    <!--End page wrapper-->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!--  Scripts-->
+
+    <!-- jquery -->
+    <script src="../../../asset/vendors/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- angularjs (Angular Material Dependencies)-->
+    <script src="../../../asset/vendors/plugins/angular-1.5.11/angular.min.js"></script>
+
+    <!-- Angular Material Dependencies -->
+    <script src="../../../asset/vendors/plugins/angular-1.5.11/angular-animate.min.js"></script>
+    <script src="../../../asset/vendors/plugins/angular-1.5.11/angular-aria.min.js"></script>
+    <script src="../../../asset/vendors/plugins/angular-1.5.11/angular-route.min.js"></script>
+    <script src="../../../asset/vendors/plugins/angular-1.5.11/angular-messages.min.js"></script>
+    <!-- ui router -->
+    <script src="../../../asset/vendors/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- ui router state events  -->
+    <script src="../../../asset/vendors/node_modules/ng-ui-router-state-events/dist/stateEvents.min.js"></script>
+    <!-- angular material script -->
+    <script src="../../../asset/vendors/node_modules/angular-material/angular-material.min.js"></script>
+    <!-- app core js -->
+    <script src="../../../asset/js/fapp.js"></script>
+    <!-- app controller -->
+    <script src="../../../asset/js/fcontroller.js"></script>
+
+
+    <!--End scripts-->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+    <!--End body-->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+</html>
+<!--End HTML document-->
+<!-- //////////////////////////////////////////////////////////////////////////// -->

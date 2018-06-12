@@ -1,0 +1,134 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Material UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/api/directive/mdInkRipple" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="buttons" ui-sref="buttons">
+            </md-tab>
+            <md-tab label="breadcrumbs" ui-sref="breadcrumbs">
+            </md-tab>
+            <md-tab label="collections" ui-sref="collections">
+            </md-tab>
+            <md-tab label="collapsibles" ui-sref="collapsibles">
+            </md-tab>
+            <md-tab label="menu" ui-sref="menu">
+            </md-tab>
+            <md-tab label="tabs" ui-sref="tabs">
+            </md-tab>
+            <md-tab label="pagination" ui-sref="pagination">
+            </md-tab>
+            <md-tab label="progress circular" ui-sref="progressCircular">
+            </md-tab>
+            <md-tab label="progress linear" ui-sref="progressLinear">
+            </md-tab>
+            <md-tab label="toasts" ui-sref="toasts">
+            </md-tab>
+            <md-tab label="tooltip" ui-sref="tooltip">
+            </md-tab>
+            <md-tab label="ripple" ui-sref="ripple" md-active="true">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Ripple</h2>
+        <!-- content -->
+        <div layout="row">
+            <div flex="100">
+                <!-- //////////////////////////////////////// -->
+                <!-- ripple example-->
+
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+                <!-- content -->
+                <md-button class="md-raised" md-ink-ripple="#F44336">
+                    Red ripple
+                </md-button>
+
+                <md-button class="md-raised" md-ink-ripple="#9C27B0">
+                    purple ripple
+                </md-button>
+
+                <md-button class="md-raised" md-ink-ripple="#2196F3">
+                    blue ripple
+                </md-button>
+
+                <md-button class="md-raised" md-ink-ripple="#3F51B5">
+                    indigo ripple
+                </md-button>
+
+                <md-button class="md-raised" md-ink-ripple="#009688">
+                    teal ripple
+                </md-button>
+
+                <md-button class="md-raised" md-ink-ripple="#CDDC39">
+                    Lime ripple
+                </md-button>
+
+                <md-button class="md-raised" md-ink-ripple="#000000">
+                    Black ripple
+                </md-button>
+
+                <md-button class="md-raised" md-ink-ripple="false">
+                    Disable ripple
+                </md-button>
+
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised&quot; md-ink-ripple=&quot;#F44336&quot;&gt;
+    Red ripple
+&lt;/md-button&gt;
+&lt;md-button class=&quot;md-raised&quot; md-ink-ripple=&quot;#9C27B0&quot;&gt;
+    purple ripple
+&lt;/md-button&gt;
+&lt;md-button class=&quot;md-raised&quot; md-ink-ripple=&quot;false&quot;&gt;
+    Disable ripple
+&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+                <h3 class="theme-title">Interpolated values</h3>
+                <div>
+                    <blockquote ng-non-bindable>
+                        In sample code angularjs scope variable denoted as <code class="red">{}</code> instead of <code class="red">{{ }}</code>.
+                    </blockquote>
+                    <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised&quot; md-ink-ripple=&quot;{ yourColor }&quot;&gt;
+    Disable ripple
+&lt;/md-button&gt;
+                            </code></pre>
+                </div>
+
+
+                <!-- End ripple example -->
+                <!-- //////////////////////////////////////// -->
+            </div>
+        </div>
+        <!-- end  content -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

@@ -1,0 +1,228 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Advanced UI</h1>
+        <!-- help -->
+        <a href="http://prismjs.com/" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="cards" ui-sref="cards">
+            </md-tab>
+            <md-tab label="carousel" ui-sref="carousel">
+            </md-tab>
+            <md-tab label="dialog" ui-sref="dialog">
+            </md-tab>
+            <md-tab label="slider" ui-sref="slider">
+            </md-tab>
+            <md-tab label="sweetAlert" ui-sref="sweetAlert">
+            </md-tab>
+            <md-tab label="highlight" ui-sref="highlight" md-active="true">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Highlight</h2>
+        <!-- page desciption -->
+        <p><a href="http://prismjs.com/" target="_blank">Prism</a> is a lightweight, extensible syntax highlighter, built with modern web standards in mind. It’s a spin-off from Dabblet and is tested there daily by thousands.</p>
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic collections -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- introduction section -->
+                <h4 class="theme-title">Introduction</h4>
+                <table class="theme-table">
+                    <thead>
+                        <tr>
+                            <th>Language</th>
+                            <th>Class</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>HTML</td>
+                            <td>language-html</td>
+                        </tr>
+                        <tr>
+                            <td>CSS</td>
+                            <td>language-css</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>language-javascript</td>
+                        </tr>
+                        <tr>
+                            <td>PHP</td>
+                            <td>language-php</td>
+                        </tr>
+                        <tr>
+                            <td>SQL</td>
+                            <td>language-sql</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>language-c</td>
+                        </tr>
+                        <tr>
+                            <td>C++</td>
+                            <td>language-cpp</td>
+                        </tr>
+                        <tr>
+                            <td>Java</td>
+                            <td>language-java</td>
+                        </tr>
+                        <tr>
+                            <td>PowerShell</td>
+                            <td>language-powershell</td>
+                        </tr>
+                        <tr>
+                            <td>Python</td>
+                            <td>language-python</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- end introduction section -->
+
+                <!-- Note -->
+                <blockquote>
+                    Find more language and class <a href="http://prismjs.com/#languages-list" target="_blank">here</a>.
+                </blockquote>
+                <!-- End Note -->
+
+                <!-- example section -->
+
+                <!-- Html -->
+                <div layout="row">
+                    <div flex="100">
+                        <h4 class="theme-title">HTML</h4>
+                        <pre><code class="language-html" prism>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;h1&gt;This is a Heading&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                    </div>
+                </div>
+                <!-- end html -->
+
+                <!-- CSS -->
+                <div layout="row">
+                    <div flex="100">
+                        <h4 class="theme-title">CSS</h4>
+                        <pre><code class="language-css" prism>
+body {
+    background-color: #fafafa;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+                </code></pre>
+                    </div>
+                </div>
+                <!-- end CSS -->
+
+                <!-- JavaScript -->
+                <div layout="row">
+                    <div flex="100">
+                        <h4 class="theme-title">JavaScript</h4>
+                        <pre><code class="language-javascript" prism>
+function myFunction(x, y) {
+    if (y === undefined) {
+        y = 0;
+    }    
+    return x * y;
+}
+                </code></pre>
+                    </div>
+                </div>
+                <!-- end JavaScript -->
+
+                <!-- PHP -->
+                <div layout="row">
+                    <div flex="100">
+                        <h4 class="theme-title">PHP</h4>
+                        <pre><code class="language-php" prism>
+&lt;?php
+$favcolor = "red";
+
+switch ($favcolor) {
+    case "red":
+        echo "Your favorite color is red!";
+        break;
+    case "blue":
+        echo "Your favorite color is blue!";
+        break;
+    case "green":
+        echo "Your favorite color is green!";
+        break;
+    default:
+        echo "Your favorite color is neither red, blue, nor green!";
+}
+?>
+                </code></pre>
+                    </div>
+                </div>
+                <!-- end PHP -->
+
+                <!-- SQL -->
+                <div layout="row">
+                    <div flex="100">
+                        <h4 class="theme-title">SQL</h4>
+                        <pre><code class="language-sql" prism>
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+LEFT JOIN Orders
+ON Customers.CustomerID=Orders.CustomerID
+ORDER BY Customers.CustomerName;
+                </code></pre>
+                    </div>
+                </div>
+                <!-- end SQL -->
+
+
+                <!-- end example section -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic collections -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

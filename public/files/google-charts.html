@@ -1,0 +1,755 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Charts</h1>
+        <!-- help -->
+        <a href="https://angular-google-chart.github.io/angular-google-chart/" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="echarts" ui-sref="echarts">
+            </md-tab>
+            <md-tab label="chartjs" ui-sref="chartjs">
+            </md-tab>
+            <md-tab label="google charts" ui-sref="google-charts" md-active="true">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Google Charts</h2>
+        <!-- page desciption -->
+        <p><a href="https://developers.google.com/chart/" target="_blank">Google chart</a> tools are powerful, simple to use, and free. Try out our rich gallery of interactive charts and data tools. Google chart wraps with <a href="https://angular-google-chart.github.io/angular-google-chart/"
+                target="_blank">angular google chart</a> for angularjs app.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Area Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Area Chart</h3>
+
+                <!-- content -->
+                <div chart="googleAreaChart" style="width: 100%; height: 400px;" google-chart></div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div chart=&quot;googleAreaChart&quot; style=&quot;width: 100%; height: 400px;&quot; google-chart&gt;&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.googleAreaChart = {
+    "type": "AreaChart",
+    "displayed": false,
+    "data": [
+        ['Year', 'Sales', 'Expenses'],
+        ['2013', 1000, 400],
+        ['2014', 1170, 460],
+        ['2015', 660, 1120],
+        ['2016', 1030, 540]
+    ],
+    "options": {
+        title: 'Company Performance',
+        hAxis: { title: 'Year', titleTextStyle: { color: '#333' } },
+        vAxis: { minValue: 0 }
+    }
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Area Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Bar Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Bar Chart</h3>
+
+                <!-- content -->
+                <div chart="googleBarChart" style="width: 100%; height: 400px;" google-chart></div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div chart=&quot;googleBarChart&quot; style=&quot;width: 100%; height: 400px;&quot; google-chart&gt;&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.googleBarChart = {
+    "type": "BarChart",
+    "displayed": false,
+    "data": [
+        ['Year', 'Sales', 'Expenses', 'Profit'],
+        ['2014', 1000, 400, 200],
+        ['2015', 1170, 460, 250],
+        ['2016', 660, 1120, 300],
+        ['2017', 1030, 540, 350]
+    ],
+    "options": {
+        chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+        }
+    }
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Bar Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Column Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Column Chart</h3>
+
+                <!-- content -->
+                <div chart="googleColumnChart" style="width: 100%; height: 400px;" google-chart></div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div chart=&quot;googleColumnChart&quot; style=&quot;width: 100%; height: 400px;&quot; google-chart&gt;&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.googleColumnChart = {
+    "type": "ColumnChart",
+    "displayed": false,
+    "data": [
+        ['Year', 'Sales', 'Expenses', 'Profit'],
+        ['2014', 1000, 400, 200],
+        ['2015', 1170, 460, 250],
+        ['2016', 660, 1120, 300],
+        ['2017', 1030, 540, 350]
+    ],
+    "options": {
+        chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+        }
+    }
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Column Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Line Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Line Chart</h3>
+
+                <!-- content -->
+                <div chart="googleLineChart" style="width: 100%; height: 400px;" google-chart></div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div chart=&quot;googleLineChart&quot; style=&quot;width: 100%; height: 400px;&quot; google-chart&gt;&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.googleLineChart = {
+    "type": "LineChart",
+    "displayed": false,
+    "data": [
+        ['Year', 'Sales', 'Expenses'],
+        ['2004', 1000, 400],
+        ['2005', 1170, 460],
+        ['2006', 660, 1120],
+        ['2007', 1030, 540]
+    ],
+    "options": {
+        chart: {
+            title: 'Average Temperatures and Daylight in Iceland Throughout the Year'
+        },
+        series: {
+            // Gives each series an axis name that matches the Y-axis below.
+            0: { axis: 'Temps' },
+            1: { axis: 'Daylight' }
+        },
+        axes: {
+            // Adds labels to each axis; they don't have to match the axis names.
+            y: {
+                Temps: { label: 'Temps (Celsius)' },
+                Daylight: { label: 'Daylight' }
+            }
+        }
+    },
+    "formatters": {}
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Line Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Pie Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Pie Chart</h3>
+
+                <!-- content -->
+                <div chart="googlePieChart" style="width: 100%; height: 400px;" google-chart></div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div chart=&quot;googlePieChart&quot; style=&quot;width: 100%; height: 400px;&quot; google-chart&gt;&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.googlePieChart = {
+    "type": "PieChart",
+    "data": [
+        ['Task', 'Hours per Day'],
+        ['Work', 11],
+        ['Eat', 2],
+        ['Commute', 2],
+        ['Watch TV', 2],
+        ['Sleep', 7]
+    ],
+    "options": {
+        title: 'My Daily Activities'
+    }
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Pie Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Donut Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Donut Chart</h3>
+
+                <!-- content -->
+                <div chart="googleDonutChart" style="width: 100%; height: 400px;" google-chart></div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div chart=&quot;googleDonutChart&quot; style=&quot;width: 100%; height: 400px;&quot; google-chart&gt;&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.googleDonutChart = {
+    "type": "PieChart",
+    "data": [
+        ['Task', 'Hours per Day'],
+        ['Work', 11],
+        ['Eat', 2],
+        ['Commute', 2],
+        ['Watch TV', 2],
+        ['Sleep', 7]
+    ],
+    "options": {
+        title: 'My Daily Activities',
+        pieHole: 0.4
+    }
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Donut Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Bubble Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Bubble Chart</h3>
+
+                <!-- content -->
+                <div chart="googleBubbleChart" google-chart style="width: 100%; height: 400px;"></div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div chart=&quot;googleBubbleChart&quot; google-chart style=&quot;width: 100%; height: 400px;&quot;&gt;&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.googleBubbleChart = {
+    "type": "BubbleChart",
+    "data": [
+        ['ID', 'Life Expectancy', 'Fertility Rate', 'Region', 'Population'],
+        ['CAN', 80.66, 1.67, 'North America', 33739900],
+        ['DEU', 79.84, 1.36, 'Europe', 81902307],
+        ['DNK', 78.6, 1.84, 'Europe', 5523095],
+        ['EGY', 72.73, 2.78, 'Middle East', 79716203],
+        ['GBR', 80.05, 2, 'Europe', 61801570],
+        ['IRN', 72.49, 1.7, 'Middle East', 73137148],
+        ['IRQ', 68.09, 4.77, 'Middle East', 31090763],
+        ['ISR', 81.55, 2.96, 'Middle East', 7485600],
+        ['RUS', 68.6, 1.54, 'Europe', 141850000],
+        ['USA', 78.09, 2.05, 'North America', 307007000]
+    ],
+    "options": {
+        title: 'Correlation between life expectancy, fertility rate ' +
+            'and population of some world countries (2010)',
+        hAxis: { title: 'Life Expectancy' },
+        vAxis: { title: 'Fertility Rate' },
+        bubble: { textStyle: { fontSize: 11 } }
+    }
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Bubble Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Combo Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Combo Chart</h3>
+
+                <!-- content -->
+                <div chart="googleComboChart" google-chart style="width: 100%; height: 400px;"></div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div chart=&quot;googleComboChart&quot; google-chart style=&quot;width: 100%; height: 400px;&quot;&gt;&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.googleComboChart = {
+    "type": "ColumnChart",
+    "data": [
+        ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
+        ['2004/05', 165, 938, 522, 998, 450, 614.6],
+        ['2005/06', 135, 1120, 599, 1268, 288, 682],
+        ['2006/07', 157, 1167, 587, 807, 397, 623],
+        ['2007/08', 139, 1110, 615, 968, 215, 609.4],
+        ['2008/09', 136, 691, 629, 1026, 366, 569.6]
+    ],
+    "options": {
+        title: 'Monthly Coffee Production by Country',
+        vAxis: { title: 'Cups' },
+        hAxis: { title: 'Month' },
+        seriesType: 'bars',
+        series: { 5: { type: 'line' } }
+    }
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Combo Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Gauge Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Gauge Chart</h3>
+
+                <!-- content -->
+                <div chart="googleGaugeChart" google-chart></div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div chart=&quot;googleGaugeChart&quot; google-chart&gt;&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.googleGaugeChart = {
+    "type": "Gauge",
+    "data": [
+        ['Label', 'Value'],
+        ['Memory', 80],
+        ['CPU', 55],
+        ['Network', 68]
+    ],
+    "options": {
+        width: 400,
+        height: 120,
+        redFrom: 90,
+        redTo: 100,
+        yellowFrom: 75,
+        yellowTo: 90,
+        minorTicks: 5
+    }
+}
+$interval(function() {
+    $scope.googleGaugeChart.data[1][1] = Math.round(60 * Math.random());
+    $scope.googleGaugeChart.data[2][1] = Math.round(60 * Math.random());
+    $scope.googleGaugeChart.data[3][1] = Math.round(60 * Math.random());
+}, 1000);
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Gauge Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Scatter Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Scatter Chart</h3>
+
+                <!-- content -->
+                <div chart="googleScatterChart" google-chart style="width: 100%; height: 400px;"></div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div chart=&quot;googleScatterChart&quot; google-chart style=&quot;width: 100%; height: 400px;&quot;&gt;&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.googleScatterChart = {
+    "type": "ScatterChart",
+    "displayed": false,
+    "data": [
+        ['Age', 'Weight', 'Height'],
+        [8, 12, 25],
+        [4, 5.5, 11],
+        [11, 14, 9],
+        [4, 5, 2],
+        [3, 3.5, 7],
+        [6.5, 7, 8.5]
+    ],
+    "options": {
+        title: 'Age vs. Weight and Height Comparison'
+    }
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Scatter Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Geo Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Geo Chart</h3>
+
+                <!-- content -->
+                <div chart="googleGeoChart" google-chart style="width: 100%; height: 400px;"></div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div chart=&quot;googleGeoChart&quot; google-chart style=&quot;width: 100%; height: 400px;&quot;&gt;&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.googleGeoChart = {
+    "type": "GeoChart",
+    "data": [
+        ['Country', 'Popularity'],
+        ['Germany', 200],
+        ['United States', 300],
+        ['Brazil', 400],
+        ['Canada', 500],
+        ['France', 600],
+        ['RU', 700]
+    ],
+    "options": {}
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Geo Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+</md-content>
+<!--End Page content -->

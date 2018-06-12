@@ -1,0 +1,503 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Advanced UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/dialog" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="cards" ui-sref="cards">
+            </md-tab>
+            <md-tab label="carousel" ui-sref="carousel">
+            </md-tab>
+            <md-tab label="dialog" ui-sref="dialog" md-active="true">
+            </md-tab>
+            <md-tab label="slider" ui-sref="slider">
+            </md-tab>
+            <md-tab label="sweetAlert" ui-sref="sweetAlert">
+            </md-tab>
+            <md-tab label="highlight" ui-sref="highlight">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Dialog</h2>
+        <!-- page desciption -->
+        <p>Dialog over the app to inform users about critical information or require them to make decisions</p>
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Dialog -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Dialog</h3>
+                <ul>
+                    <li>Complex dialogs can be sized with <code class="language-markup">flex="percentage"</code>, i.e. <code class="language-markup">flex="66"</code>.</li>
+                    <li>Default max-width is 80% of the <code class="language-markup">rootElement</code> or <code class="language-markup">parent</code>.</li>
+                </ul>
+                <!-- content -->
+                <div class="row">
+                    <!-- Small Dialog -->
+                    <div class="col s12 m6 l4">
+                        <!-- title -->
+                        <h4 class="theme-title">Small</h4>
+                        <!-- description -->
+                        <p>The rootElement or parent has <code class="language-markup">flex="40" flex-xs="90"</code></p>
+                        <!-- button -->
+                        <md-button class="md-raised md-primary" ng-click="showSmallAlert($event)">Dialog</md-button>
+                    </div>
+                    <!-- End Small Dialog -->
+
+                    <!-- Medium Dialog -->
+                    <div class="col s12 m6 l4">
+                        <!-- title -->
+                        <h4 class="theme-title">Medium</h4>
+                        <!-- description -->
+                        <p>The rootElement or parent has <code class="language-markup">flex="60" flex-xs="90"</code></p>
+                        <!-- button -->
+                        <md-button class="md-raised md-primary" ng-click="showMediumAlert($event)">Dialog</md-button>
+                    </div>
+                    <!-- End Medium Dialog -->
+
+                    <!-- Large(default) Dialog -->
+                    <div class="col s12 m6 l4">
+                        <!-- title -->
+                        <h4 class="theme-title">Large(Default)</h4>
+                        <!-- button -->
+                        <md-button class="md-raised md-primary" ng-click="showDefaultAlert($event)">Dialog</md-button>
+                    </div>
+                    <!-- End Large(default) Dialog -->
+
+                    <!-- Pre-Rendered Dialog -->
+                    <div class="col s12 m6 l4">
+                        <!-- title -->
+                        <h4 class="theme-title">Pre-Rendered Dialog</h4>
+                        <!-- button -->
+                        <md-button class="md-raised md-primary" ng-click="showPrerenderedDialog($event)">Dialog</md-button>
+
+                        <!-- Pre-Rendered Dialog content -->
+                        <div style="visibility: hidden">
+                            <div class="md-dialog-container" id="myPrerenderedDialog">
+                                <md-dialog layout-padding>
+                                    <h2>Pre-Rendered Dialog</h2>
+                                    <p>
+                                        This is a pre-rendered dialog, which means that <code>$mdDialog</code> doesn't compile its template on each opening.
+                                        <br/><br/> The Dialog Element is a static element in the DOM, which is just visually hidden.<br/> Once the dialog opens, we just fetch the element from the DOM into our dialog and upon close we restore the element
+                                        back into its old DOM position.
+                                    </p>
+                                </md-dialog>
+                            </div>
+                        </div>
+                        <!-- Pre-Rendered Dialog content -->
+                    </div>
+                    <!-- End Pre-Rendered Dialog -->
+
+                    <!-- Alert Dialog -->
+                    <div class="col s12 m6 l4">
+                        <!-- title -->
+                        <h4 class="theme-title">Alert Dialog</h4>
+                        <!-- button -->
+                        <md-button class="md-raised md-primary" ng-click="openSimpleAlert($event)">Dialog</md-button>
+                    </div>
+                    <!-- End Alert Dialog -->
+
+                    <!-- Confirm Dialog -->
+                    <div class="col s12 m6 l4">
+                        <!-- title -->
+                        <h4 class="theme-title">Confirm Dialog</h4>
+                        <!-- button -->
+                        <md-button class="md-raised md-primary" ng-click="showConfirm($event)">Dialog</md-button>
+                    </div>
+                    <!-- End Confirm Dialog -->
+
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-30">
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;!-- Small Dialog --&gt;
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;showSmallAlert($event)&quot;&gt;Dialog&lt;/md-button&gt;
+&lt;!-- Medium Dialog --&gt;
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;showMediumAlert($event)&quot;&gt;Dialog&lt;/md-button&gt;
+&lt;!-- Large(default) Dialog --&gt;
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;showDefaultAlert($event)&quot;&gt;Dialog&lt;/md-button&gt;
+&lt;!-- Pre-Rendered Dialog --&gt;
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;showPrerenderedDialog($event)&quot;&gt;Dialog&lt;/md-button&gt;
+&lt;!-- Alert Dialog --&gt;
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;openSimpleAlert($event)&quot;&gt;Dialog&lt;/md-button&gt;
+&lt;!-- Confirm Dialog --&gt;
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;showConfirm($event)&quot;&gt;Dialog&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+// Small
+$scope.showSmallAlert = function(ev) {
+    $mdDialog.show({
+            controller: DialogController,
+            template: '&lt;md-dialog aria-label=&quot;Dialog&quot; flex=&quot;40&quot; flex-xs=&quot;90&quot;&gt;' +
+                '&lt;md-toolbar&gt;' +
+                '&lt;div class=&quot;md-toolbar-tools&quot;&gt;' +
+                '&lt;h2&gt;Dialog Header&lt;/h2&gt;' +
+                '&lt;span flex&gt;&lt;/span&gt;' +
+                '&lt;md-button class=&quot;md-icon-button&quot; ng-click=&quot;cancelDialog()&quot;&gt;' +
+                '&lt;i class=&quot;material-icons&quot; aria-label=&quot;Close dialog&quot;&gt;close&lt;/i&gt;' +
+                '&lt;/md-button&gt;' +
+                '&lt;/div&gt;' +
+                '&lt;/md-toolbar&gt;' +
+                '&lt;md-dialog-content&gt;' +
+                '&lt;p class=&quot;md-padding&quot;&gt;A bunch of text&lt;/p&gt;' +
+                '&lt;/md-dialog-content&gt;' +
+                '&lt;md-dialog-actions layout=&quot;row&quot;&gt;' +
+                '&lt;md-button ng-click=&quot;answer()&quot; md-ink-ripple=&quot;#F44336&quot;&gt;Not Useful&lt;/md-button&gt;' +
+                '&lt;md-button ng-click=&quot;answer()&quot; class=&quot;m-r-20&quot;&gt;Useful&lt;/md-button&gt;' +
+                '&lt;/md-dialog-actions&gt;' +
+                '&lt;/md-dialog&gt;',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose: true
+        })
+        .then(function() {
+            $mdToast.show(
+                $mdToast.simple()
+                .textContent('You click on button, its hide dialog')
+                .position('top right')
+                .hideDelay(3000)
+            );
+        });
+};
+
+// Medium
+$scope.showMediumAlert = function(ev) {
+    $mdDialog.show({
+            controller: DialogController,
+            template: '&lt;md-dialog aria-label=&quot;Dialog&quot; flex=&quot;60&quot; flex-xs=&quot;90&quot;&gt;' +
+                '&lt;md-toolbar&gt;' +
+                '&lt;div class=&quot;md-toolbar-tools&quot;&gt;' +
+                '&lt;h2&gt;Dialog Header&lt;/h2&gt;' +
+                '&lt;span flex&gt;&lt;/span&gt;' +
+                '&lt;md-button class=&quot;md-icon-button&quot; ng-click=&quot;cancelDialog()&quot;&gt;' +
+                '&lt;i class=&quot;material-icons&quot; aria-label=&quot;Close dialog&quot;&gt;close&lt;/i&gt;' +
+                '&lt;/md-button&gt;' +
+                '&lt;/div&gt;' +
+                '&lt;/md-toolbar&gt;' +
+                '&lt;md-dialog-content&gt;' +
+                '&lt;p class=&quot;md-padding&quot;&gt;A bunch of text&lt;/p&gt;' +
+                '&lt;/md-dialog-content&gt;' +
+                '&lt;md-dialog-actions layout=&quot;row&quot;&gt;' +
+                '&lt;md-button ng-click=&quot;answer()&quot; md-ink-ripple=&quot;#F44336&quot;&gt;Not Useful&lt;/md-button&gt;' +
+                '&lt;md-button ng-click=&quot;answer()&quot; class=&quot;m-r-20&quot;&gt;Useful&lt;/md-button&gt;' +
+                '&lt;/md-dialog-actions&gt;' +
+                '&lt;/md-dialog&gt;',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose: true
+        })
+        .then(function() {
+            $mdToast.show(
+                $mdToast.simple()
+                .textContent('You click on button, its hide dialog')
+                .position('top right')
+                .hideDelay(3000)
+            );
+        });
+};
+
+// Large(default)
+$scope.showDefaultAlert = function(ev) {
+    $mdDialog.show({
+        controller: DialogController,
+        template: '&lt;md-dialog aria-label=&quot;Dialog&quot;&gt;' +
+            '&lt;md-toolbar&gt;' +
+            '&lt;div class=&quot;md-toolbar-tools&quot;&gt;' +
+            '&lt;h2&gt;Dialog Header&lt;/h2&gt;' +
+            '&lt;span flex&gt;&lt;/span&gt;' +
+            '&lt;md-button class=&quot;md-icon-button&quot; ng-click=&quot;cancelDialog()&quot;&gt;' +
+            '&lt;i class=&quot;material-icons&quot; aria-label=&quot;Close dialog&quot;&gt;close&lt;/i&gt;' +
+            '&lt;/md-button&gt;' +
+            '&lt;/div&gt;' +
+            '&lt;/md-toolbar&gt;' +
+            '&lt;md-dialog-content&gt;' +
+            '&lt;p class=&quot;md-padding&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;' +
+            '&lt;/md-dialog-content&gt;' +
+            '&lt;md-dialog-actions layout=&quot;row&quot;&gt;' +
+            '&lt;md-button ng-click=&quot;hideDialog()&quot; md-ink-ripple=&quot;#F44336&quot;&gt;Not Useful&lt;/md-button&gt;' +
+            '&lt;md-button ng-click=&quot;hideDialog()&quot; class=&quot;m-r-20&quot;&gt;Useful&lt;/md-button&gt;' +
+            '&lt;/md-dialog-actions&gt;' +
+            '&lt;/md-dialog&gt;',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose: true
+    });
+};
+
+// Pre-Rendered Dialog
+
+$scope.showPrerenderedDialog = function(ev) {
+    $mdDialog.show({
+        contentElement: '#myPrerenderedDialog',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose: true
+    });
+};
+
+//Alert Dialog
+$scope.openSimpleAlert = function(ev) {
+    $mdDialog.show(
+        $mdDialog.alert()
+        .parent(angular.element(document.body))
+        .clickOutsideToClose(true)
+        .title('This is an alert title')
+        .textContent('You can specify some description text in here.')
+        .ariaLabel('Alert Dialog Demo')
+        .ok('Got it!')
+        .targetEvent(ev)
+    );
+};
+//Confirm Dialog
+$scope.showConfirm = function(ev) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    var confirm = $mdDialog.confirm()
+        .title('Would you like to delete your debt?')
+        .textContent('All of the banks have agreed to forgive you your debts.')
+        .ariaLabel('Lucky day')
+        .targetEvent(ev)
+        .ok('Please do it!')
+        .cancel('Sounds like a scam');
+
+    $mdDialog.show(confirm).then(function() {
+        $mdToast.show(
+            $mdToast.simple()
+            .textContent('You decided to get rid of your debt.')
+            .position('top right')
+            .hideDelay(3000)
+        );
+
+    }, function() {
+        $mdToast.show(
+            $mdToast.simple()
+            .textContent('You decided to keep your debt.')
+            .position('top right')
+            .hideDelay(3000)
+        );
+    });
+};
+
+
+function DialogController($scope, $mdDialog) {
+    // Cancel Dialog
+    $scope.cancelDialog = function() {
+        $mdDialog.cancel();
+    };
+
+    //Hide  Dialog
+    $scope.answer = function() {
+        $mdDialog.hide();
+    };
+    $scope.hideDialog = function() {
+        $mdDialog.hide();
+    };
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Dialog -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">ConsoleBox Dialog</h2>
+        <!-- desciption -->
+        <p>Dialogs can be sized with <code class="language-markup">flex="percentage"</code>, i.e. <code class="language-markup">flex="66"</code>.</p>
+        <!-- end description -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic collections -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- content -->
+                <div class="row">
+                    <!-- Small Dialog -->
+                    <div class="col s12 m6 l4">
+                        <!-- title -->
+                        <h4 class="theme-title">Small</h4>
+
+                        <!-- description -->
+                        <p>The rootElement or parent has <code class="language-markup">flex="40" flex-xs="90"</code></p>
+
+                        <!-- Dialog target -->
+                        <md-button class="md-raised md-primary" data-toggle="theme-dialog" data-dialogTarget="demo-dialog1">Dialog</md-button>
+                        <!--End Dialog target -->
+
+                        <!-- Dialog Structure -->
+                        <div id="demo-dialog1" class="theme-dialog" flex="40" flex-xs="90">
+                            <div class="theme-dialog-content">
+                                <div class="md-padding">
+                                    <h2 class="theme-title">Dialog Header</h2>
+                                    <p>A bunch of text</p>
+                                </div>
+                            </div>
+                            <div class="theme-dialog-footer">
+                                <md-button class="theme-dialog-action theme-dialog-close">Disagree</md-button>
+                                <md-button class="theme-dialog-action theme-dialog-close">Agree</md-button>
+                            </div>
+                        </div>
+                        <!-- End Dialog Structure -->
+                    </div>
+                    <!--End Small Dialog -->
+
+                    <!-- Medium Dialog -->
+                    <div class="col s12 m6 l4">
+                        <!-- title -->
+                        <h4 class="theme-title">Medium</h4>
+
+                        <!-- description -->
+                        <p>The rootElement or parent has <code class="language-markup">flex="60" flex-xs="90"</code></p>
+
+                        <!-- Dialog target -->
+                        <md-button class="md-raised md-primary" data-toggle="theme-dialog" data-dialogTarget="demo-dialog2">Dialog</md-button>
+                        <!--End Dialog target -->
+
+                        <!-- Dialog Structure -->
+                        <div id="demo-dialog2" class="theme-dialog" flex="60" flex-xs="90">
+                            <div class="theme-dialog-content">
+                                <div class="md-padding">
+                                    <h2 class="theme-title">Dialog Header</h2>
+                                    <p>A bunch of text</p>
+                                </div>
+                            </div>
+                            <div class="theme-dialog-footer">
+                                <md-button class="theme-dialog-action theme-dialog-close">Disagree</md-button>
+                                <md-button class="theme-dialog-action theme-dialog-close">Agree</md-button>
+                            </div>
+                        </div>
+                        <!-- End Dialog Structure -->
+                    </div>
+                    <!--End Medium Dialog -->
+
+                    <!-- Large Dialog -->
+                    <div class="col s12 m6 l4">
+                        <!-- title -->
+                        <h4 class="theme-title">Large</h4>
+
+                        <!-- description -->
+                        <p>The rootElement or parent has <code class="language-markup">flex="80" flex-xs="90"</code></p>
+
+                        <!-- Dialog target -->
+                        <md-button class="md-raised md-primary" data-toggle="theme-dialog" data-dialogTarget="demo-dialog3">Dialog</md-button>
+                        <!--End Dialog target -->
+
+                        <!-- Dialog Structure -->
+                        <div id="demo-dialog3" class="theme-dialog" flex="80" flex-xs="90">
+                            <div class="theme-dialog-content">
+                                <div class="md-padding">
+                                    <h2 class="theme-title">Dialog Header</h2>
+                                    <p>A bunch of text</p>
+                                </div>
+                            </div>
+                            <div class="theme-dialog-footer">
+                                <md-button class="theme-dialog-action theme-dialog-close">Disagree</md-button>
+                                <md-button class="theme-dialog-action theme-dialog-close">Agree</md-button>
+                            </div>
+                        </div>
+                        <!-- End Dialog Structure -->
+                    </div>
+                    <!--End Large Dialog -->
+
+                    <!-- Modals with Fixed Footer Dialog -->
+                    <div flex="50" flex-xs="100">
+                        <!-- title -->
+                        <h4 class="theme-title">Dialog with Fixed Footer</h4>
+
+                        <!-- description -->
+                        <p>You can add the <code class="  language-markup">theme-dialog-fixed-footer</code> class to the theme-dialog. </p>
+
+                        <!-- Dialog target -->
+                        <md-button class="md-raised md-primary" data-toggle="theme-dialog" data-dialogTarget="demo-dialog4">Dialog</md-button>
+                        <!--End Dialog target -->
+
+                        <!-- Dialog Structure -->
+                        <div id="demo-dialog4" class="theme-dialog theme-dialog-fixed-footer" flex="40" flex-xs="90">
+                            <div class="theme-dialog-content">
+                                <div class="md-padding">
+                                    <h2 class="theme-title">Dialog Header</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum
+                                    </p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum
+                                    </p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="theme-dialog-footer">
+                                <md-button class="theme-dialog-action theme-dialog-close">Disagree</md-button>
+                                <md-button class="theme-dialog-action theme-dialog-close">Agree</md-button>
+                            </div>
+                        </div>
+                        <!-- End Dialog Structure -->
+                    </div>
+                    <!--End Modals with Fixed Footer Dialog -->
+
+
+                </div>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic collections -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+
+
+</md-content>
+<!--End Page content -->

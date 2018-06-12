@@ -1,0 +1,403 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title" layout="row" layout-align="space-between center">
+        <h1>{{isEdit ? "Edit Lead" : "Add New Lead"}} </h1>
+        <!-- <h1 ng-if="isEdit">Update leads ( {{ lead.firstname +' ' + lead.lastname}} )  </h1> -->
+        <a ui-sref="allLeads"> <md-icon>people</md-icon> All Leads &nbsp;  &nbsp; &nbsp;</a>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Page content -->
+<md-content class="page-content">
+
+  <!-- section -->
+   <div class="isLoading page-loader border-radius-10  md-whiteframe-3dp" 
+      layout="column" 
+      layout-align="center center " 
+      ng-show="isPageLoading">
+       <md-progress-circular md-mode="indeterminate" md-diameter="52"></md-progress-circular>
+       <span>Loading..</span>
+    </div>
+
+
+  <section class="page-section  md-whiteframe-3dp border-radius-10" ng-hide="isPageLoading">
+    <!--page loader-->
+   
+
+     <form name="leadForm" novalidate class="md-block-input form-bordered" >
+     <alert-message ng-if="alert" data="alert"> </alert-message>
+      
+    <h2>Project Information</h2>
+    <div layout="row">
+      <md-input-container class="md-block">
+        <label>Account Name</label>
+        <input required name="account" ng-model="lead.account" required>
+        <div ng-messages="leadForm.account.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+       <div class="space"></div>
+        <md-input-container class="md-block">
+        <label>Project Name</label>
+        <input required name="project" ng-model="lead.project" required>
+        <div ng-messages="leadForm.project.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+
+    <div layout="row">
+      <md-input-container class="md-block">
+        <label>Source</label>
+        <input required name="source" ng-model="lead.source" required>
+        <div ng-messages="leadForm.source.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+      <div class="space"></div>
+      <md-input-container class="md-block">
+        <label>Event</label>
+        <input required name="event" ng-model="lead.event" required>
+        <div ng-messages="leadForm.event.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+
+    <h2>Client Information</h2>
+
+    <div layout="row">
+      <md-input-container class="md-block">
+        <label>Title</label>
+        <input required name="title" ng-model="lead.title" required>
+        <div ng-messages="leadForm.title.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+    
+    <div layout="row">
+      <md-input-container class="md-block">
+        <label>Business Card</label>
+        <input required name="business_card" ng-model="lead.business_card" required>
+        <div ng-messages="leadForm.business_card.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+       <div class="space"></div>
+        <md-input-container class="md-block">
+        <label>Initial Contact</label>
+        <input  name="initial_contact" ng-model="lead.initial_contact" >
+        <div ng-messages="leadForm.initial_contact.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+
+    <div layout="row">
+      <md-input-container class="md-block">
+        <label>Firstname</label>
+        <input required name="firstname" ng-model="lead.firstname" required>
+        <div ng-messages="leadForm.firstname.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    
+      <div class="space"></div>
+      <md-input-container class="md-block">
+        <label>Lastname</label>
+        <input name="lastname" ng-model="lead.lastname">
+        <div ng-messages="leadForm.lastname.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+
+    <div layout="row">
+      <md-input-container class="md-block">
+        <label>Email Address</label>
+        <input type='email' required name="email" ng-model="lead.email" ng-pattern='/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/'
+          required>
+        <div ng-messages="leadForm.email.$error">
+          <div ng-message="required">Full name is required.</div>
+          <div ng-message="pattern">Email must be valid.</div>
+        </div>
+      </md-input-container>
+    
+      <div class="space"></div>
+      <md-input-container class="md-block">
+        <label>Phone Number</label>
+        <input name="phone_number" ng-model="lead.phone_number">
+        <div ng-messages="leadForm.phone_number.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+
+    <div layout="row">
+      <md-input-container class="md-block">
+        <label>Company</label>
+        <input required name="company" ng-model="lead.company" required>
+        <div ng-messages="leadForm.company.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    
+      <div class="space"></div>
+      <md-input-container class="md-block">
+        <label>Website</label>
+        <input name="website" ng-model="lead.website">
+        <div ng-messages="leadForm.website.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+
+
+    
+
+    <h2>Physical Information</h2>
+    <div layout="row">
+       <md-input-container class="md-block">
+        <label>Address 1</label>
+        <input  name="address1" ng-model="lead.address.address1">
+        <div ng-messages="leadForm.address1.$error">
+        <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+      <div class="space"></div>
+
+      <md-input-container class="md-block">
+        <label>Address 2</label>
+        <input name="address2" ng-model="lead.address.address2">
+        <div ng-messages="leadForm.address2.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+      <div class="space"></div>
+
+      <md-input-container class="md-block">
+        <label>City</label>
+        <input name="city" ng-model="lead.address.city">
+        <div ng-messages="leadForm.city.$error">
+        <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+    </div>
+
+   <div layout="row">
+
+      <md-input-container class="md-block">
+        <label>State</label>
+        <input  name="state" ng-model="lead.address.state">
+        <div ng-messages="leadForm.state.$error">
+          <div ng-message="required">Full name is required.</div>
+        </div>
+      </md-input-container>
+
+      <div class="space"></div>
+
+      <md-input-container class="md-block">
+
+        <label>Country</label>
+        <input name="country" ng-model="lead.address.country">
+        <div ng-messages="leadForm.country.$error">
+        <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+      <div class="space"></div>
+      
+      <md-input-container class="md-block">
+      
+        <label>Zip</label>
+        <input name="zip" ng-model="lead.address.zip">
+        <div ng-messages="leadForm.zip.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+   </div>
+
+  
+
+
+  <h2>Extra Information</h2>
+  <div layout="row">
+    <md-input-container class="md-block">
+      <label>Quote Date</label>
+      <md-datepicker ng-model="lead.quote_date" md-placeholder="Choose date"></md-datepicker>
+      <!-- <input required name="quote_date" ng-model="lead.quote_date" required> -->
+      <div ng-messages="leadForm.quote_date.$error">
+        <div ng-message="required">This is required.</div>
+      </div>
+    </md-input-container>
+  
+    <div class="space"></div>
+    <md-input-container class="md-block">
+      <label>Contract Date</label>
+      <md-datepicker ng-model="lead.contract_date" md-placeholder="Choose date"></md-datepicker>
+      <!-- <input required name="contract_date" ng-model="lead.contract_date" required> -->
+      <div ng-messages="leadForm.contract_date.$error">
+        <div ng-message="required">This is required.</div>
+      </div>
+    </md-input-container>
+  </div>
+
+
+  <h2 flex='100' class="">
+    Products
+  </h2>
+  <div layout="row" ng-repeat='p in lead.products'>
+  
+    <md-input-container class="md-block">
+      <label>Product</label>
+      <md-select ng-model="lead.products[$index].name" placeholder="Select Product" class="md-no-underline">
+        <md-option ng-repeat='product in products'value="{{product}}">{{product.title}}</md-option>
+      </md-select>
+    </md-input-container>
+  
+    <div class="space"></div>
+  
+    <md-input-container class="md-block">
+  
+      <label>Qty</label>
+      <input type="number" required="" min="1" max="100" name="qty" ng-model="lead.products[$index].qty">
+      <div ng-messages="leadForm.qty.$error">
+        <div ng-message="required">This is required.</div>
+      </div>
+    </md-input-container>
+  
+    <div class="space"></div>
+  
+    <md-input-container class="md-block">
+  
+      <label>Cost (in $)</label>
+      <input readonly="" disabled="" value="0">
+      <div ng-messages="leadForm.project.$error">
+        <div ng-message="required">Project is required.</div>
+      </div>
+    </md-input-container>
+  
+    <div class="space"></div>
+  
+    <md-input-container class="md-block">
+  
+      <label>Extended Cost (in $)</label>
+      <input readonly="" disabled="" value="0">
+      <div ng-messages="leadForm.project.$error">
+        <div ng-message="required">Project is required.</div>
+      </div>
+    </md-input-container>
+  
+    <div class="space"></div>
+  
+    <md-input-container class="md-block">
+  
+      <md-button type="button" ng-if="$index===0" aria-label="plusMinus" class="md-raised pull-right md-primary btn-small" ng-click="plusMinus()">
+        <span ng-hide="isLoading"> + </span>
+      </md-button>
+  
+      <md-button type="button" ng-if="$index!==0" aria-label="plusMinus" class="md-raised pull-right md-warn btn-small" ng-click="plusMinus('minus', $index)">
+        <span ng-hide="isLoading"> - </span>
+      </md-button>
+    </md-input-container>
+  
+  </div>
+
+  
+
+  <h2>Notes</h2>
+  <div layout="row">
+  
+    <md-input-container class="md-block">  
+      <label>Notes</label>
+      <textarea name="notes" rows="5" placeholder="Your Notes Here" ng-model="lead.notes[0]"></textarea>
+    </md-input-container>
+  
+  </div>
+
+
+  <div layout="row">
+  
+    <md-input-container class="md-block">
+      <textarea name="notes" rows="5" placeholder="Your Notes Here" ng-model="lead.notes[1]"></textarea>
+    </md-input-container>
+  
+  </div>
+
+
+  <div layout="row">
+  
+    <md-input-container class="md-block">
+      <textarea name="notes" rows="5" placeholder="Your Notes Here" ng-model="lead.notes[2]"></textarea>
+    </md-input-container>
+  
+  </div>
+
+  <div layout="row">
+  
+    <md-input-container class="md-block">
+      <textarea name="notes" rows="5" placeholder="Your Notes Here" ng-model="lead.notes[3]"></textarea>
+    </md-input-container>
+  
+  </div>
+
+  <div layout="row">
+  
+    <md-input-container class="md-block">
+      <textarea name="notes" rows="5" placeholder="Your Notes Here" ng-model="lead.notes[4]"></textarea>
+    </md-input-container>
+  
+  </div>
+
+   <div layout="row">
+
+      <md-input-container class="md-block">
+         <label>Status</label>
+
+          <md-select ng-model="lead.status" name="status" ng-required ="true">
+            <md-option value="true"> Activated </md-option>
+            <md-option value="false"> Deactivated </md-option>
+          </md-select>
+
+          <div class="md-errors-spacer"></div>
+          <div class="errors" ng-messages="leadForm.status.$error" >
+          <div ng-message="required">Status is required</div>
+        </div>
+   </div>
+
+
+  <!--  <div layout="row" layout-wrap class="margin-top-10">
+       <md-checkbox 
+           ng-checked="exists(x, lead.permissions)" 
+           ng-click="toggle(x, lead.permissions)"
+           ng-repeat="x in leadPermissionList track by $index" 
+           aria-label="id_{{$index}}">
+           {{x}}
+      </md-checkbox>
+      <div class="space"></div>
+      <div class="space"></div>
+   </div> -->
+
+    <div class="margin-top-10">
+      <md-button ng-disabled="isLoading" type="submit"  
+        ng-click="submitForm(leadForm, lead)" aria-label="submit"
+        class="md-raised md-primary btn-block max-300 btn-action-form">
+        <span ng-show="isLoading" layout="row" class="btn-loading"   layout-align="center center">   
+        <md-progress-circular md-mode="indeterminate" md-diameter="15">
+        </md-progress-circular> <small> Processing</small>
+        </span>
+         <span ng-hide="isLoading"> {{ isEdit? 'Update ': 'Add Lead' }} </span>
+      </md-button>
+    </div>
+  </form>
+  </section>
+</md-content>
+<!--End Page content -->

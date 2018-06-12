@@ -1,0 +1,118 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title" layout="row" layout-align="space-between center">
+        <h1 ng-if="!isEdit">Add Users </h1>
+        <h1 ng-if="isEdit">Update Users ( {{ user.name }} )  </h1>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Page content -->
+<md-content class="page-content">
+
+  <!-- section -->
+   <div class="isLoading page-loader border-radius-10  md-whiteframe-3dp" 
+      layout="column" 
+      layout-align="center center " 
+      ng-show="isPageLoading">
+       <md-progress-circular md-mode="indeterminate" md-diameter="52"></md-progress-circular>
+       <span>Loading..</span>
+    </div>
+
+
+  <section class="page-section  md-whiteframe-3dp border-radius-10" ng-hide="isPageLoading">
+    <!--page loader-->
+   
+
+     <form name="personalForm" novalidate class="md-block-input form-bordered" >
+     <alert-message ng-if="alert" data="alert"> </alert-message>
+   
+    <div layout="row">
+      <md-input-container class="md-block">
+        <label>Full Name</label>
+        <input required name="lastname" ng-model="user.name" required>
+        <div ng-messages="personalForm.lastname.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+       <div class="space"></div>
+
+       <md-input-container class="md-block">
+        <label>Email</label>
+        <input type='email' required name="email" ng-model="user.email" ng-pattern='/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' required>
+        <div ng-messages="personalForm.email.$error">
+        <div ng-message="required">Full name is required.</div>
+        <div ng-message="pattern">Email must be valid.</div>
+        </div>
+      </md-input-container>
+
+    </div>
+
+   <div layout="row">
+
+      <md-input-container class="md-block">
+        <label>Mobile</label>
+        <input required name="mobile" ng-model="user.mobile" ng-minlength="7" ng-maxlength="12" >
+        <div ng-messages="personalForm.mobile.$error">
+        <div ng-message="required">Mobile is required.</div>
+        <div ng-message="minlength">Please enter valid mobile number</div>
+
+        <div ng-message="maxlength">Please enter valid mobile number</div>
+        </div>
+      </md-input-container>
+
+      <div class="space"></div>
+
+      <md-input-container class="md-block">
+        <label>Password</label>
+        <input ng-disabled="isEdit" ng-required="{{isEdit ? false: true}}" name="password" ng-model="user.password"  required>
+        <div ng-messages="personalForm.password.$error">
+        <div ng-message="required">Password is required.</div>
+        </div>
+        <a ng-if="isEdit==false" ng-click="generatePassword()" class="generatePassword">Generate password</a>
+      </md-input-container>
+
+   </div>
+
+   <div layout="row">
+
+      <md-input-container class="md-block">
+         <label>User Type</label>
+          <md-select ng-model="user.usertype" name="usertype" ng-required ="true">
+            <md-option value="superadmin"> Super Admin</md-option>
+            <md-option value="employee"> Employee </md-option>
+          </md-select>
+          <div class="md-errors-spacer"></div>
+          <div class="errors" ng-messages="personalForm.usertype.$error" >
+          <div ng-message="required">User type is required</div>
+        </div>
+   </div>
+
+
+   <div layout="row" layout-wrap class="margin-top-10">
+       <md-checkbox 
+           ng-checked="exists(x, user.permissions)" 
+           ng-click="toggle(x, user.permissions)"
+           ng-repeat="x in userPermissionList track by $index" 
+           aria-label="id_{{$index}}">
+           {{x}}
+      </md-checkbox>
+      <div class="space"></div>
+      <div class="space"></div>
+   </div>
+
+    <div class="margin-top-10">
+      <md-button ng-disabled="isLoading" type="submit"  
+        ng-click="submitForm(personalForm)" aria-label="submit"
+        class="md-raised md-primary btn-block max-300 btn-action-form">
+        <span ng-show="isLoading" layout="row" class="btn-loading"   layout-align="center center">   
+        <md-progress-circular md-mode="indeterminate" md-diameter="15">
+        </md-progress-circular> <small> Processing</small>
+        </span>
+         <span ng-hide="isLoading"> {{ isEdit? 'Update ': 'Add user' }} </span>
+      </md-button>
+    </div>
+  </form>
+  </section>
+</md-content>
+<!--End Page content -->

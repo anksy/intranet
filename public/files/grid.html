@@ -1,0 +1,626 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Layout</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/layout/introduction" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Layout</h2>
+        <!-- page desciption -->
+        <p>Find angular material official layout docs <a href="https://material.angularjs.org/latest/layout/introduction" target="_blank">here</a>.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Introduction -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Introduction</h3>
+                <!-- description -->
+                <p>
+                    AngularJS Material's Layout features provide sugar to enable developers to more easily create modern, responsive layouts on top of CSS3 <a href="http://www.w3.org/TR/css3-flexbox/" target="_blank">flexbox</a>. The layout API consists
+                    of a set of AngularJS directives that can be applied to any of your application's HTML content.
+                </p>
+                <p>Take a look at this section to quickly understand how the layout works!</p>
+
+                <!-- content -->
+                <div layout="row">
+                    <div flex="10" class="grid-example"><span>1</span></div>
+                    <div flex="10" class="grid-example"><span>2</span></div>
+                    <div flex="10" class="grid-example"><span>3</span></div>
+                    <div flex="10" class="grid-example"><span>4</span></div>
+                    <div flex="10" class="grid-example"><span>5</span></div>
+                    <div flex="10" class="grid-example"><span>6</span></div>
+                    <div flex="10" class="grid-example"><span>7</span></div>
+                    <div flex="10" class="grid-example"><span>8</span></div>
+                    <div flex="10" class="grid-example"><span>9</span></div>
+                    <div flex="10" class="grid-example"><span>10</span></div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div layout=&quot;row&quot;&gt;
+    &lt;div flex=&quot;10&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;10&quot;&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;10&quot;&gt;&lt;span&gt;3&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;10&quot;&gt;&lt;span&gt;4&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;10&quot;&gt;&lt;span&gt;5&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;10&quot;&gt;&lt;span&gt;6&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;10&quot;&gt;&lt;span&gt;7&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;10&quot;&gt;&lt;span&gt;8&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;10&quot;&gt;&lt;span&gt;9&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;10&quot;&gt;&lt;span&gt;10&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Introduction -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- flex live inside layout -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">flex live inside layout</h3>
+                <!-- description -->
+                <blockquote>
+                    Remember when you are creating your layout that all flex must be contained inside a layout <code class="red">row</code> or <code class="red">column</code> and if used more than one flex variation like flex="50" flex-xs="100" should
+                    be add directive <code class="red">layout-wrap</code> in <code class="red">row</code> or <code class="red">column</code>. <code class="red">layout-wrap</code> is not working in <code class="red">safari browser</code> so we suggest
+                    when using more than two flex variation use ConsoleBox custom grid system, its docs in below <code class="red">ConsoleBox grid system</code> section.
+
+                </blockquote>
+
+                <!-- content -->
+                <div layout="row" layout-wrap>
+                    <div flex="100" class="grid-example"><span>This div is flex=100 on all screen sizes</span></div>
+                    <div flex="50" class="grid-example"><span>flex=50 (one-half)</span></div>
+                    <div flex="50" class="grid-example"><span>flex=50 (one-half)</span></div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div layout=&quot;row&quot; layout-wrap&gt;
+    &lt;div flex=&quot;100&quot;&gt;&lt;span&gt;This div is flex=100 on all screen sizes&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;50&quot;&gt;&lt;span&gt;flex=50 (one-half)&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;50&quot;&gt;&lt;span&gt;flex=50 (one-half)&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End flex live inside layout -->
+        <!-- //////////////////////////////////////// -->
+
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Creating Responsive Layouts -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Creating Responsive Layouts</h3>
+                <!-- description -->
+                <p>
+                    We can associate breakpoints with mediaQuery definitions using breakpoint alias(es):
+                </p>
+
+                <!-- content -->
+                <table class="theme-table striped responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Breakpoint</th>
+                            <th>MediaQuery (pixel range)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>xs</td>
+                            <td>'(max-width: <b>599</b>px)'</td>
+                        </tr>
+                        <tr>
+                            <td>gt-xs</td>
+                            <td>'(min-width: <b>600</b>px)'</td>
+                        </tr>
+                        <tr>
+                            <td>sm</td>
+                            <td>'(min-width: <b>600</b>px) and (max-width: <b>959</b>px)'</td>
+                        </tr>
+                        <tr>
+                            <td>gt-sm</td>
+                            <td>'(min-width: <b>960</b>px)'</td>
+                        </tr>
+                        <tr>
+                            <td>md</td>
+                            <td>'(min-width: <b>960</b>px) and (max-width: <b>1279</b>px)'</td>
+                        </tr>
+                        <tr>
+                            <td>gt-md</td>
+                            <td>'(min-width: <b>1280</b>px)'</td>
+                        </tr>
+                        <tr>
+                            <td>lg</td>
+                            <td>'(min-width: <b>1280</b>px) and (max-width: <b>1919</b>px)'</td>
+                        </tr>
+                        <tr>
+                            <td>gt-lg</td>
+                            <td>'(min-width: <b>1920</b>px)'</td>
+                        </tr>
+                        <tr>
+                            <td>xl</td>
+                            <td>'(min-width: <b>1920</b>px)'</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- end content -->
+
+                <!-- Example -->
+                <h3 class="theme-title">Examples</h3>
+                <div layout="row">
+                    <div flex="100" class="grid-example"><span>I am always full-width (flex=100)</span></div>
+                    <div flex="50" flex-xs="100" flex-sm="100" class="grid-example"><span>I am full-width on 0px to 960px</span></div>
+                </div>
+
+                <div layout="row">
+                    <div flex="100" class="grid-example"><span>flex=100</span></div>
+                </div>
+                <div layout="row">
+                    <div flex="30" flex-md="40" flex-sm="100" flex-xs="100" class="grid-example"><span>flex="30" flex-md="40" flex-sm="100" flex-xs="100"</span></div>
+                    <div flex="40" flex-md="20" flex-sm="100" flex-xs="100" class="grid-example"><span>flex="40" flex-md="20" flex-sm="100" flex-xs="100"</span></div>
+                    <div flex="30" flex-md="40" flex-sm="100" flex-xs="100" class="grid-example"><span>flex="30" flex-md="40" flex-sm="100" flex-xs="100"</span></div>
+                </div>
+                <!--End  Example -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div layout=&quot;row&quot;&gt;
+    &lt;div flex=&quot;100&quot;&gt;&lt;span&gt;I am always full-width (flex=100)&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;50&quot; flex-xs=&quot;100&quot; flex-sm=&quot;100&quot;&gt;&lt;span&gt;I am full-width on 0px to 960px&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div layout=&quot;row&quot;&gt;
+    &lt;div flex=&quot;100&quot;&quot;&gt;&lt;span&gt;flex=100&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div layout=&quot;row&quot;&gt;
+    &lt;div flex=&quot;30&quot; flex-md=&quot;40&quot; flex-sm=&quot;100&quot; flex-xs=&quot;100&quot;&gt;&lt;span&gt;flex=&quot;30&quot; flex-md=&quot;40&quot; flex-sm=&quot;100&quot; flex-xs=&quot;100&quot;&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;40&quot; flex-md=&quot;20&quot; flex-sm=&quot;100&quot; flex-xs=&quot;100&quot;&gt;&lt;span&gt;flex=&quot;40&quot; flex-md=&quot;20&quot; flex-sm=&quot;100&quot; flex-xs=&quot;100&quot;&lt;/span&gt;&lt;/div&gt;
+    &lt;div flex=&quot;30&quot; flex-md=&quot;40&quot; flex-sm=&quot;100&quot; flex-xs=&quot;100&quot;&gt;&lt;span&gt;flex=&quot;30&quot; flex-md=&quot;40&quot; flex-sm=&quot;100&quot; flex-xs=&quot;100&quot;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Creating Responsive Layouts -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!--page title-->
+        <h2 class="theme-title">ConsoleBox Grid System</h2>
+        <!-- description -->
+        <p>We are using a standard 12 column fluid responsive grid system. The grid helps you layout your page in an ordered, easy fashion.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Introduction -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Introduction</h3>
+                <!-- description -->
+                <p>Take a look at this section to quickly understand how the layout works!</p>
+
+                <!-- content -->
+                <div class="row">
+                    <div class="col s1 grid-example"><span>1</span></div>
+                    <div class="col s1 grid-example"><span>2</span></div>
+                    <div class="col s1 grid-example"><span>3</span></div>
+                    <div class="col s1 grid-example"><span>4</span></div>
+                    <div class="col s1 grid-example"><span>5</span></div>
+                    <div class="col s1 grid-example"><span>6</span></div>
+                    <div class="col s1 grid-example"><span>7</span></div>
+                    <div class="col s1 grid-example"><span>8</span></div>
+                    <div class="col s1 grid-example"><span>9</span></div>
+                    <div class="col s1 grid-example"><span>10</span></div>
+                    <div class="col s1 grid-example"><span>11</span></div>
+                    <div class="col s1 grid-example"><span>12</span></div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col s1&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s1&quot;&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s1&quot;&gt;&lt;span&gt;3&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s1&quot;&gt;&lt;span&gt;4&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s1&quot;&gt;&lt;span&gt;5&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s1&quot;&gt;&lt;span&gt;6&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s1&quot;&gt;&lt;span&gt;7&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s1&quot;&gt;&lt;span&gt;8&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s1&quot;&gt;&lt;span&gt;9&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s1&quot;&gt;&lt;span&gt;10&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s1&quot;&gt;&lt;span&gt;11&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s1&quot;&gt;&lt;span&gt;12&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Introduction -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Columns live inside Rows -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Columns live inside Rows</h3>
+                <!-- description -->
+                <p>
+                    Remember when you are creating your layout that all columns must be contained inside a row and that you must add the col class to your inner divs to make them into columns.
+                </p>
+
+                <!-- content -->
+                <div class="row">
+                    <div class="col s12 grid-example"><span>This div is 12-columns wide</span></div>
+                    <div class="col s6 grid-example"><span>This div is 6-columns wide</span></div>
+                    <div class="col s6 grid-example"><span>This div is 6-columns wide</span></div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col s12&quot;&gt;&lt;span&gt;This div is 12-columns wide&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s6&quot;&gt;&lt;span&gt;This div is 6-columns wide&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s6&quot;&gt;&lt;span&gt;This div is 6-columns wide&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Columns live inside Rows -->
+        <!-- //////////////////////////////////////// -->
+
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Offsets -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Offsets</h3>
+                <!-- description -->
+                <p>To offset, simply add <code class="  language-markup">offset-s2</code> to the class where <code class="  language-markup">s</code> signifies the screen class-prefix (s = small, m = medium, l = large) and the number after is the number
+                    of columns you want to offset by.</p>
+
+                <!-- content -->
+                <div class="row">
+                    <div class="col s12 grid-example"><span>This div is 12-columns wide on all screen sizes</span></div>
+                    <div class="col s6 offset-s6 grid-example"><span>6-columns (offset-by-6)</span></div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col s12&quot;&gt;&lt;span&gt;This div is 12-columns wide on all screen sizes&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s6 offset-s6&quot;&gt;&lt;span&gt;6-columns (offset-by-6)&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Offsets -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Push and Pull -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Offsets</h3>
+                <!-- description -->
+                <p>You can easily change the order of your columns with push and pull. Simply add <code class="  language-markup">push-s2</code> or <code class="  language-markup">pull-s2</code> to the class where <code class="  language-markup">s</code>                    signifies the screen class-prefix (s = small, m = medium, l = large) and the number after is the number of columns you want to push or pull by.</p>
+
+                <!-- content -->
+                <div class="row">
+                    <div class="col s7 push-s5 grid-example"><span>This div is 7-columns wide on pushed to the right by 5-columns.</span></div>
+                    <div class="col s5 pull-s7 grid-example"><span>5-columns wide pulled to the left by 7-columns.</span></div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col s7 push-s5&quot;&gt;&lt;span&gt;This div is 7-columns wide on pushed to the right by 5-columns.&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s5 pull-s7&quot;&gt;&lt;span&gt;5-columns wide pulled to the left by 7-columns.&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Push and Pull -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Creating Responsive Layouts -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Offsets</h3>
+                <!-- description -->
+                <p>Above we showed you how to layout elements using our grid system. Now we'll show you how to design your layouts so that they look great on all screen sizes.</p>
+
+                <!-- content -->
+                <h4 class="theme-title">Screen Sizes</h4>
+                <table class="theme-table striped responsive-table m-b-20">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th data-field="id">Mobile Devices <br>&lt;= 600px</th>
+                            <th data-field="name">Tablet Devices <br>&gt; 600px</th>
+                            <th data-field="price">Desktop Devices <br>&gt; 992px</th>
+                            <th data-field="price">Large Desktop Devices <br>&gt; 1200px</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Class Prefix</strong></td>
+                            <td><code class="  language-markup">.s</code></td>
+                            <td><code class="  language-markup">.m</code></td>
+                            <td><code class="  language-markup">.l</code></td>
+                            <td><code class="  language-markup">.xl</code></td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Number of Columns</strong></td>
+                            <td>12</td>
+                            <td>12</td>
+                            <td>12</td>
+                            <td>12</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- end content -->
+
+                <!-- Example -->
+                <div class="row">
+                    <div class="col s12 grid-example"><span>I am always full-width (col s12)</span></div>
+                    <div class="col s12 m6 grid-example"><span>I am full-width on mobile (col s12 m6)</span></div>
+                </div>
+                <!-- End Example -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col s12&quot;&gt;&lt;span&gt;I am always full-width (col s12)&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;col s12 m6&quot;&gt;&lt;span&gt;I am full-width on mobile (col s12 m6)&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Creating Responsive Layouts -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!--More Responsive Grid Examples -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">More Responsive Grid Examples</h3>
+
+                <!-- content -->
+                <div class="row">
+                    <div class="col s12 grid-example">
+                        <span>s12</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m4 l2 grid-example">
+                        <span> s12 m4 l2</span>
+                    </div>
+                    <div class="col s12 m4 l8 grid-example">
+                        <span> s12 m4 l8</span>
+                    </div>
+                    <div class="col s12 m4 l2 grid-example">
+                        <span> s12 m4 l2</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6 l3 grid-example">
+                        <span> s12 m6 l3</span>
+                    </div>
+                    <div class="col s12 m6 l3 grid-example">
+                        <span>s12 m6 l3</span>
+                    </div>
+                    <div class="col s12 m6 l3 grid-example">
+                        <span> s12 m6 l3</span>
+                    </div>
+                    <div class="col s12 m6 l3 grid-example">
+                        <span> s12 m6 l3</span>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col s12&quot;&gt;
+        &lt;span&gt;s12&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col s12 m4 l2&quot;&gt;
+        &lt;span&gt; s12 m4 l2&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col s12 m4 l8&quot;&gt;
+        &lt;span&gt; s12 m4 l8&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col s12 m4 l2&quot;&gt;
+        &lt;span&gt; s12 m4 l2&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col s12 m6 l3&quot;&gt;
+        &lt;span&gt; s12 m6 l3&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col s12 m6 l3&quot;&gt;
+        &lt;span&gt;s12 m6 l3&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col s12 m6 l3&quot;&gt;
+        &lt;span&gt; s12 m6 l3&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col s12 m6 l3&quot;&gt;
+        &lt;span&gt; s12 m6 l3&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- More Responsive Grid Examples -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+</md-content>
+<!--End Page content -->

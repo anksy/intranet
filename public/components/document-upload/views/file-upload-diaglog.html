@@ -1,0 +1,55 @@
+<md-dialog aria-label="add new" class="md-whiteframe-6dp">
+  <form ng-cloak name="form" novalidate>
+
+    <md-toolbar>
+      
+      <div class="md-toolbar-tools">
+        <h2>Uploading {{files.length}} Items </h2>
+        <span flex></span>
+         <md-button ng-click="isOpen=!isOpen" class="md-icon-button">
+            <md-icon>{{isOpen ? 'keyboard_arrow_up':'keyboard_arrow_down'}}</md-icon>
+        </md-button>
+
+         <md-button  class="md-icon-button" ng-click="cancel()">
+            <md-icon>close</md-icon>
+        </md-button>
+      </div>
+
+    </md-toolbar>
+
+    <md-dialog-content >
+       <alert-message ng-if="alert" data="alert"> </alert-message>
+      <div class="md-dialog-content add-new-folder" ng-hide="isOpen">
+      
+        <md-list>
+          <md-list-item ng-repeat="file in files" 
+            ng-init="file.isLoading =false; file.isUploaded =false"
+            layout="row" layout-align="space-between center">
+            <span class="elipsis"> {{file.name}}   </span>
+
+            <div class="md-secondary">
+                <md-icon ng-if="file.isUploaded" class="success">check_circle</md-icon>
+                
+                <md-progress-circular 
+                  md-mode="determinate" 
+                  md-diameter="24" 
+                  ng-if="!file.isUploaded"
+                  ng-class="{'active': file.isLoading ==false}"
+                  value="{{file.isLoading || 0}}">
+                </md-progress-circular>
+
+            </div>
+          </md-list-item>
+        </md-list>
+
+
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row" layout-align="center center" ng-hide="isOpen">
+         <md-button class="md-button-text" ng-click="uploadAll();"> 
+            <md-icon>file_upload</md-icon>
+            <span> Upload &nbsp;&nbsp; </span>
+         </md-button>
+        </md-dialog-actions>
+  </form>
+</md-dialog>

@@ -1,0 +1,190 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title" layout="row" layout-align="space-between center">
+        <h1> Users List </h1>
+    </div>
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+  <!-- section -->
+    <section class="page-section has-toolbar  md-whiteframe-3dp border-radius-10">
+        <md-toolbar 
+            class="md-table-toolbar md-toolbar-fixed toolbar-mini alternate text-white" 
+            ng-show="selected.length">
+
+            <div class="md-toolbar-tools md-block " 
+               layout="row" layout-align="space-between center" >
+                <span>{{selected.length}} {{selected.length > 1 ? 'items' : 'item'}} selected</span>
+                <div class="push-right" 
+                     layout="row" 
+                     layout-align="center center">
+                        <div layout="row" class="action-on-select">
+                            <md-select aria-label="action" ng-model="actionType">
+                                <md-option value="select"><em>Select option</em></md-option>
+                                <md-option value="activate"> 
+                                    <md-icon >email</md-icon>   New Email</md-option>
+                                <md-option value="deactivate"> <md-icon >note_add</md-icon>
+                                   New Task</md-option>
+                            </md-select>
+
+                            <md-button aria-label="button" ng-click="changeStatus()" 
+                                ng-disabled="isProcessing"> 
+                                <span ng-hide="isProcessing">Start</span>
+                                <div ng-show="isProcessing">
+                                    <div class="spinner">
+                                      <div class="bounce1"></div>
+                                      <div class="bounce2"></div>
+                                      <div class="bounce3"></div>
+                                    </div>
+                                </div>
+                             </md-button>
+                        </div>
+                    <md-button class="md-icon-button" ng-click="selected =[]">
+                      <md-icon>close</md-icon>
+                      <md-tooltip>Clear selection</md-tooltip>
+                    </md-button>
+                </div>
+            </div>
+        </md-toolbar>
+
+        <md-toolbar class="md-table-toolbar md-default" >
+
+            <div class="md-toolbar-tools border-bottom"  
+                layout="row" 
+                layout-align="space-between center">
+
+                <div ng-if="!isFilter"  flex="85">
+                    <h2 class="md-title">Users</h2>
+                    <div flex></div>
+                </div>
+
+                <!--filter result-->
+                <div ng-if="isFilter"  
+                    layout="row" flex="90"
+                    layout-align="start center">
+      
+                    <span> <md-icon class="material-icons">search</md-icon> </span>
+                    
+                    <form  name="filter.form" flex="85" class="md-block">
+                      <input 
+                        ng-model-options="{debounce: 500 }"
+                        ng-change="filterResult(searchText)" 
+                        md-select-on-focus="filter.show" 
+                        class="searchbox" 
+                        type="text" 
+                        ng-model="searchText" 
+                        placeholder="Search"  
+                        aria-invalid="false">
+                    </form>
+                </div>
+
+                <!--sction button-->
+                <div layout="row" flex="15">
+                    <md-button  class="md-icon-button" 
+                        ng-click="closeFilter()">
+                      <md-icon>{{isFilter ?'close' :'search'}}</md-icon>
+                      <md-tooltip>{{isFilter ?'Close' :'Search'}} </md-tooltip>
+                    </md-button>
+
+                    <md-button class="md-icon-button" ui-sref="addCustomer">
+                      <md-icon>person_add</md-icon>
+                      <md-tooltip>Add new </md-tooltip>
+                    </md-button>
+                    
+                    <md-button class="md-icon-button" ng-click="refresh()">
+                      <md-icon>refresh</md-icon>
+                      <md-tooltip>Refersh </md-tooltip>
+                    </md-button>
+                </div>
+            </div>
+        </md-toolbar>
+    
+        <md-table-container>
+
+          <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+
+            <thead md-head md-order="query.order" md-on-reorder="getList">
+              <tr md-row>
+                <th md-column md-numeric > Full Name </th>
+                <th md-column md-numeric>Company </th>
+                <th md-column md-numeric>Email </th>
+                <th md-column md-numeric>Contact Number </th>
+                <th md-column md-numeric>Create Date </th>
+
+                <th md-column md-numeric>Actions</th>
+              </tr>
+            </thead>
+            <tbody md-body ng-if="users.data.length==0">
+                <tr>
+                    <td colspan="6" class="text-center"> <b>No record found!</b></td>
+                </tr>
+            </tbody>
+            <tbody md-body>
+              <tr md-row md-select="user._id" md-select-id="name" 
+                ng-repeat="user in users.data">
+                <td md-cell>{{user.firstname +' ' + user.lastname}}</td>
+                <td md-cell>{{user.company}}</td>
+                <td md-cell>{{user.email}}</td>
+                <td md-cell>{{user.mobile}}</td>
+                <td md-cell>
+                    {{user.created_at | date :'fullDate'}}
+                  <!--   <div>{{user.usertype}}</div>
+                    <div>
+                        <span ng-if="user.status" class="label label-success">Activate</span>
+                        <span ng-if="!user.status" class="label label-danger">Deactivate</span>
+                    </div> -->
+                   <!--  <a
+                        uib-popover-template="'permission_tpl.html'"
+                        popover-trigger="'outsideClick'"
+                        popover-placement="{{$last ? 'top-right': 'bottom-right'}}"
+                    >Permission <md-icon class="icon-sm">keyboard_arrow_down</md-icon></a> -->
+                </td>
+                <td md-cell>
+
+                 <md-menu md-position-mode="target-right target" md-offset ="-90 40">
+                      <md-button aria-label="Open menu" 
+                         ng-click="$mdMenu.open($event);" 
+                        class="md-primary md-raised padd-left">
+                         Actions
+                        <md-icon md-menu-origin >keyboard_arrow_down </md-icon>
+                      </md-button>
+
+                      <md-menu-content class="menu-shink" >
+                        <div ng-include="'/components/customerCRM/views/menuList.html'"></div>
+                      </md-menu-content>
+                    </md-menu>
+
+<!-- 
+                    <md-button class="md-fab md-mini md-primary" ui-sref="updateUser({id:user._id})">
+                        <md-icon>edit</md-icon>
+                        <md-tooltip>Edit/Change</md-tooltip>
+                    </md-button> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </md-table-container>
+
+        <md-table-pagination 
+            md-limit="paging.limit" 
+            md-limit-options="[5, 10, 15]" 
+            md-page="paging.page" 
+            md-total="{{paging.count}}" 
+            md-on-paginate="getList" md-page-select>
+        </md-table-pagination>
+
+    </section>
+</md-content>
+
+ <script type="text/ng-template" id="permission_tpl.html">
+        <div>
+        <div> <b>Allow permissions for {{user.name}} </b></div>
+            <ul class="list-check">
+                <li ng-repeat="x in user.permissions"><md-icon>check</md-icon> {{x}}</li>
+            </ul>
+            <div class="text-center"><a ui-sref="updateUser({id:user._id})">  Change permission <md-icon >arrow_forward</md-icon></a></div>
+        <div>
+
+    </script>

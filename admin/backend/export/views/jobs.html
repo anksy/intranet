@@ -1,0 +1,91 @@
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content">
+        <!-- BEGIN PAGE BASE CONTENT -->
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="portlet light bordered" ng-init="showFilter=true">
+                    <material-loader ng-show="loader"></material-loader>
+
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-file-text-o font-green-sharp"></i>
+                            <span class="caption-subject font-green-sharp bold uppercase">
+                                Export - {{pageType}}
+                            </span>
+                        </div>
+                        <div class="actions">
+                            <div class="btn-group">
+                                
+                                <a  ng-click="showFilter =!showFilter"
+                                    class="btn green-haze  btn-circle btn-sm mg-10"> 
+                                        Filter &amp; Advance Search 
+                                    <i class="fa fa-angle-down" ng-show="!showFilter"></i>
+                                    <i class="fa fa-angle-up" ng-show="showFilter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--advance filter -->
+                    <div 
+                        class="advance-filter portlet-title bordered" 
+                        ng-if="showFilter">
+                        
+                        <job-filter ng-if="pageType=='jobs'"> <!--jobs filter--></job-filter>
+                       
+                    </div>
+
+                    <!--result listing-->
+
+                    <div class="data-container" ng-if="data.records.length">
+                        <md-table-container>
+                          <table md-table md-row-select multiple ng-model="selected" md-progress="data.records">
+                            <thead md-head md-order="query.order" md-on-reorder="list">
+                              <tr md-row>
+                                <th md-column><span>JOB ID</span></th>
+                                <th md-column><span>Title</span></th>
+                                
+                                <th md-column>Loan No</th>
+                                <th md-column>Order</th>
+                                <th md-column>Status</th>
+                                <th md-column>Created</th>
+                                
+                                <th md-column>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody md-body>
+                              <tr md-row md-select="row._id" md-select-id="row._id" md-auto-select ng-repeat="row in data.records">
+                                <td md-cell>{{row.job.Identifier}}</td>
+                                <td md-cell>{{row.job.title}}</td>
+                                <td md-cell>{{row.slug}}</td>
+                                <td md-cell>{{row.sort}}</td>
+
+                                <td md-cell><label class="btn btn-xs {{row.status?'green':'red'}}">{{row.status?'Active':'Inactive'}}</label></td>
+                                <td md-cell>{{row.created_at | date}}</td>
+                                
+                                <td md-cell>
+                                    <a ng-click="go('/pages/edit/'+row._id)" class="btn btn-icon-only green">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a href="javascript:;" class="btn btn-icon-only red" ng-click='remove(row._id, $event)'>
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                        </md-table-container>
+
+                        <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{data.total}}" md-on-paginate="list" md-page-select></md-table-pagination>
+                    </div>
+                    <div class="alert alert-info" ng-if='!data.records || data.records.length===0'>No record found</div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- END PAGE BASE CONTENT -->
+    </div>
+    <!-- END CONTENT BODY -->
+</div>

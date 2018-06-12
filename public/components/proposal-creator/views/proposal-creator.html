@@ -1,0 +1,264 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title" layout="row" layout-align="space-between center">
+        <h1>Proposal Creator </h1>
+    </div>
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <form name="proposalForm" novalidate class="md-block-input form-bordered">
+        
+        <section class="page-section  md-whiteframe-3dp border-radius-10" ng-hide="isPageLoading">
+            <!--page loader-->
+            <div class="alert alert-info" ng-if='isProductLoading'>Please wait... while we are getting list of products...</div>
+            <div class="autocomplete">
+                
+                <md-icon class="icon-left">search</md-icon>
+                <md-autocomplete ng-disabled="isProductLoading" md-search-text="searchText" md-selected-item-change="selectedItemChange(item)"
+                    md-items="item in querySearch(searchText)" md-item-text="item.display" md-min-length="1" placeholder="Search for product? eg. Led Street light">
+                    <md-item-template>
+                        <img ng-src="{{item.product_image}}" class="image-sm">
+                        <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.title}}</span>
+                        <span class="pull-right"> ${{item.price}}</span>
+                    </md-item-template>
+                    <md-not-found>
+                        No states matching "{{searchText}}" were found.
+                        <a ng-click="newState(searchText)">Create a new one!</a>
+                    </md-not-found>
+                </md-autocomplete>
+            </div>
+            <div class="header-group" layout="row" layout-align="space-between center">
+                <h3>Products</h3>
+                <div>
+                    <md-button class="md-button-text" ng-click="addNew()">
+                        <md-icon>add</md-icon> Add New</md-button>
+                </div>
+            </div>
+            <div class="text-center" ng-if="selectedProducts.length ==0">
+                <i> No Product added,
+                    <a ng-click="addNew()"> Add new product </a>
+                </i>
+            </div>
+            <!-- <pre> {{proposal.products | json}}</pre> -->
+            
+            <uib-accordion>
+                <div ng-repeat="product in selectedProducts track by $index" uib-accordion-group template-url="template/accordion-group.html"
+                    class="panel-default">
+                    <ng-form name="childForm">
+        
+                        <uib-accordion-heading>
+                            <span ng-if="proposal.products[$index].title">
+                                {{proposal.products[$index].title}} (${{proposal.products[$index].price}})
+                            </span>
+                            <span ng-if="!proposal.products[$index].title">No title </span>
+                            <md-button ng-click="remove($index)" class="md-icon-button pull-button-right ">
+                                <md-icon>close</md-icon>
+                                <md-tooltip> Remove </md-tooltip>
+                            </md-button>
+                            <span ng-if="childForm.$invalid" class="invalid">Invalid</span>
+        
+                        </uib-accordion-heading>
+        
+                        <div layout="column" layout-align="center center" class="product-image">
+                            <img ngf-thumbnail="file || product.product_image || 'assets/images/image.jpg'">
+                            <!-- <a ng-model="file" ngf-select="selectedFile($file, $index)">Change Image</a> -->
+        
+                        </div>
+                        <!-- {{childForm}} -->
+                        <md-input-container class="md-block">
+                            <label>Product Name / Title</label>
+                            <input required name="title" ng-model="proposal.products[$index].title">
+                            <div ng-messages="childForm.title.$error">
+                                <div ng-message="required">Product name is required.</div>
+                            </div>
+                        </md-input-container>
+        
+                        <div layout="row" layout-align="space-between center">
+        
+                            <md-input-container class="md-block">
+                                <label>Qty</label>
+                                <input type="number" required min="1" max="100" name="qty" ng-model="proposal.products[$index].qty" ng-change="calc(proposal.products[$index], $index)">
+                                <div ng-messages="childForm.qty.$error">
+                                    <div ng-message="required">Qty is required.</div>
+                                </div>
+                            </md-input-container>
+        
+                            <md-input-container class="md-block">
+                                <label>Cost (in $)</label>
+                                <input name="price" ng-model="proposal.products[$index].price" ng-change="calc(proposal.products[$index], $index)">
+                                <div ng-messages="childForm.price.$error">
+                                    <div ng-message="required">Cost is required.</div>
+                                </div>
+                            </md-input-container>
+        
+                            <md-input-container class="md-block">
+                                <label>Extended Cost (in $)</label>
+                                <input required name="extended_cost" ng-model="proposal.products[$index].extended_cost" readonly>
+                                <div ng-messages="childForm.extended_cost.$error">
+                                    <div ng-message="required">Extended cost is required.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </ng-form>
+                </div>
+        
+            </uib-accordion>
+        
+        
+        </section>
+
+        <section class="page-section  md-whiteframe-3dp border-radius-10" ng-hide="isPageLoading">
+            <!--page loader-->
+        
+            <h4 flex='100' class="">
+                <i>Prepared For...</i>
+            </h4>
+            <div layout="row">
+        
+                <md-input-container class="md-block">
+                    <label>Name</label>
+                    <input required name="name" ng-model="proposal.name" required>
+                    <div ng-messages="proposalForm.name.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+        
+                <div class="space"></div>
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input type='email' name="email" ng-model="proposal.email">
+                    <div ng-messages="proposalForm.email.$error">
+                        <div ng-message="email">Email must be valid.</div>
+                    </div>
+                </md-input-container>
+            </div>
+        
+            <div layout="row">
+                <md-input-container class="md-block">
+                    <label>Mobile</label>
+                    <input name="mobile" ng-model="proposal.mobile">
+                </md-input-container>
+        
+                <div class="space"></div>
+                <md-input-container class="md-block">
+                    <label>Address</label>
+                    <input name="address" ng-model="proposal.address">
+                </md-input-container>
+            </div>
+        
+            <h4 flex='100' class="">
+                <i>Prepared By...</i>
+            </h4>
+            <div layout="row">
+                <md-input-container class="md-block">
+                    <label>Name</label>
+                    <input required name="byname" ng-model="proposal.byname">
+                    <div ng-messages="proposalForm.byname.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+        
+                <div class="space"></div>
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input name="byemail" required="" type='email' ng-model="proposal.byemail">
+                    <div ng-messages="proposalForm.byemail.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="email">Emial must be valid.</div>
+                    </div>
+                </md-input-container>
+        
+                <div class="space"></div>
+                <md-input-container class="md-block">
+                    <label>Mobile</label>
+                    <input name="bymobile" ng-model="proposal.bymobile">
+                </md-input-container>
+        
+            </div>
+        
+            <h4 flex='100' class="">
+                <i>Executive Summary...</i>
+            </h4>
+            <div layout="row">
+                <md-input-container class="md-block">
+                    <label>Total Materials Cost ($)</label>
+                    <input name="material_cost" ng-model="proposal.material_cost" ng-pattern="/^[0-9]*$/">
+                    <div ng-messages="proposalForm.material_cost.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="pattern">Please enter valid amount</div>
+                    </div>
+                </md-input-container>
+        
+                <div class="space"></div>
+        
+        
+                <md-input-container class="md-block">
+                    <label>Tax ($)</label>
+                    <input name="tax" ng-model="proposal.tax" ng-pattern="/^[0-9]*$/">
+                    <div ng-messages="proposalForm.tax.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="pattern">Please enter valid amount</div>
+                    </div>
+                </md-input-container>
+        
+                <div class="space"></div>
+        
+                <md-input-container class="md-block">
+                    <label>Installation Cost ($)</label>
+                    <input name="installation" ng-model="proposal.installation" ng-pattern="/^[0-9]*$/">
+                    <div ng-messages="proposalForm.installation.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="pattern">Please enter valid amount</div>
+                    </div>
+                </md-input-container>
+        
+            </div>
+        
+            <div layout="row">
+                <md-input-container class="md-block">
+                    <label>Shipping ($)</label>
+                    <input name="shipping" ng-model="proposal.shipping" ng-pattern="/^[0-9]*$/">
+                    <div ng-messages="proposalForm.shipping.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="pattern">Please enter valid amount</div>
+                    </div>
+                </md-input-container>
+        
+                <div class="space"></div>
+        
+        
+                <md-input-container class="md-block">
+                    <label>Less Rebates and Incentives ($)</label>
+                    <input name="incentive" ng-model="proposal.incentive" ng-pattern="/^[0-9]*$/">
+                    <div ng-messages="proposalForm.incentive.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="pattern">Please enter valid amount</div>
+                    </div>
+                </md-input-container>
+        
+            </div>
+        
+            <div class="margin-top-10">
+                <md-button ng-disabled="isLoading" type="submit" ng-click="submitForm(proposalForm, user)" aria-label="submit" class="md-raised md-primary btn-block max-300 btn-action-form">
+                    <span ng-show="isLoading" layout="row" class="btn-loading" layout-align="center center">
+                        <md-progress-circular md-mode="indeterminate" md-diameter="15">
+                        </md-progress-circular>
+                        <small> Processing</small>
+                    </span>
+                    <span ng-hide="isLoading"> Generate Proposal </span>
+                </md-button>
+            </div>
+        
+        </section>
+
+
+    
+
+   
+
+</form>
+    
+</md-content>

@@ -1,0 +1,23 @@
+{ 
+  "esversion": 6,
+  "globalstrict": true,
+  "globals": {
+  	"$" : true,
+  	"app" : true,
+  	"App" : true,
+    "angular": true,
+    "localStorage" : true,
+    "history" : true,
+    "document" : true,
+    "window" : true,
+    "Dashboard" : true,
+    "AmCharts" : true,
+    "moment" : true,
+    "FileReader" : true,
+    "self" : true,
+    "console" : true,
+    "setTimeout" : true,
+    "io" : true,
+    "Prism" : true
+  }
+}

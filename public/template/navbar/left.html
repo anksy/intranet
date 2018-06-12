@@ -1,0 +1,136 @@
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+            <!--Left sidebar-->
+
+            <nav>
+                <!-- left sidebar overlay for mobile -->
+                <div class="theme-left-sidebar-overlay" data-ng-click="showHideLeftSidebar()" data-md-swipe-left="showHideLeftSidebar()">
+                </div>
+                <!-- sidebar box -->
+                <div class="theme-left-sidebar md-whiteframe-6dp">
+                    <!-- Theme logo only show in mobile -->
+                    <div class="theme-mobile-logo-container hide-gt-sm" data-md-colors=" {background: 'indigo'} ">
+                        <a class="theme-mobile-logo" href="#">ConsoleBox</a>
+                    </div>
+                    <md-divider></md-divider>
+                    <!-- end theme logo only show in mobile -->
+
+                    <!-- sidebar body -->
+
+                    <div class="theme-left-sidebar-body">
+                        <!-- plan -->
+                        <div class="subscription-plan">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="center-align">
+                                            <span class="current-plan">Business</span>
+                                            <span class="price">&#36;49/month</span>
+
+                                        </td>
+                                        <td class="center-align">
+                                            <md-button class="md-primary upgrade-plan">Buy Now</md-button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <md-divider></md-divider>
+                        <!-- end plan -->
+                        <!-- menu -->
+                        <ul class="theme-left-sidebar-menu">
+
+                            <li class="navigation">Menu</li>
+
+                            <li><a data-ui-sref="/" class="side-menu-label active" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">dashboard</i><span>Dashboard</span><md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Dashboard</md-tooltip></a></li>
+
+                            <li><a data-ui-sref="buttons" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">build</i><span>Material UI</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Material UI</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="typography" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">library_books</i><span>CSS</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">CSS</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="cards" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">add_to_photos</i><span>Advanced UI</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Advanced UI</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="bottomSheet" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">extension</i><span>Extra UI</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Extra UI</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="echarts" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">insert_chart</i><span>Charts</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Charts</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="form-layouts" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">message</i><span>Form</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Form</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="autocomplete" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">forum</i><span>Forms Elements</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Forms Elements</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="basic-table" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">border_all</i><span>Tables</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Tables</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="grid" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">grid_on</i><span>Layout</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Layout</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="color" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">format_color_fill</i><span>Colors</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Colors</md-tooltip></a>
+                            </li>
+
+                            <li><a data-ui-sref="helpers" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">live_help</i><span>Helpers Class</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Helpers Class</md-tooltip></a>
+                            </li>
+
+                            <li><a class="side-menu-label menu-has-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}"><i class="material-icons left-icon">terrain</i><i class="material-icons right-icon">keyboard_arrow_down</i><span>Pages</span>
+                            <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Pages</md-tooltip></a>
+                                <ul class="side-menu-label-body">
+                                    <li><a data-ui-sref="helpers" class="side-menu-label" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active"><i class="material-icons left-icon">live_help</i><span>Helpers Class</span>
+                                        <md-tooltip md-direction="right" data-ng-class="showTooltipForCollapsed">Helpers Class</md-tooltip></a>
+                                    </li>
+
+                                    <li><a data-ui-sref="login" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">Logins</a></li>
+
+                                    <li><a href="frontend/#/signup" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">Signup</a></li>
+
+                                    <li><a href="frontend/#/reset" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">Reset</a></li>
+
+                                    <li><a href="frontend/#/lock" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">Lock</a></li>
+
+                                    <li><a href="frontend/#/change-password" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">Change Password</a></li>
+
+                                    <li><a href="frontend/#/contactus" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">Contactus</a></li>
+
+                                    <li><a href="frontend/#/404" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">404</a></li>
+
+                                    <li><a href="frontend/#/500" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}">500</a></li>
+
+                                    <li><a data-ui-sref="404-admin" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active1">Dashboard 400</a></li>
+
+                                    <li><a data-ui-sref="500-admin" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active1">Dashboard 500</a></li>
+
+                                    <li><a data-ui-sref="blank" class="side-menu-label-1" data-md-ink-ripple="{{leftSidebarMenuRipple}}" data-ui-sref-active="menu-active1">Blank Page</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- end menu -->
+                    </div>
+                    <!-- end sidebar body -->
+
+
+                    <!-- left sidebar footer -->
+                    <md-divider></md-divider>
+                    <div class="theme-left-sidebar-footer hide-xs hide-sm">
+                        <a class="collapsed-sidebar" data-ng-click="collapsedLeftSidebar()"><i class="right material-icons">keyboard_arrow_left</i><md-tooltip md-direction="top" class="tooltip-gt-md">{{collapsedTooltipText}} Sidebar</md-tooltip></a>
+                    </div>
+                    <!-- end left sidebar footer -->
+                </div>
+                <!-- end sidebar box -->
+            </nav>
+            <!--End left sidebar-->

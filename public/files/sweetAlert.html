@@ -1,0 +1,565 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Advanced UI</h1>
+        <!-- help -->
+        <a href="https://sweetalert.js.org/" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="cards" ui-sref="cards">
+            </md-tab>
+            <md-tab label="carousel" ui-sref="carousel">
+            </md-tab>
+            <md-tab label="dialog" ui-sref="dialog">
+            </md-tab>
+            <md-tab label="slider" ui-sref="slider">
+            </md-tab>
+            <md-tab label="sweetAlert" ui-sref="sweetAlert" md-active="true">
+            </md-tab>
+            <md-tab label="highlight" ui-sref="highlight">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">SweetAlert</h2>
+        <!-- page desciption -->
+        <p><a href="https://sweetalert.js.org/" target="_blank">SweetAlert</a> automatically centers itself on the page and looks great no matter if you're using a desktop computer, mobile or tablet. It's even highly customizeable, as you can see below!.
+        </p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic SweetAlert -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- content -->
+                <md-button class="md-raised md-primary" ng-click="demo1()">Alert</md-button>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;demo1()&quot;&gt;Alert&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.demo1 = function() {
+    swal("Here's a message!");
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic SweetAlert -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Demo2 SweetAlert -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">A title with a text under</h3>
+
+                <!-- content -->
+                <md-button class="md-raised md-primary" ng-click="demo2()">Alert</md-button>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;demo2()&quot;&gt;Alert&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.demo2 = function() {
+    swal("Here's a message!", "It's pretty, isn't it?");
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Demo2 SweetAlert -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Demo3 SweetAlert -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">A success message!</h3>
+
+                <!-- content -->
+                <md-button class="md-raised md-primary" ng-click="demo3()">Alert</md-button>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;demo3()&quot;&gt;Alert&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.demo3 = function() {
+    swal("Good job!", "You clicked the button!", "success");
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Demo3 SweetAlert -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Demo4 SweetAlert -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">A warning message, with a function attached to the "Confirm"-button...</h3>
+
+                <!-- content -->
+                <md-button class="md-raised md-primary" ng-click="demo4()">Alert</md-button>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;demo4()&quot;&gt;Alert&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.demo4 = function() {
+    swal({
+            title: "Are you sure?",
+            text: "You will not be able to recover this imaginary file!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            closeOnConfirm: false,
+            customClass: 'warning-msg-modal'
+        },
+        function() {
+            swal("Deleted!", "Your imaginary file has been deleted.", "success");
+        });
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Demo4 SweetAlert -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Demo5 SweetAlert -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">... and by passing a parameter, you can execute something else for "Cancel".</h3>
+
+                <!-- content -->
+                <md-button class="md-raised md-primary" ng-click="demo5()">Alert</md-button>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;demo5()&quot;&gt;Alert&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+ $scope.demo5 = function() {
+    swal({
+            title: "Are you sure?",
+            text: "You will not be able to recover this imaginary file!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel plx!",
+            closeOnConfirm: false,
+            closeOnCancel: false,
+            customClass: 'warning-msg-modal'
+        },
+        function(isConfirm) {
+            if (isConfirm) {
+                swal("Deleted!", "Your imaginary file has been deleted.", "success");
+            } else {
+                swal("Cancelled", "Your imaginary file is safe :)", "error");
+            }
+        });
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Demo5 SweetAlert -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Demo6 SweetAlert -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">A message with a custom icon</h3>
+
+                <!-- content -->
+                <md-button class="md-raised md-primary" ng-click="demo6()">Alert</md-button>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;demo6()&quot;&gt;Alert&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.demo6 = function() {
+    swal({
+        title: "Sweet!",
+        text: "Here's a custom image.",
+        imageUrl: "../../asset/images/thumbs-up.jpg"
+    });
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Demo6 SweetAlert -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Demo7 SweetAlert -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">An HTML message</h3>
+
+                <!-- content -->
+                <md-button class="md-raised md-primary" ng-click="demo7()">Alert</md-button>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;demo7()&quot;&gt;Alert&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.demo7 = function() {
+    swal({
+        title: "HTML &lt;small&gt;Title&lt;/small&gt;!",
+        text: "A custom &lt;span style='color: #F8BB86 '&gt;html&lt;span&gt; message.",
+        html: true
+    });
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Demo7 SweetAlert -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Demo8 SweetAlert -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">A message with auto close timer</h3>
+
+                <!-- content -->
+                <md-button class="md-raised md-primary" ng-click="demo8()">Alert</md-button>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;demo8()&quot;&gt;Alert&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.demo8 = function() {
+    swal({
+        title: "Auto close alert!",
+        text: "I will close in 2 seconds.",
+        timer: 2000,
+        showConfirmButton: false
+    });
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Demo8 SweetAlert -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Demo9 SweetAlert -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">A replacement for the "prompt" function</h3>
+
+                <!-- content -->
+                <md-button class="md-raised md-primary" ng-click="demo9()">Alert</md-button>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;demo9()&quot;&gt;Alert&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.demo9 = function() {
+    swal({
+            title: "An input!",
+            text: "Write something interesting:",
+            type: "input",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            animation: "slide-from-top",
+            inputPlaceholder: "Write something"
+        },
+        function(inputValue) {
+            if (inputValue === false) return false;
+
+            if (inputValue === "") {
+                swal.showInputError("You need to write something!");
+                return false
+            }
+
+            swal("Nice!", "You wrote: " + inputValue, "success");
+        });
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Demo9 SweetAlert -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Demo10 SweetAlert -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">With a loader (for AJAX request for example)</h3>
+
+                <!-- content -->
+                <md-button class="md-raised md-primary" ng-click="demo10()">Alert</md-button>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;demo10()&quot;&gt;Alert&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.demo10 = function() {
+    swal({
+            title: "Ajax request example",
+            text: "Submit to run ajax request",
+            type: "info",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+        },
+        function() {
+            setTimeout(function() {
+                swal("Ajax request finished!");
+            }, 2000);
+        });
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Demo10 SweetAlert -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

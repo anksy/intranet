@@ -1,0 +1,118 @@
+<div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-star font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">User Details  </span>
+                                    </div>
+                                </div>
+
+                                <div class="portlet-body form">
+                                    <md-content class="md-padding">
+                                        <div layout="column">
+                                            <md-content layout-padding>
+                                              <form name="userForm" novalidate ng-submit="updateUser()">
+
+                                                
+                                                  <md-input-container class="md-block">
+                                                    <label>Name</label>
+                                                    <input name="name" ng-model="user.name" disabled>
+                                                  </md-input-container>
+                                                
+
+                                                <div layout="row">
+                                                  <md-input-container flex="50">
+                                                    <label>Email</label>
+                                                    <input type='email' name="email" ng-model="user.email" disabled>
+                                                  </md-input-container>
+
+                                                  <md-input-container flex="50">
+                                                    <label>Mobile</label>
+                                                    <input name="mobile" ng-model="user.mobile" disabled>
+                                                  </md-input-container>
+                                                </div>
+
+
+
+                                                  <md-input-container class="md-block">
+                                                    <label>Address</label>
+                                                    <input type='text' name="address" ng-model="user.address.formatted_address" disabled>
+                                                  </md-input-container>
+
+                                                  <div layout="row">
+                                                  <md-input-container flex="50">
+                                                    <label>Latitude</label>
+                                                    <input type='text' name="address" ng-model="user.address.location.coordinates[1]" disabled>
+                                                  </md-input-container>
+
+                                                  <md-input-container flex="50">
+                                                    <label>longitude</label>
+                                                    <input type='text' name="address" ng-model="user.address.location.coordinates[0]" disabled>
+                                                  </md-input-container>
+                                                  </div>
+
+                                                <div layout="row">
+                                                <md-input-container flex='50'>
+                                                    <label>Type</label>
+                                                    <md-select ng-model="user.usertype" disabled>
+                                                      <md-option value="company">
+                                                        Company (AMC)
+                                                      </md-option>
+                                                      <md-option value="individual">
+                                                        Individual
+                                                      </md-option>
+                                                      <md-option value="appraiser">
+                                                        Appraiser
+                                                      </md-option>
+                                                      <md-option value="inspector">
+                                                        Inspector
+                                                      </md-option>
+                                                      <md-option value="trainee">
+                                                        Trainee
+                                                      </md-option>
+                                                      <md-option value="apprentice">
+                                                        Apprentice
+                                                      </md-option>
+                                                    </md-select>
+                                                    <div ng-messages="userForm.confirm.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+
+                                                  <md-input-container flex='50'>
+                                                    <label>Status</label>
+                                                    <md-select ng-model="user.status" required>
+                                                      <md-option value="true">
+                                                        Active
+                                                      </md-option>
+                                                      <md-option value="false">
+                                                        Inactive
+                                                      </md-option>
+                                                    </md-select>
+                                                    <div ng-messages="userForm.confirm.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+                                                  </div>
+                                                <div>
+                                                  <md-button type="submit" class='btn red'>Save</md-button>
+                                                </div>
+                                              </form>
+                                            </md-content>
+
+                                       </div>
+                                      </md-content>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>

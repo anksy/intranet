@@ -1,0 +1,111 @@
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content">
+        <!-- BEGIN PAGE BASE CONTENT -->
+        <div class="row">
+            <div class="col-sm-12">
+                
+                
+                <div class="portlet light bordered">
+
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-bubble font-green-sharp"></i>
+                            <span class="caption-subject font-green-sharp bold uppercase">Payment Detail</span>
+                        </div>
+                    </div>  
+                    
+                    <div class="invoice-content-2 bordered">
+                        <div class="row invoice-body">
+                            <div class="col-xs-12 table-responsive">
+
+
+                                <label class="btn btn-xs pull-right btn-danger" ng-if="charge.refundManually && !charge.refund" ng-click="refundPayment(event)"> Refund Amount Manually</label>
+
+                                <label class="btn btn-xs pull-right btn-success" ng-if="charge.transferManually && !charge.transfer" ng-click="transferPayment(event)">Transfer Amount Manually</label>
+
+
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="invoice-title uppercase">{{charge.meta.title}} [{{charge.meta.Identifier}}] <span class='label label-success pull-right'>{{charge.status}}</span></th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>
+                                                <h3>Job Details</h3>
+                                                <p><b>Job ID : </b> {{charge.meta.Identifier}} </p>
+
+                                                <p><b>Job Title : </b> {{charge.meta.title}} </p>
+                
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <h3>Charge Details</h3>
+                                                <p><b>Charge Id (on Stripe) : </b> {{charge.chargeId}} </p>
+
+                                                <p><b>Account Id (on Stripe) : </b> {{charge.accountId}} </p>
+
+                                                <p><b>Customer Id (on Stripe) : </b> {{charge.customerId}} </p>
+
+                                                <p><b>Balance Txn Number (on Stripe) : </b> {{charge.stripe.balance_transaction}} </p>
+
+                                                <p><b>Amount : </b> ${{(charge.stripe.amount/100)}} </p>
+
+                                                <p><b>Application : </b> {{charge.stripe.application?charge.stripe.application:"N/A"}} </p>
+
+                                                <p><b>Application Fee : </b> {{charge.stripe.application_fee?charge.stripe.application_fee:"N/A"}} </p>
+
+                                                
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <h3>Job Owner Details</h3>
+                                                
+                                                <p><b>Customer Name : </b> <a ng-click="go('/user/details/'+charge.userId)">{{charge.customer.name?charge.customer.name:"N/A"}} </a></p>
+
+                                                <p><b>Customer ID (Stripe) : </b> {{charge.customerId}}</p>
+
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <h3>Freelancer Details</h3>
+                                                
+                                                <p><b>Freelancer Name : </b> 
+
+                                                <a ng-click="go('/user/details/'+charge.fl._id)">
+                                                {{charge.fl.firstname?(charge.fl.firstname+" "+charge.fl.lastname):"N/A"}} </a></p>
+
+                                                <p><b>Account ID (Stripe) : </b> {{charge.accountId}}</p>
+
+                                            </td>
+                                            
+                                        </tr>
+
+                                        
+               
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE BASE CONTENT -->
+    </div>
+    <!-- END CONTENT BODY -->
+</div>

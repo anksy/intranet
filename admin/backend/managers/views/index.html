@@ -1,0 +1,79 @@
+<div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="portlet light bordered">
+
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-user font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">Admin Users </span>
+                                    </div>
+                                    <div class="actions">
+                                        <div class="btn-group">
+
+                                            <a class="btn green-haze btn-outline btn-circle btn-sm mg-10" href="javascript:;" ng-click="go('/managers/add')"> Add New User</a>
+
+                                            <a class="btn green-haze btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" aria-expanded="false"> Actions <span ng-show='selected.length'>{{selected.length}} record(s) selected</span>
+                                                <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li>
+                                                    <a href="javascript:;" ng-click="quickAction('active')"> Activate</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;" ng-click="quickAction('inactive')"> Deactivate</a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <md-table-container>
+
+                                  <table md-table md-row-select multiple ng-model="selected" md-progress="data.managers">
+                                    <thead md-head md-order="query.order" md-on-reorder="listUsers">
+                                      <tr md-row>
+                                        <th md-column><span>Name</span></th>
+                                        <th md-column><span>Username</span></th>
+                                        <th md-column>Email</th>
+                                        <th md-column>Type</th>
+                                        <th md-column>Status</th>
+                                        <th md-column>Created</th>
+                                        <th md-column>Action</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody md-body>
+                                      <tr md-row md-select="manager._id" md-select-id="manager._id" md-auto-select ng-repeat="manager in data.managers">
+                                        <td md-cell>{{manager.firstname+" "+manager.lastname}}</td>
+                                        <td md-cell>{{manager.username}}</td>
+                                        <td md-cell>{{manager.email}}</td>
+                                        <td md-cell>{{manager.type===1?'Administrator':(manager.type===2?'Editor':'Contributor')}}</td>
+
+                                        <td md-cell><label class="btn btn-xs {{manager.status?'green':'red'}}">{{manager.status?'Active':'Inactive'}}</label></td>
+                                        <td md-cell>{{manager.created_at | date}}</td>
+                                        <td md-cell>
+                                            <a ng-click="go('/managers/edit/'+manager._id)" class="btn btn-icon-only green">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <a href="javascript:;" ng-if="manager.type!==1" class="btn btn-icon-only red" ng-click='removeUser(manager._id, $event)'>
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </td>
+
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </md-table-container>
+
+                                <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{data.total}}" md-on-paginate="listUsers" md-page-select></md-table-pagination>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>

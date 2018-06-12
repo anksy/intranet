@@ -1,0 +1,242 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Forms Elements</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/datepicker" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="Autocomplete" ui-sref="autocomplete">
+            </md-tab>
+            <md-tab label="Checkbox" ui-sref="checkbox">
+            </md-tab>
+            <md-tab label="Chips" ui-sref="chips">
+            </md-tab>
+            <md-tab label="datepicker" ui-sref="datepicker" md-active="true">
+            </md-tab>
+            <md-tab label="file input" ui-sref="file-input">
+            </md-tab>
+            <md-tab label="Radio Button" ui-sref="radio-button">
+            </md-tab>
+            <md-tab label="Select" ui-sref="select">
+            </md-tab>
+            <md-tab label="Switch" ui-sref="switch">
+            </md-tab>
+
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Datepicker</h2>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- //////////////////////////////////////// -->
+                <!-- content -->
+                <div class="row">
+                    <!-- demo 1 -->
+                    <div class="col s12 m6">
+                        <h4 class="theme-title">Standard date-picker</h4>
+                        <md-datepicker ng-model="basicDatepickerDemo.myDate1" md-placeholder="Enter date"></md-datepicker>
+                    </div>
+                    <!-- end demo 1 -->
+
+                    <!-- demo 2 -->
+                    <div class="col s12 m6">
+                        <h4 class="theme-title">Disabled date-picker</h4>
+                        <md-datepicker ng-model="basicDatepickerDemo.myDate2" md-placeholder="Enter date" disabled></md-datepicker>
+                    </div>
+                    <!-- end demo 2 -->
+
+                    <!-- demo 3 -->
+                    <div class="col s12 m6">
+                        <h4 class="theme-title">Opening the calendar when the input is focused</h4>
+                        <md-datepicker ng-model="basicDatepickerDemo.myDate3" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
+                    </div>
+                    <!-- end demo 3 -->
+
+                    <!-- demo 4 -->
+                    <div class="col s12 m6">
+                        <h4 class="theme-title">Date-picker that goes straight to the year view</h4>
+                        <md-datepicker ng-model="basicDatepickerDemo.myDate4" md-placeholder="Enter date" md-current-view="year"></md-datepicker>
+                    </div>
+                    <!-- end demo 4 -->
+
+                    <!-- demo 5 -->
+                    <div class="col s12 m6">
+                        <h4 class="theme-title">Custom calendar trigger</h4>
+                        <md-datepicker ng-model="basicDatepickerDemo.myDate5" md-placeholder="Enter date" md-is-open="basicDatepickerDemo.isOpen"></md-datepicker>
+                        <md-button class="md-primary md-raised" ng-click="basicDatepickerDemo.isOpen = true">Open</md-button>
+                    </div>
+                    <!-- end demo 5 -->
+                </div>
+                <!-- end content -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-20">
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.basicDatepickerDemo = {
+    myDate1: new Date(),
+    myDate2: new Date(),
+    myDate3: new Date(),
+    myDate4: new Date(),
+    myDate5: new Date(),
+    isOpen: false
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Validations -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Validations</h3>
+
+                <!-- //////////////////////////////////////// -->
+                <!-- content -->
+                <div class="row">
+                    <!-- demo 1 -->
+                    <div class="col s12 m6">
+                        <h4 class="theme-title">Date-picker with min date and max date</h4>
+                        <md-datepicker ng-model="validationsmyDateDemo.myDate1" md-placeholder="Enter date" md-min-date="validationsDatepickerDemo.minDate" md-max-date="validationsDatepickerDemo.maxDate"></md-datepicker>
+                        <p>Min Date: {{validationsDatepickerDemo.minDate}}</p>
+                        <p>Max Date: {{validationsDatepickerDemo.maxDate}}</p>
+                    </div>
+                    <!-- end demo 1 -->
+
+                    <!-- demo 2 -->
+                    <div class="col s12 m6">
+                        <h4 class="theme-title">Only weekends are selectable</h4>
+                        <md-datepicker ng-model="validationsmyDateDemo.myDate2" md-placeholder="Enter date" md-date-filter="validationsDatepickerDemo.onlyWeekendsPredicate"></md-datepicker>
+                    </div>
+                    <!-- end demo 2 -->
+
+                    <!-- demo 3 -->
+                    <div class="col s12 m6">
+                        <h4 class="theme-title">Only weekends within given range are selectable</h4>
+                        <md-datepicker ng-model="validationsmyDateDemo.myDate3" md-placeholder="Enter date" md-min-date="validationsDatepickerDemo.minDate" md-max-date="validationsDatepickerDemo.maxDate" md-date-filter="validationsDatepickerDemo.onlyWeekendsPredicate"></md-datepicker>
+                    </div>
+                    <!-- end demo 3 -->
+
+                    <!-- demo 4 -->
+                    <div class="col s12 m6">
+                        <h4 class="theme-title">Inside a md-input-container</h4>
+
+                        <form name="myForm" flex-gt-xs>
+                            <md-input-container>
+                                <label>Enter date</label>
+                                <md-datepicker ng-model="validationsmyDateDemo.myDate4" name="dateField" md-min-date="validationsDatepickerDemo.minDate" md-max-date="validationsDatepickerDemo.maxDate"></md-datepicker>
+
+                                <div ng-messages="myForm.dateField.$error">
+                                    <div ng-message="valid">The entered value is not a date!</div>
+                                    <div ng-message="required">This date is required!</div>
+                                    <div ng-message="mindate">Date is too early!</div>
+                                    <div ng-message="maxdate">Date is too late!</div>
+                                </div>
+                            </md-input-container>
+                        </form>
+                    </div>
+                    <!-- end demo 4 -->
+
+                </div>
+                <!-- end content -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-20">
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.validationsmyDateDemo = {
+    myDate1: new Date(),
+    myDate2: new Date(),
+    myDate3: new Date(),
+    myDate4: new Date()
+};
+
+$scope.validationsDatepickerDemo = {
+    minDate: new Date(
+        $scope.validationsmyDateDemo.myDate1.getFullYear(),
+        $scope.validationsmyDateDemo.myDate1.getMonth() - 2,
+        $scope.validationsmyDateDemo.myDate1.getDate()
+    ),
+
+    maxDate: new Date(
+        $scope.validationsmyDateDemo.myDate1.getFullYear(),
+        $scope.validationsmyDateDemo.myDate1.getMonth() + 2,
+        $scope.validationsmyDateDemo.myDate1.getDate()
+    ),
+
+    onlyWeekendsPredicate: function(date) {
+        var day = date.getDay();
+        return day === 0 || day === 6;
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Validations -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+</md-content>
+<!--End Page content -->

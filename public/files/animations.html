@@ -1,0 +1,233 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>CSS</h1>
+        <!-- help -->
+        <a href="https://docs.angularjs.org/guide/animations" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="typography" ui-sref="typography">
+            </md-tab>
+            <md-tab label="icons" ui-sref="icons">
+            </md-tab>
+            <md-tab label="animations" ui-sref="animations" md-active="true">
+            </md-tab>
+            <md-tab label="whiteframe" ui-sref="whiteframe">
+            </md-tab>
+            <md-tab label="media" ui-sref="media">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Animations</h2>
+        <!-- page desciption -->
+        <p><a href="https://daneden.github.io/animate.css/" target="_blank">Animate.css</a> Just-add-water CSS animations.</p>
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+                <!-- content -->
+                <md-button class="md-raised md-primary animated infinite bounce m-t-30">infinite bounce</md-button>
+                <!-- end content -->
+
+                <!-- info box -->
+                <blockquote>
+                    You can make your animation adding the class <code class="red">animated infinite bounce</code> to the HTML element.
+                </blockquote>
+                <!-- end info box -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary animated infinite bounce&quot;&gt;infinite bounce&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End  Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!--Examples -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Examples</h3>
+                <!-- content -->
+                <div id="add-animate" class="animated bounce" layout layout-align="center center" ng-class="animateOption">Animate Example</div>
+                <!-- end content -->
+
+                <!-- available animation options -->
+                <div layout="row" layout-align="space-around center">
+                    <md-select ng-model="animateOption" placeholder="Animate Option" class="md-no-underline">
+                        <md-optgroup label="Attention Seekers">
+                            <md-option value="bounce" selected>bounce</md-option>
+                            <md-option value="flash">flash</md-option>
+                            <md-option value="pulse">pulse</md-option>
+                            <md-option value="rubberBand">rubberBand</md-option>
+                            <md-option value="shake">shake</md-option>
+                            <md-option value="swing">swing</md-option>
+                            <md-option value="tada">tada</md-option>
+                            <md-option value="wobble">wobble</md-option>
+                            <md-option value="jello">jello</md-option>
+                        </md-optgroup>
+
+                        <md-optgroup label="Bouncing Entrances">
+                            <md-option value="bounceIn">bounceIn</md-option>
+                            <md-option value="bounceInDown">bounceInDown</md-option>
+                            <md-option value="bounceInLeft">bounceInLeft</md-option>
+                            <md-option value="bounceInRight">bounceInRight</md-option>
+                            <md-option value="bounceInUp">bounceInUp</md-option>
+                        </md-optgroup>
+
+                        <md-optgroup label="Bouncing Exits">
+                            <md-option value="bounceOut">bounceOut</md-option>
+                            <md-option value="bounceOutDown">bounceOutDown</md-option>
+                            <md-option value="bounceOutLeft">bounceOutLeft</md-option>
+                            <md-option value="bounceOutRight">bounceOutRight</md-option>
+                            <md-option value="bounceOutUp">bounceOutUp</md-option>
+                        </md-optgroup>
+
+                        <md-optgroup label="Fading Entrances">
+                            <md-option value="fadeIn">fadeIn</md-option>
+                            <md-option value="fadeInDown">fadeInDown</md-option>
+                            <md-option value="fadeInDownBig">fadeInDownBig</md-option>
+                            <md-option value="fadeInLeft">fadeInLeft</md-option>
+                            <md-option value="fadeInLeftBig">fadeInLeftBig</md-option>
+                            <md-option value="fadeInRight">fadeInRight</md-option>
+                            <md-option value="fadeInRightBig">fadeInRightBig</md-option>
+                            <md-option value="fadeInUp">fadeInUp</md-option>
+                            <md-option value="fadeInUpBig">fadeInUpBig</md-option>
+                        </md-optgroup>
+
+                        <md-optgroup label="Fading Exits">
+                            <md-option value="fadeOut">fadeOut</md-option>
+                            <md-option value="fadeOutDown">fadeOutDown</md-option>
+                            <md-option value="fadeOutDownBig">fadeOutDownBig</md-option>
+                            <md-option value="fadeOutLeft">fadeOutLeft</md-option>
+                            <md-option value="fadeOutLeftBig">fadeOutLeftBig</md-option>
+                            <md-option value="fadeOutRight">fadeOutRight</md-option>
+                            <md-option value="fadeOutRightBig">fadeOutRightBig</md-option>
+                            <md-option value="fadeOutUp">fadeOutUp</md-option>
+                            <md-option value="fadeOutUpBig">fadeOutUpBig</md-option>
+                        </md-optgroup>
+
+                        <md-optgroup label="Flippers">
+                            <md-option value="flip">flip</md-option>
+                            <md-option value="flipInX">flipInX</md-option>
+                            <md-option value="flipInY">flipInY</md-option>
+                            <md-option value="flipOutX">flipOutX</md-option>
+                            <md-option value="flipOutY">flipOutY</md-option>
+                        </md-optgroup>
+
+                        <md-optgroup label="Lightspeed">
+                            <md-option value="lightSpeedIn">lightSpeedIn</md-option>
+                            <md-option value="lightSpeedOut">lightSpeedOut</md-option>
+                        </md-optgroup>
+
+                        <md-optgroup label="Rotating Entrances">
+                            <md-option value="rotateIn">rotateIn</md-option>
+                            <md-option value="rotateInDownLeft">rotateInDownLeft</md-option>
+                            <md-option value="rotateInDownRight">rotateInDownRight</md-option>
+                            <md-option value="rotateInUpLeft">rotateInUpLeft</md-option>
+                            <md-option value="rotateInUpRight">rotateInUpRight</md-option>
+                        </md-optgroup>
+
+                        <md-optgroup label="Rotating Exits">
+                            <md-option value="rotateOut">rotateOut</md-option>
+                            <md-option value="rotateOutDownLeft">rotateOutDownLeft</md-option>
+                            <md-option value="rotateOutDownRight">rotateOutDownRight</md-option>
+                            <md-option value="rotateOutUpLeft">rotateOutUpLeft</md-option>
+                            <md-option value="rotateOutUpRight">rotateOutUpRight</md-option>
+                        </md-optgroup>
+
+                        <md-optgroup label="Sliding Entrances">
+                            <md-option value="slideInUp">slideInUp</md-option>
+                            <md-option value="slideInDown">slideInDown</md-option>
+                            <md-option value="slideInLeft">slideInLeft</md-option>
+                            <md-option value="slideInRight">slideInRight</md-option>
+
+                        </md-optgroup>
+                        <md-optgroup label="Sliding Exits">
+                            <md-option value="slideOutUp">slideOutUp</md-option>
+                            <md-option value="slideOutDown">slideOutDown</md-option>
+                            <md-option value="slideOutLeft">slideOutLeft</md-option>
+                            <md-option value="slideOutRight">slideOutRight</md-option>
+
+                        </md-optgroup>
+
+                        <md-optgroup label="Zoom Entrances">
+                            <md-option value="zoomIn">zoomIn</md-option>
+                            <md-option value="zoomInDown">zoomInDown</md-option>
+                            <md-option value="zoomInLeft">zoomInLeft</md-option>
+                            <md-option value="zoomInRight">zoomInRight</md-option>
+                            <md-option value="zoomInUp">zoomInUp</md-option>
+                        </md-optgroup>
+
+                        <md-optgroup label="Zoom Exits">
+                            <md-option value="zoomOut">zoomOut</md-option>
+                            <md-option value="zoomOutDown">zoomOutDown</md-option>
+                            <md-option value="zoomOutLeft">zoomOutLeft</md-option>
+                            <md-option value="zoomOutRight">zoomOutRight</md-option>
+                            <md-option value="zoomOutUp">zoomOutUp</md-option>
+                        </md-optgroup>
+
+                        <md-optgroup label="Specials">
+                            <md-option value="hinge">hinge</md-option>
+                            <md-option value="rollIn">rollIn</md-option>
+                            <md-option value="rollOut">rollOut</md-option>
+                        </md-optgroup>
+                    </md-select>
+                </div>
+                <!-- end available animation options -->
+
+                <!-- sample code -->
+                <div layout layout-align="center center">
+                    <h4 class="theme-title m-b-0">Source Class</h4>
+                </div>
+                <div layout layout-align="center center">
+                    <p>class="<span class="red">animated {{animateOption}}</span>"</p>
+                </div>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End  Examples -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

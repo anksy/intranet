@@ -1,0 +1,194 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Material UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/toast" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="buttons" ui-sref="buttons">
+            </md-tab>
+            <md-tab label="breadcrumbs" ui-sref="breadcrumbs">
+            </md-tab>
+            <md-tab label="collections" ui-sref="collections">
+            </md-tab>
+            <md-tab label="collapsibles" ui-sref="collapsibles">
+            </md-tab>
+            <md-tab label="menu" ui-sref="menu">
+            </md-tab>
+            <md-tab label="tabs" ui-sref="tabs">
+            </md-tab>
+            <md-tab label="pagination" ui-sref="pagination">
+            </md-tab>
+            <md-tab label="progress circular" ui-sref="progressCircular">
+            </md-tab>
+            <md-tab label="progress linear" ui-sref="progressLinear">
+            </md-tab>
+            <md-tab label="toasts" ui-sref="toasts" md-active="true">
+            </md-tab>
+            <md-tab label="tooltip" ui-sref="tooltip">
+            </md-tab>
+            <md-tab label="ripple" ui-sref="ripple">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Toasts</h2>
+        <!-- content -->
+        <div layout="row">
+            <div flex="100">
+                <!-- //////////////////////////////////////// -->
+                <!-- Basic toast-->
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+                <!-- content -->
+                <md-button class="md-raised md-primary" ng-click="simpleToast('bottom')">Bottom</md-button>
+                <md-button class="md-raised md-primary" ng-click="simpleToast('top')">top</md-button>
+                <md-button class="md-raised md-primary" ng-click="simpleToast('right')">right</md-button>
+                <md-button class="md-raised md-primary" ng-click="simpleToast('left')">left</md-button>
+                <md-button class="md-raised md-primary" ng-click="simpleToast('bottom right')">bottom right</md-button>
+                <md-button class="md-raised md-primary" ng-click="simpleToast('bottom left')">bottm left</md-button>
+                <md-button class="md-raised md-primary" ng-click="simpleToast('top right')">top right</md-button>
+                <md-button class="md-raised md-primary" ng-click="simpleToast('top left')">top left</md-button>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;simpleToast('bottom')&quot;&gt;Bottom&lt;/md-button&gt;
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;simpleToast('top')&quot;&gt;top&lt;/md-button&gt;
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;simpleToast('right')&quot;&gt;right&lt;/md-button&gt;
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;simpleToast('left')&quot;&gt;left&lt;/md-button&gt;
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;simpleToast('bottom right')&quot;&gt;bottom right&lt;/md-button&gt;
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;simpleToast('bottom left')&quot;&gt;bottm left&lt;/md-button&gt;
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;simpleToast('top right')&quot;&gt;top right&lt;/md-button&gt;
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;simpleToast('top left')&quot;&gt;top left&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.simpleToast = function(toastPosition) {
+    $mdToast.show(
+        $mdToast.simple()
+        .textContent('Simple Toast!') // toast content
+        .position(toastPosition) // toast position
+        .hideDelay(3000) // toast duration
+    );
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+                <!-- End Basic toast -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- //////////////////////////////////////// -->
+                <!-- Toast with Action-->
+                <!--title-->
+                <h3 class="theme-title">Toast with Action</h3>
+                <!-- content -->
+                <md-button class="md-raised md-primary" ng-click="actionToast()">Show With Action</md-button>
+
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;actionToast()&quot;&gt;Show With Action&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.actionToast = function() {
+    var toast = $mdToast.simple()
+        .textContent('Marked as read')
+        .action('UNDO')
+        .highlightAction(true)
+        .highlightClass('md-warn') // warn is used by default, this just demonstrates the usage.
+        .position('top');
+
+    $mdToast.show(toast).then(function(response) {
+        if (response == 'ok') {
+            alert('You clicked the \'UNDO\' action.');
+        }
+    });
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+                <!-- End Toast with Action -->
+                <!-- //////////////////////////////////////// -->
+
+                <!-- //////////////////////////////////////// -->
+                <!-- Custom Usage-->
+                <!--title-->
+                <h3 class="theme-title">Custom Usage</h3>
+                <!-- content -->
+                <md-button class="md-raised md-primary" ng-click="showCustomToast()">Show Custom Toast</md-button>
+
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-button class=&quot;md-raised md-primary&quot; ng-click=&quot;showCustomToast()&quot;&gt;Show Custom Toast&lt;/md-button&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.showCustomToast = function() {
+    $mdToast.show({
+        hideDelay: 3000,
+        position: 'top right',
+        template: '&lt;md-toast&gt; &lt;span class=&quot;md-toast-text&quot; flex&gt;Custom toast!&lt;/span&gt; &lt;md-button class=&quot;md-warn&quot;&gt; More info &lt;/md-button&gt; &lt;md-button&gt; Close &lt;/md-button&gt; &lt;/md-toast&gt;'
+    });
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+                <!-- End Custom Usage -->
+                <!-- //////////////////////////////////////// -->
+            </div>
+        </div>
+        <!-- end  content -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

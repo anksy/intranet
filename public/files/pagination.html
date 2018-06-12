@@ -1,0 +1,121 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Material UI</h1>
+        <!-- help -->
+        <a href="https://github.com/Crawlink/material-angular-paging" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="buttons" ui-sref="buttons">
+            </md-tab>
+            <md-tab label="breadcrumbs" ui-sref="breadcrumbs">
+            </md-tab>
+            <md-tab label="collections" ui-sref="collections">
+            </md-tab>
+            <md-tab label="collapsibles" ui-sref="collapsibles">
+            </md-tab>
+            <md-tab label="menu" ui-sref="menu">
+            </md-tab>
+            <md-tab label="tabs" ui-sref="tabs">
+            </md-tab>
+            <md-tab label="pagination" ui-sref="pagination" md-active="true">
+            </md-tab>
+            <md-tab label="progress circular" ui-sref="progressCircular">
+            </md-tab>
+            <md-tab label="progress linear" ui-sref="progressLinear">
+            </md-tab>
+            <md-tab label="toasts" ui-sref="toasts">
+            </md-tab>
+            <md-tab label="tooltip" ui-sref="tooltip">
+            </md-tab>
+            <md-tab label="ripple" ui-sref="ripple">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Pagination</h2>
+        <!-- page description -->
+        <p>Add pagination links to help split up your long content into shorter, easier to understand blocks.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic collections -->
+
+        <!--title-->
+        <h3 class="theme-title">Basic Usage</h3>
+        <!-- content -->
+
+        <!-- Loaded content -->
+        <div layout="row" layout-align="center center">
+            <p>Loaded data from page<strong> {{currentPage}} </strong></p>
+        </div>
+        <!--End loaded content -->
+        <!-- paging wrapper -->
+        <div class="paging-wrapper">
+            <cl-paging cl-pages="paging.total" cl-steps="6" cl-page-changed="paging.onPageChanged()" cl-align="center center" cl-current-page="paging.current"></cl-paging>
+        </div>
+        <!-- end paging wrapper -->
+
+        <!-- end content -->
+
+        <!-- sample code -->
+        <blockquote ng-non-bindable>
+            In HTML sample code angularjs scope variable denoted as <code class="red">{}</code> instead of <code class="red">{{ }}</code>.
+        </blockquote>
+
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="html">
+                <md-content class="m-t-0">
+                    <pre><code class="language-html" prism>
+&lt;!-- Loaded content --&gt;
+&lt;div layout=&quot;row&quot; layout-align=&quot;center center&quot;&gt;
+    &lt;p&gt;Loaded data from page&lt;strong&gt; {currentPage} &lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!--End loaded content --&gt;
+&lt;!-- paging wrapper --&gt;
+&lt;div class=&quot;paging-wrapper&quot;&gt;
+    &lt;cl-paging cl-pages=&quot;paging.total&quot; cl-steps=&quot;6&quot; cl-page-changed=&quot;paging.onPageChanged()&quot; cl-align=&quot;center center&quot; cl-current-page=&quot;paging.current&quot;&gt;&lt;/cl-paging&gt;
+&lt;/div&gt;
+&lt;!-- end paging wrapper --&gt;
+                            </code></pre>
+                </md-content>
+            </md-tab>
+            <md-tab label="js">
+                <md-content class="m-t-0">
+                    <pre><code class=" language-javascript" prism>
+$scope.currentPage = 0;
+$scope.paging = {
+    total: 100,
+    current: 1,
+    onPageChanged: loadPages
+};
+
+function loadPages() {
+    // TODO : Load current page Data here
+    $scope.currentPage = $scope.paging.current;
+}
+</code></pre>
+                </md-content>
+            </md-tab>
+
+        </md-tabs>
+        <!-- end sample code -->
+
+        <!-- End Basic collections -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

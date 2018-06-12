@@ -1,0 +1,102 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Material UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/tooltip" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="buttons" ui-sref="buttons">
+            </md-tab>
+            <md-tab label="breadcrumbs" ui-sref="breadcrumbs">
+            </md-tab>
+            <md-tab label="collections" ui-sref="collections">
+            </md-tab>
+            <md-tab label="collapsibles" ui-sref="collapsibles">
+            </md-tab>
+            <md-tab label="menu" ui-sref="menu">
+            </md-tab>
+            <md-tab label="tabs" ui-sref="tabs">
+            </md-tab>
+            <md-tab label="pagination" ui-sref="pagination">
+            </md-tab>
+            <md-tab label="progress circular" ui-sref="progressCircular">
+            </md-tab>
+            <md-tab label="progress linear" ui-sref="progressLinear">
+            </md-tab>
+            <md-tab label="toasts" ui-sref="toasts">
+            </md-tab>
+            <md-tab label="tooltip" ui-sref="tooltip" md-active="true">
+            </md-tab>
+            <md-tab label="ripple" ui-sref="ripple">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Tooltip</h2>
+        <!-- content -->
+        <div layout="row">
+            <div flex="100">
+                <!-- //////////////////////////////////////// -->
+                <!-- Basic Tooltip-->
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+                <!-- content -->
+                <md-button class="md-raised md-primary">
+                    <md-tooltip md-direction="bottom">I am Tooltip</md-tooltip>Bottom</md-button>
+                <md-button class="md-raised md-primary">
+                    <md-tooltip md-direction="top">I am Tooltip</md-tooltip>top</md-button>
+                <md-button class="md-raised md-primary">
+                    <md-tooltip md-direction="right">I am Tooltip</md-tooltip>right</md-button>
+                <md-button class="md-raised md-primary">
+                    <md-tooltip md-direction="left">I am Tooltip</md-tooltip>left</md-button>
+                <!-- end content -->
+
+                <!-- info md delay-->
+                <blockquote>
+                    The Tooltip's <code md-colors="{color:'red'}">md-delay</code> attribute can be used to delay the show animation.
+                </blockquote>
+                <!-- info  md delay-->
+
+                <!-- example  md delay -->
+                <md-button class="md-raised md-primary">
+                    <md-tooltip md-direction="bottom" md-delay="300">I am Tooltip</md-tooltip>md delay 300 msecs</md-button>
+                <md-button class="md-raised md-primary">
+                    <md-tooltip md-direction="bottom" md-delay="500">I am Tooltip</md-tooltip>md delay 500 msecs</md-button>
+                <!-- end example  md delay -->
+
+                <!-- info-->
+                <blockquote>
+                    The Tooltip's <code md-colors="{color:'red'}">md-z-index</code> attribute can be used to change the tooltip's visual level in comparison with the other elements of the application.<br>
+                    <strong>Note:</strong> the z-index default is <strong>100</strong>.
+                </blockquote>
+
+                <blockquote>
+                    The Tooltip's <code md-colors="{color:'red'}">md-direction</code> attribute can be used to dynamically change the direction of the tooltip.<br>
+                    <strong>Note:</strong> the direction default value is
+                    <strong>'bottom'</strong>.
+                </blockquote>
+                <!-- info-->
+
+                <!-- End Basic Tooltip -->
+                <!-- //////////////////////////////////////// -->
+            </div>
+        </div>
+        <!-- end  content -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

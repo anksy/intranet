@@ -1,0 +1,10 @@
+.error-page{  margin-top: 60px;  border-top: 1px #e2e2e2 solid;min-height: 500px;}
+.num404 *{display: block; text-align: center;}
+.num404 span{font-size: 200px; color: gray;}
+.num404 small{display: block;font-size: 18px;font-weight: 500;margin-top: -44px;  }
+.error404 *{margin: auto; display: block; text-align: center; }
+.error404 h2{font-size: 60px; color: #00aaff;}
+.error404 p{font-size: 14px;line-height: 21px;margin: 15px auto;max-width: 330px;}
+.error404{margin-top: 86px;}
+.error404 a{max-width: 300px;margin: auto;display: block;background-color: #00ccff;padding: 10px;color: white;margin-top: 10px;}
+

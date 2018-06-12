@@ -1,0 +1,337 @@
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content  dashboard">
+        <!-- BEGIN PAGE HEAD-->
+        <div class="page-head">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                <h1>Dashboard</h1>
+            </div>
+            <!-- END PAGE TITLE -->
+            
+        </div>
+        <!-- END PAGE HEAD-->
+
+        <!-- BEGIN PAGE BASE CONTENT -->
+        <div class="row">
+                
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" 
+                 ng-repeat="info in dashboardInfo">
+                <a class="dashboard-stat dashboard-stat-v2 {{info.type}}" 
+                   ng-click="go(info.href)">
+                    <div class="visual">
+                        <i class="fa fa-comments"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">
+                            <span data-counter="counterup" data-value="1349">{{info.total}}</span>
+                        </div>
+                        <div class="desc"> {{info.title}}</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-xs-12 col-sm-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-cursor font-dark hide"></i>
+                            <span class="caption-subject font-dark bold uppercase">
+                                Manage Jobs 
+                            </span>
+                        </div>
+                        <div class="actions">
+                            <a href="javascript:;" ng-click="getJobsInfo($event)" 
+                                class="btn btn-sm btn-circle red ">
+                                <i class="fa fa-repeat"></i> Refresh 
+                            </a>
+                            <a ng-href="#!/jobs" 
+                                class="btn blue btn-outline btn-circle btn-sm active">
+                                View all 
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="row">
+
+                            <div class="col-md-4"  ng-repeat="list in jobList">
+                                <div class="easy-pie-chart" >
+                                    <div class="number transactions" easypie-chart data-percent="{{list.percentage}}">
+                                        <span>{{list.total}} <small>Jobs</small></span></div>
+                                    <!-- <a class="title" href="javascript:;"> --> {{list.title}} <small>({{list.percentage}}%)</small>
+                                        <!-- <i class="icon-arrow-right"></i>
+                                    </a> --> <br>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-12 col-xs-12 col-sm-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-cursor font-dark hide"></i>
+                            <span class="caption-subject font-dark bold uppercase">
+                               Manage Payments 
+                            </span>
+                        </div>
+                        <div class="actions">
+                            <a ng-href="#!/payments"  
+                                class="btn blue btn-outline btn-circle btn-sm active">
+                                View all 
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="row">
+                            <div class="col-md-6"  ng-repeat="list in paymentList">
+                                <div class="easy-pie-chart" >
+                                    <div class="number transactions" easypie-chart data-percent="{{list.percentage}}">
+                                        <span><small>{{list.title}}</span></small></div>
+                                     <small>{{list.percentage | currency}}</span></small>
+                                        
+                                </div>
+
+                                <div class="margin-bottom-10 visible-sm"> </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--graph and staticstics -->
+       <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="portlet light bordered">
+                <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-cursor font-dark hide"></i>
+                            <span class="caption-subject font-dark bold uppercase">
+                              View report and statistics 
+                            </span>
+                        </div>
+
+                        
+                        <div class="actions date-range" >
+                            <form name="daterange" novalidate layout="row" 
+                            layout-align="end start">
+
+                            <small class="vspace">Select date Range</small>
+                            <md-input-container>
+                                <label>Start Date</label>
+                                <md-datepicker 
+                                    ng-model="graph.startDate" 
+                                    md-current-view="year"
+                                    md-mode="month"
+                                    md-max-date="graph.endDate"
+                                    md-placeholder="Start date" >
+
+                                </md-datepicker>
+                            </md-input-container>
+                            <md-input-container>
+                               
+                            <label>End date</label>
+                                  <md-datepicker 
+                                    ng-model="graph.endDate" 
+                                    md-current-view="year"
+                                    md-max-date="maxdate"
+                                    md-mode="month"
+                                    name="enddate"
+                                    ng-required="true"
+                                    ng-change="setMinDate()"
+                                    md-placeholder="End date">
+                                </md-datepicker>
+                                    <div ng-messages="daterange.enddate.$error">
+                                        <div ng-message="maxdate">
+                                            End date is not valid
+                                        </div>
+
+                                        <div ng-message="required">
+                                            Date is required
+                                        </div>
+                                    </div>
+
+                            </md-input-container>
+
+                            <md-button ng-click="gone(daterange,graph,$event)" class="md-raised small-btn">Go</md-button>
+                        </form>
+                        </div>
+                      
+                    </div>
+
+                    <div class="portlet-body" >
+                        <div ng-if="isLoading" class="loader-large" layout="column"     
+                             layout-align="center center" style="height:400px; width: 100%;">
+                            <md-progress-circular 
+                                md-mode="indeterminate" 
+                                md-diameter="40">
+                            </md-progress-circular>
+                            <span>Loading</span>
+                        </div>
+                        <div 
+                             style="height:400px; width: 100%;"
+                            ng-hide="isLoading"
+                            id="graph" 
+                            >
+                        </div>       
+                    </div>
+                </div>
+            </div>
+        </div>
+       <div class="row">
+            <div class="col-lg-6 col-xs-12 col-sm-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title tabbable-line">
+                        <div class="caption">
+                            <i class="icon-bubbles font-dark hide"></i>
+                            <span class="caption-subject font-dark bold uppercase">
+                              Suggestion / Feedback
+                            </span>
+                        </div>
+
+                        <div class="actions">
+                            <a href="javascript:;" ng-click="suggestions($event)" class="btn btn-sm btn-circle red ">
+                                <i class="fa fa-repeat"></i> Refresh 
+                            </a>
+                            <a href="javascript:;" class="btn blue btn-outline btn-circle btn-sm active" ng-click="go('/feedbacks')">
+                                View all 
+                            </a>
+
+                        </div>
+                    </div>
+                     <div class="portlet-body">
+                        <div class="tab-content">
+                            
+                            <div class="mt-comments" slim-scroll height="300px">
+
+                                <no-records ng-show="!suggestion || suggestion.length==0"></no-records>
+
+                                <div class="mt-comment" ng-repeat="list in suggestion.records">
+                                    <!-- <div class="mt-comment-img">
+                                        <img ng-src="{{list.picture}}" /> 
+                                    </div> -->
+
+                                    <div class="mt-comment-body">
+                                        <div class="mt-comment-info">
+                                            <span class="mt-comment-author">
+                                               {{list.title}}
+                                               
+                                            </span>
+                                            <span class="mt-comment-date">
+                                                {{list.created_at | date : "medium"}}
+                                            </span>
+                                        </div>
+
+                                        <div class="mt-comment-text" > 
+                                           {{list.content}}
+                                        </div>
+                                        <div class="mt-comment-details">
+                                            <span class="mt-comment-status">
+                                                <span class="label label-sm label-info">
+                                                 {{list.query}}
+                                                </span>
+                                            </span>
+                                            <ul class="mt-comment-actions">
+                                                <li>            
+                                                    <a ng-click="go('/feedbacks/view/'+list._id);">View</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+
+
+             </div>
+
+             <div class="col-lg-6 col-xs-12 col-sm-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title tabbable-line">
+                        <div class="caption">
+                            <i class="icon-bubbles font-dark hide"></i>
+                            <span class="caption-subject font-dark bold uppercase">
+                              Recently Registered
+                            </span>
+                        </div>
+
+                        <ul class="nav nav-tabs" ng-init="activeTab=0">
+                            <li ng-class="{'active':activeTab==0}">
+                                <a class="fixed-width" ng-click="recentlyRegistered('company', $event);activeTab=0"> 
+                                   <span> Companies </span>
+                                </a>
+                            </li>
+                            <li ng-class="{'active':activeTab==1}">
+                                <a class="fixed-width" ng-click="recentlyRegistered('appraiser',$event);activeTab=1"> 
+                                    Appraisers 
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                     <div class="portlet-body">
+                        <div class="tab-content">
+                            <div class="mt-comments" slim-scroll height="300px">
+
+                                <div class="mt-comment" 
+                                    ng-repeat="list in recentlyRegisteredList">
+                                    <div class="mt-comment-img">
+                                        <img ng-src="{{list.picture && list.picture.secure_url?list.picture.secure_url:'./assets/img/no_avatar.jpg'}}" style='height: 40px;'/> 
+                                    </div>
+
+                                    <div class="mt-comment-body">
+                                        <div class="mt-comment-info">
+                                            <span class="mt-comment-author">
+                                               {{list.name?list.name:list.firstname}}
+                                            </span>
+                                            <span class="mt-comment-date">
+                                                {{list.date | date : 'medium'}}
+                                            </span>
+                                        </div>
+
+                                        <div class="mt-comment-text" > 
+                                           <span ng-if="list.email">{{list.email}}</span> <br>
+
+                                        </div>
+                                        <div class="mt-comment-details">
+                                            <span class="mt-comment-status">
+                                                <span class="label label-sm label-{{list.status?'success':'danger'}}">
+                                                 {{list.status?'Email Verified':"Email Not Verified"}}
+                                                </span>
+                                            </span>
+                                            <ul class="mt-comment-actions">
+                                                <li>
+                                                    <a ng-click="go('/user/details/'+list._id);">View</a>
+                                                </li>
+                                               
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+
+
+             </div>
+
+        </div>
+        
+
+        <!-- END PAGE BASE CONTENT -->
+    </div>
+    <!-- END CONTENT BODY -->
+</div>

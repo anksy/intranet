@@ -1,0 +1,486 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Extra UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/list" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="bottom Sheet" ui-sref="bottomSheet">
+            </md-tab>
+            <md-tab label="fab SpeedDial" ui-sref="fabSpeedDial">
+            </md-tab>
+            <md-tab label="fab Toolbar" ui-sref="fabToolbar">
+            </md-tab>
+            <md-tab label="list" ui-sref="list" md-active="true">
+            </md-tab>
+            <md-tab label="menuBar" ui-sref="menuBar">
+            </md-tab>
+            <md-tab label="navBar" ui-sref="navBar">
+            </md-tab>
+            <md-tab label="panel" ui-sref="panel">
+            </md-tab>
+            <md-tab label="subheader" ui-sref="subheader">
+            </md-tab>
+            <md-tab label="swipe" ui-sref="swipe">
+            </md-tab>
+            <md-tab label="toolbar" ui-sref="toolbar">
+            </md-tab>
+            <md-tab label="virtual Repeat" ui-sref="virtualRepeat">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">List</h2>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- content -->
+                <div class="row">
+                    <!-- Normal 3 line item -->
+                    <div class="col s12 m6">
+                        <md-card>
+                            <md-toolbar layout="row">
+                                <div class="md-toolbar-tools">
+                                    <span>Normal</span>
+                                </div>
+                            </md-toolbar>
+                            <md-list>
+                                <!-- 3 line item -->
+                                <md-subheader class="md-no-sticky">3 line item (with hover)</md-subheader>
+                                <md-list-item class="md-3-line" ng-click="null">
+                                    <img src="../../asset/images/user1.jpg" class="md-avatar" alt="img" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>Min Li Chan</h3>
+                                        <h4>Brunch this weekend?</h4>
+                                        <p>I'll be in your neighborhood doing errands</p>
+                                    </div>
+                                </md-list-item>
+
+                                <md-list-item class="md-3-line" ng-click="null">
+                                    <img src="../../asset/images/user2.jpg" class="md-avatar" alt="img" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>Min Li Chan</h3>
+                                        <h4>Brunch this weekend?</h4>
+                                        <p>I'll be in your neighborhood doing errands</p>
+                                    </div>
+                                </md-list-item>
+
+                                <md-list-item class="md-3-line" ng-click="null">
+                                    <img src="../../asset/images/user3.jpg" class="md-avatar" alt="img" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>Min Li Chan</h3>
+                                        <h4>Brunch this weekend?</h4>
+                                        <p>I'll be in your neighborhood doing errands</p>
+                                    </div>
+                                </md-list-item>
+                                <!-- End 3 line item -->
+
+                                <!-- 2 line item -->
+                                <md-divider></md-divider>
+                                <md-subheader class="md-no-sticky">2 line item</md-subheader>
+                                <md-list-item class="md-2-line">
+                                    <img src="../../asset/images/user1.jpg" class="md-avatar" alt="img" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>Min Li Chan</h3>
+                                        <p>I'll be in your neighborhood doing errands</p>
+                                    </div>
+                                </md-list-item>
+                                <!-- End 2 line item -->
+
+                                <!-- 3 line item, long paragraph -->
+                                <md-divider></md-divider>
+                                <md-subheader class="md-no-sticky">3 line item, long paragraph</md-subheader>
+                                <md-list-item class="md-3-line md-long-text">
+                                    <img src="../../asset/images/user1.jpg" class="md-avatar" alt="img" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>Min Li Chan</h3>
+                                        <p>
+                                            Secondary line text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam massa quam. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia
+                                            nostra, per inceptos himenaeos.
+                                        </p>
+                                    </div>
+                                </md-list-item>
+
+                                <md-list-item class="md-3-line md-long-text">
+                                    <img src="../../asset/images/user2.jpg" class="md-avatar" alt="img" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>Min Li Chan</h3>
+                                        <p>
+                                            Secondary line text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam massa quam. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia
+                                            nostra, per inceptos himenaeos.
+                                        </p>
+                                    </div>
+                                </md-list-item>
+                                <!-- End 3 line item, long paragraph -->
+
+                                <!-- Classes -->
+                                <md-divider></md-divider>
+                                <md-subheader class="md-no-sticky">Classes</md-subheader>
+
+                                <md-list-item class="md-2-line">
+                                    <md-icon class="md-avatar-icon">phone</md-icon>
+                                    <div class="md-list-item-text">
+                                        <h3> (555) 251-1234 </h3>
+                                        <p> Home </p>
+                                    </div>
+                                </md-list-item>
+
+                                <md-list-item class="md-2-line">
+                                    <md-icon>phone</md-icon>
+                                    <div class="md-list-item-text">
+                                        <h3> (555) 251-1234 </h3>
+                                        <p> Home </p>
+                                    </div>
+                                </md-list-item>
+
+                                <!-- End Classes -->
+
+                            </md-list>
+                        </md-card>
+                    </div>
+                    <!-- End Normal 3 line item -->
+
+                    <!-- Dense 3 line item -->
+                    <div class="col s12 m6">
+                        <md-card>
+                            <md-toolbar layout="row">
+                                <div class="md-toolbar-tools">
+                                    <span>Dense</span>
+                                </div>
+                            </md-toolbar>
+
+                            <md-list class="md-dense">
+                                <!-- 3 line item -->
+                                <md-subheader class="md-no-sticky">3 line item (with hover)</md-subheader>
+                                <md-list-item class="md-3-line" ng-click="null">
+                                    <img src="../../asset/images/user1.jpg" class="md-avatar" alt="img" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>Min Li Chan</h3>
+                                        <h4>Brunch this weekend?</h4>
+                                        <p>I'll be in your neighborhood doing errands</p>
+                                    </div>
+                                </md-list-item>
+
+                                <md-list-item class="md-3-line" ng-click="null">
+                                    <img src="../../asset/images/user2.jpg" class="md-avatar" alt="img" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>Min Li Chan</h3>
+                                        <h4>Brunch this weekend?</h4>
+                                        <p>I'll be in your neighborhood doing errands</p>
+                                    </div>
+                                </md-list-item>
+
+                                <md-list-item class="md-3-line" ng-click="null">
+                                    <img src="../../asset/images/user3.jpg" class="md-avatar" alt="img" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>Min Li Chan</h3>
+                                        <h4>Brunch this weekend?</h4>
+                                        <p>I'll be in your neighborhood doing errands</p>
+                                    </div>
+                                </md-list-item>
+                                <!-- End 3 line item -->
+
+                                <!-- 2 line item -->
+                                <md-divider></md-divider>
+                                <md-subheader class="md-no-sticky">2 line item</md-subheader>
+                                <md-list-item class="md-2-line">
+                                    <img src="../../asset/images/user1.jpg" class="md-avatar" alt="img" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>Min Li Chan</h3>
+                                        <p>I'll be in your neighborhood doing errands</p>
+                                    </div>
+                                </md-list-item>
+                                <!-- End 2 line item -->
+
+                                <!-- 3 line item, long paragraph -->
+                                <md-divider></md-divider>
+                                <md-subheader class="md-no-sticky">3 line item, long paragraph</md-subheader>
+                                <md-list-item class="md-3-line md-long-text">
+                                    <img src="../../asset/images/user1.jpg" class="md-avatar" alt="img" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>Min Li Chan</h3>
+                                        <p>
+                                            Secondary line text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam massa quam. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia
+                                            nostra, per inceptos himenaeos.
+                                        </p>
+                                    </div>
+                                </md-list-item>
+
+                                <md-list-item class="md-3-line md-long-text">
+                                    <img src="../../asset/images/user2.jpg" class="md-avatar" alt="img" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>Min Li Chan</h3>
+                                        <p>
+                                            Secondary line text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam massa quam. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia
+                                            nostra, per inceptos himenaeos.
+                                        </p>
+                                    </div>
+                                </md-list-item>
+                                <!-- End 3 line item, long paragraph -->
+
+                                <!-- Classes -->
+                                <md-divider></md-divider>
+                                <md-subheader class="md-no-sticky">Classes</md-subheader>
+
+                                <md-list-item class="md-2-line">
+                                    <md-icon class="md-avatar-icon">phone</md-icon>
+                                    <div class="md-list-item-text">
+                                        <h3> (555) 251-1234 </h3>
+                                        <p> Home </p>
+                                    </div>
+                                </md-list-item>
+
+                                <md-list-item class="md-2-line">
+                                    <md-icon>phone</md-icon>
+                                    <div class="md-list-item-text">
+                                        <h3> (555) 251-1234 </h3>
+                                        <p> Home </p>
+                                    </div>
+                                </md-list-item>
+                                <!-- End Classes -->
+                            </md-list>
+                        </md-card>
+                    </div>
+                    <!-- End Dense 3 line item -->
+                </div>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- List Controls -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">List Controls</h3>
+
+                <!-- content -->
+                <div layout="row">
+                    <div flex="100">
+                        <md-card>
+                            <md-list>
+                                <!-- Single Action Checkboxes -->
+                                <md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
+                                <md-list-item>
+                                    <p> Pepperoni </p>
+                                    <md-checkbox class="md-primary" ng-model="listControlsDemo.checkbox1"></md-checkbox>
+                                </md-list-item>
+
+                                <md-list-item>
+                                    <p> Sausage </p>
+                                    <md-checkbox class="md-primary" ng-model="listControlsDemo.checkbox2"></md-checkbox>
+                                </md-list-item>
+
+                                <md-list-item>
+                                    <p> Black Olives </p>
+                                    <md-checkbox class="md-primary" ng-model="listControlsDemo.checkbox3"></md-checkbox>
+                                </md-list-item>
+
+                                <!-- End Single Action Checkboxes -->
+
+                                <!-- Secondary Buttons -->
+                                <md-divider></md-divider>
+                                <md-subheader class="md-no-sticky">Secondary Buttons</md-subheader>
+
+                                <md-list-item>
+                                    <p>Clicking the button to the right will fire the secondary action</p>
+                                    <md-button ng-click="listControlsDemoDialog1($event)">More Info</md-button>
+                                </md-list-item>
+                                <md-list-item ng-click="listControlsDemoDialog($event)">
+                                    <p>Click anywhere to fire the primary action, or the button to fire the secondary</p>
+                                    <md-button ng-click="listControlsDemoDialog1($event)">More Info</md-button>
+                                </md-list-item>
+                                <!-- Secondary Buttons -->
+
+                                <!-- Secondary Menus -->
+                                <md-divider></md-divider>
+                                <md-subheader class="md-no-sticky">Secondary Menus</md-subheader>
+
+                                <md-list-item>
+                                    <p>Click anywhere to fire the secondary action</p>
+
+                                    <md-menu>
+                                        <md-button class="md-icon-button">
+                                            <md-icon>message</md-icon>
+                                        </md-button>
+                                        <md-menu-content width="4">
+                                            <md-menu-item>
+                                                <md-button>
+                                                    Redial
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button>
+                                                    Check voicemail
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-divider></md-menu-divider>
+                                            <md-menu-item>
+                                                <md-button>
+                                                    Notifications
+                                                </md-button>
+                                            </md-menu-item>
+                                        </md-menu-content>
+                                    </md-menu>
+
+                                </md-list-item>
+                                <!-- Secondary Menus -->
+
+                                <!-- Avatar with Secondary Action Icon -->
+                                <md-divider></md-divider>
+                                <md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
+                                <md-list-item>
+                                    <img ng-src="../../asset/images/user2.jpg" class="md-avatar" alt="img" />
+                                    <p>Janet Perkins</p>
+                                    <md-menu>
+                                        <md-button class="md-icon-button">
+                                            <md-icon>message</md-icon>
+                                        </md-button>
+                                        <md-menu-content width="4">
+                                            <md-menu-item>
+                                                <md-button>
+                                                    Redial
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button>
+                                                    Check voicemail
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-divider></md-menu-divider>
+                                            <md-menu-item>
+                                                <md-button>
+                                                    Notifications
+                                                </md-button>
+                                            </md-menu-item>
+                                        </md-menu-content>
+                                    </md-menu>
+                                </md-list-item>
+
+                                <md-list-item>
+                                    <img ng-src="../../asset/images/user1.jpg" class="md-avatar" alt="img" />
+                                    <p>Peter Carlsson</p>
+                                    <md-menu>
+                                        <md-button class="md-icon-button">
+                                            <md-icon>message</md-icon>
+                                        </md-button>
+                                        <md-menu-content width="2">
+                                            <md-menu-item>
+                                                <md-button>
+                                                    Redial
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button>
+                                                    Check voicemail
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-divider></md-menu-divider>
+                                            <md-menu-item>
+                                                <md-button>
+                                                    Notifications
+                                                </md-button>
+                                            </md-menu-item>
+                                        </md-menu-content>
+                                    </md-menu>
+                                </md-list-item>
+
+                                <!-- End Avatar with Secondary Action Icon -->
+                            </md-list>
+                        </md-card>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-20">
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.listControlsDemo = {
+    checkbox1: false,
+    checkbox2: false,
+    checkbox3: true
+};
+
+$scope.listControlsDemoDialog = function(event) {
+    $mdDialog.show(
+        $mdDialog.alert()
+        .title('Primary Action')
+        .textContent('Primary actions can be used for one click actions')
+        .ariaLabel('Primary click demo')
+        .ok('Awesome!')
+        .targetEvent(event)
+    );
+};
+
+$scope.listControlsDemoDialog1 = function(event) {
+    $mdDialog.show(
+        $mdDialog.alert()
+        .title('Secondary Action')
+        .textContent('Secondary actions can be used for one click actions')
+        .ariaLabel('Secondary click demo')
+        .ok('Neat!')
+        .targetEvent(event)
+    );
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End List Controls -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+</md-content>
+<!--End Page content -->

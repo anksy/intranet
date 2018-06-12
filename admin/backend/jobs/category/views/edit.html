@@ -1,0 +1,93 @@
+<div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="portlet light bordered">
+                                <material-loader ng-show="loader"></material-loader>
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-star font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">Edit Category - {{cms.title}}</span>
+                                    </div>
+                                </div>
+  
+                                <div class="portlet-body form">
+                                    <md-content class="md-padding">
+                                        <div layout="column">
+                                            <md-content layout-padding>
+                    
+                                              <form name="editForm" novalidate ng-submit="editForm.$valid && editCategoryWithImage(file)">
+
+                                                  
+                                                  <md-input-container class='md-block'>
+                                                    <label>Parent Category</label>
+                                                    <md-select ng-model="cms.parent" required name='parent'>
+                                                      <md-option value="root">
+                                                        Root
+                                                      </md-option>
+                                                      <md-option value="{{category._id}}" ng-repeat="category in categories">
+                                                        {{category.title}}
+                                                      </md-option>
+                                                    </md-select>
+                                                    <div ng-messages="addForm.parent.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container class="md-block">
+                                                    <label>Title</label>
+                                                    <input required name="title" ng-model="cms.title" required>
+                                                    <div ng-messages="editForm.title.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container class="md-block">
+                                                    <label>Short Description</label>
+                                                    <input name="shortDesc" ng-model="cms.shortDesc">
+                                                  </md-input-container>
+                                                
+                                                
+
+                                                <md-input-container class="md-block">
+                                                <input type="file" ngf-select ng-model="file" name="file" aria-label='Image'  
+                                                 accept="image/*" ngf-max-size="2MB"
+                                                 ngf-model-invalid="errorFile"><br><br>
+                                                  <img ng-show="editForm.file.$valid || cms.image" ngf-thumbnail="file || cms.image" class="thumb" style="width:100px;"> <br>
+                                                  <md-button ng-click="file = null" ng-show="file">Remove</md-button>
+                                                </md-input-container>
+
+                                                
+                                                  <md-input-container class='md-block'>
+                                                    <label>Status</label>
+                                                    <md-select ng-model="cms.status" required name='status'>
+                                                      <md-option value="true">
+                                                        Active
+                                                      </md-option>
+                                                      <md-option value="false">
+                                                        Inactive
+                                                      </md-option>
+                                                    </md-select>
+                                                    <div ng-messages="editForm.status.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+                                                  
+                                                <div>
+                                                  <md-button type="submit" class='btn red'>Update Category</md-button>
+                                                </div>
+                                              </form>
+                                            </md-content>
+
+                                       </div>
+                                      </md-content>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>

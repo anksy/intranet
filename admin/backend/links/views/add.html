@@ -1,0 +1,87 @@
+<div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="portlet light bordered">
+                                <material-loader ng-show="loader"></material-loader>
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-star font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">Add New Link  </span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <md-content class="md-padding">
+                                        <div layout="column">
+                                            <md-content layout-padding>
+                                              <form name="addForm" novalidate ng-submit="addForm.$valid && add()">
+
+                                                <div layout="row">
+                                                  <md-input-container flex="50">
+                                                    <label>Title</label>
+                                                    <input required name="title" ng-model="cms.title" required>
+                                                    <div ng-messages="addForm.title.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+                                                  <md-input-container flex="50">
+                                                    <label>Font Class</label>
+                                                    <input name="post_extra_class" ng-model="cms.post_extra_class" required>
+                                                    <div ng-messages="addForm.title.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+                                                </div>
+
+
+                                                <md-input-container class='md-block'>
+                                                    <label>Link</label>
+                                                    <input type="url" name="post_link" ng-model="cms.post_link" required ng-pattern='/((http|https)\:\/\/)?[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/'>
+                                                    <div ng-messages="addForm.post_link.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                      <div ng-message="pattern">Url must be valid.</div>
+                                                    </div>
+                                                  </md-input-container>
+
+
+                                                <div layout="row">
+                                                <md-input-container flex='50'>
+                                                    <label>Order</label>
+                                                    <input type='number' name="sort" ng-model="cms.sort" min='1' ng-value='1' step='1'>
+                                                  </md-input-container>
+
+
+                                                  <md-input-container flex='50'>
+                                                    <label>Status</label>
+                                                    <md-select ng-model="cms.status" required name='status'>
+                                                      <md-option value="true">
+                                                        Active
+                                                      </md-option>
+                                                      <md-option value="false">
+                                                        Inactive
+                                                      </md-option>
+                                                    </md-select>
+                                                    <div ng-messages="addForm.status.$error">
+                                                      <div ng-message="required">This is required.</div>
+                                                    </div>
+                                                  </md-input-container>
+                                                  </div>
+                                                <div>
+                                                  <md-button type="submit" class='btn red'>Add Link</md-button>
+                                                </div>
+                                              </form>
+                                            </md-content>
+
+                                       </div>
+                                      </md-content>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>

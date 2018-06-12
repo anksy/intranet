@@ -1,0 +1,18 @@
+<div role="tab" id="{{::headingId}}" aria-selected="{{isOpen}}" class="panel-heading panel-cutom" ng-keypress="toggleOpen($event)">
+        <a  
+            md-ink-ripple role="button" data-toggle="collapse" href aria-expanded="{{isOpen}}" aria-controls="{{::panelId}}" tabindex="0" class="accordion-toggle"
+            ng-click="toggleOpen()" uib-accordion-transclude="heading" ng-disabled="isDisabled" uib-tabindex-toggle>
+            
+                <md-icon class="pull-left">
+                    {{isOpen ? 'remove_circle_outline':'add_circle_outline'}}
+                </md-icon>
+                <span uib-accordion-header ng-class="{'text-muted': isDisabled}">{{heading}}</span>
+                 
+            
+        </a>
+       
+</div>
+<div id="{{::panelId}}" aria-labelledby="{{::headingId}}" aria-hidden="{{!isOpen}}" role="tabpanel" class="panel-collapse collapse"
+    uib-collapse="!isOpen">
+    <div class="panel-body" ng-transclude></div>
+</div>

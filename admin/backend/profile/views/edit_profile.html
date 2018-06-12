@@ -1,0 +1,85 @@
+   <section class="content-header">
+      <h1>
+          Update Profile
+      </h1>
+   </section>
+   <section class="content paddingfotter">
+      <div class="row">
+         <div class="col-md-8 martop10">
+            <div class="box box-shadow">            
+               <form name="loginForm " class="labelform" ng-submit="loginForm.$valid && updateAdminProfile(user)" novalidate="">
+
+                  <md-input-container class="md-icon-float md-block">
+                     <label class="colorlabel">First Name</label>
+                     <input name="title" ng-model="user.first_name" required/>
+                     <div ng-messages="loginForm.title.$error" ng-show='loginForm.title.$dirty || loginForm.title.$invalid'>
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>
+
+                  <md-input-container  class="md-icon-float md-block">
+                     <label class="colorlabel">Last Name</label>
+                     <input name="meta_tittle" ng-model="user.last_name" required/>
+                     <div ng-messages="loginForm.meta_tittle.$error" ng-show='loginForm.meta_tittle.$dirty || loginForm.meta_tittle.$invalid'>
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>    
+
+                  <md-input-container  class="md-icon-float md-block">
+                     <label class="colorlabel">User Name</label>
+                     <input name="user_name" ng-model="user.user_name" required/>
+                     <div ng-messages="loginForm.user_name.$error" ng-show='loginForm.user_name.$dirty || loginForm.user_name.$invalid'>
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>                  
+                  <md-input-container class="md-icon-float md-block">
+                     <label class="colorlabel">Email</label>
+                     <input name="meta_tittle" ng-model="user.email" ng-pattern = '/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i' required/>
+                     <div ng-messages="loginForm.meta_tittle.$error" ng-show='loginForm.meta_tittle.$dirty || loginForm.meta_tittle.$invalid'>
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                     <label class="colorlabel">Address</label>
+                     <input name="meta_content" ng-model="user.address" required/>
+                     <div ng-messages="loginForm.meta_content.$error" ng-show='loginForm.meta_content.$dirty || loginForm.meta_content.$invalid'>
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>
+    
+                              
+<!--                   <md-input-container flex="100"  style = "width: 100%;">
+                     <label class="colorlabel">Role</label>
+                     <md-select name="favoriteColor" ng-model="user.role" required>
+                        <md-option value="superadmin">Super Admin</md-option>
+                        <md-option value="subadmin">Sub Admin</md-option>
+                     </md-select>
+                     <div class="errors" ng-messages="adminProfileForm.favoriteColor.$error">
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container> -->
+
+
+
+
+                  <md-input-container flex="100"  style = "width: 100%;">
+                     <label class="colorlabel">Gander</label>
+                     <md-select name="favoriteColor" ng-model="user.gender" required>
+                        <md-option value="male">Male</md-option>
+                        <md-option value="female">Female</md-option>
+                     </md-select>
+                     <div class="errors" ng-messages="adminProfileForm.favoriteColor.$error">
+                        <div ng-message="required">This is required.</div>
+                     </div>
+                  </md-input-container>
+                              
+                  <div class="row">
+                     <div class="col-xs-12 pull-left" style="margin-top: 20px;">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </section>   

@@ -1,0 +1,301 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Forms Elements</h1>
+        <!-- help -->
+        <a href="https://github.com/shuyu/angular-material-fileinput" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="Autocomplete" ui-sref="autocomplete">
+            </md-tab>
+            <md-tab label="Checkbox" ui-sref="checkbox">
+            </md-tab>
+            <md-tab label="Chips" ui-sref="chips">
+            </md-tab>
+            <md-tab label="datepicker" ui-sref="datepicker">
+            </md-tab>
+            <md-tab label="file input" ui-sref="file-input" md-active="true">
+            </md-tab>
+            <md-tab label="Radio Button" ui-sref="radio-button">
+            </md-tab>
+            <md-tab label="Select" ui-sref="select">
+            </md-tab>
+            <md-tab label="Switch" ui-sref="switch">
+            </md-tab>
+
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">File Input</h2>
+        <!-- page desciption -->
+        <p><a href="https://github.com/shuyu/angular-material-fileinput" target="_blank">Angular Material File Input</a>: A Html file input enhance base on angular material.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- content -->
+                <lf-ng-md-file-input lf-files="files01"></lf-ng-md-file-input>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Multiple -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Multiple</h3>
+
+                <!-- content -->
+                <lf-ng-md-file-input lf-files="files02" multiple></lf-ng-md-file-input>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Multiple -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Progress -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Progress</h3>
+
+                <!-- content -->
+                <lf-ng-md-file-input lf-files="filesProgress" progress></lf-ng-md-file-input>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Progress -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Custom placeholder and caption -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Custom placeholder and caption</h3>
+
+                <!-- content -->
+                <lf-ng-md-file-input lf-files="files03" lf-placeholder="Select Profile Image" lf-caption="Your Profile Image"></lf-ng-md-file-input>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Custom placeholder and caption -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Custom labels -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Custom labels</h3>
+
+                <!-- content -->
+                <lf-ng-md-file-input lf-files="files04" lf-browse-label="Upload" lf-remove-label="Delete"></lf-ng-md-file-input>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Custom labels -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Preview -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Preview</h3>
+
+                <!-- content -->
+                <lf-ng-md-file-input lf-files="files06" preview></lf-ng-md-file-input>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Preview -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Drag & drop -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Drag &amp; Drop</h3>
+
+                <!-- content -->
+                <lf-ng-md-file-input lf-files="files07" drag></lf-ng-md-file-input>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Drag & drop -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Combination -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Combination( Preview,Drag &amp; Drop )</h3>
+
+                <!-- content -->
+                <lf-ng-md-file-input lf-files="files08" multiple drag preview></lf-ng-md-file-input>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Combination -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Validation -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Validation</h3>
+
+                <!-- content -->
+                <form name="testForm" layout="column">
+                    <lf-ng-md-file-input name="files00" lf-files="files09" lf-api="api09" lf-required lf-maxcount="5" lf-filesize="10MB" lf-totalsize="20MB" lf-mimetype="image/*" multiple drag preview></lf-ng-md-file-input>
+                    <div ng-messages="testForm.files00.$error" class="red">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="maxcount">Too much files.</div>
+                        <div ng-message="filesize">File size too large.</div>
+                        <div ng-message="totalsize">Total size too large.</div>
+                        <div ng-message="mimetype">Mimetype error.</div>
+                    </div>
+                    <md-button type="button" ng-disabled="testForm.$invalid" class="md-raised md-primary" ng-click="api09.removeAll()">Submit</md-button>
+                </form>
+                <!-- end content -->
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Validation -->
+        <!-- //////////////////////////////////////// -->
+
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Callback function -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Callback function</h3>
+
+                <!-- content -->
+                <lf-ng-md-file-input lf-files="filesOnFileClick" lf-on-file-click="fileInputDemo.onFileClick" lf-on-file-remove="fileInputDemo.onFileRemove" preview drag multiple></lf-ng-md-file-input>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom class="m-t-20">
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-html" prism>
+&lt;lf-ng-md-file-input lf-files=&quot;filesOnFileClick&quot; lf-on-file-click=&quot;fileInputDemo.onFileClick&quot; lf-on-file-remove=&quot;fileInputDemo.onFileRemove&quot; preview drag multiple&gt;&lt;/lf-ng-md-file-input&gt;
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.fileInputDemo = {
+    //  event fire when click on selected file
+    onFileClick: function(obj, idx) {
+        console.log(obj);
+    },
+    //  event fire when remove on selected file
+    onFileRemove: function(obj, idx) {
+        console.log(obj);
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Callback function -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

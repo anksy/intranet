@@ -1,0 +1,154 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Extra UI</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/fabToolbar" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="bottom Sheet" ui-sref="bottomSheet">
+            </md-tab>
+            <md-tab label="fab SpeedDial" ui-sref="fabSpeedDial">
+            </md-tab>
+            <md-tab label="fab Toolbar" ui-sref="fabToolbar" md-active="true">
+            </md-tab>
+            <md-tab label="list" ui-sref="list">
+            </md-tab>
+            <md-tab label="menuBar" ui-sref="menuBar">
+            </md-tab>
+            <md-tab label="navBar" ui-sref="navBar">
+            </md-tab>
+            <md-tab label="panel" ui-sref="panel">
+            </md-tab>
+            <md-tab label="subheader" ui-sref="subheader">
+            </md-tab>
+            <md-tab label="swipe" ui-sref="swipe">
+            </md-tab>
+            <md-tab label="toolbar" ui-sref="toolbar">
+            </md-tab>
+            <md-tab label="virtual Repeat" ui-sref="virtualRepeat">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">FAB Toolbar</h2>
+        <!-- description -->
+        <p>You can use the fabToolbar with a trigger and regular toolbar.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+                <!-- descrition -->
+                <p>
+                    You may use the <code class="language-markup">md-open</code> attribute to programmatically control whether or not the control is open, and you may set the direction that the toolbar appears using the
+                    <code class="language-markup">md-direction</code> attribute. This component currently supports the <code class="language-markup">left</code> and <code class="language-markup">right</code> options.
+                </p>
+                <!--end descrition -->
+
+                <!-- alert -->
+                <blockquote>
+                    <code class="red">md-fab-trigger</code> inside icon should be use in <code class="red">md-icon</code> attribute, otherwise after collapse fab toolbar trigger icon hide.
+                </blockquote>
+                <!-- end alert -->
+
+                <!-- content -->
+
+                <!-- Direction Left -->
+                <h4 class="theme-title">Direction Left</h4>
+                <md-fab-toolbar md-open="fabToolbarDemo.isOpen" md-direction="left">
+                    <md-fab-trigger class="align-with-text">
+                        <md-button aria-label="menu" class="md-fab md-primary">
+                            <md-icon>menu</md-icon>
+                        </md-button>
+                    </md-fab-trigger>
+
+                    <md-toolbar>
+                        <md-fab-actions class="md-toolbar-tools">
+                            <md-button aria-label="network wifi" class="md-icon-button">
+                                <i class="material-icons">network_wifi</i>
+                            </md-button>
+                            <md-button aria-label="settings bluetooth" class="md-icon-button">
+                                <i class="material-icons">settings_bluetooth</i>
+                            </md-button>
+                            <md-button aria-label="portable wifi off" class="md-icon-button">
+                                <i class="material-icons">portable_wifi_off</i>
+                            </md-button>
+                        </md-fab-actions>
+                    </md-toolbar>
+                </md-fab-toolbar>
+                <!-- End Direction Left -->
+
+                <!-- Direction Right -->
+                <h4 class="theme-title">Direction Right</h4>
+                <md-fab-toolbar md-open="fabToolbarDemo.isOpen1" md-direction="right">
+                    <md-fab-trigger class="align-with-text">
+                        <md-button aria-label="menu" class="md-fab md-primary">
+                            <md-icon>menu</md-icon>
+                        </md-button>
+                    </md-fab-trigger>
+
+                    <md-toolbar>
+                        <md-fab-actions class="md-toolbar-tools">
+                            <md-button aria-label="network wifi" class="md-icon-button">
+                                <i class="material-icons">network_wifi</i>
+                            </md-button>
+                            <md-button aria-label="settings bluetooth" class="md-icon-button">
+                                <i class="material-icons">settings_bluetooth</i>
+                            </md-button>
+                            <md-button aria-label="portable wifi off" class="md-icon-button">
+                                <i class="material-icons">portable_wifi_off</i>
+                            </md-button>
+                        </md-fab-actions>
+                    </md-toolbar>
+                </md-fab-toolbar>
+                <!-- End Direction Right -->
+
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.fabToolbarDemo = {
+    isOpen: false,
+    isOpen1: false
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

@@ -1,0 +1,708 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Charts</h1>
+        <!-- help -->
+        <a href="http://jtblin.github.io/angular-chart.js/" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="echarts" ui-sref="echarts">
+            </md-tab>
+            <md-tab label="chartjs" ui-sref="chartjs" md-active="true">
+            </md-tab>
+            <md-tab label="google charts" ui-sref="google-charts">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">ChartJS Charts</h2>
+        <!-- page desciption -->
+        <p class="header-desc"><a href="http://jtblin.github.io/angular-chart.js/" target="_blank">Chart.js</a> Simple yet flexible JavaScript charting for designers &amp; developers.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Area Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Area Chart</h3>
+
+                <!-- content -->
+                <canvas class="chart chart-line" chart-data="area.data" chart-labels="area.labels" chart-series="area.series" chart-options="area.options" chart-dataset-override="area.datasetOverride" chart-colors="area.colors" height="110"></canvas>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;canvas class=&quot;chart chart-line&quot; chart-data=&quot;area.data&quot; chart-labels=&quot;area.labels&quot; chart-series=&quot;area.series&quot; chart-options=&quot;area.options&quot; chart-dataset-override=&quot;area.datasetOverride&quot; chart-colors=&quot;area.colors&quot; height=&quot;110&quot;&gt;&lt;/canvas&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.area = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    series: ['Series A', 'Series B'],
+    data: [
+        [65, 59, 80, 81, 56, 55, 40],
+        [28, 48, 40, 19, 86, 27, 90]
+    ],
+    datasetOverride: [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }],
+    colors: ['#1A237E', '#C62828'],
+    options: {
+        title: {
+            display: true,
+            text: 'Visitors Area Chart'
+        },
+        scales: {
+            yAxes: [{
+                    id: 'y-axis-1',
+                    type: 'linear',
+                    display: true,
+                    position: 'left'
+                },
+                {
+                    id: 'y-axis-2',
+                    type: 'linear',
+                    display: true,
+                    position: 'right'
+                }
+            ]
+        },
+        legend: { display: true }
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Area Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Bar Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Bar Chart</h3>
+
+                <!-- content -->
+                <canvas class="chart chart-bar" chart-data="bar.data" chart-labels="bar.labels" chart-series="bar.series" chart-colors="bar.colors" chart-options="bar.options" height="110"></canvas>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;canvas class=&quot;chart chart-bar&quot; chart-data=&quot;bar.data&quot; chart-labels=&quot;bar.labels&quot; chart-series=&quot;bar.series&quot; chart-colors=&quot;bar.colors&quot; chart-options=&quot;bar.options&quot; height=&quot;110&quot;&gt;&lt;/canvas&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.bar = {
+    labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
+    series: ['Series A', 'Series B'],
+    data: [
+        [65, 59, 80, 81, 56, 55, 40],
+        [28, 48, 40, 19, 86, 27, 90]
+    ],
+    colors: [{
+            backgroundColor: "#3F51B5",
+            borderColor: "#1A237E"
+        },
+        {
+            backgroundColor: '#F44336',
+            borderColor: '#B71C1C'
+        }
+    ],
+    options: {
+        title: {
+            display: true,
+            text: 'Visitors Bar Chart'
+        },
+        legend: { display: true }
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Bar Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Line Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Line Chart</h3>
+
+                <!-- content -->
+                <canvas class="chart chart-line" chart-data="line.data" chart-labels="line.labels" chart-series="line.series" chart-options="line.options" chart-dataset-override="line.datasetOverride" chart-colors="line.colors" height="110"></canvas>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;canvas class=&quot;chart chart-line&quot; chart-data=&quot;line.data&quot; chart-labels=&quot;line.labels&quot; chart-series=&quot;line.series&quot; chart-options=&quot;line.options&quot; chart-dataset-override=&quot;line.datasetOverride&quot; chart-colors=&quot;line.colors&quot; height=&quot;110&quot;&gt;&lt;/canvas&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.line = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    series: ['Series A', 'Series B'],
+    data: [
+        [65, 59, 80, 81, 56, 55, 40],
+        [28, 48, 40, 19, 86, 27, 90]
+    ],
+    datasetOverride: [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }],
+    colors: [{
+            backgroundColor: "transparent",
+            borderColor: "#1A237E"
+        },
+        {
+            backgroundColor: "transparent",
+            borderColor: '#B71C1C'
+        }
+    ],
+    options: {
+        title: {
+            display: true,
+            text: 'Visitors Line Chart'
+        },
+        scales: {
+            yAxes: [{
+                    id: 'y-axis-1',
+                    type: 'linear',
+                    display: true,
+                    position: 'left'
+                },
+                {
+                    id: 'y-axis-2',
+                    type: 'linear',
+                    display: true,
+                    position: 'right'
+                }
+            ]
+        },
+        legend: { display: true },
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Line Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Pie Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Pie Chart</h3>
+
+                <!-- content -->
+                <canvas class="chart chart-pie" chart-data="pie.data" chart-labels="pie.labels" chart-options="pie.options" chart-colors="pie.colors" height="110"></canvas>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;canvas class=&quot;chart chart-pie&quot; chart-data=&quot;pie.data&quot; chart-labels=&quot;pie.labels&quot; chart-options=&quot;pie.options&quot; chart-colors=&quot;pie.colors&quot; height=&quot;110&quot;&gt;&lt;/canvas&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.pie = {
+    labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
+    data: [
+        400, 300, 100, 800, 600
+    ],
+    colors: [{
+        backgroundColor: '#C62828',
+        pointBackgroundColor: '#EF5350'
+    }, {
+        backgroundColor: '#D84315',
+        pointBackgroundColor: '#FF7043'
+    }, {
+        backgroundColor: '#FFA000',
+        pointBackgroundColor: '#FFCA28'
+    }, {
+        backgroundColor: '#2E7D32',
+        pointBackgroundColor: '#66BB6A'
+    }, {
+        backgroundColor: '#1976D2',
+        pointBackgroundColor: '#64B5F6'
+    }],
+    options: {
+        title: {
+            display: true,
+            text: 'Colors Pie Chart'
+        },
+        legend: { display: true },
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Pie Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Donut Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Donut Chart</h3>
+
+                <!-- content -->
+                <canvas class="chart chart-doughnut" chart-data="doughnut.data" chart-labels="doughnut.labels" chart-options="doughnut.options" chart-colors="doughnut.colors" height="110"></canvas>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;canvas class=&quot;chart chart-doughnut&quot; chart-data=&quot;doughnut.data&quot; chart-labels=&quot;doughnut.labels&quot; chart-options=&quot;doughnut.options&quot; chart-colors=&quot;doughnut.colors&quot; height=&quot;110&quot;&gt;&lt;/canvas&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.doughnut = {
+    labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
+    data: [
+        400, 300, 100, 800, 600
+    ],
+    colors: [{
+        backgroundColor: '#C62828',
+        pointBackgroundColor: '#EF5350'
+    }, {
+        backgroundColor: '#D84315',
+        pointBackgroundColor: '#FF7043'
+    }, {
+        backgroundColor: '#FFA000',
+        pointBackgroundColor: '#FFCA28'
+    }, {
+        backgroundColor: '#2E7D32',
+        pointBackgroundColor: '#66BB6A'
+    }, {
+        backgroundColor: '#1976D2',
+        pointBackgroundColor: '#64B5F6'
+    }],
+    options: {
+        title: {
+            display: true,
+            text: 'Colors Doughnut Chart'
+        },
+        legend: { display: true },
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Donut Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Radar Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Radar Chart</h3>
+
+                <!-- content -->
+                <canvas class="chart chart-radar" chart-data="radar.data" chart-labels="radar.labels" chart-options="radar.options" chart-colors="radar.colors" height="110"></canvas>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;canvas class=&quot;chart chart-radar&quot; chart-data=&quot;radar.data&quot; chart-labels=&quot;radar.labels&quot; chart-options=&quot;radar.options&quot; chart-colors=&quot;radar.colors&quot; height=&quot;110&quot;&gt;&lt;/canvas&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.radar = {
+    labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+    data: [
+        [65, 59, 90, 81, 56, 55, 40],
+        [28, 48, 40, 19, 96, 27, 100]
+    ],
+
+    colors: ['#1A237E', '#B71C1C'],
+    options: {
+        title: {
+            display: true,
+            text: 'Radar Chart'
+        }
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Radar Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Polar Area Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Polar Area Chart</h3>
+
+                <!-- content -->
+                <canvas class="chart chart-polar-area" chart-data="polarArea.data" chart-labels="polarArea.labels" chart-options="polarArea.options" chart-colors="polarArea.colors" height="130"></canvas>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;canvas class=&quot;chart chart-polar-area&quot; chart-data=&quot;polarArea.data&quot; chart-labels=&quot;polarArea.labels&quot; chart-options=&quot;polarArea.options&quot; chart-colors=&quot;polarArea.colors&quot; height=&quot;130&quot;&gt;&lt;/canvas&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+ $scope.polarArea = {
+    labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
+    data: [
+        400, 300, 100, 800, 600
+    ],
+    colors: [{
+        backgroundColor: '#C62828',
+        pointBackgroundColor: 'rgba(255, 99, 132,0.4)'
+    }, {
+        backgroundColor: '#D84315',
+        pointBackgroundColor: 'rgba(100, 181, 246, 0.4)'
+    }, {
+        backgroundColor: '#FFA000',
+        pointBackgroundColor: 'rgba(102, 187, 106, 0.4)'
+    }, {
+        backgroundColor: '#2E7D32',
+        pointBackgroundColor: 'rgba(255, 202, 40, 0.4)'
+    }, {
+        backgroundColor: '#1976D2',
+        pointBackgroundColor: 'rgba(255, 112, 67, 0.4)'
+    }],
+    options: {
+        title: {
+            display: true,
+            text: 'Colors Polar Area Chart'
+        },
+        legend: { display: true },
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Polar Area Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Horizontal Bar Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Horizontal Bar Chart</h3>
+
+                <!-- content -->
+                <canvas class="chart chart-horizontal-bar" chart-data="horizontalBar.data" chart-labels="horizontalBar.labels" chart-series="horizontalBar.series" chart-colors="horizontalBar.colors" chart-options="horizontalBar.options" height="180"></canvas>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;canvas class=&quot;chart chart-horizontal-bar&quot; chart-data=&quot;horizontalBar.data&quot; chart-labels=&quot;horizontalBar.labels&quot; chart-series=&quot;horizontalBar.series&quot; chart-colors=&quot;horizontalBar.colors&quot; chart-options=&quot;horizontalBar.options&quot; height=&quot;180&quot;&gt;&lt;/canvas&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.horizontalBar = {
+    labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
+    series: ['Series A', 'Series B'],
+    data: [
+        [65, 59, 80, 81, 56, 55, 40],
+        [28, 48, 40, 19, 86, 27, 90]
+    ],
+    colors: [{
+            backgroundColor: "#3F51B5",
+            borderColor: "#1A237E"
+        },
+        {
+            backgroundColor: '#F44336',
+            borderColor: '#B71C1C'
+        }
+    ],
+    options: {
+        title: {
+            display: true,
+            text: 'Visitors Horizontal Bar Chart'
+        },
+        legend: { display: true }
+    }
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Horizontal Bar Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////////// -->
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!-- //////////////////////////////////////// -->
+        <!-- Mixed type Chart -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Mixed type Chart</h3>
+
+                <!-- content -->
+                <canvas class="chart chart-bar" chart-data="mixedtype.data" chart-labels="mixedtype.labels" chart-series="mixedtype.series" chart-colors="mixedtype.colors" chart-options="mixedtype.options" chart-dataset-override="mixedtype.datasetOverride" height="110"></canvas>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+ &lt;canvas class=&quot;chart chart-bar&quot; chart-data=&quot;mixedtype.data&quot; chart-labels=&quot;mixedtype.labels&quot; chart-series=&quot;mixedtype.series&quot; chart-colors=&quot;mixedtype.colors&quot; chart-options=&quot;mixedtype.options&quot; chart-dataset-override=&quot;mixedtype.datasetOverride&quot; height=&quot;110&quot;&gt;&lt;/canvas&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+ $scope.mixedtype = {
+    labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    series: ['Series A', 'Series B'],
+    data: [
+        [65, -59, 80, 81, -56, 55, -40],
+        [28, 48, -40, 19, 86, 27, 90]
+    ],
+    colors: ['#1A237E', '#448AFF'],
+    options: {
+        title: {
+            display: true,
+            text: 'Visitors Mixed Type Chart'
+        },
+        legend: { display: true }
+    },
+    datasetOverride: [{
+            label: "Bar chart",
+            borderWidth: 1,
+            type: 'bar'
+        },
+        {
+            label: "Line chart",
+            borderWidth: 3,
+            hoverBackgroundColor: "rgba(255,99,132,0.4)",
+            hoverBorderColor: "rgba(255,99,132,1)",
+            type: 'line'
+        }
+    ]
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Mixed type Chart -->
+        <!-- //////////////////////////////////////// -->
+    </section>
+    <!-- end section -->
+    <!-- //////////////////////////////////////// -->
+
+</md-content>
+<!--End Page content -->

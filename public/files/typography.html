@@ -1,0 +1,592 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>CSS</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/CSS/typography" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="typography" ui-sref="typography" md-active="true">
+            </md-tab>
+            <md-tab label="icons" ui-sref="icons">
+            </md-tab>
+            <md-tab label="animations" ui-sref="animations">
+            </md-tab>
+            <md-tab label="whiteframe" ui-sref="whiteframe">
+            </md-tab>
+            <md-tab label="media" ui-sref="media">
+            </md-tab>
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Typography</h2>
+        <!-- description -->
+        <p>AngularJS Material provides typography CSS classes you can use to create visual consistency across your application.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- General Typography -->
+        <div layout="row">
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">General Typography</h3>
+                <!-- content -->
+                <p>ConsoleBox uses the Roboto font for all of its components.</p>
+                <!-- end content -->
+
+                <!--title-->
+                <h4 class="theme-title">Removing Roboto</h4>
+                <!-- content -->
+                <p>In case you don't want to use Roboto on your webpage, fear not. Simply change the font stack by modifying the code below to your liking and add it to your custom css.</p>
+
+                <p>Remove Roboto google font link to your <code class="language-markup">head</code> section in index.html.</p>
+
+                <p> <code class="language-markup">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic&quot;&gt;</code>
+                </p>
+
+                <p>add below code to your custom css and link to your font in <code class="language-markup">head</code> section in index.html</p>
+
+                <p> <code class="language-markup">
+                    html, button, input, select, textarea{font-family:GillSans, Calibri, Trebuchet, sans-serif;}</code>
+                </p>
+                <!-- end content -->
+
+            </div>
+        </div>
+        <!-- End General Typography -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Heading Styles -->
+        <div layout="row">
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Heading Styles</h3>
+                <!-- description -->
+                <p>To preserve <a href="http://webaim.org/techniques/semanticstructure/">semantic structures</a>, you should style the <code class="language-markup">&lt;h1&gt;</code> - <code class="language-markup">&lt;h6&gt;</code> heading tags with the
+                    styling classes shown below:</p>
+
+                <!-- content -->
+                <table class="theme-table">
+                    <thead>
+                        <tr>
+                            <th>Selectors</th>
+                            <th>Output</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><code class="language-markup">.md-display-4</code></td>
+                            <td>
+                                <h5 class="md-display-4 demo-output-header">Light 112px</h5>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><code class="language-markup">.md-display-3</code></td>
+                            <td>
+                                <h5 class="md-display-3 demo-output-header">Light 112px</h5>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><code class="language-markup">.md-display-2</code></td>
+                            <td>
+                                <h5 class="md-display-2 demo-output-header">Light 112px</h5>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><code class="language-markup">.md-display-1</code></td>
+                            <td>
+                                <h5 class="md-display-1 demo-output-header">Light 112px</h5>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><code class="language-markup">.md-headline</code></td>
+                            <td>
+                                <h5 class="md-headline demo-output-header">Light 112px</h5>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><code class="language-markup">.md-title</code></td>
+                            <td>
+                                <h5 class="md-title demo-output-header">Light 112px</h5>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><code class="language-markup">.md-subhead</code></td>
+                            <td>
+                                <h5 class="md-subhead demo-output-header">Light 112px</h5>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <blockquote ng-non-bindable>
+                    <span class="md-body-1">
+                        Note: Base font size is <code class="red">10px</code> for easy rem units (1.2rem = 12px). Body font size is <code class="red">14px</code>. sp = scalable pixels.
+                    </span>
+                </blockquote>
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;h1 class=&quot;md-display-3&quot;&gt;Headline&lt;/h1&gt;
+&lt;h2 class=&quot;md-display-1&quot;&gt;Headline&lt;/h2&gt;
+&lt;h3 class=&quot;md-headline&quot;&gt;Headline&lt;/h3&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+        </div>
+        <!-- End Heading Styles -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Body Copy -->
+        <div layout="row">
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Body Copy</h3>
+
+                <!-- content -->
+                <table class="theme-table responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Selectors</th>
+                            <th>Output</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><code class="language-markup">.md-body-1</code></td>
+                            <td>
+                                <p class="md-body-1">Light 112px</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><code class="language-markup">.md-body-2</code></td>
+                            <td>
+                                <p class="md-body-2">Light 112px</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><code class="language-markup">.md-button</code></td>
+                            <td>
+                                <md-button class="md-raised">Medium 14px</md-button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><code class="language-markup">.md-caption</code></td>
+                            <td>
+                                <small class="md-caption">Regular 12px</small>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <!-- end content -->
+
+                <!-- sample code -->
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;p class=&quot;md-body-2&quot;&gt;Body copy with medium weight.&lt;/p&gt;
+&lt;md-button class="md-raised"&gt;Button&lt;/md-button&gt;
+&lt;p class=&quot;md-body-1&quot;&gt;Regular body copy &lt;small class=&quot;md-caption&quot;&gt;with small text&lt;/small&gt;.&lt;/p&gt;
+&lt;span class=&quot;md-caption&quot;&gt;Caption&lt;/span&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+        </div>
+        <!-- End Body Copy -->
+        <!-- //////////////////////////////////////// -->
+
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Headers -->
+        <div layout="row">
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Headers</h3>
+                <!-- content -->
+                <div layout="row">
+                    <div flex="100">
+                        <h1>Heading h1</h1>
+                        <h2>Heading h2</h2>
+                        <h3>Heading h3</h3>
+                        <h4>Heading h4</h4>
+                        <h5>Heading h5</h5>
+                        <h6>Heading h6</h6>
+                    </div>
+                </div>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- End Headers -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Custom Headers -->
+        <div layout="row">
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Custom Headers</h3>
+                <!-- description -->
+                <p>Add class <code class="language-markup">theme-title</code> with header tag.</p>
+
+                <!-- content -->
+                <div layout="row">
+                    <div flex="100">
+                        <h1 class="theme-title">Heading h1</h1>
+                        <h2 class="theme-title">Heading h2</h2>
+                        <h3 class="theme-title">Heading h3</h3>
+                        <h4 class="theme-title">Heading h4</h4>
+                        <h5 class="theme-title">Heading h5</h5>
+                        <h6 class="theme-title">Heading h6</h6>
+                    </div>
+                </div>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- End Custom Headers -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Blockquotes -->
+        <div layout="row">
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Blockquotes</h3>
+
+                <!-- content -->
+                <blockquote>
+                    Blockquotes are mainly used to give emphasis to a quote or citation. You can also use these for some extra text hierarchy and emphasis.
+                </blockquote>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- End Blockquotes -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Paragraph -->
+        <div layout="row">
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Paragraph</h3>
+
+                <!-- content -->
+                <p>This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content so, did you know that there are storms occurring
+                    on Jupiter that are larger than the Earth? Pretty cool. Wrap strong around type to make it bold!. You can also use em to italicize your words.</p>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- End Paragraph -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Ordered List -->
+        <div layout="row">
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Ordered List</h3>
+                <!-- description -->
+                <p>A list of items in which the order does explicitly matter.</p>
+
+                <!-- content -->
+                <ol>
+                    <li>
+                        Lorem ipsum dolor sit amet
+                    </li>
+                    <li>
+                        Consectetur adipiscing elit
+                    </li>
+                    <li>
+                        Integer molestie lorem at massa
+                    </li>
+                    <li>
+                        Facilisis in pretium nisl aliquet
+                    </li>
+                    <li>
+                        Nulla volutpat aliquam velit
+                        <ol>
+                            <li>
+                                Phasellus iaculis neque
+                            </li>
+                            <li>
+                                Purus sodales ultricies
+                            </li>
+                            <li>
+                                Vestibulum laoreet porttitor sem
+                            </li>
+                            <li>
+                                Ac tristique libero volutpat at
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Faucibus porta lacus fringilla vel
+                    </li>
+                    <li>
+                        Aenean sit amet erat nunc
+                    </li>
+                    <li>
+                        Eget porttitor lorem
+                    </li>
+                </ol>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- End Ordered List -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Unordered Block -->
+        <div class="row">
+            <!-- //////////////////////////////////////// -->
+            <!-- Unordered List -->
+            <div class="col s12 l6">
+                <!--title-->
+                <h3 class="theme-title">Unordered List</h3>
+                <!-- description -->
+                <p>A list of items in which the order does not explicitly matter.</p>
+
+                <!-- content -->
+
+
+                <ul>
+                    <li>
+                        Lorem ipsum dolor sit amet
+                    </li>
+                    <li>
+                        Consectetur adipiscing elit
+                    </li>
+                    <li>
+                        Integer molestie lorem at massa
+                    </li>
+                    <li>
+                        Facilisis in pretium nisl aliquet
+                    </li>
+                    <li>
+                        Nulla volutpat aliquam velit
+                        <ul>
+                            <li>
+                                Phasellus iaculis neque
+                            </li>
+                            <li>
+                                Purus sodales ultricies
+                            </li>
+                            <li>
+                                Vestibulum laoreet porttitor sem
+                            </li>
+                            <li>
+                                Ac tristique libero volutpat at
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Faucibus porta lacus fringilla vel
+                    </li>
+                    <li>
+                        Aenean sit amet erat nunc
+                    </li>
+                    <li>
+                        Eget porttitor lorem
+                    </li>
+                </ul>
+
+
+                <!-- end content -->
+
+                <!-- End Unordered List -->
+                <!-- //////////////////////////////////////// -->
+            </div>
+            <div class="col s12 l6">
+                <!-- //////////////////////////////////////// -->
+                <!-- Default Unordered List -->
+
+                <!--title-->
+                <h3 class="theme-title">Default Unordered List</h3>
+                <!-- description -->
+                <p>To use Default on a Unordered List, simply just add the class <code class="  language-markup">default</code> to a <code class="  language-markup">ul</code>, see the example below.</p>
+
+                <!-- content -->
+                <ul class="default">
+                    <li>
+                        Lorem ipsum dolor sit amet
+                    </li>
+                    <li>
+                        Consectetur adipiscing elit
+                    </li>
+                    <li>
+                        Integer molestie lorem at massa
+                    </li>
+                    <li>
+                        Facilisis in pretium nisl aliquet
+                    </li>
+                    <li>
+                        Nulla volutpat aliquam velit
+                        <ul>
+                            <li>
+                                Phasellus iaculis neque
+                            </li>
+                            <li>
+                                Purus sodales ultricies
+                            </li>
+                            <li>
+                                Vestibulum laoreet porttitor sem
+                            </li>
+                            <li>
+                                Ac tristique libero volutpat at
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Faucibus porta lacus fringilla vel
+                    </li>
+                    <li>
+                        Aenean sit amet erat nunc
+                    </li>
+                    <li>
+                        Eget porttitor lorem
+                    </li>
+                </ul>
+                <!-- end content -->
+
+                <!-- End Default Unordered List -->
+                <!-- //////////////////////////////////////// -->
+            </div>
+        </div>
+        <!-- End Unordered Block -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Inline Unordered List -->
+        <div layout="row">
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Inline Unordered List</h3>
+                <!-- description -->
+                <p>To use Inline on a Unordered List, simply just add the class <code class="  language-markup">list-inline</code> to a <code class="  language-markup">ul</code>, see the example below.</p>
+
+                <!-- content -->
+                <ul class="list-inline">
+                    <li>
+                        Lorem ipsum dolor sit amet
+                    </li>
+                    <li>
+                        Consectetur adipiscing elit
+                    </li>
+                    <li>
+                        Integer molestie lorem at massa
+                    </li>
+                    <li>
+                        Facilisis in pretium nisl aliquet
+                    </li>
+                    <li>
+                        Nulla volutpat aliquam velit
+                    </li>
+                    <li>
+                        Faucibus porta lacus fringilla vel
+                    </li>
+                    <li>
+                        Aenean sit amet erat nunc
+                    </li>
+                    <li>
+                        Eget porttitor lorem
+                    </li>
+                </ul>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- End Inline Unordered List -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Description List -->
+        <div layout="row">
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Description List</h3>
+
+                <!-- content -->
+                <dl>
+                    <dt>Description lists</dt>
+                    <dd>A description list is perfect for defining terms.</dd>
+                    <dt>Euismod</dt>
+                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                    <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                    <dt>Malesuada porta</dt>
+                    <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                </dl>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- End Description List -->
+        <!-- //////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Horizontal Description List -->
+        <div layout="row">
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Horizontal Description List</h3>
+                <!-- description -->
+                <p>To use Horizontal on a Description List, simply just add the class <code class="  language-markup">dl-horizontal</code> to a <code class="  language-markup">dl</code>, see the example below.</p>
+
+                <!-- content -->
+                <dl class="dl-horizontal">
+                    <dt>Description lists</dt>
+                    <dd>A description list is perfect for defining terms.</dd>
+                    <dt>Euismod</dt>
+                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                    <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                    <dt>Malesuada porta</dt>
+                    <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                    <dt>Felis euismod semper eget lacinia</dt>
+                    <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+                </dl>
+                <!-- end content -->
+            </div>
+        </div>
+        <!-- End Horizontal Description List -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

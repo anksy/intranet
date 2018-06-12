@@ -1,0 +1,207 @@
+<!-- Page Header -->
+<div class="theme-page-body-header-box" md-colors="{background: '{{themeColor}}-500'}">
+    <div class="theme-page-body-header-title">
+        <!-- title -->
+        <h1>Forms Elements</h1>
+        <!-- help -->
+        <a href="https://material.angularjs.org/latest/demo/radioButton" target="_blank" class="theme-page-help"><i class="material-icons">help</i><md-tooltip md-direction="bottom" class="tooltip-gt-md">Help</md-tooltip></a>
+    </div>
+
+    <!-- Tab -->
+    <div class="theme-page-body-header-menu">
+        <md-tabs md-dynamic-height>
+            <md-tab label="Autocomplete" ui-sref="autocomplete">
+            </md-tab>
+            <md-tab label="Checkbox" ui-sref="checkbox">
+            </md-tab>
+            <md-tab label="Chips" ui-sref="chips">
+            </md-tab>
+            <md-tab label="datepicker" ui-sref="datepicker">
+            </md-tab>
+            <md-tab label="file input" ui-sref="file-input">
+            </md-tab>
+            <md-tab label="Radio Button" ui-sref="radio-button" md-active="true">
+            </md-tab>
+            <md-tab label="Select" ui-sref="select">
+            </md-tab>
+            <md-tab label="Switch" ui-sref="switch">
+            </md-tab>
+
+        </md-tabs>
+    </div>
+    <!-- end tab -->
+
+</div>
+<!-- End Page Header -->
+
+<!-- Page content -->
+<md-content class="page-content">
+    <!-- section -->
+    <section class="page-section md-whiteframe-3dp">
+        <!--page title-->
+        <h2 class="theme-title">Radio Buttons</h2>
+        <!-- description -->
+        <p>Radio Buttons are used when the user must make only one selection out of a group of items.</p>
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Basic Usage -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Basic Usage</h3>
+
+                <!-- content -->
+                <div layout="row">
+                    <div flex="100">
+                        <form>
+                            <md-radio-group ng-model="basicUsageRadioButton.group1">
+                                <md-radio-button value="Apple" class="md-primary">Apple</md-radio-button>
+                                <md-radio-button value="Banana" class="md-warn"> Banana </md-radio-button>
+                                <md-radio-button value="Mango">Mango</md-radio-button>
+                                <md-radio-button value="Orange" ng-disabled="true">Orange(Disabled)</md-radio-button>
+                                <md-radio-button value="Lemon" class="md-primary" md-no-ink>Lemon(No Ink)</md-radio-button>
+                            </md-radio-group>
+                            <p>Selected Value: <span class="red">{{ basicUsageRadioButton.group1 }}</span> </p>
+                        </form>
+                    </div>
+                </div>
+                <!-- end content -->
+
+
+                <!-- sample code -->
+                <blockquote ng-non-bindable>
+                    In HTML sample code angularjs scope variable denoted as <code class="red">{}</code> instead of <code class="red">{{ }}</code>.
+                </blockquote>
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;form&gt;
+    &lt;md-radio-group ng-model=&quot;basicUsageRadioButton.group1&quot;&gt;
+        &lt;md-radio-button value=&quot;Apple&quot; class=&quot;md-primary&quot;&gt;Apple&lt;/md-radio-button&gt;
+        &lt;md-radio-button value=&quot;Banana&quot; class=&quot;md-warn&quot;&gt; Banana &lt;/md-radio-button&gt;
+        &lt;md-radio-button value=&quot;Mango&quot;&gt;Mango&lt;/md-radio-button&gt;
+        &lt;md-radio-button value=&quot;Orange&quot; ng-disabled=&quot;true&quot;&gt;Orange(Disabled)&lt;/md-radio-button&gt;
+        &lt;md-radio-button value=&quot;Lemon&quot; class=&quot;md-primary&quot; md-no-ink&gt;Lemon(No Ink)&lt;/md-radio-button&gt;
+    &lt;/md-radio-group&gt;
+    &lt;p&gt;Selected Value: &lt;span class=&quot;red&quot;&gt;{ basicUsageRadioButton.group1 }&lt;/span&gt; &lt;/p&gt;
+&lt;/form&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.basicUsageRadioButton = {
+    group1: 'Banana'
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Basic Usage -->
+        <!-- //////////////////////////////////////// -->
+
+
+        <!-- //////////////////////////////////////// -->
+        <!-- Color Options -->
+
+        <!-- layout  -->
+        <div layout="row">
+            <!-- flex -->
+            <div flex="100">
+                <!--title-->
+                <h3 class="theme-title">Color Options</h3>
+
+                <!-- content -->
+                <div layout="row">
+                    <div flex="100">
+                        <form>
+                            <md-radio-group ng-model="colorOptionRadioButton.group">
+                                <div class="row">
+                                    <div class="col s12 m6">
+                                        <md-radio-button value="primary" class="md-primary">primary</md-radio-button>
+                                        <md-radio-button value="warn" class="md-warn"> warn </md-radio-button>
+                                        <md-radio-button value="accent">accent</md-radio-button>
+                                        <md-radio-button value="purple" class="md-purple">purple</md-radio-button>
+                                        <md-radio-button value="blue" class="md-blue">blue</md-radio-button>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <md-radio-button value="cyan" class="md-cyan">cyan</md-radio-button>
+                                        <md-radio-button value="teal" class="md-teal">teal</md-radio-button>
+                                        <md-radio-button value="green" class="md-green">green</md-radio-button>
+                                        <md-radio-button value="yellow" class="md-yellow">yellow</md-radio-button>
+                                        <md-radio-button value="brown" class="md-brown">brown</md-radio-button>
+                                    </div>
+                                </div>
+                            </md-radio-group>
+                        </form>
+                    </div>
+                </div>
+                <!-- end content -->
+
+                <!-- sample code -->
+
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="html">
+                        <md-content class="m-t-0">
+                            <pre><code class="language-html" prism>
+&lt;md-radio-group ng-model=&quot;colorOptionRadioButton.group&quot;&gt;
+    &lt;md-radio-button value=&quot;purple&quot; class=&quot;md-purple&quot;&gt;Purple&lt;/md-radio-button&gt;
+&lt;/md-radio-group&gt;
+                            </code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="js">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-javascript" prism>
+$scope.colorOptionRadioButton = {
+    group: 'primary'
+};
+</code></pre>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="css">
+                        <md-content class="m-t-0">
+                            <pre><code class=" language-css" prism>
+md-radio-button:not([disabled]).md-purple .md-on,
+md-radio-group:not([disabled]) .md-purple .md-on {
+    background-color: #9C27B0;
+}
+
+md-radio-button:not([disabled]).md-purple.md-checked .md-off,
+md-radio-group:not([disabled]) .md-purple.md-checked .md-off {
+    border-color: #9C27B0;
+}
+</code></pre>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+                <!-- end sample code -->
+
+
+            </div>
+            <!-- end flex -->
+        </div>
+        <!-- end layout  -->
+
+        <!-- End Color Options -->
+        <!-- //////////////////////////////////////// -->
+
+    </section>
+    <!-- end section -->
+</md-content>
+<!--End Page content -->

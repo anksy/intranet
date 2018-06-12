@@ -1,0 +1,365 @@
+/* ////////////////////////   ConsoleBox theme stylesheet /////////////////////////////// */
+
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body
+2. Content
+    1. typography
+    2. whiteframe
+    3. owl carousel
+    4. SweetAlert
+    5. FrontEnd Pages(login,signup,reset,....)
+    6. Layout
+3. Footer
+-------------------------------------------------------------------*/
+
+
+/* =================================================================================
+Body
+================================================================================= */
+
+
+/* boxed layout page background */
+
+.layout-boxed main.theme-page-body {
+    background: #f9f8f8;
+}
+
+
+/* color - indigo
+
+anchor,notification list box button 
+
+
+*/
+
+a,
+a:hover,
+a:focus,
+a:active,
+.noti-list-item-action a.md-button {
+    color: #3949ab;
+}
+
+
+/*text selection*/
+
+::-moz-selection,
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+    color: white;
+    background: #4b60e8;
+}
+
+::selection,
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+    color: white;
+    background: #4b60e8;
+}
+
+
+/* color - black
+
+button,apps
+*/
+
+.md-button>a,
+.theme-apps-item>a>span,
+.theme-apps-item>a>.material-icons {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* color - white
+
+page title,page header tab active, page header indicator,toolbar icon,theme logo,theme mobile logo,
+page help
+
+*/
+
+.theme-page-body-header-title>h1,
+.theme-page-body-header-menu .md-tab.md-active>span,
+.theme-page-body-header-menu md-tabs md-ink-bar,
+ul.theme-toolbar-left .material-icons,
+ul.theme-toolbar-right .material-icons,
+.theme-left-sidebar .theme-mobile-logo-container,
+.theme-mobile-logo-container .theme-mobile-logo,
+.theme-toolbar .theme-logo,
+.theme-page-body-header-title>.theme-page-help {
+    color: #fff;
+}
+
+
+/* background - white 
+
+page header indicator,notification list item,section
+
+*/
+
+.theme-page-body-header-menu md-tabs md-ink-bar,
+md-menu-item.theme-noti-list,
+section.page-section {
+    background-color: #fff;
+}
+
+
+/* background - #eeeeee 
+
+pre page loader, notification box
+
+*/
+
+#pre-page-loader,
+md-menu-content.theme-noti-box,
+md-menu-item.theme-noti-list:first-child {
+    background: #eeeeee;
+}
+
+
+/* background - #fafafa 
+
+left sidebar,right sidebar,footer,search box
+
+*/
+
+.theme-left-sidebar,
+.theme-right-sidebar,
+footer.page-footer,
+.theme-search,
+.theme-search>input.theme-search-input {
+    background-color: #fafafa;
+}
+
+
+/* background - transparent
+
+md-content
+*/
+
+md-content {
+    background: transparent;
+}
+
+
+/* overlay  */
+
+.md-left-sidebar .theme-left-sidebar-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+/* pulse */
+
+.theme-pulse {
+    background: red;
+    box-shadow: 0 0 0 rgba(255, 0, 0, 0.8);
+}
+
+@-webkit-keyframes theme-pulse {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.8);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    }
+}
+
+@keyframes theme-pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.8);
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.8);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+        box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+        box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    }
+}
+
+
+/* page header tab */
+
+.theme-page-body-header-menu .md-tab>span {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.theme-page-body-header-menu md-prev-button.md-disabled md-icon,
+.theme-page-body-header-menu md-next-button.md-disabled md-icon {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-page-body-header-menu md-prev-button md-icon,
+.theme-page-body-header-menu md-next-button md-icon {
+    color: rgba(173, 173, 173, 0.5);
+}
+
+
+/* color - rgba(0, 0, 0, 0.54)
+
+subscription plan price 
+
+*/
+
+.subscription-plan .price {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+
+/* color - rgba(49, 48, 48, 0.87), background: rgba(158, 158, 158, 0.2)
+
+left sidebar menu
+
+*/
+
+.theme-left-sidebar-menu>li>a,
+.side-menu-label-body>li>a {
+    color: rgba(49, 48, 48, 0.87);
+}
+
+.side-menu-label:hover {
+    background: rgba(158, 158, 158, 0.2);
+}
+
+.side-menu-label.menu-active {
+    background: rgba(158, 158, 158, 0.4);
+    color: rgba(29, 28, 28, 0.87);
+}
+
+.side-menu-label-1:hover {
+    color: rgba(29, 28, 28, 0.90);
+}
+
+.side-menu-label-1.menu-active1 {
+    color: #000;
+}
+
+
+/* right sidebar close icon */
+
+.layout-options-box md-radio-button>.md-label {
+    color: rgba(49, 48, 48, 0.87);
+}
+
+.theme-right-sidebar .theme-right-sidebar-close>.material-icons {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.theme-right-sidebar-close>.material-icons:hover {
+    color: #000;
+}
+
+
+/* collapsed sidebar scrollbar */
+
+.collapsed-left-sidebar .theme-left-sidebar-body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgb(241, 241, 241);
+    box-shadow: inset 0 0 6px rgb(241, 241, 241);
+    border-left: 1px solid #dadada;
+}
+
+.collapsed-left-sidebar .theme-left-sidebar-body::-webkit-scrollbar-thumb {
+    background: rgba(192, 192, 192, 0.6);
+    -webkit-box-shadow: inset 0 0 20px 5px rgb(192, 192, 192);
+    box-shadow: inset 0 0 20px 5px rgb(192, 192, 192);
+}
+
+.collapsed-left-sidebar .theme-left-sidebar-body::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(192, 192, 192, 0.4);
+}
+
+
+/* Breadcrumbs */
+
+.breadcrumbs>li.active,
+.breadcrumbs>li.active>a,
+.breadcrumbs>li+li:before,
+.breadcrumbs.arrow-right>li+li:before,
+.breadcrumbs.arrow-forward>li+li:before,
+.breadcrumbs.fast-forward>li+li:before,
+.breadcrumbs.play-forward>li+li:before {
+    color: #6f6f6f;
+}
+
+
+/* =================================================================================
+typography
+================================================================================= */
+
+blockquote {
+    border-left: 5px solid #3949ab;
+}
+
+
+/* =================================================================================
+whiteframe
+================================================================================= */
+
+.whiteframedemoBasicUsage md-whiteframe {
+    background: #5C6BC0;
+    color: #fff;
+}
+
+
+/* =================================================================================
+owl carousel
+================================================================================= */
+
+.carousel-demo .owl-carousel .item {
+    background: #3949ab;
+    color: #fff;
+}
+
+
+/* =================================================================================
+SweetAlert
+================================================================================= */
+
+
+/* sweetAlert button */
+
+.sweet-alert button,
+.sweet-alert button:hover,
+.sweet-alert button:active {
+    background: #3949ab !important;
+    color: #fff !important;
+}
+
+
+/*Sweetalert input */
+
+.sweet-alert.show-input input:focus {
+    border: 1px solid #3949ab;
+}
+
+
+/* =================================================================================
+FrontEnd Pages
+================================================================================= */
+
+.front-theme-page-body .form-brand-logo,
+.error-box .error-code,
+.admin-error-box .error-code {
+    color: #3949ab;
+}
+
+
+/* =================================================================================
+Layout
+================================================================================= */
+
+.grid-example {
+    background: #3949ab;
+}
